@@ -83,6 +83,7 @@ typedef struct
     gint            orientation;
     gchar           *label;
     gchar           *mnt;
+    gchar 	    *filemanager;
 } gui;
 
 static GtkTooltips *tooltips = NULL;
@@ -122,12 +123,16 @@ plugin_recreate_gui (gpointer data)
 }
 
 static void
-plugin_open_xffm (GtkWidget *widget, gpointer user_data)
+plugin_open_mnt (GtkWidget *widget, gpointer user_data)
 {
     gui *plugin = user_data;
     GString *cmd;
-    cmd = g_string_new ("xffm ");
+    if (strlen(plugin->filemanager) == 0) {
+        return;
+    }
+    cmd = g_string_new (plugin->filemanager);
     if (plugin->mnt != NULL && (strcmp(plugin->mnt, ""))) {
+        g_string_append (cmd, " ");
         g_string_append (cmd, plugin->mnt);
     }
     exec_cmd (cmd->str, FALSE, FALSE);
@@ -222,8 +227,9 @@ gui_new ()
     plugin->yellow = 0;
     plugin->red = 0;
     plugin->timeout = 0;
+    plugin->filemanager = "xffm";
     plugin->fs = xfce_iconbutton_new ();
-    g_signal_connect (G_OBJECT(plugin->fs), "clicked", G_CALLBACK(plugin_open_xffm), plugin);
+    g_signal_connect (G_OBJECT(plugin->fs), "clicked", G_CALLBACK(plugin_open_mnt), plugin);
     pb = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, TRUE, NULL);
     pb = gdk_pixbuf_scale_simple (pb, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
     xfce_iconbutton_set_pixbuf (XFCE_ICONBUTTON(plugin->fs), pb);
@@ -324,6 +330,10 @@ plugin_read_config (Control *ctrl, xmlNodePtr node)
                 plugin->mnt = g_strdup((gchar *)value);
                 g_free(value);
             }
+            if ((value = xmlGetProp(node, (const xmlChar *)"filemanager"))) {
+                plugin->filemanager = g_strdup((gchar *)value);
+                g_free(value);
+            }
             break;
 	}
     }
@@ -349,6 +359,8 @@ plugin_write_config (Control *ctrl, xmlNodePtr parent)
     xmlSetProp(root, "label", plugin->label);
 
     xmlSetProp(root, "mnt", plugin->mnt);
+    
+    xmlSetProp(root, "filemanager", plugin->filemanager);
 }    
 
 static void
@@ -366,6 +378,13 @@ plugin_ent2_changed (GtkWidget *widget, gpointer user_data)
     plugin->mnt = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
     plugin->seen = FALSE;
     plugin_check_fs (plugin);
+}
+
+static void
+plugin_ent3_changed (GtkWidget *widget, gpointer user_data)
+{
+    gui *plugin = user_data;
+    plugin->filemanager = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
 }
 
 static void
@@ -388,12 +407,13 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
 {
     gui *plugin = ctrl->data;
     GtkWidget *hbox, *vbox1, *vbox2, *mnt, *spin1, *spin2;
-    GtkWidget *lab1, *lab2, *lab3, *lab4, *ent1, *ent2;
+    GtkWidget *lab1, *lab2, *lab3, *lab4, *lab5, *ent1, *ent2, *ent3;
     gchar *text[] = {
 	     _("label"),
 	     _("mountpoint"),
              _("high alarm limit (MB)"),
 	     _("high warn limit (MB)"),
+	     _("filemanager"),
     };
  
     hbox = gtk_hbox_new (FALSE, 2);
@@ -407,6 +427,8 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
     lab2 = gtk_label_new (text[1]);
     lab3 = gtk_label_new (text[2]);
     lab4 = gtk_label_new (text[3]);
+    lab5 = gtk_label_new (text[4]);
+
     ent1 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY(ent1), 16);
     if (plugin->label != NULL) {
@@ -417,22 +439,32 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
     if (plugin->mnt != NULL) {
         gtk_entry_set_text (GTK_ENTRY(ent2), plugin->mnt);
     }
+    ent3 = gtk_entry_new ();
+    gtk_entry_set_max_length (GTK_ENTRY(ent2), 16);
+    if (plugin->filemanager != NULL) {
+        gtk_entry_set_text (GTK_ENTRY(ent3), plugin->filemanager);
+    }
+ 
     spin1 = gtk_spin_button_new_with_range (0, 1000000, 10);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), plugin->red);
     spin2 = gtk_spin_button_new_with_range (0, 1000000, 10);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), plugin->yellow);
+
     g_signal_connect (ent1, "changed", G_CALLBACK(plugin_ent1_changed), plugin);
     g_signal_connect (ent2, "changed", G_CALLBACK(plugin_ent2_changed), plugin);
+    g_signal_connect (ent3, "changed", G_CALLBACK(plugin_ent3_changed), plugin);
     g_signal_connect (spin1, "value-changed", G_CALLBACK(plugin_spin1_changed), plugin);
     g_signal_connect (spin2, "value-changed", G_CALLBACK(plugin_spin2_changed), plugin);
 
     gtk_box_pack_start (GTK_BOX(vbox1), lab1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab2, TRUE, FALSE, 1);
+    gtk_box_pack_start (GTK_BOX(vbox1), lab5, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab3, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab4, TRUE, FALSE, 1);
 
     gtk_box_pack_start (GTK_BOX(vbox2), ent1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), ent2, TRUE, FALSE, 1);
+    gtk_box_pack_start (GTK_BOX(vbox2), ent3, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), spin1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), spin2, TRUE, FALSE, 1);
 
