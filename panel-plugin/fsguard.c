@@ -437,7 +437,7 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
         gtk_entry_set_text (GTK_ENTRY(ent2), plugin->mnt);
     }
     ent3 = gtk_entry_new ();
-    gtk_entry_set_max_length (GTK_ENTRY(ent2), 16);
+    gtk_entry_set_max_length (GTK_ENTRY(ent3), 16);
     if (plugin->filemanager != NULL) {
         gtk_entry_set_text (GTK_ENTRY(ent3), plugin->filemanager);
     }
