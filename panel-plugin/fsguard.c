@@ -124,14 +124,18 @@ plugin_check_fs (gpointer data)
     GdkPixbuf *pb;
     GString *tool;
     int size;
+    float freeblocks;
     int err;
+    long blocksize;
     static struct statfs fsd;
     char msg[100];
     gui *plugin = data;
 
     err = statfs (plugin->mnt, &fsd);
+    blocksize = fsd.f_bsize;
+    freeblocks = fsd.f_bavail;
     if (err != -1) {
-        size = fsd.f_bavail * fsd.f_bsize / 1048576;
+        size = (freeblocks * blocksize) / 1048576;
         if (size <= plugin->red) {
             pb = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, TRUE, NULL);
 	    if (!plugin->seen) {
