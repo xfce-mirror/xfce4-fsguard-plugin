@@ -1,0 +1,56 @@
+# translation of xfce4-fsguard-plugin.
+# Andre Lerche <a.lerche@gmx.net>, 2003.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-11-08 22:58+0100\n"
+"PO-Revision-Date: 2003-11-08 22:58+0100\n"
+"Last-Translator: Andre Lerche <a.lerche@gmx.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: panel-plugin/fsguard.c:136
+#, c-format
+msgid "Only %i MB space left on %s (%s)!"
+msgstr "Nur noch %i MB freier Speicher auf %s (%s)!"
+
+#: panel-plugin/fsguard.c:138
+#, c-format
+msgid "Only %i MB space left on %s!"
+msgstr "Nur noch %i MB freier Speicher auf %s!"
+
+#: panel-plugin/fsguard.c:149
+#, c-format
+msgid "%i MB free on %s (%s)"
+msgstr "%i MB frei auf %s (%s)"
+
+#: panel-plugin/fsguard.c:151
+#, c-format
+msgid "%i MB free on %s"
+msgstr "%i MB frei auf %s"
+
+#: panel-plugin/fsguard.c:342
+msgid "label"
+msgstr "Label"
+
+#: panel-plugin/fsguard.c:343
+msgid "mountpoint"
+msgstr "Mountpunkt"
+
+#: panel-plugin/fsguard.c:344
+msgid "high alarm limit (MB)"
+msgstr "Alarm ab (MB)"
+
+#: panel-plugin/fsguard.c:345
+msgid "high warn limit (MB)"
+msgstr "Warnung ab (MB)"
+
+#: panel-plugin/fsguard.c:401
+msgid "Free Space Checker"
+msgstr "Speicherplatz-Checker"
+
