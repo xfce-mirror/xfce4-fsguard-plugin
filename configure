@@ -19687,7 +19687,7 @@ cat >>confdefs.h <<\_ACEOF
 _ACEOF
 
 
-  ALL_LINGUAS="de ko"
+  ALL_LINGUAS="de ko pl"
 
 
 

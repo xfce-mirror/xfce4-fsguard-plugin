@@ -1,0 +1,80 @@
+# Translation file for XFce4's fsguard plugin.
+# Copyright (C) 2003 Andre Lerche <a.lerche@gmx.net>
+# This file is distributed under the same license as the XFce4.
+# Daniel 'Beorn' Mróz <beorn@alpha.pl>, 2003.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pl\n"
+"POT-Creation-Date: 2003-11-22 16:53+0100\n"
+"PO-Revision-Date: 2003-12-24 11:10+0100\n"
+"Last-Translator: Daniel 'Beorn' Mróz <beorn@alpha.pl>\n"
+"Language-Team: none <none@none>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: panel-plugin/fsguard.c:166
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "%.2f GB wolnego miejsca na %s (%s) pozostało tylko!"
+
+#: panel-plugin/fsguard.c:168
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "%.2f MB wolnego miejsca na %s (%s) pozostało tylko!"
+
+#: panel-plugin/fsguard.c:172
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "%.2f GB wolnego miejsca na %s pozostało tylko!"
+
+#: panel-plugin/fsguard.c:174
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "%.2f MB wolnego miejsca na %s pozostało tylko!"
+
+#: panel-plugin/fsguard.c:186
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f GB wolnego miejsca pozostało na %s (%s)"
+
+#: panel-plugin/fsguard.c:188
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f MB wolnego miejsca pozostało na %s (%s)"
+
+#: panel-plugin/fsguard.c:192
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f GB wolnego miejsca pozostało na %s"
+
+#: panel-plugin/fsguard.c:194
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f MB wolnego miejsca pozostało na %s"
+
+#: panel-plugin/fsguard.c:409
+msgid "label"
+msgstr "etykieta"
+
+#: panel-plugin/fsguard.c:410
+msgid "mountpoint"
+msgstr "punkt montowania"
+
+#: panel-plugin/fsguard.c:411
+msgid "high alarm limit (MB)"
+msgstr "próg alarmu (MB)"
+
+#: panel-plugin/fsguard.c:412
+msgid "high warn limit (MB)"
+msgstr "próg ostrzeżenia (MB)"
+
+#: panel-plugin/fsguard.c:413
+msgid "filemanager"
+msgstr "menadżer plików"
+
+#: panel-plugin/fsguard.c:481
+msgid "Free Space Checker"
+msgstr "Strażnik Wolnego Miejsca"
