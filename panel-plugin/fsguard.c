@@ -51,9 +51,9 @@
 #define MEDIUM 2
 #define LARGE 3
 
-#define ICONSIZETINY 16
-#define ICONSIZESMALL 32
-#define ICONSIZEMEDIUM 48
+#define ICONSIZETINY 24 
+#define ICONSIZESMALL 30
+#define ICONSIZEMEDIUM 45
 #define ICONSIZELARGE 60
 
 
@@ -86,7 +86,7 @@ static void
 plugin_recreate_gui (gpointer data)
 {
     gui *plugin = data;
-    if (plugin->label != NULL) {
+    if (plugin->label != NULL && (strlen (plugin->label) > 0)) {
         if (plugin->lab == NULL) {
             plugin->lab = gtk_label_new (plugin->label);
 	    gtk_widget_show (plugin->lab);
@@ -98,7 +98,10 @@ plugin_recreate_gui (gpointer data)
 	    }
 	}
     } else {
-        g_object_unref (plugin->lab);
+        if (GTK_IS_WIDGET (plugin->lab)) {
+            gtk_widget_destroy (plugin->lab);
+	    plugin->lab = NULL;
+	}
     }
 }
 
@@ -146,9 +149,9 @@ plugin_check_fs (gpointer data)
         }
         pb = gdk_pixbuf_scale_simple (pb, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
         if (plugin->label != NULL && (strcmp(plugin->label,""))) {
-            g_snprintf (msg, 99, _("%i MB free on %s (%s)"), size, plugin->mnt, plugin->label);
+            g_snprintf (msg, 99, _("%i MB space left on %s (%s)"), size, plugin->mnt, plugin->label);
         } else if (plugin->mnt != NULL && (strcmp(plugin->mnt, ""))) {
-            g_snprintf (msg, 99, _("%i MB free on %s"), size, plugin->mnt);
+            g_snprintf (msg, 99, _("%i MB space left on %s"), size, plugin->mnt);
         } 
         gtk_tooltips_set_tip (tooltips, plugin->fs, msg, NULL);
     } else {
@@ -246,6 +249,7 @@ plugin_set_size (Control *ctrl, int size)
         plugin->size = ICONSIZELARGE;
     }	
     plugin_check_fs (plugin);
+    gtk_widget_set_size_request (plugin->fs, plugin->size, plugin->size);
 }
 
 static void

@@ -1,2 +1,5 @@
-This is a little XFCE Plugin, to minimize and unminimize all windows on the
-current workspace.
+This is a little XFce Plugin, which checks the free space on the choosen mountpoint frequently.
+If free space <= alarm limit it displays a red icon and a warning message.
+If free space >= alarm limit and <= warn limit it displays a yellow icon.
+Otherwise it displays a green icon.
+<Button 1> click starts xffm on the choosen mountpoint.

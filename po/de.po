@@ -26,12 +26,12 @@ msgstr "Nur noch %i MB freier Speicher auf %s!"
 
 #: panel-plugin/fsguard.c:149
 #, c-format
-msgid "%i MB free on %s (%s)"
+msgid "%i MB space left on %s (%s)"
 msgstr "%i MB frei auf %s (%s)"
 
 #: panel-plugin/fsguard.c:151
 #, c-format
-msgid "%i MB free on %s"
+msgid "%i MB space left on %s"
 msgstr "%i MB frei auf %s"
 
 #: panel-plugin/fsguard.c:342
