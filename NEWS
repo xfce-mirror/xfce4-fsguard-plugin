@@ -1,5 +1,8 @@
 20031111:
 ---------
+	* The label is now located below the icon in vertical mode.
 
+	* Tooltip and Messagebox show the size in GB if MB > 1024.
+	
 	* Make this work on Net/Free/OpenBSD as well. Currently only tested
 	  on NetBSD.
