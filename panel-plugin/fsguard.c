@@ -142,23 +142,24 @@ plugin_open_mnt (GtkWidget *widget, gpointer user_data)
 static gboolean
 plugin_check_fs (gpointer data)
 {
-    GdkPixbuf *pb;
+    GdkPixbuf *pb, *tmp;
     GString *tool;
     float size = 0;
-    float freeblocks;
+    float freeblocks = 0;
     long blocksize;
     int err;
+    gchar msg[100];
     static struct statfs fsd;
-    char msg[100];
     gui *plugin = data;
 
     err = statfs (plugin->mnt, &fsd);
+    
     if (err != -1) {
         blocksize = fsd.f_bsize;
         freeblocks = fsd.f_bavail;
         size = (freeblocks * blocksize) / 1048576;
         if (size <= plugin->red) {
-            pb = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, TRUE, NULL);
+            tmp = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, FALSE, NULL);
 	    if (!plugin->seen) {
                 if (plugin->label != NULL && (strcmp(plugin->label,"")) && (strcmp(plugin->mnt, plugin->label))) {
 		    if (size > 1024) {
@@ -176,31 +177,32 @@ plugin_check_fs (gpointer data)
 		plugin->seen = TRUE;
 	    }
         } else if (size >= plugin->red && size <= plugin->yellow) {
-            pb = gdk_pixbuf_new_from_inline (sizeof(icon_yellow), icon_yellow, TRUE, NULL);
+            tmp = gdk_pixbuf_new_from_inline (sizeof(icon_yellow), icon_yellow, FALSE, NULL);
         } else {
-            pb = gdk_pixbuf_new_from_inline (sizeof(icon_green), icon_green, TRUE, NULL);
+            tmp = gdk_pixbuf_new_from_inline (sizeof(icon_green), icon_green, FALSE, NULL);
         }
-        pb = gdk_pixbuf_scale_simple (pb, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
         if (plugin->label != NULL && (strcmp(plugin->label,"")) && (strcmp(plugin->mnt, plugin->label))) {
 	    if (size > 1024) {
-                g_snprintf (msg, 99, _("%.2f GB space left on %s (%s)"), size/1024, plugin->mnt, plugin->label);
+                g_snprintf (msg, sizeof (msg), _("%.2f GB space left on %s (%s)"), size/1024, plugin->mnt, plugin->label);
 	    } else {
-                g_snprintf (msg, 99, _("%.2f MB space left on %s (%s)"), size, plugin->mnt, plugin->label);
+                g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s (%s)"), size, plugin->mnt, plugin->label);
 	    }
         } else if (plugin->mnt != NULL && (strcmp(plugin->mnt, ""))) {
 	    if (size > 1024) {
-                g_snprintf (msg, 99, _("%.2f GB space left on %s"), size/1024, plugin->mnt);
+                g_snprintf (msg, sizeof (msg), _("%.2f GB space left on %s"), size/1024, plugin->mnt);
 	    } else {
-                g_snprintf (msg, 99, _("%.2f MB space left on %s"), size, plugin->mnt);
+                g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s"), size, plugin->mnt);
 	    }
         } 
         gtk_tooltips_set_tip (tooltips, plugin->fs, msg, NULL);
     } else {
-        pb = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, TRUE, NULL);
-        pb = gdk_pixbuf_scale_simple (pb, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
+        tmp = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, FALSE, NULL);
     }
        
+    pb = gdk_pixbuf_scale_simple (tmp, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
     xfce_iconbutton_set_pixbuf(XFCE_ICONBUTTON(plugin->fs), pb);
+    g_object_unref (G_OBJECT(tmp));
+    g_object_unref (G_OBJECT(pb));
     return TRUE;
 }
 
@@ -208,7 +210,6 @@ static gui *
 gui_new ()
 {
     gui *plugin;
-    GdkPixbuf *pb;
     tooltips = gtk_tooltips_new ();
     plugin = g_new(gui, 1);
     plugin->ebox = gtk_event_box_new();
@@ -230,16 +231,12 @@ gui_new ()
     plugin->filemanager = "xffm";
     plugin->fs = xfce_iconbutton_new ();
     g_signal_connect (G_OBJECT(plugin->fs), "clicked", G_CALLBACK(plugin_open_mnt), plugin);
-    pb = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, TRUE, NULL);
-    pb = gdk_pixbuf_scale_simple (pb, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
-    xfce_iconbutton_set_pixbuf (XFCE_ICONBUTTON(plugin->fs), pb);
     gtk_button_set_relief (GTK_BUTTON(plugin->fs), GTK_RELIEF_NONE);
-    
     gtk_container_add (GTK_CONTAINER(plugin->hbox), plugin->vbox);
     gtk_container_add (GTK_CONTAINER(plugin->hbox), plugin->fs);
-        
     gtk_container_add (GTK_CONTAINER(plugin->ebox), plugin->hbox);
     gtk_widget_show_all (plugin->ebox);
+
     plugin_check_fs (plugin);
     plugin->timeout = g_timeout_add_full (G_PRIORITY_DEFAULT, 8192, (GSourceFunc) plugin_check_fs, plugin, NULL);
     return(plugin);
@@ -263,10 +260,10 @@ create_plugin_control (Control *ctrl)
 static void
 plugin_free (Control *ctrl)
 {
+    gui *plugin;
     g_return_if_fail (ctrl != NULL);
     g_return_if_fail (ctrl->data != NULL);
-
-    gui *plugin = ctrl->data;
+    plugin = ctrl->data;
     if (plugin->timeout != 0) {
         g_source_remove (plugin->timeout);
     }

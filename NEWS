@@ -1,3 +1,7 @@
+20031122:
+---------
+        * fixed memory leak
+
 20031112:
 ---------
         * new option to choose the filemanager for button1 click
