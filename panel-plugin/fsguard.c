@@ -48,8 +48,10 @@
 #include <panel/plugins.h>
 #include <panel/xfce.h>
 #include <panel/xfce_support.h>
-#include <libxfcegui4/netk-screen.h>
 #include "icons.h"
+
+#define HORIZONTAL 0
+#define VERTICAL 1
 
 #define TINY 0
 #define SMALL 1
@@ -69,7 +71,8 @@
 typedef struct
 {
     GtkWidget	    *fs;
-    GtkWidget       *box;
+    GtkWidget       *hbox;
+    GtkWidget       *vbox;
     GtkWidget	    *ebox;
     GtkWidget       *lab;
     gboolean        seen;
@@ -77,6 +80,7 @@ typedef struct
     gint            timeout;
     gint            yellow;
     gint            red;
+    gint            orientation;
     gchar           *label;
     gchar           *mnt;
 } gui;
@@ -95,12 +99,19 @@ plugin_recreate_gui (gpointer data)
         if (plugin->lab == NULL) {
             plugin->lab = gtk_label_new (plugin->label);
 	    gtk_widget_show (plugin->lab);
-            gtk_box_pack_start (GTK_BOX(plugin->box), plugin->lab, FALSE, FALSE, 1);
-	    gtk_box_reorder_child (GTK_BOX(plugin->box), plugin->lab, 0);
+            gtk_box_pack_start (GTK_BOX(plugin->hbox), plugin->lab, FALSE, FALSE, 1);
+	    gtk_box_reorder_child (GTK_BOX(plugin->hbox), plugin->lab, 0);
 	} else {
 	    if (gtk_label_get_text (GTK_LABEL(plugin->lab)) != plugin->label) {
 	        gtk_label_set_text (GTK_LABEL(plugin->lab), plugin->label);
 	    }
+	}
+        if (plugin->orientation == VERTICAL) {
+            gtk_widget_reparent (plugin->fs, plugin->vbox);
+            gtk_widget_reparent (plugin->lab, plugin->vbox);
+        } else {
+            gtk_widget_reparent (plugin->fs, plugin->hbox);
+            gtk_widget_reparent (plugin->lab, plugin->hbox);
 	}
     } else {
         if (GTK_IS_WIDGET (plugin->lab)) {
@@ -128,26 +139,34 @@ plugin_check_fs (gpointer data)
 {
     GdkPixbuf *pb;
     GString *tool;
-    int size;
+    float size = 0;
     float freeblocks;
-    int err;
     long blocksize;
+    int err;
     static struct statfs fsd;
     char msg[100];
     gui *plugin = data;
 
     err = statfs (plugin->mnt, &fsd);
-    blocksize = fsd.f_bsize;
-    freeblocks = fsd.f_bavail;
     if (err != -1) {
+        blocksize = fsd.f_bsize;
+        freeblocks = fsd.f_bavail;
         size = (freeblocks * blocksize) / 1048576;
         if (size <= plugin->red) {
             pb = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, TRUE, NULL);
 	    if (!plugin->seen) {
-                if (plugin->label != NULL && (strcmp(plugin->label,""))) {
-                    xfce_warn (_("Only %i MB space left on %s (%s)!"), size, plugin->mnt, plugin->label);
+                if (plugin->label != NULL && (strcmp(plugin->label,"")) && (strcmp(plugin->mnt, plugin->label))) {
+		    if (size > 1024) {
+                        xfce_warn (_("Only %.2f GB space left on %s (%s)!"), size/1024, plugin->mnt, plugin->label);
+		    } else {
+                        xfce_warn (_("Only %.2f MB space left on %s (%s)!"), size, plugin->mnt, plugin->label);
+		    }
                 } else {
-                    xfce_warn (_("Only %i MB space left on %s!"), size, plugin->mnt);
+		    if (size > 1024) {
+                        xfce_warn (_("Only %.2f GB space left on %s!"), size/1024, plugin->mnt);
+		    } else {
+                        xfce_warn (_("Only %.2f MB space left on %s!"), size, plugin->mnt);
+		    }
 		}
 		plugin->seen = TRUE;
 	    }
@@ -157,10 +176,18 @@ plugin_check_fs (gpointer data)
             pb = gdk_pixbuf_new_from_inline (sizeof(icon_green), icon_green, TRUE, NULL);
         }
         pb = gdk_pixbuf_scale_simple (pb, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
-        if (plugin->label != NULL && (strcmp(plugin->label,""))) {
-            g_snprintf (msg, 99, _("%i MB space left on %s (%s)"), size, plugin->mnt, plugin->label);
+        if (plugin->label != NULL && (strcmp(plugin->label,"")) && (strcmp(plugin->mnt, plugin->label))) {
+	    if (size > 1024) {
+                g_snprintf (msg, 99, _("%.2f GB space left on %s (%s)"), size/1024, plugin->mnt, plugin->label);
+	    } else {
+                g_snprintf (msg, 99, _("%.2f MB space left on %s (%s)"), size, plugin->mnt, plugin->label);
+	    }
         } else if (plugin->mnt != NULL && (strcmp(plugin->mnt, ""))) {
-            g_snprintf (msg, 99, _("%i MB space left on %s"), size, plugin->mnt);
+	    if (size > 1024) {
+                g_snprintf (msg, 99, _("%.2f GB space left on %s"), size/1024, plugin->mnt);
+	    } else {
+                g_snprintf (msg, 99, _("%.2f MB space left on %s"), size, plugin->mnt);
+	    }
         } 
         gtk_tooltips_set_tip (tooltips, plugin->fs, msg, NULL);
     } else {
@@ -182,8 +209,11 @@ gui_new ()
     plugin->ebox = gtk_event_box_new();
     gtk_widget_show (plugin->ebox);
  
-    plugin->box = gtk_hbox_new(FALSE, 0);
-    gtk_widget_show (plugin->box);
+    plugin->hbox = gtk_hbox_new(FALSE, 0);
+    gtk_widget_show (plugin->hbox);
+
+    plugin->vbox = gtk_vbox_new (FALSE, 0);
+    gtk_widget_show (plugin->vbox);
    
     plugin->size = ICONSIZETINY;
     plugin->lab = NULL;
@@ -199,11 +229,12 @@ gui_new ()
     xfce_iconbutton_set_pixbuf (XFCE_ICONBUTTON(plugin->fs), pb);
     gtk_button_set_relief (GTK_BUTTON(plugin->fs), GTK_RELIEF_NONE);
     
-    gtk_container_add (GTK_CONTAINER(plugin->box), plugin->fs);
+    gtk_container_add (GTK_CONTAINER(plugin->hbox), plugin->vbox);
+    gtk_container_add (GTK_CONTAINER(plugin->hbox), plugin->fs);
         
-    gtk_container_add (GTK_CONTAINER(plugin->ebox), plugin->box);
+    gtk_container_add (GTK_CONTAINER(plugin->ebox), plugin->hbox);
     gtk_widget_show_all (plugin->ebox);
-    plugin_check_fs ((gpointer)plugin);
+    plugin_check_fs (plugin);
     plugin->timeout = g_timeout_add_full (G_PRIORITY_DEFAULT, 8192, (GSourceFunc) plugin_check_fs, plugin, NULL);
     return(plugin);
 }
@@ -242,6 +273,14 @@ plugin_attach_callback (Control *ctrl, const gchar *signal, GCallback cb, gpoint
     gui *plugin = ctrl->data;
     g_signal_connect (plugin->ebox, signal, cb, data);
     g_signal_connect (plugin->fs, signal, cb, data);
+}
+
+static void
+plugin_set_orientation (Control *ctrl, int orientation)
+{
+    gui *plugin = ctrl->data;
+    plugin->orientation = orientation;
+    plugin_recreate_gui (plugin);
 }
 
 static void
@@ -301,11 +340,10 @@ plugin_write_config (Control *ctrl, xmlNodePtr parent)
     char value[20];
 
     root = xmlNewTextChild(parent, NULL, "Fsguard", NULL);
-
-    g_snprintf(value, sizeof(plugin->red), "%d", plugin->red);
+    g_snprintf(value, 10, "%d", plugin->red);
     xmlSetProp(root, "red", value);
 
-    g_snprintf(value, sizeof(plugin->yellow), "%d", plugin->yellow);
+    g_snprintf(value, 10, "%d", plugin->yellow);
     xmlSetProp(root, "yellow", value);
 
     xmlSetProp(root, "label", plugin->label);
@@ -379,9 +417,9 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
     if (plugin->mnt != NULL) {
         gtk_entry_set_text (GTK_ENTRY(ent2), plugin->mnt);
     }
-    spin1 = gtk_spin_button_new_with_range (0, 100000, 10);
+    spin1 = gtk_spin_button_new_with_range (0, 1000000, 10);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), plugin->red);
-    spin2 = gtk_spin_button_new_with_range (0, 100000, 10);
+    spin2 = gtk_spin_button_new_with_range (0, 1000000, 10);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), plugin->yellow);
     g_signal_connect (ent1, "changed", G_CALLBACK(plugin_ent1_changed), plugin);
     g_signal_connect (ent2, "changed", G_CALLBACK(plugin_ent2_changed), plugin);
@@ -428,6 +466,7 @@ xfce_control_class_init(ControlClass *cc)
      * set it to something else.
     */
     cc->set_size		= plugin_set_size;
+    cc->set_orientation		= plugin_set_orientation;
     cc->create_options          = plugin_create_options;
 }
 
