@@ -27,7 +27,7 @@ dnl Check for standard header files
 AC_HEADER_STDC
 
 dnl check for i18n support
-BM_I18N([xfce4-fsguard], [de])
+BM_I18N([xfce4-fsguard], [de ko])
 
 dnl configure the panel plugin
 XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.0.0])
