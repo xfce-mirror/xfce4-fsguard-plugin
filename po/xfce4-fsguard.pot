@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-11-08 22:54+0100\n"
+"POT-Creation-Date: 2003-11-11 19:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,42 +15,62 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: panel-plugin/fsguard.c:136
+#: panel-plugin/fsguard.c:160
 #, c-format
-msgid "Only %i MB space left on %s (%s)!"
+msgid "Only %.2f GB space left on %s (%s)!"
 msgstr ""
 
-#: panel-plugin/fsguard.c:138
+#: panel-plugin/fsguard.c:162
 #, c-format
-msgid "Only %i MB space left on %s!"
+msgid "Only %.2f MB space left on %s (%s)!"
 msgstr ""
 
-#: panel-plugin/fsguard.c:149
+#: panel-plugin/fsguard.c:166
 #, c-format
-msgid "%i MB free on %s (%s)"
+msgid "Only %.2f GB space left on %s!"
 msgstr ""
 
-#: panel-plugin/fsguard.c:151
+#: panel-plugin/fsguard.c:168
 #, c-format
-msgid "%i MB free on %s"
+msgid "Only %.2f MB space left on %s!"
 msgstr ""
 
-#: panel-plugin/fsguard.c:342
+#: panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr ""
+
+#: panel-plugin/fsguard.c:183
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr ""
+
+#: panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr ""
+
+#: panel-plugin/fsguard.c:189
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr ""
+
+#: panel-plugin/fsguard.c:393
 msgid "label"
 msgstr ""
 
-#: panel-plugin/fsguard.c:343
+#: panel-plugin/fsguard.c:394
 msgid "mountpoint"
 msgstr ""
 
-#: panel-plugin/fsguard.c:344
+#: panel-plugin/fsguard.c:395
 msgid "high alarm limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:345
+#: panel-plugin/fsguard.c:396
 msgid "high warn limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:401
+#: panel-plugin/fsguard.c:452
 msgid "Free Space Checker"
 msgstr ""
