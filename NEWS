@@ -1,0 +1,5 @@
+20031111:
+---------
+
+	* Make this work on Net/Free/OpenBSD as well. Currently only tested
+	  on NetBSD.

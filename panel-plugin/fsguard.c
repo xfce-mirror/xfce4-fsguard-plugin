@@ -39,7 +39,12 @@
 #include <libxfce4util/i18n.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#if defined(__linux__)
 #include <sys/vfs.h>
+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+#include <sys/param.h>
+#include <sys/mount.h>
+#endif
 #include <panel/plugins.h>
 #include <panel/xfce.h>
 #include <panel/xfce_support.h>
