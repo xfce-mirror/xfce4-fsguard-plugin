@@ -38,13 +38,13 @@ MKINSTALLDIRS = $(top_srcdir)/./mkinstalldirs
 
 CC = gcc
 GENCAT = @GENCAT@
-GMSGFMT = /usr/bin/msgfmt
-MSGFMT = /usr/bin/msgfmt
-XGETTEXT = /usr/bin/xgettext
+GMSGFMT = /opt/xfce4-tools/bin/gmsgfmt
+MSGFMT = /opt/xfce4-tools/bin/msgfmt
+XGETTEXT = /opt/xfce4-tools/bin/xgettext
 MSGMERGE = msgmerge
 
 DEFS = -DHAVE_CONFIG_H
-CFLAGS = -g -O2
+CFLAGS = -O2 -march=athlon-xp -msse -mmmx -mfpmath=sse,387 -m3dnow -funroll-loops -pipe
 CPPFLAGS = 
 
 INCLUDES = -I.. -I$(top_srcdir)/intl
