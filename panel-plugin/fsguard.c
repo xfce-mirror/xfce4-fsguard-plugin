@@ -194,10 +194,12 @@ plugin_check_fs (gpointer data)
                 g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s"), size, plugin->mnt);
 	    }
         } 
-        gtk_tooltips_set_tip (tooltips, plugin->fs, msg, NULL);
     } else {
         tmp = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, FALSE, NULL);
+        g_snprintf (msg, sizeof (msg), _("could not check mountpoint %s, please check your config"), plugin->mnt);
     }
+    
+    gtk_tooltips_set_tip (tooltips, plugin->fs, msg, NULL);
        
     pb = gdk_pixbuf_scale_simple (tmp, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
     xfce_iconbutton_set_pixbuf(XFCE_ICONBUTTON(plugin->fs), pb);
@@ -432,7 +434,7 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
         gtk_entry_set_text (GTK_ENTRY(ent1), plugin->label);
     }
     ent2 = gtk_entry_new ();
-    gtk_entry_set_max_length (GTK_ENTRY(ent2), 16);
+    gtk_entry_set_max_length (GTK_ENTRY(ent2), 32);
     if (plugin->mnt != NULL) {
         gtk_entry_set_text (GTK_ENTRY(ent2), plugin->mnt);
     }

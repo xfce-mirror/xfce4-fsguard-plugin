@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
-"POT-Creation-Date: 2003-11-22 16:53+0100\n"
+"POT-Creation-Date: 2004-02-04 20:56+0100\n"
 "PO-Revision-Date: 2003-12-24 11:10+0100\n"
 "Last-Translator: Daniel 'Beorn' Mróz <beorn@alpha.pl>\n"
 "Language-Team: none <none@none>\n"
@@ -55,26 +55,31 @@ msgstr "%.2f GB wolnego miejsca pozostało na %s"
 msgid "%.2f MB space left on %s"
 msgstr "%.2f MB wolnego miejsca pozostało na %s"
 
-#: panel-plugin/fsguard.c:409
+#: panel-plugin/fsguard.c:199
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr ""
+
+#: panel-plugin/fsguard.c:411
 msgid "label"
 msgstr "etykieta"
 
-#: panel-plugin/fsguard.c:410
+#: panel-plugin/fsguard.c:412
 msgid "mountpoint"
 msgstr "punkt montowania"
 
-#: panel-plugin/fsguard.c:411
+#: panel-plugin/fsguard.c:413
 msgid "high alarm limit (MB)"
 msgstr "próg alarmu (MB)"
 
-#: panel-plugin/fsguard.c:412
+#: panel-plugin/fsguard.c:414
 msgid "high warn limit (MB)"
 msgstr "próg ostrzeżenia (MB)"
 
-#: panel-plugin/fsguard.c:413
+#: panel-plugin/fsguard.c:415
 msgid "filemanager"
 msgstr "menadżer plików"
 
-#: panel-plugin/fsguard.c:481
+#: panel-plugin/fsguard.c:483
 msgid "Free Space Checker"
 msgstr "Strażnik Wolnego Miejsca"

@@ -1,3 +1,8 @@
+20040204:
+---------
+        * now it's possible to add mountpoints with max 32 chars
+	  as requested by Stefan Misel
+
 20040109:
 ---------
         * added Polish translation by Daniel Mroz

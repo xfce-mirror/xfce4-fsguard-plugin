@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
-"POT-Creation-Date: 2003-11-22 16:53+0100\n"
+"POT-Creation-Date: 2004-02-04 20:56+0100\n"
 "PO-Revision-Date: 2003-11-25 01:09+0900\n"
 "Last-Translator: ByungHyun Choi<byunghyunchoi@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,26 +55,31 @@ msgstr "%.2f GB가 남은 %s!"
 msgid "%.2f MB space left on %s"
 msgstr "%.2f MB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:409
+#: panel-plugin/fsguard.c:199
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr ""
+
+#: panel-plugin/fsguard.c:411
 msgid "label"
 msgstr "라벨"
 
-#: panel-plugin/fsguard.c:410
+#: panel-plugin/fsguard.c:412
 msgid "mountpoint"
 msgstr "마운트 위치"
 
-#: panel-plugin/fsguard.c:411
+#: panel-plugin/fsguard.c:413
 msgid "high alarm limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:412
+#: panel-plugin/fsguard.c:414
 msgid "high warn limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:413
+#: panel-plugin/fsguard.c:415
 msgid "filemanager"
 msgstr "화일관리자"
 
-#: panel-plugin/fsguard.c:481
+#: panel-plugin/fsguard.c:483
 msgid "Free Space Checker"
 msgstr "남은 용량 확인"

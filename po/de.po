@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
-"POT-Creation-Date: 2003-11-22 16:53+0100\n"
+"POT-Creation-Date: 2004-02-04 20:56+0100\n"
 "PO-Revision-Date: 2003-11-08 22:58+0100\n"
 "Last-Translator: Andre Lerche <a.lerche@gmx.net>\n"
 "Language-Team: \n"
@@ -54,26 +54,31 @@ msgstr "%.2f GB frei auf %s"
 msgid "%.2f MB space left on %s"
 msgstr "%.2f MB frei auf %s"
 
-#: panel-plugin/fsguard.c:409
+#: panel-plugin/fsguard.c:199
+#, c-format
+msgid "Mountpunkt %s nicht gefunden, bitte Einstellungen kontrollieren"
+msgstr ""
+
+#: panel-plugin/fsguard.c:411
 msgid "label"
 msgstr "Label"
 
-#: panel-plugin/fsguard.c:410
+#: panel-plugin/fsguard.c:412
 msgid "mountpoint"
 msgstr "Mountpunkt"
 
-#: panel-plugin/fsguard.c:411
+#: panel-plugin/fsguard.c:413
 msgid "high alarm limit (MB)"
 msgstr "Alarm ab (MB)"
 
-#: panel-plugin/fsguard.c:412
+#: panel-plugin/fsguard.c:414
 msgid "high warn limit (MB)"
 msgstr "Warnung ab (MB)"
 
-#: panel-plugin/fsguard.c:413
+#: panel-plugin/fsguard.c:415
 msgid "filemanager"
 msgstr "Dateimanager"
 
-#: panel-plugin/fsguard.c:481
+#: panel-plugin/fsguard.c:483
 msgid "Free Space Checker"
 msgstr "Speicherplatz-Checker"
