@@ -38,9 +38,9 @@ MKINSTALLDIRS = $(top_srcdir)/./mkinstalldirs
 
 CC = gcc
 GENCAT = @GENCAT@
-GMSGFMT = /opt/xfce4-tools/bin/gmsgfmt
-MSGFMT = /opt/xfce4-tools/bin/msgfmt
-XGETTEXT = /opt/xfce4-tools/bin/xgettext
+GMSGFMT = /usr/bin/gmsgfmt
+MSGFMT = /usr/bin/msgfmt
+XGETTEXT = /usr/bin/xgettext
 MSGMERGE = msgmerge
 
 DEFS = -DHAVE_CONFIG_H
