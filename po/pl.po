@@ -7,7 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
-"POT-Creation-Date: 2004-02-04 20:56+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-10-10 17:33+0200\n"
 "PO-Revision-Date: 2003-12-24 11:10+0100\n"
 "Last-Translator: Daniel 'Beorn' Mróz <beorn@alpha.pl>\n"
 "Language-Team: none <none@none>\n"
@@ -15,71 +16,71 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: panel-plugin/fsguard.c:166
+#: panel-plugin/fsguard.c:167
 #, c-format
 msgid "Only %.2f GB space left on %s (%s)!"
 msgstr "%.2f GB wolnego miejsca na %s (%s) pozostało tylko!"
 
-#: panel-plugin/fsguard.c:168
+#: panel-plugin/fsguard.c:169
 #, c-format
 msgid "Only %.2f MB space left on %s (%s)!"
 msgstr "%.2f MB wolnego miejsca na %s (%s) pozostało tylko!"
 
-#: panel-plugin/fsguard.c:172
+#: panel-plugin/fsguard.c:173
 #, c-format
 msgid "Only %.2f GB space left on %s!"
 msgstr "%.2f GB wolnego miejsca na %s pozostało tylko!"
 
-#: panel-plugin/fsguard.c:174
+#: panel-plugin/fsguard.c:175
 #, c-format
 msgid "Only %.2f MB space left on %s!"
 msgstr "%.2f MB wolnego miejsca na %s pozostało tylko!"
 
-#: panel-plugin/fsguard.c:186
+#: panel-plugin/fsguard.c:187
 #, c-format
 msgid "%.2f GB space left on %s (%s)"
 msgstr "%.2f GB wolnego miejsca pozostało na %s (%s)"
 
-#: panel-plugin/fsguard.c:188
+#: panel-plugin/fsguard.c:189
 #, c-format
 msgid "%.2f MB space left on %s (%s)"
 msgstr "%.2f MB wolnego miejsca pozostało na %s (%s)"
 
-#: panel-plugin/fsguard.c:192
+#: panel-plugin/fsguard.c:193
 #, c-format
 msgid "%.2f GB space left on %s"
 msgstr "%.2f GB wolnego miejsca pozostało na %s"
 
-#: panel-plugin/fsguard.c:194
+#: panel-plugin/fsguard.c:195
 #, c-format
 msgid "%.2f MB space left on %s"
 msgstr "%.2f MB wolnego miejsca pozostało na %s"
 
-#: panel-plugin/fsguard.c:199
+#: panel-plugin/fsguard.c:200
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr ""
 
-#: panel-plugin/fsguard.c:411
+#: panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "etykieta"
 
-#: panel-plugin/fsguard.c:412
+#: panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "punkt montowania"
 
-#: panel-plugin/fsguard.c:413
+#: panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr "próg alarmu (MB)"
 
-#: panel-plugin/fsguard.c:414
+#: panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr "próg ostrzeżenia (MB)"
 
-#: panel-plugin/fsguard.c:415
+#: panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "menadżer plików"
 
-#: panel-plugin/fsguard.c:483
+#: panel-plugin/fsguard.c:485
 msgid "Free Space Checker"
 msgstr "Strażnik Wolnego Miejsca"

@@ -153,6 +153,7 @@ plugin_check_fs (gpointer data)
     gui *plugin = data;
 
     err = statfs (plugin->mnt, &fsd);
+    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
     
     if (err != -1) {
         blocksize = fsd.f_bsize;
@@ -408,12 +409,13 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
     GtkWidget *hbox, *vbox1, *vbox2, *mnt, *spin1, *spin2;
     GtkWidget *lab1, *lab2, *lab3, *lab4, *lab5, *ent1, *ent2, *ent3;
     gchar *text[] = {
-	     _("label"),
-	     _("mountpoint"),
-             _("high alarm limit (MB)"),
-	     _("high warn limit (MB)"),
-	     _("filemanager"),
+	     N_("label"),
+	     N_("mountpoint"),
+             N_("high alarm limit (MB)"),
+	     N_("high warn limit (MB)"),
+	     N_("filemanager"),
     };
+    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
  
     hbox = gtk_hbox_new (FALSE, 2);
     vbox1 = gtk_vbox_new (FALSE, 5);
@@ -422,11 +424,11 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
     gtk_box_pack_start (GTK_BOX(hbox), vbox1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(hbox), vbox2, TRUE, FALSE, 1);
 
-    lab1 = gtk_label_new (text[0]);
-    lab2 = gtk_label_new (text[1]);
-    lab3 = gtk_label_new (text[2]);
-    lab4 = gtk_label_new (text[3]);
-    lab5 = gtk_label_new (text[4]);
+    lab1 = gtk_label_new (_(text[0]));
+    lab2 = gtk_label_new (_(text[1]));
+    lab3 = gtk_label_new (_(text[2]));
+    lab4 = gtk_label_new (_(text[3]));
+    lab5 = gtk_label_new (_(text[4]));
 
     ent1 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY(ent1), 16);

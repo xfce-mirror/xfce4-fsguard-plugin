@@ -7,7 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
-"POT-Creation-Date: 2004-02-04 20:56+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-10-10 17:33+0200\n"
 "PO-Revision-Date: 2003-11-25 01:09+0900\n"
 "Last-Translator: ByungHyun Choi<byunghyunchoi@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,71 +16,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: panel-plugin/fsguard.c:166
+#: panel-plugin/fsguard.c:167
 #, c-format
 msgid "Only %.2f GB space left on %s (%s)!"
 msgstr "이제 %.2f GB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:168
+#: panel-plugin/fsguard.c:169
 #, c-format
 msgid "Only %.2f MB space left on %s (%s)!"
 msgstr "이제 %.2f MB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:172
+#: panel-plugin/fsguard.c:173
 #, c-format
 msgid "Only %.2f GB space left on %s!"
 msgstr "이제 %.2f GB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:174
+#: panel-plugin/fsguard.c:175
 #, c-format
 msgid "Only %.2f MB space left on %s!"
 msgstr "이제 %.2f MB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:186
+#: panel-plugin/fsguard.c:187
 #, c-format
 msgid "%.2f GB space left on %s (%s)"
 msgstr "%.2f GB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:188
+#: panel-plugin/fsguard.c:189
 #, c-format
 msgid "%.2f MB space left on %s (%s)"
 msgstr "%.2f MB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:192
+#: panel-plugin/fsguard.c:193
 #, c-format
 msgid "%.2f GB space left on %s"
 msgstr "%.2f GB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:194
+#: panel-plugin/fsguard.c:195
 #, c-format
 msgid "%.2f MB space left on %s"
 msgstr "%.2f MB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:199
+#: panel-plugin/fsguard.c:200
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr ""
 
-#: panel-plugin/fsguard.c:411
+#: panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "라벨"
 
-#: panel-plugin/fsguard.c:412
+#: panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "마운트 위치"
 
-#: panel-plugin/fsguard.c:413
+#: panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:414
+#: panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:415
+#: panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "화일관리자"
 
-#: panel-plugin/fsguard.c:483
+#: panel-plugin/fsguard.c:485
 msgid "Free Space Checker"
 msgstr "남은 용량 확인"

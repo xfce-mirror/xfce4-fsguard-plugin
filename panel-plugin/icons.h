@@ -1,6 +1,13 @@
 /* GdkPixbuf RGBA C-Source image dump */
 
+#ifdef __SUNPRO_C
+#pragma align 4 (icon_red)
+#endif
+#ifdef __GNUC__
+static const guint8 icon_red[] __attribute__ ((__aligned__ (4))) = 
+#else
 static const guint8 icon_red[] = 
+#endif
 { ""
   /* Pixbuf magic (0x47646b50) */
   "GdkP"
@@ -199,7 +206,14 @@ static const guint8 icon_red[] =
 
 /* GdkPixbuf RGBA C-Source image dump */
 
+#ifdef __SUNPRO_C
+#pragma align 4 (icon_green)
+#endif
+#ifdef __GNUC__
+static const guint8 icon_green[] __attribute__ ((__aligned__ (4))) = 
+#else
 static const guint8 icon_green[] = 
+#endif
 { ""
   /* Pixbuf magic (0x47646b50) */
   "GdkP"
@@ -403,7 +417,14 @@ static const guint8 icon_green[] =
 
 /* GdkPixbuf RGBA C-Source image dump */
 
+#ifdef __SUNPRO_C
+#pragma align 4 (icon_yellow)
+#endif
+#ifdef __GNUC__
+static const guint8 icon_yellow[] __attribute__ ((__aligned__ (4))) = 
+#else
 static const guint8 icon_yellow[] = 
+#endif
 { ""
   /* Pixbuf magic (0x47646b50) */
   "GdkP"
@@ -605,7 +626,14 @@ static const guint8 icon_yellow[] =
 
 /* GdkPixbuf RGBA C-Source image dump */
 
+#ifdef __SUNPRO_C
+#pragma align 4 (icon_unknown)
+#endif
+#ifdef __GNUC__
+static const guint8 icon_unknown[] __attribute__ ((__aligned__ (4))) = 
+#else
 static const guint8 icon_unknown[] = 
+#endif
 { ""
   /* Pixbuf magic (0x47646b50) */
   "GdkP"

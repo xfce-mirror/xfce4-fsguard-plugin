@@ -1,0 +1,4 @@
+2004-10-10 17:35:00 papermoon:
+	* panel-plugin/fsguard.c
+	fixed some i18n issues
+
