@@ -107,6 +107,12 @@ plugin_recreate_gui (gpointer data)
 	        gtk_label_set_text (GTK_LABEL(plugin->lab), plugin->label);
 	    }
 	}
+    } else {
+        if (GTK_IS_WIDGET (plugin->lab)) {
+            gtk_widget_destroy (plugin->lab);
+	    plugin->lab = NULL;
+	}
+    }
         if (plugin->orientation == VERTICAL) {
             gtk_widget_reparent (plugin->fs, plugin->vbox);
             gtk_widget_reparent (plugin->lab, plugin->vbox);
@@ -114,12 +120,6 @@ plugin_recreate_gui (gpointer data)
             gtk_widget_reparent (plugin->fs, plugin->hbox);
             gtk_widget_reparent (plugin->lab, plugin->hbox);
 	}
-    } else {
-        if (GTK_IS_WIDGET (plugin->lab)) {
-            gtk_widget_destroy (plugin->lab);
-	    plugin->lab = NULL;
-	}
-    }
 }
 
 static void

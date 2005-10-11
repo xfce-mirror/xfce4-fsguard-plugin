@@ -1,3 +1,7 @@
+20051011:
+---------
+	* the icon is now properly centered when no label is given
+
 20040204:
 ---------
         * now it's possible to add mountpoints with max 32 chars
