@@ -14,7 +14,7 @@
 
 GETTEXT_PACKAGE = xfce4-fsguard
 PACKAGE = xfce4-fsguard-plugin
-VERSION = 0.2.0
+VERSION = 0.2.1
 
 SHELL = /bin/sh
 
@@ -54,7 +54,7 @@ COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
 SOURCES = 
 POFILES =  de.po ko.po lt.po pl.po
 GMOFILES =  de.gmo ko.gmo lt.gmo pl.gmo
-DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(GETTEXT_PACKAGE).pot \
+DISTFILES = Makefile.in.in POTFILES.in $(GETTEXT_PACKAGE).pot \
 $(POFILES) $(GMOFILES) $(SOURCES)
 
 POTFILES = \
