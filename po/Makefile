@@ -38,13 +38,13 @@ MKINSTALLDIRS = $(top_srcdir)/./mkinstalldirs
 
 CC = gcc
 GENCAT = @GENCAT@
-GMSGFMT = /usr/bin/gmsgfmt
+GMSGFMT = /usr/bin/msgfmt
 MSGFMT = /usr/bin/msgfmt
 XGETTEXT = /usr/bin/xgettext
 MSGMERGE = msgmerge
 
 DEFS = -DHAVE_CONFIG_H
-CFLAGS = -O2 -march=athlon-xp -msse -mmmx -mfpmath=sse,387 -m3dnow -funroll-loops -pipe
+CFLAGS = -g -O2
 CPPFLAGS = 
 
 INCLUDES = -I.. -I$(top_srcdir)/intl
@@ -52,15 +52,15 @@ INCLUDES = -I.. -I$(top_srcdir)/intl
 COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
 
 SOURCES = 
-POFILES =  de.po ko.po pl.po
-GMOFILES =  de.gmo ko.gmo pl.gmo
+POFILES =  de.po ko.po lt.po pl.po
+GMOFILES =  de.gmo ko.gmo lt.gmo pl.gmo
 DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(GETTEXT_PACKAGE).pot \
 $(POFILES) $(GMOFILES) $(SOURCES)
 
 POTFILES = \
 	../panel-plugin/fsguard.c
 
-CATALOGS =  de.gmo ko.gmo pl.gmo
+CATALOGS =  de.gmo ko.gmo lt.gmo pl.gmo
 CATOBJEXT = .gmo
 INSTOBJEXT = .mo
 
