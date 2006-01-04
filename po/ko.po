@@ -1,86 +1,87 @@
-# Korean translations for libxfcegui4 package.
-# Copyright (C) 2002-2005 The Xfce development team.
-# This file is distributed under the same license as the libxfcegui4 package.
+# Korean translations for xfce4-fsguard-plugin package.
+# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
+# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
+# This file is distributed under the same license as the xfce4-fsguard-plugin package.
 # ByungHyun Choi <byunghyun.choi@gmail.com>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Project-Id-Version: xfce4-fsguard-plugin 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-10 17:33+0200\n"
+"POT-Creation-Date: 2006-01-04 00:34+0900\n"
 "PO-Revision-Date: 2005-11-03 01:57+0900\n"
-"Last-Translator: ByungHyun Choi<byunghyun.choi@gmail.com>\n"
+"Last-Translator: ByungHyun Choi <byunghyun.choi@gmail.com>\n"
 "Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge."
 "net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: panel-plugin/fsguard.c:167
+#: panel-plugin/fsguard.c:178
 #, c-format
 msgid "Only %.2f GB space left on %s (%s)!"
 msgstr "이제 %.2f GB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:169
+#: panel-plugin/fsguard.c:180
 #, c-format
 msgid "Only %.2f MB space left on %s (%s)!"
 msgstr "이제 %.2f MB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:173
+#: panel-plugin/fsguard.c:184
 #, c-format
 msgid "Only %.2f GB space left on %s!"
 msgstr "이제 %.2f GB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:175
+#: panel-plugin/fsguard.c:186
 #, c-format
 msgid "Only %.2f MB space left on %s!"
 msgstr "이제 %.2f MB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:187
+#: panel-plugin/fsguard.c:198
 #, c-format
 msgid "%.2f GB space left on %s (%s)"
 msgstr "%.2f GB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:189
+#: panel-plugin/fsguard.c:200
 #, c-format
 msgid "%.2f MB space left on %s (%s)"
 msgstr "%.2f MB가 남은 %s (%s)!"
 
-#: panel-plugin/fsguard.c:193
+#: panel-plugin/fsguard.c:204
 #, c-format
 msgid "%.2f GB space left on %s"
 msgstr "%.2f GB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:195
+#: panel-plugin/fsguard.c:206
 #, c-format
 msgid "%.2f MB space left on %s"
 msgstr "%.2f MB가 남은 %s!"
 
-#: panel-plugin/fsguard.c:200
+#: panel-plugin/fsguard.c:211
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "%s에 대한 마운트 지점을 검사하지 못 했으니, 설정을 확인해 보십시오."
 
-#: panel-plugin/fsguard.c:412
+#: panel-plugin/fsguard.c:423
 msgid "label"
 msgstr "라벨"
 
-#: panel-plugin/fsguard.c:413
+#: panel-plugin/fsguard.c:424
 msgid "mountpoint"
 msgstr "마운트 위치"
 
-#: panel-plugin/fsguard.c:414
+#: panel-plugin/fsguard.c:425
 msgid "high alarm limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:415
+#: panel-plugin/fsguard.c:426
 msgid "high warn limit (MB)"
 msgstr ""
 
-#: panel-plugin/fsguard.c:416
+#: panel-plugin/fsguard.c:427
 msgid "filemanager"
 msgstr "화일관리자"
 
-#: panel-plugin/fsguard.c:485
+#: panel-plugin/fsguard.c:496
 msgid "Free Space Checker"
 msgstr "남은 용량 확인"

@@ -1,4 +1,168 @@
-2004-10-10 17:35:00 papermoon:
-	* panel-plugin/fsguard.c
-	fixed some i18n issues
+2006-01-01 15:04  p0llux
+
+	* configure.ac, po/fr.po: add fr translations from Stephane Roy
+
+2005-11-02 17:19  byunghyunchoi
+
+	* po/ko.po, xfce4-modemlights-plugin/trunk/po/ko.po,
+	  xfce4-sensors-plugin/trunk/po/ko.po,
+	  xfce4-wavelan-plugin/trunk/po/ko.po: 11/03/2005: ByungHyun Choi
+	  added Korean translations for modemlights and wavelan plugin
+	  modified Korean translations for fsguard and sendsors plugin
+
+2005-10-11 20:28  stefan_ott
+
+	* configure, configure.ac, po/Makefile, po/Makefile.in,
+	  po/Makefile.in.in: Regenerated once again
+
+2005-10-11 20:15  stefan_ott
+
+	* NEWS, panel-plugin/fsguard.c: Added patch to fix icon position
+	  when label is missing
+
+2005-10-11 20:14  stefan_ott
+
+	* AUTHORS: Added myself to AUTHORS
+
+2005-10-11 20:09  stefan_ott
+
+	* Makefile.in, aclocal.m4, compile, config.guess, config.h.in,
+	  config.sub, configure, depcomp, install-sh, ltmain.sh, missing,
+	  mkinstalldirs, panel-plugin/Makefile.in, po/Makefile,
+	  po/Makefile.in: Regenerated autoconf files
+
+2005-02-13 12:55  p0llux
+
+	* Makefile.in, aclocal.m4, compile, config.guess, config.h.in,
+	  config.sub, configure, configure.ac, depcomp, install-sh,
+	  ltmain.sh, missing, mkinstalldirs, panel-plugin/Makefile.in,
+	  po/Makefile, po/Makefile.in, po/lt.po: add LT translations
+
+2005-01-25 10:04  p0llux
+
+	* po/Makefile, po/Makefile.in, po/ko.gmo, po/ko.po: update KO
+	  translations
+
+2004-10-10 15:36  papermoon
+
+	* ChangeLog, panel-plugin/fsguard.c, panel-plugin/icons.h,
+	  po/Makefile, po/Makefile.in, po/de.gmo, po/de.po, po/ko.gmo,
+	  po/ko.po, po/pl.gmo, po/pl.po, po/xfce4-fsguard.pot: fixed some
+	  i18n issues
+
+2004-07-28 21:49  benny
+
+	* m4/depends.m4: Fix BM_DEPEND_CHECK().
+
+2004-07-24 17:29  benny
+
+	* m4/depends.m4: Correct min. required panel version.
+
+2004-07-24 17:26  benny
+
+	* m4/depends.m4: Extended XFCE_PANEL_PLUGIN macro to honor the new
+	  threaded panel.
+
+2004-07-21 09:00  benny
+
+	* m4/depends.m4: New panel plugin check
+
+2004-02-04 20:03  papermoon
+
+	* NEWS, panel-plugin/fsguard.c, po/de.gmo, po/de.po, po/ko.gmo,
+	  po/ko.po, po/pl.gmo, po/pl.po, po/xfce4-fsguard.pot: enlarged
+	  entry to define mountpint, as requested by Stefan
+
+2004-01-09 18:42  papermoon
+
+	* NEWS, configure, configure.ac, po/pl.gmo, po/pl.po: added Polish
+	  translation, thanks to Daniel Mroz
+
+2004-01-08 20:02  papermoon
+
+	* panel-plugin/fsguard.c: fixed typo, thanks to Adriano
+
+2003-11-24 18:16  papermoon
+
+	* NEWS, configure, configure.ac, po/ko.gmo, po/ko.po: added Korean
+	  translation by David Choi
+
+2003-11-22 16:11  papermoon
+
+	* configure.ac: fixed memory leak
+
+2003-11-22 16:04  papermoon
+
+	* NEWS, panel-plugin/fsguard.c, po/de.gmo, po/de.po,
+	  po/xfce4-fsguard.pot: fixed memory leak
+
+2003-11-12 21:08  papermoon
+
+	* NEWS, panel-plugin/fsguard.c, po/de.gmo, po/de.po,
+	  po/xfce4-fsguard.pot: added option to choose filemanager for
+	  button1 click
+
+2003-11-11 17:58  papermoon
+
+	* NEWS: Label is now located below icon in vertical mode; display
+	  the size in GB if MB > 1024
+
+2003-11-11 17:53  papermoon
+
+	* panel-plugin/fsguard.c: minor bugfixes, display label below icon
+	  in vertical mode, display size in GB if MB > 1024
+
+2003-11-11 17:49  papermoon
+
+	* po/de.po, po/xfce4-fsguard.pot: minor changes including
+	  translations for new strings
+
+2003-11-11 09:56  benny
+
+	* NEWS, panel-plugin/fsguard.c: Make this compile on
+	  Free/Net/OpenBSD as well. Seems to work fine with NetBSD,
+	  Free/OpenBSD aren't tested yet. Thanks to martti for the patch.
+
+2003-11-09 12:01  papermoon
+
+	* panel-plugin/fsguard.c: minor fixes
+
+2003-11-09 10:48  papermoon
+
+	* Makefile.am, Makefile.in, README, panel-plugin/fsguard.c,
+	  po/de.po: some minor changes
+	* configure.ac: changed version before first release
+
+2003-11-08 22:10  papermoon
+
+	* po/xfce4-fsguard.pot: missing file from initial import
+
+2003-11-08 22:09  papermoon
+
+	* panel-plugin/.xvpics, po/xfce4-fsguard.pot_: does not belong here
+
+2003-11-08 22:00  papermoon
+
+	* AUTHORS, COPYING, INSTALL, Makefile.am, Makefile.in, NEWS,
+	  README, aclocal.m4, autogen.sh, compile, config.guess,
+	  config.h.in, config.sub, configure, configure.ac, depcomp,
+	  install-sh, ltmain.sh, m4, m4/debug.m4, m4/depends.m4,
+	  m4/i18n.m4, missing, mkinstalldirs, panel-plugin,
+	  panel-plugin/.xvpics, panel-plugin/.xvpics/gnome-question.xpm,
+	  panel-plugin/.xvpics/green.png, panel-plugin/.xvpics/green.xpm,
+	  panel-plugin/.xvpics/red.png, panel-plugin/.xvpics/red.xpm,
+	  panel-plugin/.xvpics/unknown.xpm,
+	  panel-plugin/.xvpics/yellow.png,
+	  panel-plugin/.xvpics/yellow.xpm, panel-plugin/Makefile.am,
+	  panel-plugin/Makefile.in, panel-plugin/fsguard.c,
+	  panel-plugin/green.xpm, panel-plugin/icons.h,
+	  panel-plugin/red.xpm, panel-plugin/unknown.xpm,
+	  panel-plugin/yellow.xpm, po, po/Makefile, po/Makefile.in,
+	  po/Makefile.in.in, po/POTFILES, po/POTFILES.in, po/de.gmo,
+	  po/de.po, po/xfce4-fsguard.pot_: Initial revision
+
+2003-11-08 22:00  
+
+	* xfce4-fsguard-plugin/branches, xfce4-fsguard-plugin/tags, .: New
+	  repository initialized by cvs2svn.
 
