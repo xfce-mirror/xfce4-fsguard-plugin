@@ -44,8 +44,6 @@
 #elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <sys/param.h>
 #include <sys/mount.h>
-#elif defined(__sgi__)
-#include <sys/statfs.h>
 #endif
 #include <panel/plugins.h>
 #include <panel/xfce.h>
@@ -155,20 +153,12 @@ plugin_check_fs (gpointer data)
     gui *plugin = data;
 
 int statfs (const char *path, struct statfs *buf, int len, int fstyp);
-#if defined(__sgi__)
-    err = statfs (plugin->mnt, &fsd, sizeof fsd, 0);
-#else
     err = statfs (plugin->mnt, &fsd);
-#endif
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
     
     if (err != -1) {
         blocksize = fsd.f_bsize;
-#if defined(__sgi__)
-        freeblocks = fsd.f_bfree;
-#else        
         freeblocks = fsd.f_bavail;
-#endif
         size = (freeblocks * blocksize) / 1048576;
         if (size <= plugin->red) {
             tmp = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, FALSE, NULL);
