@@ -1,0 +1,8 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+_Name=Free Space Checker
+_Comment=Monitor free disk space
+Icon=xfce-fsguard
+X-XFCE-Exec=@PLUGIN_PATH@/xfce4-fsguard-plugin
+
