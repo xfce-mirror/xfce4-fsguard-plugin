@@ -1,5 +1,9 @@
-20051011:
----------
+20060206 (0.3.0):
+-----------------
+	* ported to xfce 4.4 by Jasper Huijsmans, thanks!
+
+20051011 (0.2.1):
+-----------------
 	* the icon is now properly centered when no label is given
 
 20040204:

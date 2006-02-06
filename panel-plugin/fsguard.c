@@ -34,9 +34,7 @@
 #include <config.h>
 #endif
 
-#include <gtk/gtk.h>
-
-#include <libxfce4util/i18n.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #if defined(__linux__)
@@ -45,9 +43,12 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 #endif
-#include <panel/plugins.h>
-#include <panel/xfce.h>
-#include <panel/xfce_support.h>
+
+#include <gtk/gtk.h>
+#include <libxfce4util/libxfce4util.h>
+#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4panel/xfce-panel-plugin.h>
+
 #include "icons.h"
 
 #define HORIZONTAL 0
@@ -63,6 +64,7 @@
 #define ICONSIZEMEDIUM 45
 #define ICONSIZELARGE 60
 
+#define BORDER 8
 
 // }}}
 
@@ -70,6 +72,8 @@
 
 typedef struct
 {
+    XfcePanelPlugin *plugin;
+
     GtkWidget	    *fs;
     GtkWidget       *hbox;
     GtkWidget       *vbox;
@@ -80,11 +84,11 @@ typedef struct
     gint            timeout;
     gint            yellow;
     gint            red;
-    gint            orientation;
+    GtkOrientation  orientation;
     gchar           *label;
     gchar           *mnt;
     gchar 	    *filemanager;
-} gui;
+} FsGuard;
 
 static GtkTooltips *tooltips = NULL;
 
@@ -93,321 +97,312 @@ static GtkTooltips *tooltips = NULL;
 // all functions {{{
 
 static void
-plugin_recreate_gui (gpointer data)
+fsguard_recreate_gui (gpointer data)
 {
-    gui *plugin = data;
-    if (plugin->label != NULL && (strlen (plugin->label) > 0)) {
-        if (plugin->lab == NULL) {
-            plugin->lab = gtk_label_new (plugin->label);
-	    gtk_widget_show (plugin->lab);
-            gtk_box_pack_start (GTK_BOX(plugin->hbox), plugin->lab, FALSE, FALSE, 1);
-	    gtk_box_reorder_child (GTK_BOX(plugin->hbox), plugin->lab, 0);
-	} else {
-	    if (gtk_label_get_text (GTK_LABEL(plugin->lab)) != plugin->label) {
-	        gtk_label_set_text (GTK_LABEL(plugin->lab), plugin->label);
-	    }
-	}
+    FsGuard *fsguard = data;
+    if (fsguard->label != NULL && (strlen (fsguard->label) > 0)) {
+        if (fsguard->lab == NULL) {
+            fsguard->lab = gtk_label_new (fsguard->label);
+	    gtk_widget_show (fsguard->lab);
+            gtk_box_pack_start (GTK_BOX(fsguard->hbox), fsguard->lab, FALSE, FALSE, 0);
+	    gtk_box_reorder_child (GTK_BOX(fsguard->hbox), fsguard->lab, 0);
+	} 
     } else {
-        if (GTK_IS_WIDGET (plugin->lab)) {
-            gtk_widget_destroy (plugin->lab);
-	    plugin->lab = NULL;
+        if (GTK_IS_WIDGET (fsguard->lab)) {
+            gtk_widget_destroy (fsguard->lab);
+	    fsguard->lab = NULL;
 	}
     }
-        if (plugin->orientation == VERTICAL) {
-            gtk_widget_reparent (plugin->fs, plugin->vbox);
-            gtk_widget_reparent (plugin->lab, plugin->vbox);
-        } else {
-            gtk_widget_reparent (plugin->fs, plugin->hbox);
-            gtk_widget_reparent (plugin->lab, plugin->hbox);
-	}
+    gtk_label_set_text (GTK_LABEL(fsguard->lab), fsguard->label);
+
+    if (fsguard->orientation == GTK_ORIENTATION_VERTICAL) {
+        gtk_widget_reparent (fsguard->fs, fsguard->vbox);
+        gtk_widget_reparent (fsguard->lab, fsguard->vbox);
+    } else {
+        gtk_widget_reparent (fsguard->fs, fsguard->hbox);
+        gtk_widget_reparent (fsguard->lab, fsguard->hbox);
+    }
 }
 
 static void
-plugin_open_mnt (GtkWidget *widget, gpointer user_data)
+fsguard_open_mnt (GtkWidget *widget, gpointer user_data)
 {
-    gui *plugin = user_data;
+    FsGuard *fsguard = user_data;
     GString *cmd;
-    if (strlen(plugin->filemanager) == 0) {
+    if (strlen(fsguard->filemanager) == 0) {
         return;
     }
-    cmd = g_string_new (plugin->filemanager);
-    if (plugin->mnt != NULL && (strcmp(plugin->mnt, ""))) {
+    cmd = g_string_new (fsguard->filemanager);
+    if (fsguard->mnt != NULL && (strcmp(fsguard->mnt, ""))) {
         g_string_append (cmd, " ");
-        g_string_append (cmd, plugin->mnt);
+        g_string_append (cmd, fsguard->mnt);
     }
-    exec_cmd (cmd->str, FALSE, FALSE);
+    g_spawn_command_line_async (cmd->str, NULL);
     g_string_free (cmd, TRUE);
 }
 
 static gboolean
-plugin_check_fs (gpointer data)
+fsguard_check_fs (gpointer data)
 {
-    GdkPixbuf *pb, *tmp;
-    GString *tool;
+    GdkPixbuf *pb;
     float size = 0;
     float freeblocks = 0;
     long blocksize;
     int err;
     gchar msg[100];
     static struct statfs fsd;
-    gui *plugin = data;
+    FsGuard *fsguard = data;
 
-int statfs (const char *path, struct statfs *buf, int len, int fstyp);
-    err = statfs (plugin->mnt, &fsd);
+    err = statfs (fsguard->mnt, &fsd);
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
     
     if (err != -1) {
         blocksize = fsd.f_bsize;
         freeblocks = fsd.f_bavail;
         size = (freeblocks * blocksize) / 1048576;
-        if (size <= plugin->red) {
-            tmp = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, FALSE, NULL);
-	    if (!plugin->seen) {
-                if (plugin->label != NULL && (strcmp(plugin->label,"")) && (strcmp(plugin->mnt, plugin->label))) {
+        if (size <= fsguard->red) {
+            pb = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, FALSE, NULL);
+	    if (!fsguard->seen) {
+                if (fsguard->label != NULL && (strcmp(fsguard->label,"")) && (strcmp(fsguard->mnt, fsguard->label))) {
 		    if (size > 1024) {
-                        xfce_warn (_("Only %.2f GB space left on %s (%s)!"), size/1024, plugin->mnt, plugin->label);
+                        xfce_warn (_("Only %.2f GB space left on %s (%s)!"), size/1024, fsguard->mnt, fsguard->label);
 		    } else {
-                        xfce_warn (_("Only %.2f MB space left on %s (%s)!"), size, plugin->mnt, plugin->label);
+                        xfce_warn (_("Only %.2f MB space left on %s (%s)!"), size, fsguard->mnt, fsguard->label);
 		    }
                 } else {
 		    if (size > 1024) {
-                        xfce_warn (_("Only %.2f GB space left on %s!"), size/1024, plugin->mnt);
+                        xfce_warn (_("Only %.2f GB space left on %s!"), size/1024, fsguard->mnt);
 		    } else {
-                        xfce_warn (_("Only %.2f MB space left on %s!"), size, plugin->mnt);
+                        xfce_warn (_("Only %.2f MB space left on %s!"), size, fsguard->mnt);
 		    }
 		}
-		plugin->seen = TRUE;
+		fsguard->seen = TRUE;
 	    }
-        } else if (size >= plugin->red && size <= plugin->yellow) {
-            tmp = gdk_pixbuf_new_from_inline (sizeof(icon_yellow), icon_yellow, FALSE, NULL);
+        } else if (size >= fsguard->red && size <= fsguard->yellow) {
+            pb = gdk_pixbuf_new_from_inline (sizeof(icon_yellow), icon_yellow, FALSE, NULL);
         } else {
-            tmp = gdk_pixbuf_new_from_inline (sizeof(icon_green), icon_green, FALSE, NULL);
+            pb = gdk_pixbuf_new_from_inline (sizeof(icon_green), icon_green, FALSE, NULL);
         }
-        if (plugin->label != NULL && (strcmp(plugin->label,"")) && (strcmp(plugin->mnt, plugin->label))) {
+        if (fsguard->label != NULL && (strcmp(fsguard->label,"")) && (strcmp(fsguard->mnt, fsguard->label))) {
 	    if (size > 1024) {
-                g_snprintf (msg, sizeof (msg), _("%.2f GB space left on %s (%s)"), size/1024, plugin->mnt, plugin->label);
+                g_snprintf (msg, sizeof (msg), _("%.2f GB space left on %s (%s)"), size/1024, fsguard->mnt, fsguard->label);
 	    } else {
-                g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s (%s)"), size, plugin->mnt, plugin->label);
+                g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s (%s)"), size, fsguard->mnt, fsguard->label);
 	    }
-        } else if (plugin->mnt != NULL && (strcmp(plugin->mnt, ""))) {
+        } else if (fsguard->mnt != NULL && (strcmp(fsguard->mnt, ""))) {
 	    if (size > 1024) {
-                g_snprintf (msg, sizeof (msg), _("%.2f GB space left on %s"), size/1024, plugin->mnt);
+                g_snprintf (msg, sizeof (msg), _("%.2f GB space left on %s"), size/1024, fsguard->mnt);
 	    } else {
-                g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s"), size, plugin->mnt);
+                g_snprintf (msg, sizeof (msg), _("%.2f MB space left on %s"), size, fsguard->mnt);
 	    }
         } 
     } else {
-        tmp = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, FALSE, NULL);
-        g_snprintf (msg, sizeof (msg), _("could not check mountpoint %s, please check your config"), plugin->mnt);
+        pb = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, FALSE, NULL);
+        g_snprintf (msg, sizeof (msg), _("could not check mountpoint %s, please check your config"), fsguard->mnt);
     }
     
-    gtk_tooltips_set_tip (tooltips, plugin->fs, msg, NULL);
+    gtk_tooltips_set_tip (tooltips, fsguard->fs, msg, NULL);
        
-    pb = gdk_pixbuf_scale_simple (tmp, plugin->size, plugin->size, GDK_INTERP_BILINEAR);
-    xfce_iconbutton_set_pixbuf(XFCE_ICONBUTTON(plugin->fs), pb);
-    g_object_unref (G_OBJECT(tmp));
+    xfce_iconbutton_set_pixbuf(XFCE_ICONBUTTON(fsguard->fs), pb);
     g_object_unref (G_OBJECT(pb));
     return TRUE;
 }
 
-static gui *
-gui_new ()
+static FsGuard *
+create_fsguard_control (XfcePanelPlugin *plugin)
 {
-    gui *plugin;
+    FsGuard *fsguard;
     tooltips = gtk_tooltips_new ();
-    plugin = g_new(gui, 1);
-    plugin->ebox = gtk_event_box_new();
-    gtk_widget_show (plugin->ebox);
+    fsguard = g_new(FsGuard, 1);
+
+    fsguard->plugin = plugin;
+    
+    fsguard->ebox = gtk_event_box_new();
+    gtk_widget_show (fsguard->ebox);
  
-    plugin->hbox = gtk_hbox_new(FALSE, 0);
-    gtk_widget_show (plugin->hbox);
+    fsguard->hbox = gtk_hbox_new(FALSE, 2);
+    gtk_widget_show (fsguard->hbox);
 
-    plugin->vbox = gtk_vbox_new (FALSE, 0);
-    gtk_widget_show (plugin->vbox);
+    fsguard->vbox = gtk_vbox_new (FALSE, 2);
+    gtk_widget_show (fsguard->vbox);
    
-    plugin->size = ICONSIZETINY;
-    plugin->lab = NULL;
-    plugin->label = NULL;
-    plugin->mnt = NULL;
-    plugin->yellow = 0;
-    plugin->red = 0;
-    plugin->timeout = 0;
-    plugin->filemanager = "xffm";
-    plugin->fs = xfce_iconbutton_new ();
-    g_signal_connect (G_OBJECT(plugin->fs), "clicked", G_CALLBACK(plugin_open_mnt), plugin);
-    gtk_button_set_relief (GTK_BUTTON(plugin->fs), GTK_RELIEF_NONE);
-    gtk_container_add (GTK_CONTAINER(plugin->hbox), plugin->vbox);
-    gtk_container_add (GTK_CONTAINER(plugin->hbox), plugin->fs);
-    gtk_container_add (GTK_CONTAINER(plugin->ebox), plugin->hbox);
-    gtk_widget_show_all (plugin->ebox);
+    fsguard->fs = xfce_iconbutton_new ();
+    gtk_widget_show (fsguard->fs);
+    g_signal_connect (G_OBJECT(fsguard->fs), "clicked", G_CALLBACK(fsguard_open_mnt), fsguard);
+    
+    gtk_button_set_relief (GTK_BUTTON(fsguard->fs), GTK_RELIEF_NONE);
+    gtk_container_add (GTK_CONTAINER(fsguard->hbox), fsguard->vbox);
+    gtk_container_add (GTK_CONTAINER(fsguard->hbox), fsguard->fs);
+    gtk_container_add (GTK_CONTAINER(fsguard->ebox), fsguard->hbox);
 
-    plugin_check_fs (plugin);
-    plugin->timeout = g_timeout_add_full (G_PRIORITY_DEFAULT, 8192, (GSourceFunc) plugin_check_fs, plugin, NULL);
-    return(plugin);
+    xfce_panel_plugin_add_action_widget (plugin, fsguard->ebox);
+    xfce_panel_plugin_add_action_widget (plugin, fsguard->fs);
+    
+    fsguard->size = ICONSIZETINY;
+    fsguard->lab = NULL;
+    fsguard->label = NULL;
+    fsguard->mnt = NULL;
+    fsguard->yellow = 0;
+    fsguard->red = 0;
+    fsguard->timeout = 0;
+    fsguard->filemanager = NULL;
+    
+    return fsguard;
+}
+
+static void
+fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
+{
+    if (fsguard->timeout != 0) {
+        g_source_remove (fsguard->timeout);
+    }
+
+    g_free (fsguard->label);
+    g_free (fsguard->mnt);
+    g_free (fsguard->filemanager);
+
+    g_free(fsguard);
+}
+
+static void
+fsguard_set_orientation (XfcePanelPlugin *plugin, GtkOrientation orientation, FsGuard *fsguard)
+{
+    fsguard->orientation = orientation;
+    fsguard_recreate_gui (fsguard);
 }
 
 static gboolean
-create_plugin_control (Control *ctrl)
+fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 {
-    gui *plugin = gui_new();
+    fsguard->size = size;
+    fsguard_check_fs (fsguard);
+    gtk_widget_set_size_request (fsguard->fs, fsguard->size, fsguard->size);
 
-    gtk_container_add (GTK_CONTAINER(ctrl->base), plugin->ebox);
-
-    ctrl->data = (gpointer)plugin;
-    ctrl->with_popup = FALSE;
-
-    gtk_widget_set_size_request (ctrl->base, -1, -1);
-
-    return(TRUE);
+    return TRUE;
 }
 
 static void
-plugin_free (Control *ctrl)
+fsguard_read_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
 {
-    gui *plugin;
-    g_return_if_fail (ctrl != NULL);
-    g_return_if_fail (ctrl->data != NULL);
-    plugin = ctrl->data;
-    if (plugin->timeout != 0) {
-        g_source_remove (plugin->timeout);
-    }
-    g_free(plugin);
-}
-
-static void
-plugin_attach_callback (Control *ctrl, const gchar *signal, GCallback cb, gpointer data)
-{
-    gui *plugin = ctrl->data;
-    g_signal_connect (plugin->ebox, signal, cb, data);
-    g_signal_connect (plugin->fs, signal, cb, data);
-}
-
-static void
-plugin_set_orientation (Control *ctrl, int orientation)
-{
-    gui *plugin = ctrl->data;
-    plugin->orientation = orientation;
-    plugin_recreate_gui (plugin);
-}
-
-static void
-plugin_set_size (Control *ctrl, int size)
-{
-    gui *plugin = ctrl->data;
-    if (size == TINY) {
-        plugin->size = ICONSIZETINY;
-    } else if (size == SMALL) {
-        plugin->size = ICONSIZESMALL;
-    } else if (size == MEDIUM) {
-        plugin->size = ICONSIZEMEDIUM;
-    } else {
-        plugin->size = ICONSIZELARGE;
-    }	
-    plugin_check_fs (plugin);
-    gtk_widget_set_size_request (plugin->fs, plugin->size, plugin->size);
-}
-
-static void
-plugin_read_config (Control *ctrl, xmlNodePtr node)
-{
-    xmlChar *value;
-    gui *plugin = ctrl->data;
-
-    for (node = node->children; node; node = node->next) {
-        if (xmlStrEqual(node->name, (const xmlChar *)"Fsguard")) {
-            if ((value = xmlGetProp(node, (const xmlChar *)"yellow"))) {
-                plugin->yellow = atoi(value);
-                g_free(value);
-            }
-            if ((value = xmlGetProp(node, (const xmlChar *)"red"))) {
-                plugin->red = atoi(value);
-                g_free(value);
-            }
-            if ((value = xmlGetProp(node, (const xmlChar *)"label"))) {
-                plugin->label = g_strdup((gchar *)value);
-                g_free(value);
-            }
-            if ((value = xmlGetProp(node, (const xmlChar *)"mnt"))) {
-                plugin->mnt = g_strdup((gchar *)value);
-                g_free(value);
-            }
-            if ((value = xmlGetProp(node, (const xmlChar *)"filemanager"))) {
-                plugin->filemanager = g_strdup((gchar *)value);
-                g_free(value);
-            }
-            break;
-	}
-    }
-    plugin_recreate_gui (plugin);
-    plugin_check_fs (plugin);
-    plugin->seen = FALSE;
-}
-
-static void
-plugin_write_config (Control *ctrl, xmlNodePtr parent)
-{
-    gui *plugin = ctrl->data;
-    xmlNodePtr root;
-    char value[20];
-
-    root = xmlNewTextChild(parent, NULL, "Fsguard", NULL);
-    g_snprintf(value, 10, "%d", plugin->red);
-    xmlSetProp(root, "red", value);
-
-    g_snprintf(value, 10, "%d", plugin->yellow);
-    xmlSetProp(root, "yellow", value);
-
-    xmlSetProp(root, "label", plugin->label);
-
-    xmlSetProp(root, "mnt", plugin->mnt);
+    const char *value;
+    char *file;
+    XfceRc *rc;
     
-    xmlSetProp(root, "filemanager", plugin->filemanager);
+    if (!(file = xfce_panel_plugin_lookup_rc_file (plugin)))
+        return;
+    
+    rc = xfce_rc_simple_open (file, TRUE);
+    g_free (file);
+
+    if (!rc)
+        return;
+    
+    fsguard->yellow = xfce_rc_read_int_entry (rc, "yellow", 0);
+
+    fsguard->red = xfce_rc_read_int_entry (rc, "red", 0);
+
+    if ((value = xfce_rc_read_entry (rc, "label", NULL)) && *value) {
+        fsguard->label = g_strdup(value);
+
+    }
+    
+    if ((value = xfce_rc_read_entry (rc, "mnt", NULL)) && *value) {
+        fsguard->mnt = g_strdup(value);
+    }
+    
+    if ((value = xfce_rc_read_entry (rc, "filemanager", NULL)) && *value) {
+        fsguard->filemanager = g_strdup(value);
+    }
+    else {
+        fsguard->filemanager = g_strdup ("xffm");
+    }
+
+    xfce_rc_close (rc);
+}
+
+static void
+fsguard_write_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
+{
+    XfceRc *rc;
+    char *file;
+
+    if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))
+        return;
+    
+    rc = xfce_rc_simple_open (file, FALSE);
+    g_free (file);
+
+    if (!rc)
+        return;
+    
+    xfce_rc_write_int_entry (rc, "yellow", fsguard->yellow);
+    
+    xfce_rc_write_int_entry (rc, "red", fsguard->red);
+    
+    xfce_rc_write_entry (rc, "label", fsguard->label ? fsguard->label : "");
+    
+    xfce_rc_write_entry (rc, "mnt", fsguard->mnt ? fsguard->mnt : "");
+    
+    xfce_rc_write_entry (rc, "filemanager", 
+                         fsguard->filemanager ? fsguard->filemanager : "");
+
+    xfce_rc_close (rc);
 }    
 
 static void
-plugin_ent1_changed (GtkWidget *widget, gpointer user_data)
+fsguard_ent1_changed (GtkWidget *widget, gpointer user_data)
 {
-    gui *plugin = user_data;
-    plugin->label = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
-    plugin_recreate_gui (plugin);
+    FsGuard *fsguard = user_data;
+    fsguard->label = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
+    fsguard_recreate_gui (fsguard);
 }
 
 static void
-plugin_ent2_changed (GtkWidget *widget, gpointer user_data)
+fsguard_ent2_changed (GtkWidget *widget, gpointer user_data)
 {
-    gui *plugin = user_data;
-    plugin->mnt = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
-    plugin->seen = FALSE;
-    plugin_check_fs (plugin);
+    FsGuard *fsguard = user_data;
+    fsguard->mnt = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
+    fsguard->seen = FALSE;
+    fsguard_check_fs (fsguard);
 }
 
 static void
-plugin_ent3_changed (GtkWidget *widget, gpointer user_data)
+fsguard_ent3_changed (GtkWidget *widget, gpointer user_data)
 {
-    gui *plugin = user_data;
-    plugin->filemanager = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
+    FsGuard *fsguard = user_data;
+    fsguard->filemanager = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
 }
 
 static void
-plugin_spin1_changed (GtkWidget *widget, gpointer user_data)
+fsguard_spin1_changed (GtkWidget *widget, gpointer user_data)
 {
-    gui *plugin = user_data;
-    plugin->red = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
-    plugin->seen = FALSE;
+    FsGuard *fsguard = user_data;
+    fsguard->red = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
+    fsguard->seen = FALSE;
 }
 
 static void
-plugin_spin2_changed (GtkWidget *widget, gpointer user_data)
+fsguard_spin2_changed (GtkWidget *widget, gpointer user_data)
 {
-    gui *plugin = user_data;
-    plugin->yellow = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
+    FsGuard *fsguard = user_data;
+    fsguard->yellow = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
 }
 
 static void
-plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
+fsguard_dialog_response (GtkWidget *dlg, int response, FsGuard *fsguard)
 {
-    gui *plugin = ctrl->data;
-    GtkWidget *hbox, *vbox1, *vbox2, *mnt, *spin1, *spin2;
+    gtk_widget_destroy (dlg);
+    xfce_panel_plugin_unblock_menu (fsguard->plugin);
+    fsguard_write_config (fsguard->plugin, fsguard);
+    fsguard_recreate_gui (fsguard);
+}
+
+static void
+fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
+{
+    GtkWidget *dlg, *header;
+    GdkPixbuf *pb;
+    GtkWidget *hbox, *vbox1, *vbox2, *spin1, *spin2;
     GtkWidget *lab1, *lab2, *lab3, *lab4, *lab5, *ent1, *ent2, *ent3;
     gchar *text[] = {
 	     N_("label"),
@@ -417,10 +412,36 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
 	     N_("filemanager"),
     };
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
- 
-    hbox = gtk_hbox_new (FALSE, 2);
-    vbox1 = gtk_vbox_new (FALSE, 5);
-    vbox2 = gtk_vbox_new (FALSE, 5);
+    xfce_panel_plugin_block_menu (plugin);
+    
+    dlg = gtk_dialog_new_with_buttons (_("Properties"), 
+                GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
+                GTK_DIALOG_DESTROY_WITH_PARENT |
+                GTK_DIALOG_NO_SEPARATOR,
+                GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+                NULL);
+    
+    g_signal_connect (dlg, "response", G_CALLBACK (fsguard_dialog_response),
+                      fsguard);
+
+    gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
+    
+    pb = xfce_themed_icon_load ("xfce4-panel", 48);
+    gtk_window_set_icon (GTK_WINDOW (dlg), pb);
+    g_object_unref (pb);
+    
+    header = xfce_create_header (NULL, _("Free Space Checker"));
+    gtk_widget_set_size_request (GTK_BIN (header)->child, -1, 32);
+    gtk_container_set_border_width (GTK_CONTAINER (header), BORDER - 2);
+    gtk_widget_show (header);
+    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), header,
+                        FALSE, TRUE, 0);
+    
+    hbox = gtk_hbox_new (FALSE, BORDER);
+    gtk_container_set_border_width (GTK_CONTAINER (hbox), BORDER - 2);
+    
+    vbox1 = gtk_vbox_new (FALSE, BORDER);
+    vbox2 = gtk_vbox_new (FALSE, BORDER);
 
     gtk_box_pack_start (GTK_BOX(hbox), vbox1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(hbox), vbox2, TRUE, FALSE, 1);
@@ -433,30 +454,30 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
 
     ent1 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY(ent1), 16);
-    if (plugin->label != NULL) {
-        gtk_entry_set_text (GTK_ENTRY(ent1), plugin->label);
+    if (fsguard->label != NULL) {
+        gtk_entry_set_text (GTK_ENTRY(ent1), fsguard->label);
     }
     ent2 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY(ent2), 32);
-    if (plugin->mnt != NULL) {
-        gtk_entry_set_text (GTK_ENTRY(ent2), plugin->mnt);
+    if (fsguard->mnt != NULL) {
+        gtk_entry_set_text (GTK_ENTRY(ent2), fsguard->mnt);
     }
     ent3 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY(ent3), 16);
-    if (plugin->filemanager != NULL) {
-        gtk_entry_set_text (GTK_ENTRY(ent3), plugin->filemanager);
+    if (fsguard->filemanager != NULL) {
+        gtk_entry_set_text (GTK_ENTRY(ent3), fsguard->filemanager);
     }
  
     spin1 = gtk_spin_button_new_with_range (0, 1000000, 10);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), plugin->red);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), fsguard->red);
     spin2 = gtk_spin_button_new_with_range (0, 1000000, 10);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), plugin->yellow);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), fsguard->yellow);
 
-    g_signal_connect (ent1, "changed", G_CALLBACK(plugin_ent1_changed), plugin);
-    g_signal_connect (ent2, "changed", G_CALLBACK(plugin_ent2_changed), plugin);
-    g_signal_connect (ent3, "changed", G_CALLBACK(plugin_ent3_changed), plugin);
-    g_signal_connect (spin1, "value-changed", G_CALLBACK(plugin_spin1_changed), plugin);
-    g_signal_connect (spin2, "value-changed", G_CALLBACK(plugin_spin2_changed), plugin);
+    g_signal_connect (ent1, "changed", G_CALLBACK(fsguard_ent1_changed), fsguard);
+    g_signal_connect (ent2, "changed", G_CALLBACK(fsguard_ent2_changed), fsguard);
+    g_signal_connect (ent3, "changed", G_CALLBACK(fsguard_ent3_changed), fsguard);
+    g_signal_connect (spin1, "value-changed", G_CALLBACK(fsguard_spin1_changed), fsguard);
+    g_signal_connect (spin2, "value-changed", G_CALLBACK(fsguard_spin2_changed), fsguard);
 
     gtk_box_pack_start (GTK_BOX(vbox1), lab1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab2, TRUE, FALSE, 1);
@@ -470,42 +491,53 @@ plugin_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
     gtk_box_pack_start (GTK_BOX(vbox2), spin1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), spin2, TRUE, FALSE, 1);
 
-    gtk_container_add (GTK_CONTAINER(con), hbox);
     gtk_widget_show_all (hbox);
+    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), hbox,
+                        TRUE, TRUE, 0);
+
+    gtk_widget_show (dlg);
 }
 
 // }}}
 
 // initialization {{{
-G_MODULE_EXPORT void
-xfce_control_class_init(ControlClass *cc)
+static void
+fsguard_construct (XfcePanelPlugin *plugin)
 {
+    FsGuard *fsguard;
+    
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-    /* these are required */
-    cc->name		= "fsguard";
-    cc->caption		= _("Free Space Checker");
+ 
+    fsguard = create_fsguard_control (plugin);
 
-    cc->create_control	= (CreateControlFunc)create_plugin_control;
+    fsguard_read_config (plugin, fsguard);
+    
+    fsguard_recreate_gui (fsguard);
+    fsguard_check_fs (fsguard);
+    fsguard->seen = FALSE;
 
-    cc->free		= plugin_free;
-    cc->attach_callback	= plugin_attach_callback;
+    fsguard->timeout = 
+        g_timeout_add (8192, (GSourceFunc) fsguard_check_fs, fsguard);
 
-    /* options; don't define if you don't have any ;) */
-    cc->read_config	= plugin_read_config;
-    cc->write_config	= plugin_write_config;
+    gtk_container_add (GTK_CONTAINER (plugin), fsguard->ebox);
 
-    /* Don't use this function at all if you want xfce to
-     * do the sizing.
-     * Just define the set_size function to NULL, or rather, don't 
-     * set it to something else.
-    */
-    cc->set_size		= plugin_set_size;
-    cc->set_orientation		= plugin_set_orientation;
-    cc->create_options          = plugin_create_options;
+    g_signal_connect (plugin, "free-data", G_CALLBACK (fsguard_free), fsguard);
+    
+    g_signal_connect (plugin, "save", G_CALLBACK (fsguard_write_config), 
+                      fsguard);
+    
+    g_signal_connect (plugin, "size-changed", G_CALLBACK (fsguard_set_size), 
+                      fsguard);
+    
+    g_signal_connect (plugin, "orientation-changed", 
+                      G_CALLBACK (fsguard_set_orientation), fsguard);
+	
+    xfce_panel_plugin_menu_show_configure (plugin);
+    g_signal_connect (plugin, "configure-plugin", 
+                      G_CALLBACK (fsguard_create_options), fsguard);
 }
 
-/* required! defined in panel/plugins.h */
-XFCE_PLUGIN_CHECK_INIT
+XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (fsguard_construct);
 
 // }}}
 
