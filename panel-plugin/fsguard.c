@@ -75,8 +75,7 @@ typedef struct
     XfcePanelPlugin *plugin;
 
     GtkWidget	    *fs;
-    GtkWidget       *hbox;
-    GtkWidget       *vbox;
+    GtkWidget       *box;
     GtkWidget	    *ebox;
     GtkWidget       *lab;
     gboolean        seen;
@@ -104,23 +103,16 @@ fsguard_recreate_gui (gpointer data)
         if (fsguard->lab == NULL) {
             fsguard->lab = gtk_label_new (fsguard->label);
 	    gtk_widget_show (fsguard->lab);
-            gtk_box_pack_start (GTK_BOX(fsguard->hbox), fsguard->lab, FALSE, FALSE, 0);
-	    gtk_box_reorder_child (GTK_BOX(fsguard->hbox), fsguard->lab, 0);
+            gtk_box_pack_start (GTK_BOX(fsguard->box), fsguard->lab, FALSE, FALSE, 0);
+	    gtk_box_reorder_child (GTK_BOX(fsguard->box), fsguard->lab, 0);
 	} 
+
+        gtk_label_set_text (GTK_LABEL(fsguard->lab), fsguard->label);
     } else {
         if (GTK_IS_WIDGET (fsguard->lab)) {
             gtk_widget_destroy (fsguard->lab);
 	    fsguard->lab = NULL;
 	}
-    }
-    gtk_label_set_text (GTK_LABEL(fsguard->lab), fsguard->label);
-
-    if (fsguard->orientation == GTK_ORIENTATION_VERTICAL) {
-        gtk_widget_reparent (fsguard->fs, fsguard->vbox);
-        gtk_widget_reparent (fsguard->lab, fsguard->vbox);
-    } else {
-        gtk_widget_reparent (fsguard->fs, fsguard->hbox);
-        gtk_widget_reparent (fsguard->lab, fsguard->hbox);
     }
 }
 
@@ -154,7 +146,6 @@ fsguard_check_fs (gpointer data)
     FsGuard *fsguard = data;
 
     err = statfs (fsguard->mnt, &fsd);
-    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
     
     if (err != -1) {
         blocksize = fsd.f_bsize;
@@ -216,24 +207,25 @@ create_fsguard_control (XfcePanelPlugin *plugin)
     fsguard = g_new(FsGuard, 1);
 
     fsguard->plugin = plugin;
+    fsguard->orientation = xfce_panel_plugin_get_orientation(plugin);
     
     fsguard->ebox = gtk_event_box_new();
     gtk_widget_show (fsguard->ebox);
- 
-    fsguard->hbox = gtk_hbox_new(FALSE, 2);
-    gtk_widget_show (fsguard->hbox);
 
-    fsguard->vbox = gtk_vbox_new (FALSE, 2);
-    gtk_widget_show (fsguard->vbox);
-   
+    if (fsguard->orientation == GTK_ORIENTATION_VERTICAL) {
+	fsguard->box = gtk_vbox_new (FALSE, 2);
+    } else {
+	fsguard->box = gtk_hbox_new (FALSE, 2);
+    }
+    gtk_widget_show (fsguard->box);
+
     fsguard->fs = xfce_iconbutton_new ();
     gtk_widget_show (fsguard->fs);
     g_signal_connect (G_OBJECT(fsguard->fs), "clicked", G_CALLBACK(fsguard_open_mnt), fsguard);
     
     gtk_button_set_relief (GTK_BUTTON(fsguard->fs), GTK_RELIEF_NONE);
-    gtk_container_add (GTK_CONTAINER(fsguard->hbox), fsguard->vbox);
-    gtk_container_add (GTK_CONTAINER(fsguard->hbox), fsguard->fs);
-    gtk_container_add (GTK_CONTAINER(fsguard->ebox), fsguard->hbox);
+    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->fs);
+    gtk_container_add (GTK_CONTAINER(fsguard->ebox), fsguard->box);
 
     xfce_panel_plugin_add_action_widget (plugin, fsguard->ebox);
     xfce_panel_plugin_add_action_widget (plugin, fsguard->fs);
@@ -268,7 +260,20 @@ static void
 fsguard_set_orientation (XfcePanelPlugin *plugin, GtkOrientation orientation, FsGuard *fsguard)
 {
     fsguard->orientation = orientation;
-    fsguard_recreate_gui (fsguard);
+    GtkWidget* box;
+    if (fsguard->orientation == GTK_ORIENTATION_VERTICAL) {
+	box = gtk_vbox_new (FALSE, 2);
+        gtk_widget_reparent (fsguard->lab, box);
+        gtk_widget_reparent (fsguard->fs, box);
+    } else {
+        box = gtk_hbox_new (FALSE, 2);
+        gtk_widget_reparent (fsguard->lab, box);
+        gtk_widget_reparent (fsguard->fs, box);
+    }
+    gtk_widget_destroy (fsguard->box);
+    fsguard->box = box;
+    gtk_container_add (GTK_CONTAINER(fsguard->ebox), fsguard->box);
+    gtk_widget_show (fsguard->box);
 }
 
 static gboolean
@@ -411,7 +416,6 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 	     N_("high warn limit (MB)"),
 	     N_("filemanager"),
     };
-    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
     xfce_panel_plugin_block_menu (plugin);
     
     dlg = gtk_dialog_new_with_buttons (_("Properties"), 
