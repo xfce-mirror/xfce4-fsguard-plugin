@@ -1,0 +1,96 @@
+# Hungarian translations for xfce4-fsguard-plugin package.
+# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
+# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
+# This file is distributed under the same license as the xfce4-fsguard-plugin package.
+# SZERVÁC Attila, 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"PO-Revision-Date: 2006-02-11 12:28+0100\n"
+"Last-Translator: SZERVÑC Attila <sas@321.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Csak %.2f GB szabad itt: %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Csak %.2f MB szabad itt: %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Csak %.2f GB szabat itt: %s!"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Csak %.2f MB szabat itt: %s!"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f GB szabad itt: %s (%s)"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f MB szabad itt: %s (%s)"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f GB szabad itt: %s"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f MB szabad itt: %s"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "Nem ellenőrizhető e csatolópont: %s, ellenőrizd a beállítást"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "label"
+msgstr "cím"
+
+#: ../panel-plugin/fsguard.c:414
+msgid "mountpoint"
+msgstr "csatolópont"
+
+#: ../panel-plugin/fsguard.c:415
+msgid "high alarm limit (MB)"
+msgstr "Veszélyszint (MB)"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "high warn limit (MB)"
+msgstr "Figyelmeztetés (MB)"
+
+#: ../panel-plugin/fsguard.c:417
+msgid "filemanager"
+msgstr "fájlkezelő"
+
+#: ../panel-plugin/fsguard.c:421
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Szabad hely figyelő"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "Szabad lemezhely figyelése"
