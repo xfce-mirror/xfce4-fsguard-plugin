@@ -129,7 +129,7 @@ fsguard_open_mnt (GtkWidget *widget, gpointer user_data)
         g_string_append (cmd, " ");
         g_string_append (cmd, fsguard->mnt);
     }
-    g_spawn_command_line_async (cmd->str, NULL);
+    xfce_exec (cmd->str, FALSE, FALSE, NULL);
     g_string_free (cmd, TRUE);
 }
 
