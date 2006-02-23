@@ -1,0 +1,95 @@
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Phan Vĩnh Thịnh <teppi@vnlinux.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4.2-fsguard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"PO-Revision-Date: 2006-02-19 22:50+0300\n"
+"Last-Translator: Phan Vĩnh Thịnh <teppi@vnlinux.org>\n"
+"Language-Team: Vietnamese <none@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Chỉ còn %.2f GB trống trên %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Chỉ còn %.2f MB trống trên %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Chỉ còn %.2f GB trống trên %s!"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Chỉ còn %.2f MB trống trên %s!"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f GB trống trên %s (%s)"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f MB trống trên %s (%s)"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f GB trống trên %s"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f MB trống trên %s"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "không kiểm tra được điểm gắn %s, xin hãy xem lại cấu hình"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "label"
+msgstr "nhãn"
+
+#: ../panel-plugin/fsguard.c:414
+msgid "mountpoint"
+msgstr "điểm gắn"
+
+#: ../panel-plugin/fsguard.c:415
+msgid "high alarm limit (MB)"
+msgstr "báo thức giới hạn cao (MB)"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "high warn limit (MB)"
+msgstr "cảnh báo giới hạn cao (MB)"
+
+#: ../panel-plugin/fsguard.c:417
+msgid "filemanager"
+msgstr "trình quản lý tập tin"
+
+#: ../panel-plugin/fsguard.c:421
+msgid "Properties"
+msgstr ""
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Trình kiểm tra không gian trống"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr ""
