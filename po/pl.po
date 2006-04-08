@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-11 19:33+0900\n"
 "PO-Revision-Date: 2003-12-24 11:10+0100\n"
-"Last-Translator: Daniel 'Beorn' Mróz <beorn@alpha.pl>\n"
+"Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -59,7 +59,7 @@ msgstr "%.2f MB wolnego miejsca pozostało na %s"
 #: ../panel-plugin/fsguard.c:192
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
+msgstr "nie mogę sprawdzić punktu montowania %s, sprawdź ustawienia"
 
 #: ../panel-plugin/fsguard.c:413
 msgid "label"
@@ -83,7 +83,7 @@ msgstr "menadżer plików"
 
 #: ../panel-plugin/fsguard.c:421
 msgid "Properties"
-msgstr ""
+msgstr "Właściwości"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
@@ -93,4 +93,4 @@ msgstr "Strażnik Wolnego Miejsca"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "Monitor wolnego miejsca na dysku"
