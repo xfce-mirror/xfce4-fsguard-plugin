@@ -1,0 +1,101 @@
+# Catalan translations for xfce4-fsguard-plugin package.
+# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
+# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
+# This file is distributed under the same license as the
+# xfce4-fsguard-plugin package.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"PO-Revision-Date: 2006-04-17 20:13+0100\n"
+"Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
+"Language-Team: catalan\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Només queden %.2f GB d'espai a %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Només queden %.2f MB d'espai a %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Només queden %.2f GB d'espai a %s!"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Només queden %.2f MB d'espai a %s!"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "Queden %.2f GB d'espai a %s (%s)"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "Queden %.2f MB d'espai a %s (%s)"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "Queden %.2f GB d'espai a %s"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "Queden %.2f MB d'espai a %s"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "No es por verificar el punt de muntatge %s, verifiqueu la configuració"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "label"
+msgstr "etiqueta"
+
+#: ../panel-plugin/fsguard.c:414
+msgid "mountpoint"
+msgstr "punt de muntatge"
+
+#: ../panel-plugin/fsguard.c:415
+msgid "high alarm limit (MB)"
+msgstr "Espai mínim per l'alarma (MB):"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "high warn limit (MB)"
+msgstr "Espai mínim per l'advertència (MB):"
+
+#: ../panel-plugin/fsguard.c:417
+msgid "filemanager"
+msgstr "gestor de fitxers"
+
+#: ../panel-plugin/fsguard.c:421
+msgid "Properties"
+msgstr "Propietats"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Revisador d'espai lliure"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+#, fuzzy
+msgid "Monitor free disk space"
+msgstr "Monitoritza l'espai lliure del disc"
