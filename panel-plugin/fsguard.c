@@ -259,8 +259,9 @@ fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
 static void
 fsguard_set_orientation (XfcePanelPlugin *plugin, GtkOrientation orientation, FsGuard *fsguard)
 {
-    fsguard->orientation = orientation;
     GtkWidget* box;
+
+    fsguard->orientation = orientation;
     if (fsguard->orientation == GTK_ORIENTATION_VERTICAL) {
 	box = gtk_vbox_new (FALSE, 2);
         gtk_widget_reparent (fsguard->lab, box);
