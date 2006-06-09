@@ -1,0 +1,92 @@
+# Swedish translation for xfce4-fsguard-plugin
+# Copyright (c) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the xfce4-fsguard-plugin package.
+# Daniel Nylander <po@danielnylander.se>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-05-09 05:40+0000\n"
+"PO-Revision-Date: 2006-05-17 14:50+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/fsguard.c:168
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Endast %.2f GB utrymme kvar på %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:170
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Endast %.2f MB utrymme kvar på %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:174
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Endast %.2f GB utrymme kvar på %s!"
+
+#: ../panel-plugin/fsguard.c:176
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Endast %.2f MB utrymme kvar på %s!"
+
+#: ../panel-plugin/fsguard.c:188
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f GB utrymme kvar på %s (%s)"
+
+#: ../panel-plugin/fsguard.c:190
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f MB utrymme kvar på %s (%s)"
+
+#: ../panel-plugin/fsguard.c:194
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f GB utrymme kvar på %s"
+
+#: ../panel-plugin/fsguard.c:196
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f MB utrymme kvar på %s"
+
+#: ../panel-plugin/fsguard.c:201
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr ""
+"kunde inte kontrollera monteringspunkten %s, undersök din konfiguration"
+
+#: ../panel-plugin/fsguard.c:408
+msgid "label"
+msgstr "etikett"
+
+#: ../panel-plugin/fsguard.c:409
+msgid "mountpoint"
+msgstr "monteringspunkt"
+
+#: ../panel-plugin/fsguard.c:410
+msgid "high alarm limit (MB)"
+msgstr "alarmgräns hög (MB)"
+
+#: ../panel-plugin/fsguard.c:411
+msgid "high warn limit (MB)"
+msgstr "varningsgräns hög (MB)"
+
+#: ../panel-plugin/fsguard.c:412
+msgid "filemanager"
+msgstr "filhanterare"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "Properties"
+msgstr "Egenskaper"
+
+#: ../panel-plugin/fsguard.c:432
+msgid "Free Space Checker"
+msgstr "Kontrollerare av ledigt utrymme"
+
