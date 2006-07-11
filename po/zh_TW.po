@@ -1,0 +1,97 @@
+# Traditional Chinese translations for xfce4-fsguard-plugin package.
+# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
+# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
+# This file is distributed under the same license as
+#   the xfce4-fsguard-plugin package.
+# Hydonsingore Cia <hydonsingore@educities.edu.tw>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"PO-Revision-Date: 2006-06-26 22:06+0800\n"
+"Last-Translator: Hydonsingore Cia <hydonsingore@educities.edu.tw>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "%2$s (%3$s) 的容量只剩下 %1$.2f GB！"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "%2$s (%3$s) 的容量只剩下 %1$.2f MB！"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "%2$s 的容量只剩下 %1$.2f GB！"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "%2$s 的容量只剩下 %1$.2f MB！"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%2$s (%3$s) 的容量剩下 %1$.2f GB"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%2$s (%3$s) 的容量剩下 %1$.2f MB"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%2$s 的容量剩下 %1$.2f GB"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%2$s 的容量剩下 %1$.2f MB"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "無法檢查位置 %s，請檢查您的設定"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "label"
+msgstr "標籤"
+
+#: ../panel-plugin/fsguard.c:414
+msgid "mountpoint"
+msgstr "掛載點"
+
+#: ../panel-plugin/fsguard.c:415
+msgid "high alarm limit (MB)"
+msgstr "高容量提醒上限 (MB)"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "high warn limit (MB)"
+msgstr "高容量警告上限 (MB)"
+
+#: ../panel-plugin/fsguard.c:417
+msgid "filemanager"
+msgstr "檔案管理程式"
+
+#: ../panel-plugin/fsguard.c:421
+msgid "Properties"
+msgstr "屬性"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "剩餘容量檢查程式"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "監控磁碟剩餘容量"
