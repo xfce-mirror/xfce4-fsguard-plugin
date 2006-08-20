@@ -1,0 +1,90 @@
+# Galician translation for xfce4-fsguard-plugin
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the xfce4-fsguard-plugin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-05-09 05:40+0000\n"
+"PO-Revision-Date: 2006-08-17 19:31+0000\n"
+"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
+"Language-Team: Galician <gl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/fsguard.c:168
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:170
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:174
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:176
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:188
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:190
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:194
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:196
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:201
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:408
+msgid "label"
+msgstr "etiqueta"
+
+#: ../panel-plugin/fsguard.c:409
+msgid "mountpoint"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:410
+msgid "high alarm limit (MB)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:411
+msgid "high warn limit (MB)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:412
+msgid "filemanager"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:416
+msgid "Properties"
+msgstr "Propiedades"
+
+#: ../panel-plugin/fsguard.c:432
+msgid "Free Space Checker"
+msgstr ""
