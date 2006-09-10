@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2005-02-04 23:28+0200\n"
 "Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -61,33 +61,33 @@ msgstr "%.2f MB laisvos vietos yra likę skirsnyje·%s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "nepavyko patikrinti prijungimo taško %s, pasitikrinkite konfigūraciją"
 
-#: ../panel-plugin/fsguard.c:413
+#: ../panel-plugin/fsguard.c:414
 msgid "label"
 msgstr "užrašas"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:415
 msgid "mountpoint"
 msgstr "prijungimo taškas"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:416
 msgid "high alarm limit (MB)"
 msgstr "signalizuoti ties (MB)"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:417
 msgid "high warn limit (MB)"
 msgstr "įspėti ties (MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:418
 msgid "filemanager"
 msgstr "bylų naršyklė"
 
-#: ../panel-plugin/fsguard.c:421
+#: ../panel-plugin/fsguard.c:422
 msgid "Properties"
 msgstr ""
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Laisvos vietos tikrintuvė"
 

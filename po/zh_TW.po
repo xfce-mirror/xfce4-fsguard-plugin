@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2006-06-26 22:06+0800\n"
 "Last-Translator: Hydonsingore Cia <hydonsingore@educities.edu.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -62,33 +62,33 @@ msgstr "%2$s 的容量剩下 %1$.2f MB"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "無法檢查位置 %s，請檢查您的設定"
 
-#: ../panel-plugin/fsguard.c:413
+#: ../panel-plugin/fsguard.c:414
 msgid "label"
 msgstr "標籤"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:415
 msgid "mountpoint"
 msgstr "掛載點"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:416
 msgid "high alarm limit (MB)"
 msgstr "高容量提醒上限 (MB)"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:417
 msgid "high warn limit (MB)"
 msgstr "高容量警告上限 (MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:418
 msgid "filemanager"
 msgstr "檔案管理程式"
 
-#: ../panel-plugin/fsguard.c:421
+#: ../panel-plugin/fsguard.c:422
 msgid "Properties"
 msgstr "屬性"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "剩餘容量檢查程式"
 

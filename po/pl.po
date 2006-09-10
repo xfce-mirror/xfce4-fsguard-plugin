@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-11 19:33+0900\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2003-12-24 11:10+0100\n"
 "Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -61,33 +61,33 @@ msgstr "%.2f MB wolnego miejsca pozostało na %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "nie mogę sprawdzić punktu montowania %s, sprawdź ustawienia"
 
-#: ../panel-plugin/fsguard.c:413
+#: ../panel-plugin/fsguard.c:414
 msgid "label"
 msgstr "etykieta"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:415
 msgid "mountpoint"
 msgstr "punkt montowania"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:416
 msgid "high alarm limit (MB)"
 msgstr "próg alarmu (MB)"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:417
 msgid "high warn limit (MB)"
 msgstr "próg ostrzeżenia (MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:418
 msgid "filemanager"
 msgstr "menadżer plików"
 
-#: ../panel-plugin/fsguard.c:421
+#: ../panel-plugin/fsguard.c:422
 msgid "Properties"
 msgstr "Właściwości"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:437 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Strażnik Wolnego Miejsca"
 
