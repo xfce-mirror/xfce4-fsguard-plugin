@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 21:29+0200\n"
-"PO-Revision-Date: 2006-04-17 20:13+0100\n"
+"PO-Revision-Date: 2006-09-20 13:28+0200\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: catalan\n"
 "MIME-Version: 1.0\n"
@@ -96,6 +96,5 @@ msgid "Free Space Checker"
 msgstr "Revisador d'espai lliure"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
-#, fuzzy
 msgid "Monitor free disk space"
 msgstr "Monitoritza l'espai lliure del disc"
