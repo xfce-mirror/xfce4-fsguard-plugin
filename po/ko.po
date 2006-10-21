@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 21:29+0200\n"
-"PO-Revision-Date: 2005-11-03 01:57+0900\n"
-"Last-Translator: ByungHyun Choi <byunghyun.choi@gmail.com>\n"
+"PO-Revision-Date: 2006-10-20 11:31+0900\n"
+"Last-Translator: ByungHyun Choi <byunghyun.choi@debianusers.org>\n"
 "Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge."
 "net>\n"
 "MIME-Version: 1.0\n"
@@ -72,11 +72,11 @@ msgstr "마운트 위치"
 
 #: ../panel-plugin/fsguard.c:416
 msgid "high alarm limit (MB)"
-msgstr ""
+msgstr "경고 상한(MB)"
 
 #: ../panel-plugin/fsguard.c:417
 msgid "high warn limit (MB)"
-msgstr ""
+msgstr "쥐의 상한(MB)"
 
 #: ../panel-plugin/fsguard.c:418
 msgid "filemanager"
@@ -84,7 +84,7 @@ msgstr "화일관리자"
 
 #: ../panel-plugin/fsguard.c:422
 msgid "Properties"
-msgstr ""
+msgstr "속성"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
@@ -94,4 +94,4 @@ msgstr "남은 용량 확인"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "남은 용량 감시"
