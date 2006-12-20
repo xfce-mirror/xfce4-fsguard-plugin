@@ -1,31 +1,31 @@
 plugindir = $(libexecdir)/xfce4/panel-plugins
 plugin_PROGRAMS = xfce4-fsguard-plugin
 
-xfce4_fsguard_plugin_CFLAGS =					\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"			\
+xfce4_fsguard_plugin_CFLAGS =									\
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"						\
 	@LIBXFCE4PANEL_CFLAGS@
 
-xfce4_fsguard_plugin_LDFLAGS =					\
+xfce4_fsguard_plugin_LDFLAGS =									\
 	@LIBXFCE4PANEL_LIBS@
 
-xfce4_fsguard_plugin_SOURCES =					\
+xfce4_fsguard_plugin_SOURCES =									\
 	fsguard.c
 
-noinst_DATA =							\
-	icons.h 						\
-	red.xpm 						\
-	green.xpm 						\
-	yellow.xpm 						\
+noinst_DATA =													\
+	icons.h 													\
+	red.xpm 													\
+	green.xpm 													\
+	yellow.xpm 													\
 	unknown.xpm
 
 icons.h: $(srcdir)/red.xpm
-	gdk-pixbuf-csource --raw --build-list 			\
+	gdk-pixbuf-csource --raw --build-list 						\
 	icon_red red.xpm > $(srcdir)/icons.h
-	gdk-pixbuf-csource --raw --build-list 			\
+	gdk-pixbuf-csource --raw --build-list 						\
 	icon_green green.xpm >> $(srcdir)/icons.h
-	gdk-pixbuf-csource --raw --build-list 			\
+	gdk-pixbuf-csource --raw --build-list 						\
 	icon_yellow yellow.xpm >> $(srcdir)/icons.h
-	gdk-pixbuf-csource --raw --build-list 			\
+	gdk-pixbuf-csource --raw --build-list 						\
 	icon_unknown unknown.xpm >> $(srcdir)/icons.h
 
 # .desktop file
@@ -42,14 +42,14 @@ desktopdir = $(datadir)/xfce4/panel-plugins
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST = 								\
+EXTRA_DIST = 													\
 	$(desktop_in_in_files) $(noinst_DATA)
 
-DISTCLEANFILES =							\
+DISTCLEANFILES =												\
 	$(desktop_DATA) $(desktop_in_files)
 	
 # get full path into .desktop file
 %.desktop.in: %.desktop.in.in
-	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" \
+	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^"	\
 		$< > $@
 

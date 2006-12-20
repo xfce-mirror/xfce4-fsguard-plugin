@@ -18,6 +18,15 @@ EOF
   exit 1
 }
 
+# verify that po/LINGUAS is present
+(test -f po/LINGUAS) >/dev/null 2>&1 || {
+  cat >&2 <<EOF
+autogen.sh: The file po/LINGUAS could not be found. Please check your snapshot
+            or try to checkout again.
+EOF
+  exit 1
+}
+
 exec xdt-autogen $@
 
 # vi:set ts=2 sw=2 et ai:

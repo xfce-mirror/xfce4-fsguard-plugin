@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
 "PO-Revision-Date: 2006-10-20 11:31+0900\n"
 "Last-Translator: ByungHyun Choi <byunghyun.choi@debianusers.org>\n"
 "Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge."
@@ -62,36 +62,35 @@ msgstr "%.2f MB가 남은 %s!"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "%s에 대한 마운트 지점을 검사하지 못 했으니, 설정을 확인해 보십시오."
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "라벨"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "마운트 위치"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr "경고 상한(MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr "쥐의 상한(MB)"
 
-#: ../panel-plugin/fsguard.c:418
+#: ../panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "화일관리자"
 
-#: ../panel-plugin/fsguard.c:422
-msgid "Properties"
-msgstr "속성"
-
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "남은 용량 확인"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "남은 용량 감시"
+
+#~ msgid "Properties"
+#~ msgstr "속성"

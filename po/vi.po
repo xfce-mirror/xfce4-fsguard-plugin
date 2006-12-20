@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
 "PO-Revision-Date: 2006-02-19 22:50+0300\n"
 "Last-Translator: Phan Vĩnh Thịnh <teppi@vnlinux.org>\n"
 "Language-Team: Vietnamese <none@li.org>\n"
@@ -60,33 +60,29 @@ msgstr "%.2f MB trống trên %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "không kiểm tra được điểm gắn %s, xin hãy xem lại cấu hình"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "nhãn"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "điểm gắn"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr "báo thức giới hạn cao (MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr "cảnh báo giới hạn cao (MB)"
 
-#: ../panel-plugin/fsguard.c:418
+#: ../panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "trình quản lý tập tin"
 
-#: ../panel-plugin/fsguard.c:422
-msgid "Properties"
-msgstr ""
-
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Trình kiểm tra không gian trống"
 

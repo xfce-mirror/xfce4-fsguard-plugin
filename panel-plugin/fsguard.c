@@ -234,10 +234,10 @@ create_fsguard_control (XfcePanelPlugin *plugin)
     fsguard->lab = NULL;
     fsguard->label = NULL;
     fsguard->mnt = NULL;
+    fsguard->filemanager = g_strdup ("exo-open");
     fsguard->yellow = 0;
     fsguard->red = 0;
     fsguard->timeout = 0;
-    fsguard->filemanager = NULL;
     
     return fsguard;
 }
@@ -307,20 +307,16 @@ fsguard_read_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     fsguard->red = xfce_rc_read_int_entry (rc, "red", 0);
 
-    if ((value = xfce_rc_read_entry (rc, "label", NULL)) && *value) {
+    if ((value = xfce_rc_read_entry (rc, "label", ""))) {
         fsguard->label = g_strdup(value);
-
     }
     
-    if ((value = xfce_rc_read_entry (rc, "mnt", NULL)) && *value) {
+    if ((value = xfce_rc_read_entry (rc, "mnt", ""))) {
         fsguard->mnt = g_strdup(value);
     }
     
-    if ((value = xfce_rc_read_entry (rc, "filemanager", NULL)) && *value) {
+    if ((value = xfce_rc_read_entry (rc, "filemanager", "exo-open"))) {
         fsguard->filemanager = g_strdup(value);
-    }
-    else {
-        fsguard->filemanager = g_strdup ("xffm");
     }
 
     xfce_rc_close (rc);
@@ -406,8 +402,7 @@ fsguard_dialog_response (GtkWidget *dlg, int response, FsGuard *fsguard)
 static void
 fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 {
-    GtkWidget *dlg, *header;
-    GdkPixbuf *pb;
+    GtkWidget *dlg;
     GtkWidget *hbox, *vbox1, *vbox2, *spin1, *spin2;
     GtkWidget *lab1, *lab2, *lab3, *lab4, *lab5, *ent1, *ent2, *ent3;
     gchar *text[] = {
@@ -419,10 +414,10 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     };
     xfce_panel_plugin_block_menu (plugin);
     
-    dlg = gtk_dialog_new_with_buttons (_("Properties"), 
+
+    dlg = xfce_titled_dialog_new_with_buttons (_("Free Space Checker"), 
                 GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
-                GTK_DIALOG_DESTROY_WITH_PARENT |
-                GTK_DIALOG_NO_SEPARATOR,
+                GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
                 GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
                 NULL);
     
@@ -431,16 +426,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
     
-    pb = xfce_themed_icon_load ("xfce4-panel", 48);
-    gtk_window_set_icon (GTK_WINDOW (dlg), pb);
-    g_object_unref (pb);
-    
-    header = xfce_create_header (NULL, _("Free Space Checker"));
-    gtk_widget_set_size_request (GTK_BIN (header)->child, -1, 32);
-    gtk_container_set_border_width (GTK_CONTAINER (header), BORDER - 2);
-    gtk_widget_show (header);
-    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), header,
-                        FALSE, TRUE, 0);
+    gtk_window_set_icon_name (GTK_WINDOW (dlg), "xfce4-settings");
     
     hbox = gtk_hbox_new (FALSE, BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (hbox), BORDER - 2);

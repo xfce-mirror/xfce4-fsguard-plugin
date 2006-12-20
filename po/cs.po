@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
 "PO-Revision-Date: 2006-08-26 22:28+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -61,36 +61,35 @@ msgstr "%.2f MB zbývá na disku %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "nelze ověřit místo připojení %s, zkontrolujte Vaši konfiguraci"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "popisek"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "místo připojení"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr "limit pro zobrazení výstrahy (MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr "limit pro zobrazení varování (MB)"
 
-#: ../panel-plugin/fsguard.c:418
+#: ../panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "správce souborů"
 
-#: ../panel-plugin/fsguard.c:422
-msgid "Properties"
-msgstr "Vlastnosti"
-
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Kontrola volného prostoru"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Sledování volného prostoru na disku"
+
+#~ msgid "Properties"
+#~ msgstr "Vlastnosti"

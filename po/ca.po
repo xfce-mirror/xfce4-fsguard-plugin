@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
 "PO-Revision-Date: 2006-09-20 13:28+0200\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: catalan\n"
@@ -65,36 +65,35 @@ msgstr "Queden %.2f MB d'espai a %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "No es por verificar el punt de muntatge %s, verifiqueu la configuració"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "etiqueta"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "punt de muntatge"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr "Espai mínim per l'alarma (MB):"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr "Espai mínim per l'advertència (MB):"
 
-#: ../panel-plugin/fsguard.c:418
+#: ../panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "gestor de fitxers"
 
-#: ../panel-plugin/fsguard.c:422
-msgid "Properties"
-msgstr "Propietats"
-
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Revisador d'espai lliure"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Monitoritza l'espai lliure del disc"
+
+#~ msgid "Properties"
+#~ msgstr "Propietats"

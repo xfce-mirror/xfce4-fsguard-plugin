@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
 "PO-Revision-Date: 2006-02-11 19:39+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -64,36 +64,35 @@ msgstr "%2$s には %1$.2f MB の空き容量があります"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "マウント位置 (%s) を確認できませんでした、設定を確かめて下さい"
 
-#: ../panel-plugin/fsguard.c:414
+#: ../panel-plugin/fsguard.c:412
 msgid "label"
 msgstr "ラベル"
 
-#: ../panel-plugin/fsguard.c:415
+#: ../panel-plugin/fsguard.c:413
 msgid "mountpoint"
 msgstr "マウント位置"
 
-#: ../panel-plugin/fsguard.c:416
+#: ../panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
 msgstr "注意を促す上限値 (MB)"
 
-#: ../panel-plugin/fsguard.c:417
+#: ../panel-plugin/fsguard.c:415
 msgid "high warn limit (MB)"
 msgstr "警告を出す上限値 (MB)"
 
-#: ../panel-plugin/fsguard.c:418
+#: ../panel-plugin/fsguard.c:416
 msgid "filemanager"
 msgstr "ファイルマネージャー"
 
-#: ../panel-plugin/fsguard.c:422
-msgid "Properties"
-msgstr "プロパティ"
-
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:438 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "空き容量チェッカー"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "ディスクの空き容量を見張ります。"
+
+#~ msgid "Properties"
+#~ msgstr "プロパティ"
