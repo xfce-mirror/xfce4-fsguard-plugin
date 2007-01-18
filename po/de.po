@@ -3,14 +3,15 @@
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
 # Andre Lerche <a.lerche@gmx.net>, 2003.
+# Fabian Nowak <timystery@arcor.de>, 2007.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-20 23:05+0100\n"
-"PO-Revision-Date: 2004-10-10 17:32+0200\n"
-"Last-Translator: Andre Lerche <a.lerche@gmx.net>\n"
+"PO-Revision-Date: 2007-01-18 08:41+0100\n"
+"Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,16 +61,16 @@ msgstr "%.2f MB frei auf %s"
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr ""
-"Der Mountpunkt %s konnte nicht gecheckt werden, bitte prüfen Sie Ihre "
+"Der Einhängepunkt »%s« konnte nicht geprüft werden, bitte prüfen Sie Ihre "
 "Konfiguration."
 
 #: ../panel-plugin/fsguard.c:412
 msgid "label"
-msgstr "Label"
+msgstr "Beschriftung"
 
 #: ../panel-plugin/fsguard.c:413
 msgid "mountpoint"
-msgstr "Mountpunkt"
+msgstr "Einhängepunkt"
 
 #: ../panel-plugin/fsguard.c:414
 msgid "high alarm limit (MB)"
@@ -87,8 +88,8 @@ msgstr "Dateimanager"
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Speicherplatz-Checker"
+msgstr "Speicherplatz-Prüfung"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "Freien Festplattenplatz überwachen"
