@@ -1,0 +1,95 @@
+# Translation of xfce4-fsguard-plugin to Ukrainian
+# Copyright (C) 2007 Dmitry Nikitin
+# This file is distributed under the same license as the xfce4-fsguard-plugin package.
+#
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-13 17:02+0200\n"
+"PO-Revision-Date: 2007-03-08 02:34+0200\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Тільки %.2f Гб вільного простору залишилось на %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Тільки %.2f Мб вільного простору залишилось на %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Тільки %.2f Гб вільного простору залишилось на %s!"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Тільки %.2f Мб вільного простору залишилось на %s!"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f Гб вільного простору залишилось на %s (%s)"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f Мб вільного простору залишилось на %s (%s)"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f Гб вільного простору залишилось на %s"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f Мб вільного простору залишилось на %s"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr ""
+"неможливо перевірити точку монтування %s, будь-ласка перевірте Ваш config"
+
+#: ../panel-plugin/fsguard.c:409
+msgid "label"
+msgstr "мітка"
+
+#: ../panel-plugin/fsguard.c:410
+msgid "mountpoint"
+msgstr "точка монтування"
+
+#: ../panel-plugin/fsguard.c:411
+msgid "high alarm limit (MB)"
+msgstr "Найвищий ліміт для тривоги (Мб)"
+
+#: ../panel-plugin/fsguard.c:412
+msgid "high warn limit (MB)"
+msgstr "Найвищий ліміт для попередження (Мб)"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "filemanager"
+msgstr "файловий менеджер"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:418 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Контролер вільного місця"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "Спостереження за вільним простором на диску"
