@@ -1,0 +1,94 @@
+# English/GB translation of xfce4-fsguard-plugin.
+# Copyright (C) 2007 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-fsguard-plugin package.
+# Jeff Bailes <thepizzaking@gmail.com>, 2007.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
+"PO-Revision-Date: 2007-03-30 22:24+1000\n"
+"Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
+"Language-Team: English/GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Only %.2f GB space left on %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Only %.2f MB space left on %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Only %.2f GB space left on %s!"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Only %.2f MB space left on %s!"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f GB space left on %s (%s)"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f MB space left on %s (%s)"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f GB space left on %s"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f MB space left on %s"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "could not check mountpoint %s, please check your config"
+
+#: ../panel-plugin/fsguard.c:412
+msgid "label"
+msgstr "label"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "mountpoint"
+msgstr "mountpoint"
+
+#: ../panel-plugin/fsguard.c:414
+msgid "high alarm limit (MB)"
+msgstr "high alarm limit (MB)"
+
+#: ../panel-plugin/fsguard.c:415
+msgid "high warn limit (MB)"
+msgstr "high warn limit (MB)"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "filemanager"
+msgstr "filemanager"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Free Space Checker"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "Monitor free disk space"
+
