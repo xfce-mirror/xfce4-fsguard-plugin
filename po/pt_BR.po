@@ -1,0 +1,92 @@
+# Portuguese translations for xfce package.
+# Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-fsguard-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-20 23:05+0100\n"
+"PO-Revision-Date: 2007-09-03 22:43-0300\n"
+"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
+"Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/fsguard.c:159
+#, c-format
+msgid "Only %.2f GB space left on %s (%s)!"
+msgstr "Somente %.2f GB de espaço livre em %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:161
+#, c-format
+msgid "Only %.2f MB space left on %s (%s)!"
+msgstr "Somente %.2f MB de espaço livre em %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:165
+#, c-format
+msgid "Only %.2f GB space left on %s!"
+msgstr "Somente %.2f GB de espaço livre em %s!"
+
+#: ../panel-plugin/fsguard.c:167
+#, c-format
+msgid "Only %.2f MB space left on %s!"
+msgstr "Somente %.2f MB de espaço livre em %s!"
+
+#: ../panel-plugin/fsguard.c:179
+#, c-format
+msgid "%.2f GB space left on %s (%s)"
+msgstr "%.2f GB de espaço livre em %s (%s)"
+
+#: ../panel-plugin/fsguard.c:181
+#, c-format
+msgid "%.2f MB space left on %s (%s)"
+msgstr "%.2f MB de espaço livre em %s (%s)"
+
+#: ../panel-plugin/fsguard.c:185
+#, c-format
+msgid "%.2f GB space left on %s"
+msgstr "%.2f GB de espaço livre em %s"
+
+#: ../panel-plugin/fsguard.c:187
+#, c-format
+msgid "%.2f MB space left on %s"
+msgstr "%.2f MB de espaço livre em %s"
+
+#: ../panel-plugin/fsguard.c:192
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "não foi possível verificar o ponto de montagem %s, por favor verifique sua configuração"
+
+#: ../panel-plugin/fsguard.c:412
+msgid "label"
+msgstr "rótulo"
+
+#: ../panel-plugin/fsguard.c:413
+msgid "mountpoint"
+msgstr "ponto de montagem"
+
+#: ../panel-plugin/fsguard.c:414
+msgid "high alarm limit (MB)"
+msgstr "alarme de limite alto (MB)"
+
+#: ../panel-plugin/fsguard.c:415
+msgid "high warn limit (MB)"
+msgstr "aviso de limite alto (MB)"
+
+#: ../panel-plugin/fsguard.c:416
+msgid "filemanager"
+msgstr "gerente de arquivo"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Verificador de Espaço Livre"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "Monitor de espaço livre em disco"
