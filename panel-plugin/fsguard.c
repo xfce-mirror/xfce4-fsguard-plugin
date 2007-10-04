@@ -39,7 +39,7 @@
 #include <sys/stat.h>
 #if defined(__linux__)
 #include <sys/vfs.h>
-#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD_kernel__)
 #include <sys/param.h>
 #include <sys/mount.h>
 #endif
