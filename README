@@ -1,5 +1,45 @@
-This is a little XFce Plugin, which checks the free space on the chosen mountpoint frequently.
-If free space <= alarm limit it displays a red icon and a warning message.
-If free space >= alarm limit and <= warn limit it displays a yellow icon.
-Otherwise it displays a green icon.
-<Button 1> click starts xffm on the chosen mountpoint.
+ FSGuard
+=========
+
+The FSGuard panel plugin checks free space on a chosen mount point
+frequently and displays a message when a limit is reached.  There are
+two limits: a warning limit, and an urgent limit.
+
+The icon button can be clicked to open the chosen mount point.
+
+
+ Homepage
+----------
+
+http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
+
+
+ Dependencies
+--------------
+
+* libgtk+2 2.6
+* libxfcegui4 4.4.0
+* libxfce4util 4.4.0
+* libxfce4panel 4.4.0
+
+ Install
+---------
+
+% tar xf xfce4-fsguard-plugin-<version>.tar.gz
+% ./configure
+% make
+% make install
+
+See the INSTALL file for more instructions.
+
+
+ Report bugs
+-------------
+You can report bugs and feature requests on http://bugzilla.xfce.org/.
+Select the product “Xfce Panel Plugins” and the component “fsguard”.
+
+Feature requests are always welcome.
+
+You can also join the Xfce Goodies mailing-list at this address:
+http://foo-projects.org/mailman/listinfo/goodies-dev.
+

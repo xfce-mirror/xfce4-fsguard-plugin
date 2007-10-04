@@ -7,82 +7,82 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin/\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-20 23:05+0100\n"
-"PO-Revision-Date: 2007-06-30 18:41+0100\n"
-"Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
+"POT-Creation-Date: 2007-10-04 15:56+0200\n"
+"PO-Revision-Date: 2007-10-04 17:29+0100\n"
+"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:159
+#: ../panel-plugin/fsguard.c:153
+#: ../panel-plugin/fsguard.c:158
 #, c-format
-msgid "Only %.2f GB space left on %s (%s)!"
-msgstr "Apenas %.2f GB de espaço livre em %s (%s)!"
+msgid "%.2f GB"
+msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:161
+#: ../panel-plugin/fsguard.c:155
+#: ../panel-plugin/fsguard.c:160
 #, c-format
-msgid "Only %.2f MB space left on %s (%s)!"
-msgstr "Apenas %.2f MB espaço livre em %s (%s)! "
+msgid "%.2f MB"
+msgstr "%.2f MB"
 
-#: ../panel-plugin/fsguard.c:165
+#: ../panel-plugin/fsguard.c:169
 #, c-format
-msgid "Only %.2f GB space left on %s!"
-msgstr "Apenas %.2f GB espaço livre em %s!"
+msgid "Only %s space left on %s (%s)!"
+msgstr "Apenas %s de espaço livre em %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:167
+#: ../panel-plugin/fsguard.c:171
 #, c-format
-msgid "Only %.2f MB space left on %s!"
-msgstr "Apenas %.2f MB espaço livre em %s!"
+msgid "Only %s space left on %s!"
+msgstr "Apenas %s espaço livre em %s!"
 
-#: ../panel-plugin/fsguard.c:179
+#: ../panel-plugin/fsguard.c:182
 #, c-format
-msgid "%.2f GB space left on %s (%s)"
-msgstr "%.2f GB espaço livre em %s (%s)"
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s espaço livre em %s (%s)"
 
-#: ../panel-plugin/fsguard.c:181
+#: ../panel-plugin/fsguard.c:184
 #, c-format
-msgid "%.2f MB space left on %s (%s)"
-msgstr "%.2f MB espaço livre em %s (%s)"
+msgid "%s/%s space left on %s"
+msgstr "%s/%s espaço livre em %s"
 
-#: ../panel-plugin/fsguard.c:185
-#, c-format
-msgid "%.2f GB space left on %s"
-msgstr "%.2f GB espaço livre em %s"
-
-#: ../panel-plugin/fsguard.c:187
-#, c-format
-msgid "%.2f MB space left on %s"
-msgstr "%.2f MB espaço livre em %s"
-
-#: ../panel-plugin/fsguard.c:192
+#: ../panel-plugin/fsguard.c:190
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "incapaz de verificar o ponto de montagem %s, por favor verifique a sua config"
+msgstr "Incapaz de verificar o ponto de montagem %s, por favor verifique a sua config"
 
-#: ../panel-plugin/fsguard.c:412
-msgid "label"
-msgstr "Etiqueta"
+#: ../panel-plugin/fsguard.c:431
+msgid "Name"
+msgstr ""
 
-#: ../panel-plugin/fsguard.c:413
-msgid "mountpoint"
-msgstr "ponto montagem"
+#: ../panel-plugin/fsguard.c:432
+msgid "Mount point"
+msgstr "Ponto montagem"
 
-#: ../panel-plugin/fsguard.c:414
-msgid "high alarm limit (MB)"
-msgstr "alarme de limite alto (MB)"
+#: ../panel-plugin/fsguard.c:433
+msgid "Warning limit (MB)"
+msgstr "Limite de aviso alto (MB)"
 
-#: ../panel-plugin/fsguard.c:415
-msgid "high warn limit (MB)"
-msgstr "limite de aviso alto (MB)"
+#: ../panel-plugin/fsguard.c:434
+#, fuzzy
+msgid "Urgent limit (MB)"
+msgstr "Alarme de limite alto (MB)"
 
-#: ../panel-plugin/fsguard.c:416
-msgid "filemanager"
-msgstr "gestor de ficheiros"
+#: ../panel-plugin/fsguard.c:435
+#, fuzzy
+msgid "File manager"
+msgstr "Gestor de ficheiros"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:421
+#: ../panel-plugin/fsguard.c:436
+msgid "Display size"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:437
+msgid "Display progress bar"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:442
 #: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Free Space Checker"
@@ -90,4 +90,17 @@ msgstr "Free Space Checker"
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Monitor free disk space"
+
+#~ msgid "Only %.2f MB space left on %s (%s)!"
+#~ msgstr "Apenas %.2f MB espaço livre em %s (%s)! "
+#~ msgid "Only %.2f MB space left on %s!"
+#~ msgstr "Apenas %.2f MB espaço livre em %s!"
+#~ msgid "%.2f MB space left on %s (%s)"
+#~ msgstr "%.2f MB espaço livre em %s (%s)"
+#~ msgid "%.2f MB space left on %s"
+#~ msgstr "%.2f MB espaço livre em %s"
+#~ msgid "label"
+#~ msgstr "Etiqueta"
+#~ msgid "high alarm limit (MB)"
+#~ msgstr "alarme de limite alto (MB)"
 

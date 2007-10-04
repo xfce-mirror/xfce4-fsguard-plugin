@@ -27,6 +27,13 @@ EOF
   exit 1
 }
 
+# substitute revision and linguas
+linguas=`sed -e '/^#/d' po/LINGUAS`
+revision=`LC_ALL=C svn info $0 | awk '/^Revision: / {printf "%05d\n", $2}'`
+sed -e "s/@LINGUAS@/${linguas}/g" \
+    -e "s/@REVISION@/${revision}/g" \
+    < "configure.in.in" > "configure.in"
+
 exec xdt-autogen $@
 
 # vi:set ts=2 sw=2 et ai:

@@ -3,90 +3,104 @@
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
 # Rimas Kudelis <rq@akl.lt>, 2005.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-20 23:05+0100\n"
-"PO-Revision-Date: 2005-02-04 23:28+0200\n"
-"Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
+"POT-Creation-Date: 2007-10-04 15:56+0200\n"
+"PO-Revision-Date: 2007-10-04 17:29+0100\n"
+"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:159
+#: ../panel-plugin/fsguard.c:153
+#: ../panel-plugin/fsguard.c:158
 #, c-format
-msgid "Only %.2f GB space left on %s (%s)!"
-msgstr "Tik %.2f GB laisvos vietos liko skirsnyje·%s·(%s)!"
+msgid "%.2f GB"
+msgstr ""
 
-#: ../panel-plugin/fsguard.c:161
+#: ../panel-plugin/fsguard.c:155
+#: ../panel-plugin/fsguard.c:160
 #, c-format
-msgid "Only %.2f MB space left on %s (%s)!"
-msgstr "Tik %.2f MB laisvos vietos liko skirsnyje·%s·(%s)!"
+msgid "%.2f MB"
+msgstr ""
 
-#: ../panel-plugin/fsguard.c:165
+#: ../panel-plugin/fsguard.c:169
 #, c-format
-msgid "Only %.2f GB space left on %s!"
-msgstr "Tik %.2f GB laisvos vietos liko skirsnyje·%s!"
+msgid "Only %s space left on %s (%s)!"
+msgstr "Tik %s laisvos vietos liko skirsnyje·%s·(%s)!"
 
-#: ../panel-plugin/fsguard.c:167
+#: ../panel-plugin/fsguard.c:171
 #, c-format
-msgid "Only %.2f MB space left on %s!"
-msgstr "Tik %.2f MB laisvos vietos liko skirsnyje·%s!"
+msgid "Only %s space left on %s!"
+msgstr "Tik %s laisvos vietos liko skirsnyje·%s!"
 
-#: ../panel-plugin/fsguard.c:179
+#: ../panel-plugin/fsguard.c:182
 #, c-format
-msgid "%.2f GB space left on %s (%s)"
-msgstr "%.2f GB laisvos vietos yra likę skirsnyje·%s·(%s)"
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s laisvos vietos yra likę skirsnyje·%s·(%s)"
 
-#: ../panel-plugin/fsguard.c:181
+#: ../panel-plugin/fsguard.c:184
 #, c-format
-msgid "%.2f MB space left on %s (%s)"
-msgstr "%.2f MB laisvos vietos yra likę skirsnyje·%s·(%s)"
+msgid "%s/%s space left on %s"
+msgstr "%s/%s laisvos vietos yra likę skirsnyje·%s"
 
-#: ../panel-plugin/fsguard.c:185
-#, c-format
-msgid "%.2f GB space left on %s"
-msgstr "%.2f GB laisvos vietos yra likę skirsnyje·%s"
-
-#: ../panel-plugin/fsguard.c:187
-#, c-format
-msgid "%.2f MB space left on %s"
-msgstr "%.2f MB laisvos vietos yra likę skirsnyje·%s"
-
-#: ../panel-plugin/fsguard.c:192
+#: ../panel-plugin/fsguard.c:190
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "nepavyko patikrinti prijungimo taško %s, pasitikrinkite konfigūraciją"
+msgstr "Nepavyko patikrinti prijungimo taško %s, pasitikrinkite konfigūraciją"
 
-#: ../panel-plugin/fsguard.c:412
-msgid "label"
-msgstr "užrašas"
+#: ../panel-plugin/fsguard.c:431
+msgid "Name"
+msgstr ""
 
-#: ../panel-plugin/fsguard.c:413
-msgid "mountpoint"
-msgstr "prijungimo taškas"
+#: ../panel-plugin/fsguard.c:432
+msgid "Mount point"
+msgstr "Prijungimo taškas"
 
-#: ../panel-plugin/fsguard.c:414
-msgid "high alarm limit (MB)"
-msgstr "signalizuoti ties (MB)"
+#: ../panel-plugin/fsguard.c:433
+msgid "Warning limit (MB)"
+msgstr "Įspėti ties (MB)"
 
-#: ../panel-plugin/fsguard.c:415
-msgid "high warn limit (MB)"
-msgstr "įspėti ties (MB)"
+#: ../panel-plugin/fsguard.c:434
+#, fuzzy
+msgid "Urgent limit (MB)"
+msgstr "Signalizuoti ties (MB)"
 
-#: ../panel-plugin/fsguard.c:416
-msgid "filemanager"
-msgstr "bylų naršyklė"
+#: ../panel-plugin/fsguard.c:435
+msgid "File manager"
+msgstr "Bylų naršyklė"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:421 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:436
+msgid "Display size"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:437
+msgid "Display progress bar"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:442
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Laisvos vietos tikrintuvė"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr ""
+
+#~ msgid "Only %.2f MB space left on %s (%s)!"
+#~ msgstr "Tik %.2f MB laisvos vietos liko skirsnyje·%s·(%s)!"
+#~ msgid "Only %.2f MB space left on %s!"
+#~ msgstr "Tik %.2f MB laisvos vietos liko skirsnyje·%s!"
+#~ msgid "%.2f MB space left on %s (%s)"
+#~ msgstr "%.2f MB laisvos vietos yra likę skirsnyje·%s·(%s)"
+#~ msgid "%.2f MB space left on %s"
+#~ msgstr "%.2f MB laisvos vietos yra likę skirsnyje·%s"
+#~ msgid "label"
+#~ msgstr "užrašas"
+#~ msgid "high alarm limit (MB)"
+#~ msgstr "signalizuoti ties (MB)"
+

@@ -1,7 +1,12 @@
+2007-10-04  Mike Massonnet <mmassonnet@xfce.org>
+
+	* *.po, *.pot: make update-po
+	* *.po: Correct fuzzy strings
+
 2007-09-07  Og Maciel <ogmaciel@gnome.org>
 
-»···* pt_BR.po: Brazilian Protuguese translation added
-»···by Fábio Nogueira <deb-user-ba@ubuntu.com>
+	* pt_BR.po: Brazilian Protuguese translation added
+	by Fábio Nogueira <deb-user-ba@ubuntu.com>
 
 2007-07-08  Maximilian Schleiss <maximilian@xfce.org>
 

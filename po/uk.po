@@ -7,89 +7,101 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-13 17:02+0200\n"
-"PO-Revision-Date: 2007-03-08 02:34+0200\n"
-"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"POT-Creation-Date: 2007-10-04 15:56+0200\n"
+"PO-Revision-Date: 2007-10-04 17:29+0100\n"
+"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: Ukrainian <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/fsguard.c:159
+#: ../panel-plugin/fsguard.c:153
+#: ../panel-plugin/fsguard.c:158
 #, c-format
-msgid "Only %.2f GB space left on %s (%s)!"
-msgstr "Тільки %.2f Гб вільного простору залишилось на %s (%s)!"
+msgid "%.2f GB"
+msgstr "%.2f Гб"
 
-#: ../panel-plugin/fsguard.c:161
+#: ../panel-plugin/fsguard.c:155
+#: ../panel-plugin/fsguard.c:160
 #, c-format
-msgid "Only %.2f MB space left on %s (%s)!"
-msgstr "Тільки %.2f Мб вільного простору залишилось на %s (%s)!"
+msgid "%.2f MB"
+msgstr "%.2f Мб"
 
-#: ../panel-plugin/fsguard.c:165
+#: ../panel-plugin/fsguard.c:169
 #, c-format
-msgid "Only %.2f GB space left on %s!"
-msgstr "Тільки %.2f Гб вільного простору залишилось на %s!"
+msgid "Only %s space left on %s (%s)!"
+msgstr "Тільки %s вільного простору залишилось на %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:167
+#: ../panel-plugin/fsguard.c:171
 #, c-format
-msgid "Only %.2f MB space left on %s!"
-msgstr "Тільки %.2f Мб вільного простору залишилось на %s!"
+msgid "Only %s space left on %s!"
+msgstr "Тільки %s вільного простору залишилось на %s!"
 
-#: ../panel-plugin/fsguard.c:179
+#: ../panel-plugin/fsguard.c:182
 #, c-format
-msgid "%.2f GB space left on %s (%s)"
-msgstr "%.2f Гб вільного простору залишилось на %s (%s)"
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s вільного простору залишилось на %s (%s)"
 
-#: ../panel-plugin/fsguard.c:181
+#: ../panel-plugin/fsguard.c:184
 #, c-format
-msgid "%.2f MB space left on %s (%s)"
-msgstr "%.2f Мб вільного простору залишилось на %s (%s)"
+msgid "%s/%s space left on %s"
+msgstr "%s/%s вільного простору залишилось на %s"
 
-#: ../panel-plugin/fsguard.c:185
-#, c-format
-msgid "%.2f GB space left on %s"
-msgstr "%.2f Гб вільного простору залишилось на %s"
-
-#: ../panel-plugin/fsguard.c:187
-#, c-format
-msgid "%.2f MB space left on %s"
-msgstr "%.2f Мб вільного простору залишилось на %s"
-
-#: ../panel-plugin/fsguard.c:192
+#: ../panel-plugin/fsguard.c:190
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
+msgstr "Неможливо перевірити точку монтування %s, будь-ласка перевірте Ваш config"
+
+#: ../panel-plugin/fsguard.c:431
+msgid "Name"
 msgstr ""
-"неможливо перевірити точку монтування %s, будь-ласка перевірте Ваш config"
 
-#: ../panel-plugin/fsguard.c:409
-msgid "label"
-msgstr "мітка"
+#: ../panel-plugin/fsguard.c:432
+msgid "Mount point"
+msgstr "Точка монтування"
 
-#: ../panel-plugin/fsguard.c:410
-msgid "mountpoint"
-msgstr "точка монтування"
-
-#: ../panel-plugin/fsguard.c:411
-msgid "high alarm limit (MB)"
-msgstr "Найвищий ліміт для тривоги (Мб)"
-
-#: ../panel-plugin/fsguard.c:412
-msgid "high warn limit (MB)"
+#: ../panel-plugin/fsguard.c:433
+msgid "Warning limit (MB)"
 msgstr "Найвищий ліміт для попередження (Мб)"
 
-#: ../panel-plugin/fsguard.c:413
-msgid "filemanager"
-msgstr "файловий менеджер"
+#: ../panel-plugin/fsguard.c:434
+#, fuzzy
+msgid "Urgent limit (MB)"
+msgstr "Найвищий ліміт для тривоги (Мб)"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:418 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:435
+msgid "File manager"
+msgstr "Файловий менеджер"
+
+#: ../panel-plugin/fsguard.c:436
+msgid "Display size"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:437
+msgid "Display progress bar"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:442
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Контролер вільного місця"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Спостереження за вільним простором на диску"
+
+#~ msgid "Only %.2f MB space left on %s (%s)!"
+#~ msgstr "Тільки %.2f Мб вільного простору залишилось на %s (%s)!"
+#~ msgid "Only %.2f MB space left on %s!"
+#~ msgstr "Тільки %.2f Мб вільного простору залишилось на %s!"
+#~ msgid "%.2f MB space left on %s (%s)"
+#~ msgstr "%.2f Мб вільного простору залишилось на %s (%s)"
+#~ msgid "%.2f MB space left on %s"
+#~ msgstr "%.2f Мб вільного простору залишилось на %s"
+#~ msgid "label"
+#~ msgstr "мітка"
+#~ msgid "high alarm limit (MB)"
+#~ msgstr "Найвищий ліміт для тривоги (Мб)"
+
