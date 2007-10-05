@@ -1,32 +1,20 @@
 plugindir = $(libexecdir)/xfce4/panel-plugins
 plugin_PROGRAMS = xfce4-fsguard-plugin
 
-xfce4_fsguard_plugin_CFLAGS =									\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"						\
-	@LIBXFCE4PANEL_CFLAGS@
-
-xfce4_fsguard_plugin_LDADD =									\
-	@LIBXFCE4PANEL_LIBS@
-
 xfce4_fsguard_plugin_SOURCES =									\
 	fsguard.c
 
-noinst_DATA =													\
-	icons.h 													\
-	red.xpm 													\
-	green.xpm 													\
-	yellow.xpm 													\
-	unknown.xpm
+xfce4_fsguard_plugin_CFLAGS =									\
+	-I$(top_srcdir)												\
+	@LIBXFCEGUI4_CFLAGS@										\
+	@LIBXFCE4UTIL_CFLAGS@										\
+	@LIBXFCE4PANEL_CFLAGS@										\
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-icons.h: $(srcdir)/red.xpm
-	gdk-pixbuf-csource --raw --build-list 						\
-	icon_red red.xpm > $(srcdir)/icons.h
-	gdk-pixbuf-csource --raw --build-list 						\
-	icon_green green.xpm >> $(srcdir)/icons.h
-	gdk-pixbuf-csource --raw --build-list 						\
-	icon_yellow yellow.xpm >> $(srcdir)/icons.h
-	gdk-pixbuf-csource --raw --build-list 						\
-	icon_unknown unknown.xpm >> $(srcdir)/icons.h
+xfce4_fsguard_plugin_LDADD =									\
+	@LIBXFCEGUI4_LIBS@											\
+	@LIBXFCE4UTIL_LIBS@											\
+	@LIBXFCE4PANEL_LIBS@
 
 # .desktop file
 #
@@ -37,13 +25,13 @@ icons.h: $(srcdir)/red.xpm
 # 
 desktop_in_in_files = fsguard.desktop.in.in
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
-	
+
 desktopdir = $(datadir)/xfce4/panel-plugins
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST = 													\
-	$(desktop_in_in_files) $(noinst_DATA)
+EXTRA_DIST =													\
+	$(desktop_in_in_files)
 
 DISTCLEANFILES =												\
 	$(desktop_DATA) $(desktop_in_files)

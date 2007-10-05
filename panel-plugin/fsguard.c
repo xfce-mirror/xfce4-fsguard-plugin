@@ -48,22 +48,13 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfcegui4/libxfcegui4.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
+#include <libxfce4panel/xfce-panel-convenience.h>
 #include <libxfce4panel/xfce-hvbox.h>
 
-#include "icons.h"
-
-#define HORIZONTAL 0
-#define VERTICAL 1
-
-#define TINY 0
-#define SMALL 1
-#define MEDIUM 2
-#define LARGE 3
-
-#define ICONSIZETINY 24 
-#define ICONSIZESMALL 30
-#define ICONSIZEMEDIUM 45
-#define ICONSIZELARGE 60
+#define ICON_NORMAL             0
+#define ICON_WARNING            1
+#define ICON_URGENT             2
+#define ICON_INSENSITIVE        3
 
 #define BORDER 8
 
@@ -75,6 +66,7 @@ typedef struct
 {
     XfcePanelPlugin    *plugin;
     gboolean            seen;
+    gint                icon_id;
     gint                timeout;
     gint                limit_warning;
     gint                limit_urgent;
@@ -86,11 +78,12 @@ typedef struct
 
     GtkWidget          *ebox;
     GtkWidget          *box;
-    GtkWidget          *lab_name;
     GtkWidget          *btn_panel;
+    GtkWidget          *icon_panel;
+    GtkWidget          *lab_name;
+    GtkWidget          *lab_size;
     GtkWidget          *pb_box;
     GtkWidget          *progress_bar;
-    GtkWidget          *lab_size;
 } FsGuard;
 
 static GtkTooltips *tooltips = NULL;
@@ -111,9 +104,48 @@ fsguard_refresh_name (FsGuard *fsguard)
 }
 
 static void
-fsguard_open_mnt (GtkWidget *widget, gpointer user_data)
+fsguard_set_icon (FsGuard *fsguard, gint id)
 {
-    FsGuard *fsguard = user_data;
+    GdkPixbuf          *pixbuf;
+    gint                size;
+
+    if (id == fsguard->icon_id)
+        return;
+
+    fsguard->icon_id = id;
+    size = xfce_panel_plugin_get_size (fsguard->plugin);
+    size = size - 2 - (2 * MAX (fsguard->btn_panel->style->xthickness,
+                                fsguard->btn_panel->style->ythickness));
+
+    switch (id) {
+      default:
+      case ICON_NORMAL:
+        pixbuf = xfce_themed_icon_load ("xfce4-fsguard-plugin", size);
+        break;
+      case ICON_WARNING:
+        pixbuf = xfce_themed_icon_load ("xfce4-fsguard-plugin-warning", size);
+        break;
+      case ICON_URGENT:
+        pixbuf = xfce_themed_icon_load ("xfce4-fsguard-plugin-urgent", size);
+        break;
+    }
+
+    gtk_widget_set_sensitive (fsguard->icon_panel, id != ICON_INSENSITIVE);
+    gtk_image_set_from_pixbuf (GTK_IMAGE (fsguard->icon_panel), pixbuf);
+    g_object_unref (G_OBJECT (pixbuf));
+}
+
+static inline void
+fsguard_refresh_icon (FsGuard *fsguard)
+{
+    gint icon_id = fsguard->icon_id;
+    fsguard->icon_id = -1;
+    fsguard_set_icon (fsguard, icon_id);
+}
+
+static void
+fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
+{
     GString *cmd;
     if (strlen(fsguard->filemanager) == 0) {
         return;
@@ -130,7 +162,6 @@ fsguard_open_mnt (GtkWidget *widget, gpointer user_data)
 static gboolean
 fsguard_check_fs (FsGuard *fsguard)
 {
-    GdkPixbuf          *pb;
     float               size = 0;
     float               total = 0;
     float               freeblocks = 0;
@@ -138,16 +169,17 @@ fsguard_check_fs (FsGuard *fsguard)
     long                blocksize;
     int                 err;
     gchar               msg_size[100], msg_total_size[100], msg[100];
+    gint                icon_id = ICON_INSENSITIVE;
     static struct statfs fsd;
 
     err = statfs (fsguard->path, &fsd);
     
     if (err != -1) {
-        blocksize = fsd.f_bsize;
-        freeblocks = fsd.f_bavail;
-        totalblocks = fsd.f_blocks;
-        size = (freeblocks * blocksize) / 1048576;
-        total = (totalblocks * blocksize) / 1048576;
+        blocksize       = fsd.f_bsize;
+        freeblocks      = fsd.f_bavail;
+        totalblocks     = fsd.f_blocks;
+        size            = (freeblocks * blocksize) / 1048576;
+        total           = (totalblocks * blocksize) / 1048576;
 
         if (total > 1024) {
             g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.2f GB"), total/1024);
@@ -163,7 +195,7 @@ fsguard_check_fs (FsGuard *fsguard)
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), size / total);
 
         if (size <= fsguard->limit_urgent) {
-            pb = gdk_pixbuf_new_from_inline (sizeof(icon_red), icon_red, FALSE, NULL);
+            icon_id = ICON_URGENT;
 	    if (!fsguard->seen) {
                 if (fsguard->name != NULL && (strcmp(fsguard->name,"")) && (strcmp(fsguard->path, fsguard->name))) {
                     xfce_warn (_("Only %s space left on %s (%s)!"), msg_size, fsguard->path, fsguard->name);
@@ -173,9 +205,9 @@ fsguard_check_fs (FsGuard *fsguard)
 		fsguard->seen = TRUE;
 	    }
         } else if (size >= fsguard->limit_urgent && size <= fsguard->limit_warning) {
-            pb = gdk_pixbuf_new_from_inline (sizeof(icon_yellow), icon_yellow, FALSE, NULL);
+            icon_id = ICON_WARNING;
         } else {
-            pb = gdk_pixbuf_new_from_inline (sizeof(icon_green), icon_green, FALSE, NULL);
+            icon_id = ICON_NORMAL;
         }
 
         if (fsguard->name != NULL && (strcmp(fsguard->name,"")) && (strcmp(fsguard->path, fsguard->name))) {
@@ -186,14 +218,12 @@ fsguard_check_fs (FsGuard *fsguard)
     } else {
         gtk_label_set_text (GTK_LABEL(fsguard->lab_size), "0.0 MB");
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), 0.0);
-        pb = gdk_pixbuf_new_from_inline (sizeof(icon_unknown), icon_unknown, FALSE, NULL);
         g_snprintf (msg, sizeof (msg), _("could not check mountpoint %s, please check your config"), fsguard->path);
     }
     
     gtk_tooltips_set_tip (tooltips, fsguard->ebox, msg, NULL);
-       
-    xfce_iconbutton_set_pixbuf(XFCE_ICONBUTTON(fsguard->btn_panel), pb);
-    g_object_unref (G_OBJECT(pb));
+    fsguard_set_icon (fsguard, icon_id);
+
     return TRUE;
 }
 
@@ -208,13 +238,14 @@ fsguard_read_config (FsGuard *fsguard)
     rc = xfce_rc_simple_open (file, FALSE);
     g_free (file);
 
+    fsguard->seen               = FALSE;
     fsguard->name               = g_strdup (xfce_rc_read_entry (rc, "label", ""));
     fsguard->path               = g_strdup (xfce_rc_read_entry (rc, "mnt", "/"));
     fsguard->filemanager        = g_strdup (xfce_rc_read_entry (rc, "filemanager", "Thunar"));
     fsguard->show_size          = xfce_rc_read_bool_entry (rc, "lab_size_visible", TRUE);
     fsguard->show_progress_bar  = xfce_rc_read_bool_entry (rc, "progress_bar_visible", TRUE);
-    fsguard->limit_warning      = xfce_rc_read_int_entry (rc, "yellow", 0);
-    fsguard->limit_urgent       = xfce_rc_read_int_entry (rc, "red", 0);
+    fsguard->limit_warning      = xfce_rc_read_int_entry (rc, "yellow", 1500);
+    fsguard->limit_urgent       = xfce_rc_read_int_entry (rc, "red", 300);
 
     xfce_rc_close (rc);
 }
@@ -265,8 +296,8 @@ fsguard_new (XfcePanelPlugin *plugin)
 
     fsguard->lab_name = gtk_label_new (fsguard->name);
 
-    fsguard->btn_panel = xfce_iconbutton_new ();
-    gtk_button_set_relief (GTK_BUTTON (fsguard->btn_panel), GTK_RELIEF_NONE);
+    fsguard->btn_panel = xfce_create_panel_button ();
+    fsguard->icon_panel = gtk_image_new ();
 
     fsguard->progress_bar = gtk_progress_bar_new ();
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), 0.0);
@@ -290,8 +321,9 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_container_add (GTK_CONTAINER(fsguard->ebox), fsguard->box);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_name);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->btn_panel);
+    gtk_container_add (GTK_CONTAINER(fsguard->btn_panel), fsguard->icon_panel);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_size);
-    gtk_box_pack_start (GTK_BOX (fsguard->box), fsguard->pb_box, TRUE, TRUE, 0);
+    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->pb_box);
     gtk_container_add (GTK_CONTAINER(fsguard->pb_box), fsguard->progress_bar);
 
     xfce_panel_plugin_add_action_widget (plugin, fsguard->ebox);
@@ -350,6 +382,7 @@ fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
     }
 
     gtk_widget_set_size_request (GTK_WIDGET(plugin), -1, -1);
+    fsguard_refresh_icon (fsguard);
 
     return TRUE;
 }
@@ -381,14 +414,14 @@ fsguard_ent3_changed (GtkWidget *widget, FsGuard *fsguard)
 static void
 fsguard_spin1_changed (GtkWidget *widget, FsGuard *fsguard)
 {
-    fsguard->limit_urgent = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
+    fsguard->limit_warning = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
     fsguard->seen = FALSE;
 }
 
 static void
 fsguard_spin2_changed (GtkWidget *widget, FsGuard *fsguard)
 {
-    fsguard->limit_warning = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
+    fsguard->limit_urgent = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
 }
 
 static void
@@ -488,9 +521,9 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(check2), fsguard->show_progress_bar);
 
     spin1 = gtk_spin_button_new_with_range (0, 1000000, 10);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), fsguard->limit_urgent);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), fsguard->limit_warning);
     spin2 = gtk_spin_button_new_with_range (0, 1000000, 10);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), fsguard->limit_warning);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), fsguard->limit_urgent);
 
     g_signal_connect (ent1, "changed", G_CALLBACK(fsguard_ent1_changed), fsguard);
     g_signal_connect (ent2, "changed", G_CALLBACK(fsguard_ent2_changed), fsguard);
@@ -532,7 +565,6 @@ fsguard_construct (XfcePanelPlugin *plugin)
  
     FsGuard *fsguard = fsguard_new (plugin);
     fsguard_check_fs (fsguard);
-    fsguard->seen = FALSE;
     fsguard->timeout =
       g_timeout_add (8192, (GSourceFunc) fsguard_check_fs, fsguard);
 
