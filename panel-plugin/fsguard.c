@@ -68,8 +68,8 @@ typedef struct
     gboolean            seen;
     gint                icon_id;
     gint                timeout;
-    gint                limit_warning;
-    gint                limit_urgent;
+    guint               limit_warning;
+    guint               limit_urgent;
     gboolean            show_size;
     gboolean            show_progress_bar;
     gchar              *name;
@@ -80,6 +80,7 @@ typedef struct
     GtkWidget          *box;
     GtkWidget          *btn_panel;
     GtkWidget          *icon_panel;
+    GtkWidget          *lab_box;
     GtkWidget          *lab_name;
     GtkWidget          *lab_size;
     GtkWidget          *pb_box;
@@ -295,6 +296,8 @@ fsguard_new (XfcePanelPlugin *plugin)
                       FALSE, 2);
 
     fsguard->lab_name = gtk_label_new (fsguard->name);
+    fsguard->lab_size = gtk_label_new (NULL);
+    fsguard->lab_box = gtk_vbox_new (FALSE, 0);
 
     fsguard->btn_panel = xfce_create_panel_button ();
     fsguard->icon_panel = gtk_image_new ();
@@ -304,14 +307,11 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
                                       orientation == GTK_ORIENTATION_HORIZONTAL ?
                                       GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
-
     fsguard->pb_box =
       xfce_hvbox_new (orientation == GTK_ORIENTATION_HORIZONTAL ?
                       GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL,
                       FALSE, 0);
     gtk_container_set_border_width (GTK_CONTAINER (fsguard->pb_box), 2);
-
-    fsguard->lab_size = gtk_label_new (NULL);
 
     g_signal_connect (G_OBJECT(fsguard->btn_panel),
                       "clicked",
@@ -319,10 +319,11 @@ fsguard_new (XfcePanelPlugin *plugin)
                       fsguard);
 
     gtk_container_add (GTK_CONTAINER(fsguard->ebox), fsguard->box);
-    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_name);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->btn_panel);
     gtk_container_add (GTK_CONTAINER(fsguard->btn_panel), fsguard->icon_panel);
-    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_size);
+    gtk_container_add (GTK_CONTAINER(fsguard->lab_box), fsguard->lab_name);
+    gtk_container_add (GTK_CONTAINER(fsguard->lab_box), fsguard->lab_size);
+    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_box);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->pb_box);
     gtk_container_add (GTK_CONTAINER(fsguard->pb_box), fsguard->progress_bar);
 
@@ -520,9 +521,9 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     check2 = gtk_check_button_new_with_label (_(text[6]));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(check2), fsguard->show_progress_bar);
 
-    spin1 = gtk_spin_button_new_with_range (0, 1000000, 10);
+    spin1 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), fsguard->limit_warning);
-    spin2 = gtk_spin_button_new_with_range (0, 1000000, 10);
+    spin2 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), fsguard->limit_urgent);
 
     g_signal_connect (ent1, "changed", G_CALLBACK(fsguard_ent1_changed), fsguard);

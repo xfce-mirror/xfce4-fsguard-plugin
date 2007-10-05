@@ -1,4 +1,2 @@
-- Use a nicer icon (work in progress)
-- Mix the two labels name+size, separate them with \n
 ? Possibility to hide the icon so it fits the same gui as netload,
   systemload, ...
