@@ -72,6 +72,7 @@ typedef struct
     guint               limit_urgent;
     gboolean            show_size;
     gboolean            show_progress_bar;
+    gboolean            hide_button;
     gchar              *name;
     gchar              *path;
     gchar              *filemanager;
@@ -85,6 +86,7 @@ typedef struct
     GtkWidget          *lab_size;
     GtkWidget          *pb_box;
     GtkWidget          *progress_bar;
+    GtkWidget          *cb_hide_button;
 } FsGuard;
 
 static GtkTooltips *tooltips = NULL;
@@ -93,14 +95,24 @@ static GtkTooltips *tooltips = NULL;
 
 // all functions {{{
 
+static inline void
+fsguard_refresh_button (FsGuard *fsguard)
+{
+    if (GTK_IS_WIDGET (fsguard->cb_hide_button)
+        && fsguard->hide_button == TRUE && *(fsguard->name) == '\0'
+        && !fsguard->show_size && !fsguard->show_progress_bar)
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button), FALSE);
+}
+
 static void
 fsguard_refresh_name (FsGuard *fsguard)
 {
-    if (fsguard->name != NULL && (strlen (fsguard->name) > 0)) {
+    if (*(fsguard->name) != '\0') {
         gtk_label_set_text (GTK_LABEL(fsguard->lab_name), fsguard->name);
         gtk_widget_show (fsguard->lab_name);
     } else {
         gtk_widget_hide (fsguard->lab_name);
+        fsguard_refresh_button (fsguard);
     }
 }
 
@@ -238,6 +250,7 @@ fsguard_read_config (FsGuard *fsguard)
     DBG ("Lookup rc file `%s'", file);
     rc = xfce_rc_simple_open (file, FALSE);
     g_free (file);
+    g_return_if_fail (rc);
 
     fsguard->seen               = FALSE;
     fsguard->name               = g_strdup (xfce_rc_read_entry (rc, "label", ""));
@@ -245,6 +258,7 @@ fsguard_read_config (FsGuard *fsguard)
     fsguard->filemanager        = g_strdup (xfce_rc_read_entry (rc, "filemanager", "Thunar"));
     fsguard->show_size          = xfce_rc_read_bool_entry (rc, "lab_size_visible", TRUE);
     fsguard->show_progress_bar  = xfce_rc_read_bool_entry (rc, "progress_bar_visible", TRUE);
+    fsguard->hide_button        = xfce_rc_read_bool_entry (rc, "hide_button", FALSE);
     fsguard->limit_warning      = xfce_rc_read_int_entry (rc, "yellow", 1500);
     fsguard->limit_urgent       = xfce_rc_read_int_entry (rc, "red", 300);
 
@@ -257,19 +271,16 @@ fsguard_write_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
     char               *file;
     XfceRc             *rc;
 
-    if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))
-        return;
-    
+    file = xfce_panel_plugin_save_location (plugin, TRUE);
     rc = xfce_rc_simple_open (file, FALSE);
     g_free (file);
+    g_return_if_fail (rc);
 
-    if (!rc)
-        return;
-    
     xfce_rc_write_int_entry (rc, "yellow", fsguard->limit_warning);
     xfce_rc_write_int_entry (rc, "red", fsguard->limit_urgent);
     xfce_rc_write_bool_entry (rc, "lab_size_visible", fsguard->show_size);
     xfce_rc_write_bool_entry (rc, "progress_bar_visible", fsguard->show_progress_bar);
+    xfce_rc_write_bool_entry (rc, "hide_button", fsguard->hide_button);
     xfce_rc_write_entry (rc, "label", fsguard->name);
     xfce_rc_write_entry (rc, "mnt", fsguard->path);
     xfce_rc_write_entry (rc, "filemanager", fsguard->filemanager);
@@ -295,7 +306,7 @@ fsguard_new (XfcePanelPlugin *plugin)
                       GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL,
                       FALSE, 2);
 
-    fsguard->lab_name = gtk_label_new (fsguard->name);
+    fsguard->lab_name = gtk_label_new (NULL);
     fsguard->lab_size = gtk_label_new (NULL);
     fsguard->lab_box = gtk_vbox_new (FALSE, 0);
 
@@ -337,6 +348,8 @@ fsguard_new (XfcePanelPlugin *plugin)
         gtk_widget_hide (fsguard->lab_size);
     if (fsguard->show_progress_bar != TRUE)
         gtk_widget_hide (fsguard->pb_box);
+    if (fsguard->hide_button != FALSE)
+        gtk_widget_hide (fsguard->btn_panel);
 
     return fsguard;
 }
@@ -431,8 +444,10 @@ fsguard_check1_changed (GtkWidget *widget, FsGuard *fsguard)
     fsguard->show_size = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
     if (fsguard->show_size)
         gtk_widget_show (fsguard->lab_size);
-    else
+    else {
         gtk_widget_hide (fsguard->lab_size);
+        fsguard_refresh_button (fsguard);
+    }
 }
 
 static void
@@ -441,8 +456,23 @@ fsguard_check2_changed (GtkWidget *widget, FsGuard *fsguard)
     fsguard->show_progress_bar = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
     if (fsguard->show_progress_bar)
         gtk_widget_show (fsguard->pb_box);
-    else
+    else {
         gtk_widget_hide (fsguard->pb_box);
+        fsguard_refresh_button (fsguard);
+    }
+}
+
+static void
+fsguard_check3_changed (GtkWidget *widget, FsGuard *fsguard)
+{
+    fsguard->hide_button = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
+
+    if (fsguard->hide_button == FALSE)
+        gtk_widget_show (fsguard->btn_panel);
+    else {
+        gtk_widget_hide (fsguard->btn_panel);
+        fsguard_refresh_button (fsguard);
+    }
 }
 
 static void
@@ -458,7 +488,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 {
     GtkWidget *dlg;
     GtkWidget *hbox, *vbox1, *vbox2, *spin1, *spin2;
-    GtkWidget *lab1, *lab2, *lab3, *lab4, *lab5, *lab6, *lab7;
+    GtkWidget *lab1, *lab2, *lab3, *lab4, *lab5, *lab6, *lab7, *lab8;
     GtkWidget *ent1, *ent2, *ent3;
     GtkWidget *check1, *check2;
     gchar *text[] = {
@@ -469,6 +499,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 	     N_("File manager"),
 	     N_("Display size"),
 	     N_("Display progress bar"),
+	     N_("Hide button"),
     };
     xfce_panel_plugin_block_menu (plugin);
     
@@ -502,6 +533,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     lab5 = gtk_label_new (_(text[4]));
     lab6 = gtk_label_new (NULL);
     lab7 = gtk_label_new (NULL);
+    lab8 = gtk_label_new (NULL);
 
     ent1 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY(ent1), 16);
@@ -515,16 +547,20 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_entry_set_max_length (GTK_ENTRY(ent3), 16);
     gtk_entry_set_text (GTK_ENTRY(ent3), fsguard->filemanager);
 
+    spin1 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), fsguard->limit_warning);
+
+    spin2 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), fsguard->limit_urgent);
+
     check1 = gtk_check_button_new_with_label (_(text[5]));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(check1), fsguard->show_size);
  
     check2 = gtk_check_button_new_with_label (_(text[6]));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(check2), fsguard->show_progress_bar);
 
-    spin1 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin1), fsguard->limit_warning);
-    spin2 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON(spin2), fsguard->limit_urgent);
+    fsguard->cb_hide_button = gtk_check_button_new_with_label (_(text[7]));
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(fsguard->cb_hide_button), fsguard->hide_button);
 
     g_signal_connect (ent1, "changed", G_CALLBACK(fsguard_ent1_changed), fsguard);
     g_signal_connect (ent2, "changed", G_CALLBACK(fsguard_ent2_changed), fsguard);
@@ -533,6 +569,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     g_signal_connect (spin2, "value-changed", G_CALLBACK(fsguard_spin2_changed), fsguard);
     g_signal_connect (check1, "toggled", G_CALLBACK(fsguard_check1_changed), fsguard);
     g_signal_connect (check2, "toggled", G_CALLBACK(fsguard_check2_changed), fsguard);
+    g_signal_connect (fsguard->cb_hide_button, "toggled", G_CALLBACK(fsguard_check3_changed), fsguard);
 
     gtk_box_pack_start (GTK_BOX(vbox1), lab1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab2, TRUE, FALSE, 1);
@@ -541,6 +578,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_box_pack_start (GTK_BOX(vbox1), lab4, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab6, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox1), lab7, TRUE, FALSE, 1);
+    gtk_box_pack_start (GTK_BOX(vbox1), lab8, TRUE, FALSE, 1);
 
     gtk_box_pack_start (GTK_BOX(vbox2), ent1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), ent2, TRUE, FALSE, 1);
@@ -549,6 +587,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_box_pack_start (GTK_BOX(vbox2), spin2, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), check1, TRUE, FALSE, 1);
     gtk_box_pack_start (GTK_BOX(vbox2), check2, TRUE, FALSE, 1);
+    gtk_box_pack_start (GTK_BOX(vbox2), fsguard->cb_hide_button, TRUE, FALSE, 1);
 
     gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), hbox,
                         TRUE, TRUE, 0);
