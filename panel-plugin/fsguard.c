@@ -56,7 +56,11 @@
 #define ICON_URGENT             2
 #define ICON_INSENSITIVE        3
 
-#define BORDER 8
+#define BORDER                  8
+
+#define COLOR_NORMAL            "#00C000"
+#define COLOR_WARNING           "#FFE500"
+#define COLOR_URGENT            "#FF4F00"
 
 // }}}
 
@@ -157,6 +161,37 @@ fsguard_refresh_icon (FsGuard *fsguard)
 }
 
 static void
+fsguard_refresh_monitor (FsGuard *fsguard)
+{
+    GdkColor            color;
+
+    switch (fsguard->icon_id) {
+      default:
+      case ICON_NORMAL:
+        gdk_color_parse (COLOR_NORMAL, &color);
+        break;
+
+      case ICON_WARNING:
+        gdk_color_parse (COLOR_WARNING, &color);
+        break;
+
+      case ICON_URGENT:
+        gdk_color_parse (COLOR_URGENT, &color);
+        break;
+    }
+
+    gtk_widget_modify_bg (GTK_WIDGET (fsguard->progress_bar),
+                          GTK_STATE_PRELIGHT,
+                          &color);
+    gtk_widget_modify_bg (GTK_WIDGET (fsguard->progress_bar),
+                          GTK_STATE_SELECTED,
+                          &color);
+    gtk_widget_modify_base (GTK_WIDGET (fsguard->progress_bar),
+                            GTK_STATE_SELECTED,
+                            &color);
+}
+
+static void
 fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
 {
     GString *cmd;
@@ -236,6 +271,7 @@ fsguard_check_fs (FsGuard *fsguard)
     
     gtk_tooltips_set_tip (tooltips, fsguard->ebox, msg, NULL);
     fsguard_set_icon (fsguard, icon_id);
+    fsguard_refresh_monitor (fsguard);
 
     return TRUE;
 }

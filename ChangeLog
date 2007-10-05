@@ -1,3 +1,55 @@
+2007-10-05  Mike Massonnet <mmassonnet@xfce.org>
+
+	* panel-plugin/fsguard.c: Remove deprecated #define, add 4 new
+	  #define for the icon style.  Add icon_id and an icon widget in
+	  the structure.  Include xfce-panel-convenience.h for the
+	  button panel.
+	* panel-plugin/fsguard.c(fsguard_set_icon): New function.  Sets
+	  the image inside the panel button.
+	* panel-plugin/fsguard.c(fsguard_refresh_icon): New function.
+	  Refresh the current icon the panel button.
+	* panel-plugin/fsguard.c(fsguard_refresh_monitor): New function.
+	  Set the color of the progress bar according the free disk space
+	  limit.
+	* panel-plugin/fsguard.c(fsguard_check_fs): Replace code for the
+	  new image inside the button panel.
+	* panel-plugin/fsguard.c(fsguard_read_config): Set default
+	  values for the warning and urgent limit.
+	* panel-plugin/fsguard.c(fsguard_new): Replace
+	  xfce_iconbutton_new with xfce_create_panel_button and put a
+	  GtkImage in that one.
+	* panel-plugin/fsguard.c(fsguard_spin1_changed),
+	  panel-plugin/fsguard.c(fsguard_spin2_changed),
+	  panel-plugin/fsguard.c(fsguard_create_options): Fixed a mix
+	  between limit_urgent and limit_warning.
+	* configure.in.in, icons/*/**,
+	  panel-plugin/fsguard.desktop.in.in,
+	  panel-plugin/Makefile.am: Removed old icons against 3 new
+	  icons.
+
+2007-10-04  Mike Massonnet <mmassonnet@xfce.org>
+
+	* panel-plugin/fsguard.c: Add defined(__FreeBSD_kernel__) to
+	  build the plugin on GNU/kFreeBSD.  Fix bug #3033.
+	* fsguard.c: Code cleaning in general.
+	* fsguard.c(typedef struct FsGuard): Dropped size and
+	  orientation, and renamed some properties.  Added 3 new
+	  widgets: a progress bar, a box for the progress bar, and a
+	  label for the free space.
+	* fsguard.c(fsguard_check_fs): Add total size in the tooltip.
+	* fsguard.c(setup_fsguard): Renamed to fsguard_new.  Read the
+	  config there to create a new plugin with better default
+	  values.  Create the widget for the name and avoid to destroy
+	  it in fsguard_recreate_gui.
+	* fsguard.c(fsguard_recreate_gui): Renamed to
+	  fsguard_refresh_name.
+	* fsguard.c(setup_fsguard), fsguard.c(fsguard_set_orientation):
+	  Replace orientation code with an XfceHVBox widget.
+	* fsguard.c(fsguard_create_options): String modifications.  Two
+	  new checkboxes to display the size and progress bar.
+	* po/: Run make update-po and update fuzzy strings.
+
+
 2006-01-01 15:04  p0llux
 
 	* configure.ac, po/fr.po: add fr translations from Stephane Roy

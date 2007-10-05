@@ -1,31 +1,38 @@
+20071005 (0.3.99.1):
+--------------------
+	* New options to display the free space in a text label and in a
+	  progress bar, and the possibility to hide the button in the panel
+	* Redefined the strings
+	* Bug fixes and code cleanup
+
 20060206 (0.3.0):
 -----------------
-	* ported to xfce 4.4 by Jasper Huijsmans, thanks!
+	* Ported to xfce 4.4 by Jasper Huijsmans, thanks!
 
 20051011 (0.2.1):
 -----------------
-	* the icon is now properly centered when no label is given
+	* The icon is now properly centered when no label is given
 
 20040204:
 ---------
-        * now it's possible to add mountpoints with max 32 chars
+	* Now it's possible to add mountpoints with max 32 chars
 	  as requested by Stefan Misel
 
 20040109:
 ---------
-        * added Polish translation by Daniel Mroz
+	* Added Polish translation by Daniel Mroz
 
 20031124:
 ---------
-        * added Korean translation by David Choi
+	* Added Korean translation by David Choi
 
 20031122:
 ---------
-        * fixed memory leak
+	* Fixed memory leak
 
 20031112:
 ---------
-        * new option to choose the filemanager for button1 click
+	* New option to choose the filemanager for button1 click
 
 20031111:
 ---------
