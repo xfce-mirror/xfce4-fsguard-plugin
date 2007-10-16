@@ -3,9 +3,9 @@
 
 The FSGuard panel plugin checks free space on a chosen mount point
 frequently and displays a message when a limit is reached.  There are
-two limits: a warning limit, and an urgent limit.
-
-The icon button can be clicked to open the chosen mount point.
+two limits: a warning limit where only the icon changes, and an urgent
+limit that advise the user with a message.  The icon button can be
+clicked to open the chosen mount point.
 
 
  Homepage

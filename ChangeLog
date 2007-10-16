@@ -1,3 +1,7 @@
+2007-10-16  Mike Massonnet <mmassonnet@xfce.org>
+
+	* === Release 0.4 RC1 (0.3.99.1) ===
+
 2007-10-05  Mike Massonnet <mmassonnet@xfce.org>
 
 	* panel-plugin/fsguard.c: Remove deprecated #define, add 4 new
