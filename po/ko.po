@@ -52,8 +52,6 @@ msgstr "%s/%s가 남은 %s!"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "%s에 대한 마운트 지점을 검사하지 못 했으니, 설정을 확인해 보십시오."
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "남은 용량 확인"

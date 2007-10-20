@@ -52,8 +52,6 @@ msgstr "%s/%s leku libre dago %s-(e)n"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Ezin da %s muntatze puntua egiaztatau, konfigurazio egiaztatu"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Leku Libre Egiaztatzailea"

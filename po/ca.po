@@ -57,8 +57,6 @@ msgstr ""
 "no s'ha pogut verificar el punt de muntatge %s, hauríeu de comprovar la "
 "vostra configuració"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Verificador de l'espai lliure"

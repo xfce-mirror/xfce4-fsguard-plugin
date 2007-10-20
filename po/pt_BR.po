@@ -53,8 +53,6 @@ msgstr ""
 "Não foi possível verificar o ponto de montagem %s, por favor verifique sua "
 "configuração"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Verificador de Espaço Livre"

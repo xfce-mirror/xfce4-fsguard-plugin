@@ -50,8 +50,6 @@ msgstr "%s/%s trống trên %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "không kiểm tra được điểm gắn %s, xin hãy xem lại cấu hình"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Trình kiểm tra không gian trống"

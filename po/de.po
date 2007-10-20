@@ -54,8 +54,6 @@ msgstr ""
 "Der Einhängepunkt »%s« konnte nicht geprüft werden, bitte prüfen Sie Ihre "
 "Konfiguration."
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Speicherplatz-Prüfung"
@@ -90,7 +88,7 @@ msgstr "Name"
 
 #: ../panel-plugin/fsguard.c:602
 msgid "Display size"
-msgstr "Freier Speicher anzeigen"
+msgstr "Freien Speicher anzeigen"
 
 #: ../panel-plugin/fsguard.c:606
 msgid "Display meter"

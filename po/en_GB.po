@@ -52,8 +52,6 @@ msgstr "%s/%s space left on %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "could not check mountpoint %s, please check your config"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Free Space Checker"

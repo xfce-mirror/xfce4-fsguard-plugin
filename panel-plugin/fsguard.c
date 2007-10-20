@@ -3,6 +3,7 @@
 /*
  * Copyright (c) 2003 Andre Lerche <a.lerche@gmx.net>
  * Copyright (c) 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
+ * Copyright (c) 2007 Mike Massonnet <mmassonnet@xfce.org>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -102,6 +103,7 @@ static GtkTooltips *tooltips = NULL;
 static inline void
 fsguard_refresh_button (FsGuard *fsguard)
 {
+    /* Refresh the checkbox state as seen in the dialog */
     if (GTK_IS_WIDGET (fsguard->cb_hide_button)
         && fsguard->hide_button == TRUE && *(fsguard->name) == '\0'
         && !fsguard->show_size && !fsguard->show_progress_bar)
@@ -439,15 +441,7 @@ fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 }
 
 static void
-fsguard_ent1_changed (GtkWidget *widget, FsGuard *fsguard)
-{
-    g_free (fsguard->name);
-    fsguard->name = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
-    fsguard_refresh_name (fsguard);
-}
-
-static void
-fsguard_ent2_changed (GtkWidget *widget, FsGuard *fsguard)
+fsguard_entry1_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     g_free (fsguard->path);
     fsguard->path = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
@@ -456,7 +450,7 @@ fsguard_ent2_changed (GtkWidget *widget, FsGuard *fsguard)
 }
 
 static void
-fsguard_ent3_changed (GtkWidget *widget, FsGuard *fsguard)
+fsguard_entry2_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     g_free (fsguard->filemanager);
     fsguard->filemanager = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
@@ -467,12 +461,22 @@ fsguard_spin1_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->limit_warning = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
     fsguard->seen = FALSE;
+    fsguard_check_fs (fsguard);
 }
 
 static void
 fsguard_spin2_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->limit_urgent = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON(widget));
+    fsguard_check_fs (fsguard);
+}
+
+static void
+fsguard_entry3_changed (GtkWidget *widget, FsGuard *fsguard)
+{
+    g_free (fsguard->name);
+    fsguard->name = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
+    fsguard_refresh_name (fsguard);
 }
 
 static void
@@ -510,14 +514,6 @@ fsguard_check3_changed (GtkWidget *widget, FsGuard *fsguard)
         gtk_widget_hide (fsguard->btn_panel);
         fsguard_refresh_button (fsguard);
     }
-}
-
-static void
-fsguard_dialog_response (GtkWidget *dlg, int response, FsGuard *fsguard)
-{
-    gtk_widget_destroy (dlg);
-    xfce_panel_plugin_unblock_menu (fsguard->plugin);
-    fsguard_write_config (fsguard->plugin, fsguard);
 }
 
 static void
@@ -622,21 +618,13 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_table_attach_defaults (GTK_TABLE (table2), fsguard->cb_hide_button,
                                0, 2, 3, 4);
 
-    g_signal_connect (dialog,
-                      "response",
-                      G_CALLBACK (fsguard_dialog_response),
-                      fsguard);
     g_signal_connect (entry1,
                       "changed",
-                      G_CALLBACK (fsguard_ent1_changed),
+                      G_CALLBACK (fsguard_entry1_changed),
                       fsguard);
     g_signal_connect (entry2,
                       "changed",
-                      G_CALLBACK (fsguard_ent2_changed),
-                      fsguard);
-    g_signal_connect (entry3,
-                      "changed",
-                      G_CALLBACK (fsguard_ent3_changed),
+                      G_CALLBACK (fsguard_entry2_changed),
                       fsguard);
     g_signal_connect (spin1,
                       "value-changed",
@@ -645,6 +633,10 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     g_signal_connect (spin2,
                       "value-changed",
                       G_CALLBACK (fsguard_spin2_changed),
+                      fsguard);
+    g_signal_connect (entry3,
+                      "changed",
+                      G_CALLBACK (fsguard_entry3_changed),
                       fsguard);
     g_signal_connect (check1,
                       "toggled",
@@ -659,7 +651,11 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                       G_CALLBACK (fsguard_check3_changed),
                       fsguard);
 
-    gtk_widget_show_all (dialog);
+    gtk_widget_show_all (GTK_DIALOG (dialog)->vbox);
+    gtk_dialog_run (GTK_DIALOG (dialog));
+    gtk_widget_destroy (dialog);
+    xfce_panel_plugin_unblock_menu (fsguard->plugin);
+    fsguard_write_config (fsguard->plugin, fsguard);
 }
 
 // }}}
