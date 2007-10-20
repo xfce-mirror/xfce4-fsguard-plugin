@@ -1,3 +1,12 @@
+2007-10-20  Mike Massonnet <mmassonnet@xfce.org>
+
+	* panel-plugin/fsguard.c(fsguard_new): Revert border around GtkProgressBar
+	  to BORDER / 2 to fit the style of Xfce 4.4.
+	* panel-plugin/fsguard.c(fsguard_set_size): Fix plugin size.
+	* panel-plugin/fsguard.c(fsguard_create_options): New option dialog.
+	* panel-plugin/fsguard.desktop.in.in: Use xfce4-fsguard-plugin-warning as
+	  default icon.
+
 2007-10-16  Mike Massonnet <mmassonnet@xfce.org>
 
 	* === Release 0.4 RC1 (0.3.99.1) ===
