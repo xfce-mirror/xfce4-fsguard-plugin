@@ -1,3 +1,10 @@
+20071021 (0.3.99.2):
+
+	* Set default plugin icon to xfce4-fsguard-plugin-warning
+	* Rename the "progress bar" to "meter"
+	* Fix size of plugin and border around the GtkProgressBar
+	* Reworked option dialog
+
 20071005 (0.3.99.1):
 --------------------
 	* New options to display the free space in a text label and in a

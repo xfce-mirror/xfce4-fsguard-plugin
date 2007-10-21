@@ -54,8 +54,6 @@ msgstr "%3$s には %1$s/%2$s の空き容量があります"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "マウント位置 (%s) を確認できませんでした、設定を確かめて下さい"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "空き容量チェッカー"

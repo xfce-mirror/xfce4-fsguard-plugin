@@ -52,8 +52,6 @@ msgstr "%3$s 的容量剩下 %1$s/%2$s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "無法檢查位置 %s，請檢查您的設定"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "剩餘容量檢查程式"

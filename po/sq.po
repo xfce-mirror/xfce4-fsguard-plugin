@@ -51,8 +51,6 @@ msgid "could not check mountpoint %s, please check your config"
 msgstr ""
 "Nuk montova dot pikën e montimit %s, ju lutem kontrolloni formësimin tuaj"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Kontrollues Hapësire të Lirë"

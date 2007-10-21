@@ -1,6 +1,2 @@
-# List of source files containing translatable strings.
-
 panel-plugin/fsguard.c
-
-# files added by intltool-prepare.
 panel-plugin/fsguard.desktop.in.in

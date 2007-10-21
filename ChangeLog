@@ -1,3 +1,13 @@
+2007-10-21  Mike Massonnet <mmassonnet@xfce.org>
+
+	* === Release 0.4RC2 (0.3.99.2) ===
+
+2007-10-20  Mike Massonnet <mmassonnet@xfce.org>
+
+	* panel-plugin/fsguard.c(fsguard_create_options): Fix signal callbacks.
+	* panel-plugin/fsguard.c(fsguard_create_options): Remove callback
+	  fsguard_dialog_response() and call gtk_dialog_run() instead.
+
 2007-10-20  Mike Massonnet <mmassonnet@xfce.org>
 
 	* panel-plugin/fsguard.c(fsguard_new): Revert border around GtkProgressBar
