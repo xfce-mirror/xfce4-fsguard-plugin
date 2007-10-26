@@ -78,6 +78,7 @@ typedef struct
     gboolean            show_size;
     gboolean            show_progress_bar;
     gboolean            hide_button;
+    gboolean            show_name;
     gchar              *name;
     gchar              *path;
     gchar              *filemanager;
@@ -104,16 +105,22 @@ static inline void
 fsguard_refresh_button (FsGuard *fsguard)
 {
     /* Refresh the checkbox state as seen in the dialog */
-    if (GTK_IS_WIDGET (fsguard->cb_hide_button)
-        && fsguard->hide_button == TRUE && *(fsguard->name) == '\0'
-        && !fsguard->show_size && !fsguard->show_progress_bar)
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button), FALSE);
+    if (fsguard->hide_button == TRUE && (*(fsguard->name) == '\0' || !fsguard->show_name)
+        && !fsguard->show_size && !fsguard->show_progress_bar) {
+        DBG ("Show the button back");
+        if (G_LIKELY (GTK_IS_WIDGET (fsguard->cb_hide_button)))
+            gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button), FALSE);
+        else {
+            gtk_widget_show (fsguard->btn_panel);
+            fsguard->hide_button = FALSE;
+        }
+    }
 }
 
 static void
 fsguard_refresh_name (FsGuard *fsguard)
 {
-    if (*(fsguard->name) != '\0') {
+    if (*(fsguard->name) != '\0' && fsguard->show_name) {
         gtk_label_set_text (GTK_LABEL(fsguard->lab_name), fsguard->name);
         gtk_widget_show (fsguard->lab_name);
     } else {
@@ -292,6 +299,7 @@ fsguard_read_config (FsGuard *fsguard)
 
     fsguard->seen               = FALSE;
     fsguard->name               = g_strdup (xfce_rc_read_entry (rc, "label", ""));
+    fsguard->show_name          = xfce_rc_read_bool_entry (rc, "label_visible", FALSE);
     fsguard->path               = g_strdup (xfce_rc_read_entry (rc, "mnt", "/"));
     fsguard->filemanager        = g_strdup (xfce_rc_read_entry (rc, "filemanager", "Thunar"));
     fsguard->show_size          = xfce_rc_read_bool_entry (rc, "lab_size_visible", TRUE);
@@ -320,6 +328,7 @@ fsguard_write_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
     xfce_rc_write_bool_entry (rc, "progress_bar_visible", fsguard->show_progress_bar);
     xfce_rc_write_bool_entry (rc, "hide_button", fsguard->hide_button);
     xfce_rc_write_entry (rc, "label", fsguard->name);
+    xfce_rc_write_bool_entry (rc, "label_visible", fsguard->show_name);
     xfce_rc_write_entry (rc, "mnt", fsguard->path);
     xfce_rc_write_entry (rc, "filemanager", fsguard->filemanager);
 
@@ -382,6 +391,7 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_widget_set_size_request(fsguard->ebox, -1, -1);
     gtk_widget_show_all (fsguard->ebox);
     fsguard_refresh_name (fsguard);
+    fsguard_refresh_button (fsguard);
     if (fsguard->show_size != TRUE)
         gtk_widget_hide (fsguard->lab_size);
     if (fsguard->show_progress_bar != TRUE)
@@ -472,6 +482,13 @@ fsguard_spin2_changed (GtkWidget *widget, FsGuard *fsguard)
 }
 
 static void
+fsguard_check1_changed (GtkWidget *widget, FsGuard *fsguard)
+{
+    fsguard->show_name = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
+    fsguard_refresh_name (fsguard);
+}
+
+static void
 fsguard_entry3_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     g_free (fsguard->name);
@@ -480,7 +497,7 @@ fsguard_entry3_changed (GtkWidget *widget, FsGuard *fsguard)
 }
 
 static void
-fsguard_check1_changed (GtkWidget *widget, FsGuard *fsguard)
+fsguard_check2_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->show_size = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
     if (fsguard->show_size)
@@ -492,7 +509,7 @@ fsguard_check1_changed (GtkWidget *widget, FsGuard *fsguard)
 }
 
 static void
-fsguard_check2_changed (GtkWidget *widget, FsGuard *fsguard)
+fsguard_check3_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->show_progress_bar = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
     if (fsguard->show_progress_bar)
@@ -504,7 +521,7 @@ fsguard_check2_changed (GtkWidget *widget, FsGuard *fsguard)
 }
 
 static void
-fsguard_check3_changed (GtkWidget *widget, FsGuard *fsguard)
+fsguard_check4_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->hide_button = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
 
@@ -589,31 +606,33 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), frame2,
                         TRUE, TRUE, 0);
 
-    GtkWidget *label5 = gtk_label_new (_("Name"));
-    gtk_misc_set_alignment (GTK_MISC (label5), 0, 0.5);
+    GtkWidget *check1 = gtk_check_button_new_with_label (_("Name"));
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check1),
+                                  fsguard->show_name);
     GtkWidget *entry3 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY (entry3), 16);
     gtk_entry_set_text (GTK_ENTRY (entry3), fsguard->name);
 
-    GtkWidget *check1 = gtk_check_button_new_with_label (_("Display size"));
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check1),
+
+    GtkWidget *check2 = gtk_check_button_new_with_label (_("Display size"));
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check2),
                                   fsguard->show_size);
 
-    GtkWidget *check2 = gtk_check_button_new_with_label (_("Display meter"));
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check2),
+    GtkWidget *check3 = gtk_check_button_new_with_label (_("Display meter"));
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check3),
                                   fsguard->show_progress_bar);
 
     fsguard->cb_hide_button = gtk_check_button_new_with_label (_("Hide button"));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button),
                                   fsguard->hide_button);
 
-    gtk_table_attach_defaults (GTK_TABLE (table2), label5,
+    gtk_table_attach_defaults (GTK_TABLE (table2), check1,
                                0, 1, 0, 1);
     gtk_table_attach_defaults (GTK_TABLE (table2), entry3,
                                1, 2, 0, 1);
-    gtk_table_attach_defaults (GTK_TABLE (table2), check1,
-                               0, 2, 1, 2);
     gtk_table_attach_defaults (GTK_TABLE (table2), check2,
+                               0, 2, 1, 2);
+    gtk_table_attach_defaults (GTK_TABLE (table2), check3,
                                0, 2, 2, 3);
     gtk_table_attach_defaults (GTK_TABLE (table2), fsguard->cb_hide_button,
                                0, 2, 3, 4);
@@ -634,21 +653,25 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                       "value-changed",
                       G_CALLBACK (fsguard_spin2_changed),
                       fsguard);
-    g_signal_connect (entry3,
-                      "changed",
-                      G_CALLBACK (fsguard_entry3_changed),
-                      fsguard);
     g_signal_connect (check1,
                       "toggled",
                       G_CALLBACK (fsguard_check1_changed),
+                      fsguard);
+    g_signal_connect (entry3,
+                      "changed",
+                      G_CALLBACK (fsguard_entry3_changed),
                       fsguard);
     g_signal_connect (check2,
                       "toggled",
                       G_CALLBACK (fsguard_check2_changed),
                       fsguard);
-    g_signal_connect (fsguard->cb_hide_button,
+    g_signal_connect (check3,
                       "toggled",
                       G_CALLBACK (fsguard_check3_changed),
+                      fsguard);
+    g_signal_connect (fsguard->cb_hide_button,
+                      "toggled",
+                      G_CALLBACK (fsguard_check4_changed),
                       fsguard);
 
     gtk_widget_show_all (GTK_DIALOG (dialog)->vbox);
