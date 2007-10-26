@@ -1,5 +1,10 @@
 2007-10-26  Mike Massonnet <mmassonnet@xfce.org>
 
+	* panel-plugin/fsguard.c(fsguard_check_fs): If size is in MB, display a
+	  natural number.
+
+2007-10-26  Mike Massonnet <mmassonnet@xfce.org>
+
 	* panel-plugin/fsguard.c: Replace label5 against check1 to set the
 	  visibility of the name by choice.  This keeps the name saved, and if you
 	  feel borred you can simply switch the state on click, and not on select,

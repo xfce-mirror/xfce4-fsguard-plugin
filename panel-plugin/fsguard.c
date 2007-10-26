@@ -241,12 +241,12 @@ fsguard_check_fs (FsGuard *fsguard)
         if (total > 1024) {
             g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.2f GB"), total/1024);
         } else {
-            g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.2f MB"), total);
+            g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.0f MB"), total);
         }
         if (size > 1024) {
             g_snprintf (msg_size, sizeof (msg_size), _("%.2f GB"), size/1024);
         } else {
-            g_snprintf (msg_size, sizeof (msg_size), _("%.2f MB"), size);
+            g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), size);
         }
         gtk_label_set_text (GTK_LABEL(fsguard->lab_size), msg_size);
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), size / total);
