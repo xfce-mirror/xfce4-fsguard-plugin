@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 04:44+0200\n"
+"POT-Creation-Date: 2007-10-26 04:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,82 +16,84 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:233 ../panel-plugin/fsguard.c:238
+#: ../panel-plugin/fsguard.c:242 ../panel-plugin/fsguard.c:247
 #, c-format
 msgid "%.2f GB"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:235 ../panel-plugin/fsguard.c:240
+#: ../panel-plugin/fsguard.c:244 ../panel-plugin/fsguard.c:249
 #, c-format
-msgid "%.2f MB"
+msgid "%.0f MB"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:249
+#: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:251
+#: ../panel-plugin/fsguard.c:260
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:271
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:273
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:269
+#: ../panel-plugin/fsguard.c:278
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:530 ../panel-plugin/fsguard.desktop.in.in.h:1
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:543 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:541
+#: ../panel-plugin/fsguard.c:554
 msgid "Configuration"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:548
+#: ../panel-plugin/fsguard.c:561
 msgid "Mount point"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:554
+#: ../panel-plugin/fsguard.c:567
 msgid "File manager"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:560
+#: ../panel-plugin/fsguard.c:573
 msgid "Warning limit (MB)"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:565
+#: ../panel-plugin/fsguard.c:578
 msgid "Urgent limit (MB)"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:589
+#: ../panel-plugin/fsguard.c:602
 msgid "User Interface"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:596
+#: ../panel-plugin/fsguard.c:609
 msgid "Name"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:602
+#: ../panel-plugin/fsguard.c:617
 msgid "Display size"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:606
+#: ../panel-plugin/fsguard.c:621
 msgid "Display meter"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:610
+#: ../panel-plugin/fsguard.c:625
 msgid "Hide button"
 msgstr ""
 
