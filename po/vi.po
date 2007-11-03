@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-26 04:27+0200\n"
+"POT-Creation-Date: 2007-11-04 00:15+0100\n"
 "PO-Revision-Date: 2007-10-04 16:43+0100\n"
 "Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: Vietnamese <none@li.org>\n"
@@ -50,8 +50,6 @@ msgstr "%s/%s trống trên %s"
 msgid "could not check mountpoint %s, please check your config"
 msgstr "không kiểm tra được điểm gắn %s, xin hãy xem lại cấu hình"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:543 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Trình kiểm tra không gian trống"

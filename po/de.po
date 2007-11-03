@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-26 04:27+0200\n"
+"POT-Creation-Date: 2007-11-04 00:15+0100\n"
 "PO-Revision-Date: 2007-10-20 04:12+0100\n"
 "Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -54,8 +54,6 @@ msgstr ""
 "Der Einhängepunkt »%s« konnte nicht geprüft werden, bitte prüfen Sie Ihre "
 "Konfiguration."
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:543 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Speicherplatz-Prüfung"

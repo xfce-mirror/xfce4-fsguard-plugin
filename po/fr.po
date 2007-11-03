@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-26 04:27+0200\n"
+"POT-Creation-Date: 2007-11-04 00:15+0100\n"
 "PO-Revision-Date: 2007-10-26 04:28+0100\n"
 "Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -17,14 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:242
-#: ../panel-plugin/fsguard.c:247
+#: ../panel-plugin/fsguard.c:242 ../panel-plugin/fsguard.c:247
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f Go"
 
-#: ../panel-plugin/fsguard.c:244
-#: ../panel-plugin/fsguard.c:249
+#: ../panel-plugin/fsguard.c:244 ../panel-plugin/fsguard.c:249
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f Mo"
@@ -52,12 +50,11 @@ msgstr "%s/%s d'espace disque libre sur %s"
 #: ../panel-plugin/fsguard.c:278
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "Échec du contrôle du point de montage %s, veuillez vérifier votre configuration"
+msgstr ""
+"Échec du contrôle du point de montage %s, veuillez vérifier votre "
+"configuration"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:543
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:543 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Contrôle d'espace disque libre"
 
@@ -104,4 +101,3 @@ msgstr "Cacher le bouton"
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Contrôler l'espace disque libre"
-
