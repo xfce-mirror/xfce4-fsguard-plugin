@@ -140,8 +140,8 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
 
     fsguard->icon_id = id;
     size = xfce_panel_plugin_get_size (fsguard->plugin);
-    size = size - 2 - (2 * MAX (fsguard->btn_panel->style->xthickness,
-                                fsguard->btn_panel->style->ythickness));
+    size = size - (2 * MAX (fsguard->btn_panel->style->xthickness,
+                            fsguard->btn_panel->style->ythickness));
 
     switch (id) {
       default:
