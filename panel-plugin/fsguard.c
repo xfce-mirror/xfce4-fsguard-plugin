@@ -219,68 +219,73 @@ fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
 static gboolean
 fsguard_check_fs (FsGuard *fsguard)
 {
-    float               size = 0;
+    float               free = 0;
     float               total = 0;
     float               freeblocks = 0;
     float               totalblocks = 0;
-    long                blocksize;
+    long                blocksize = 0;
     int                 err;
     gchar               msg_size[100], msg_total_size[100], msg[100];
     gint                icon_id = ICON_INSENSITIVE;
     static struct statfs fsd;
 
     err = statfs (fsguard->path, &fsd);
-    
+
     if (err != -1) {
         blocksize       = fsd.f_bsize;
         freeblocks      = fsd.f_bavail;
         totalblocks     = fsd.f_blocks;
-        size            = (freeblocks * blocksize) / 1048576;
+        free            = (freeblocks * blocksize) / 1048576;
         total           = (totalblocks * blocksize) / 1048576;
 
-        if (total > 1024) {
-            g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.2f GB"), total/1024);
-        } else {
-            g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.0f MB"), total);
-        }
-        if (size > 1024) {
-            g_snprintf (msg_size, sizeof (msg_size), _("%.2f GB"), size/1024);
-        } else {
-            g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), size);
-        }
-        gtk_label_set_text (GTK_LABEL(fsguard->lab_size), msg_size);
-        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), size / total);
-
-        if (size <= fsguard->limit_urgent) {
-            icon_id = ICON_URGENT;
-	    if (!fsguard->seen) {
-                if (fsguard->name != NULL && (strcmp(fsguard->name,"")) && (strcmp(fsguard->path, fsguard->name))) {
-                    xfce_warn (_("Only %s space left on %s (%s)!"), msg_size, fsguard->path, fsguard->name);
-                } else {
-                    xfce_warn (_("Only %s space left on %s!"), msg_size, fsguard->path);
-		}
-		fsguard->seen = TRUE;
-	    }
-        } else if (size >= fsguard->limit_urgent && size <= fsguard->limit_warning) {
+        if (free > fsguard->limit_warning) {
+            icon_id = ICON_NORMAL;
+        } else if (free > fsguard->limit_urgent && free <= fsguard->limit_warning) {
             icon_id = ICON_WARNING;
         } else {
-            icon_id = ICON_NORMAL;
+            icon_id = ICON_URGENT;
         }
-
-        if (fsguard->name != NULL && (strcmp(fsguard->name,"")) && (strcmp(fsguard->path, fsguard->name))) {
-            g_snprintf (msg, sizeof (msg), _("%s/%s space left on %s (%s)"), msg_size, msg_total_size, fsguard->path, fsguard->name);
-        } else if (fsguard->path != NULL && (strcmp(fsguard->path, ""))) {
-            g_snprintf (msg, sizeof (msg), _("%s/%s space left on %s"), msg_size, msg_total_size, fsguard->path);
-        } 
-    } else {
-        gtk_label_set_text (GTK_LABEL(fsguard->lab_size), "0.0 MB");
-        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), 0.0);
-        g_snprintf (msg, sizeof (msg), _("could not check mountpoint %s, please check your config"), fsguard->path);
     }
-    
+
+    /* msg_total_size, msg_size */
+    if (total > 1024) {
+        g_snprintf (msg_total_size, sizeof(msg_total_size), _("%.2f GB"), total / 1024);
+        g_snprintf (msg_size, sizeof (msg_size), _("%.2f GB"), free / 1024);
+        g_snprintf (msg, sizeof (msg),
+                    (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) ?
+                    _("%s/%s space left on %s (%s)") : _("%s/%s space left on %s"),
+                    msg_size, msg_total_size, fsguard->path, fsguard->name);
+    } else {
+        g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.0f MB"), total);
+        g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), free);
+        g_snprintf (msg, sizeof (msg),
+                    _("could not check mountpoint %s, please check your config"),
+                    fsguard->path);
+    }
+
+    if (GTK_IS_LABEL(fsguard->lab_size)) {
+        gtk_label_set_text (GTK_LABEL(fsguard->lab_size),
+                            msg_size);
+    }
+    if (GTK_IS_PROGRESS_BAR(fsguard->lab_size)) {
+        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar),
+                                       (total > 0 ) ? free / total : 0.0);
+    }
+
     gtk_tooltips_set_tip (tooltips, fsguard->ebox, msg, NULL);
     fsguard_set_icon (fsguard, icon_id);
     fsguard_refresh_monitor (fsguard);
+
+    if (err != -1 && !fsguard->seen && icon_id == ICON_URGENT) {
+        fsguard->seen = TRUE;
+        if (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) {
+            xfce_warn (_("Only %s space left on %s (%s)!"),
+                       msg_size, fsguard->path, fsguard->name);
+        } else {
+            xfce_warn (_("Only %s space left on %s!"),
+                       msg_size, fsguard->path);
+        }
+    }
 
     return TRUE;
 }
