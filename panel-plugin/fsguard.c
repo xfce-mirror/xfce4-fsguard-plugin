@@ -541,7 +541,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     /* Dialog */
     GtkWidget *dialog =
       xfce_titled_dialog_new_with_buttons (_("Free Space Checker"),
-        GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
+        NULL,
         GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
         GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
         NULL);
