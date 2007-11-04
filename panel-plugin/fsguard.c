@@ -263,18 +263,18 @@ fsguard_check_fs (FsGuard *fsguard)
                     fsguard->path);
     }
 
-    if (GTK_IS_LABEL(fsguard->lab_size)) {
+    if (fsguard->show_size) {
         gtk_label_set_text (GTK_LABEL(fsguard->lab_size),
                             msg_size);
     }
-    if (GTK_IS_PROGRESS_BAR(fsguard->lab_size)) {
+    if (fsguard->show_progress_bar) {
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar),
                                        (total > 0 ) ? free / total : 0.0);
+        fsguard_refresh_monitor (fsguard);
     }
 
     gtk_tooltips_set_tip (tooltips, fsguard->ebox, msg, NULL);
     fsguard_set_icon (fsguard, icon_id);
-    fsguard_refresh_monitor (fsguard);
 
     if (err != -1 && !fsguard->seen && icon_id == ICON_URGENT) {
         fsguard->seen = TRUE;
