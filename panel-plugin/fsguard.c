@@ -547,7 +547,6 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
         NULL);
     gtk_window_set_icon_name (GTK_WINDOW (dialog), "xfce4-fsguard-plugin-warning");
     gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-    gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->vbox), BORDER);
 
     /* Configuration frame */
     GtkWidget *table1 = gtk_table_new (2, 4, FALSE);
