@@ -2,14 +2,15 @@
 # Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007.
+# Og Maciel <ogmaciel@gnome.org>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-04 00:15+0100\n"
-"PO-Revision-Date: 2007-10-04 17:29+0100\n"
-"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
+"PO-Revision-Date: 2007-11-05 12:38-0500\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -59,7 +60,7 @@ msgstr "Verificador de Espaço Livre"
 
 #: ../panel-plugin/fsguard.c:554
 msgid "Configuration"
-msgstr ""
+msgstr "Configuração"
 
 #: ../panel-plugin/fsguard.c:561
 msgid "Mount point"
@@ -71,32 +72,31 @@ msgstr "Gerente de arquivo"
 
 #: ../panel-plugin/fsguard.c:573
 msgid "Warning limit (MB)"
-msgstr "Aviso de limite alto (MB)"
+msgstr "Limite de aviso (MB)"
 
 #: ../panel-plugin/fsguard.c:578
-#, fuzzy
 msgid "Urgent limit (MB)"
-msgstr "Alarme de limite alto (MB)"
+msgstr "Limite de urgência (MB)"
 
 #: ../panel-plugin/fsguard.c:602
 msgid "User Interface"
-msgstr ""
+msgstr "Interface de Usuário"
 
 #: ../panel-plugin/fsguard.c:609
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../panel-plugin/fsguard.c:617
 msgid "Display size"
-msgstr ""
+msgstr "Tamanho de exibição"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "Display meter"
-msgstr ""
+msgstr "Medidor de exibição"
 
 #: ../panel-plugin/fsguard.c:625
 msgid "Hide button"
-msgstr ""
+msgstr "Ocultar botão"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
