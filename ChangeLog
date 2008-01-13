@@ -1,3 +1,29 @@
+2008-01-13	Mike Massonnet <mmassonnet@xfce.org>
+
+	* configure.in.in: Fix version number to 0.4.1
+	* panel-plugin/fsguard.c(fsguard_create_options): Correct commit 3513, now
+	  the dialog is centered and has a parent.
+	* panel-plugin/fsguard.c(fsguard_refresh_button),
+	  panel-plugin/fsguard.c(fsguard_check4_changed),
+	  panel-plugin/fsguard.c(fsguard_create_options): Switch "Hide button"
+	  with "Display button". #3802
+	* panel-plugin/fsguard.c(fsguard_set_icon): Replace xfce_themed_icon with
+	  gtk_icon_theme.
+
+2007-11-04	Mike Massonnet <mmassonnet@xfce.org>
+
+	 * panel-plugin/fsguard.c(fsguard_check_fs): I'm not sure about the
+	  hack for destroying/creating the GtkWidgets on the fly, hence a modified
+	  version that holds an eye on the show_$variables.
+	* panel-plugin/fsguard.c(fsguard_check_fs): Refactorize the code around a
+	  bit.
+	* panel-plugin/fsguard.c(fsguard_create_options): Remove the parent, this
+	  way the dialog is centered.
+	* panel-plugin/fsguard.c(fsguard_create_options): Remove a border width
+	  around a vbox.
+	* panel-plugin/fsguard.c(fsguard_set_icon): Remove padding inside button
+	  to get a bigger icon.
+
 2007-10-26  Mike Massonnet <mmassonnet@xfce.org>
 
 	* panel-plugin/fsguard.c(fsguard_check_fs): If size is in MB, display a

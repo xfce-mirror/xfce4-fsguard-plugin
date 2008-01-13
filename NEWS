@@ -1,3 +1,12 @@
+20080113 (0.4.1):
+-----------------
+
+    * Switch "Hide button" with "Display button" #3802
+    * Replace xfce_themed_icon with gtk_icon_theme
+    * Some GUI tweaks in the dialog
+    * Display natural numbers in MB
+    * Replace the label with a checkbox+label for the name
+
 20071025 (0.4.0):
 -----------------
 
