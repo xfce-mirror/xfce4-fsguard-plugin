@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-04 00:15+0100\n"
+"POT-Creation-Date: 2008-01-13 16:10+0100\n"
 "PO-Revision-Date: 2007-10-04 16:44+0100\n"
 "Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -17,84 +17,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:242 ../panel-plugin/fsguard.c:247
+#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:244 ../panel-plugin/fsguard.c:249
-#, c-format
-msgid "%.0f MB"
-msgstr "%.0f MB"
-
 #: ../panel-plugin/fsguard.c:258
 #, c-format
-msgid "Only %s space left on %s (%s)!"
-msgstr "%2$s (%3$s) 的容量只剩下 %1$s！"
-
-#: ../panel-plugin/fsguard.c:260
-#, c-format
-msgid "Only %s space left on %s!"
-msgstr "%2$s 的容量只剩下 %1$s！"
-
-#: ../panel-plugin/fsguard.c:271
-#, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr "%3$s (%4$s) 的容量剩下 %2$s/%3$s"
+msgstr "%3$s (%4$s) 的容量剩下 %1$s/%2$s"
 
-#: ../panel-plugin/fsguard.c:273
+#: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%3$s 的容量剩下 %1$s/%2$s"
 
-#: ../panel-plugin/fsguard.c:278
+#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f MB"
+
+#: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "無法檢查位置 %s，請檢查您的設定"
 
-#: ../panel-plugin/fsguard.c:543 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:284
+#, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr "%2$s (%3$s) 的容量只剩下 %1$s！"
+
+#: ../panel-plugin/fsguard.c:287
+#, c-format
+msgid "Only %s space left on %s!"
+msgstr "%2$s 的容量只剩下 %1$s！"
+
+#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "剩餘容量檢查程式"
 
-#: ../panel-plugin/fsguard.c:554
+#: ../panel-plugin/fsguard.c:560
 msgid "Configuration"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:561
+#: ../panel-plugin/fsguard.c:567
 msgid "Mount point"
 msgstr "掛載點"
 
-#: ../panel-plugin/fsguard.c:567
+#: ../panel-plugin/fsguard.c:573
 msgid "File manager"
 msgstr "檔案管理程式"
 
-#: ../panel-plugin/fsguard.c:573
+#: ../panel-plugin/fsguard.c:579
 msgid "Warning limit (MB)"
 msgstr "高容量警告上限 (MB)"
 
-#: ../panel-plugin/fsguard.c:578
+#: ../panel-plugin/fsguard.c:584
 #, fuzzy
 msgid "Urgent limit (MB)"
 msgstr "高容量提醒上限 (MB)"
 
-#: ../panel-plugin/fsguard.c:602
+#: ../panel-plugin/fsguard.c:608
 msgid "User Interface"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:609
+#: ../panel-plugin/fsguard.c:615
 msgid "Name"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:617
+#: ../panel-plugin/fsguard.c:623
 msgid "Display size"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:627
 msgid "Display meter"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:625
-msgid "Hide button"
+#: ../panel-plugin/fsguard.c:631
+msgid "Display button"
 msgstr ""
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2

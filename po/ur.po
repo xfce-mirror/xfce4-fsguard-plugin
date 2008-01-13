@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-20 23:05+0100\n"
+"POT-Creation-Date: 2008-01-13 16:10+0100\n"
 "PO-Revision-Date: 2007-10-26 23:06+0500\n"
 "Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -18,79 +18,107 @@ msgstr ""
 "X-Poedit-Country: PAKISTAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/fsguard.c:159
+#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
 #, c-format
-msgid "Only %.2f GB space left on %s (%s)!"
-msgstr "صرف %.2f گ.ب جگہ %s (%s) پر باقی ہے!"
+msgid "%.2f GB"
+msgstr ""
 
-#: ../panel-plugin/fsguard.c:161
-#, c-format
-msgid "Only %.2f MB space left on %s (%s)!"
-msgstr "صرف %.2f م.ب جگہ %s (%s) پر باقی ہے!"
-
-#: ../panel-plugin/fsguard.c:165
-#, c-format
-msgid "Only %.2f GB space left on %s!"
-msgstr "صرف %.2f گ.ب جگہ %s پر باقی ہے!"
-
-#: ../panel-plugin/fsguard.c:167
-#, c-format
-msgid "Only %.2f MB space left on %s!"
-msgstr "صرف %.2f م.ب جگہ %s پر باقی ہے!"
-
-#: ../panel-plugin/fsguard.c:179
-#, c-format
-msgid "%.2f GB space left on %s (%s)"
+#: ../panel-plugin/fsguard.c:258
+#, fuzzy, c-format
+msgid "%s/%s space left on %s (%s)"
 msgstr "%.2f گ.ب جگہ %s (%s) پر باقی ہے"
 
-#: ../panel-plugin/fsguard.c:181
-#, c-format
-msgid "%.2f MB space left on %s (%s)"
-msgstr "%.2f م.ب جگہ %s (%s) پر باقی ہے"
-
-#: ../panel-plugin/fsguard.c:185
-#, c-format
-msgid "%.2f GB space left on %s"
+#: ../panel-plugin/fsguard.c:258
+#, fuzzy, c-format
+msgid "%s/%s space left on %s"
 msgstr "%.2f گ.ب جگہ %s پر باقی ہے"
 
-#: ../panel-plugin/fsguard.c:187
+#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
 #, c-format
-msgid "%.2f MB space left on %s"
-msgstr "%.2f م.ب جگہ %s پر باقی ہے"
+msgid "%.0f MB"
+msgstr ""
 
-#: ../panel-plugin/fsguard.c:192
+#: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "ماؤنٹ پوائنٹ %s چیک نہیں کیا جاسکتا، اپنی config چیک کریں"
 
-#: ../panel-plugin/fsguard.c:412
-msgid "label"
-msgstr "لیبل"
+#: ../panel-plugin/fsguard.c:284
+#, fuzzy, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr "صرف %.2f گ.ب جگہ %s (%s) پر باقی ہے!"
 
-#: ../panel-plugin/fsguard.c:413
-msgid "mountpoint"
-msgstr "ماؤنٹ پوائنٹ"
+#: ../panel-plugin/fsguard.c:287
+#, fuzzy, c-format
+msgid "Only %s space left on %s!"
+msgstr "صرف %.2f گ.ب جگہ %s پر باقی ہے!"
 
-#: ../panel-plugin/fsguard.c:414
-msgid "high alarm limit (MB)"
-msgstr "ہائی الارم حد (م.ب)"
-
-#: ../panel-plugin/fsguard.c:415
-msgid "high warn limit (MB)"
-msgstr "ہائی انتباہ حد (م.ب)"
-
-#: ../panel-plugin/fsguard.c:416
-msgid "filemanager"
-msgstr "فائل منیجر"
-
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:421
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "خالی جگہ چیکر"
+
+#: ../panel-plugin/fsguard.c:560
+msgid "Configuration"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:567
+#, fuzzy
+msgid "Mount point"
+msgstr "ماؤنٹ پوائنٹ"
+
+#: ../panel-plugin/fsguard.c:573
+#, fuzzy
+msgid "File manager"
+msgstr "فائل منیجر"
+
+#: ../panel-plugin/fsguard.c:579
+#, fuzzy
+msgid "Warning limit (MB)"
+msgstr "ہائی انتباہ حد (م.ب)"
+
+#: ../panel-plugin/fsguard.c:584
+#, fuzzy
+msgid "Urgent limit (MB)"
+msgstr "ہائی انتباہ حد (م.ب)"
+
+#: ../panel-plugin/fsguard.c:608
+msgid "User Interface"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:615
+msgid "Name"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:623
+msgid "Display size"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:627
+msgid "Display meter"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:631
+msgid "Display button"
+msgstr ""
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "خالی ہارڈ ڈسک جگہ دیکھیں"
 
+#~ msgid "Only %.2f MB space left on %s (%s)!"
+#~ msgstr "صرف %.2f م.ب جگہ %s (%s) پر باقی ہے!"
+
+#~ msgid "Only %.2f MB space left on %s!"
+#~ msgstr "صرف %.2f م.ب جگہ %s پر باقی ہے!"
+
+#~ msgid "%.2f MB space left on %s (%s)"
+#~ msgstr "%.2f م.ب جگہ %s (%s) پر باقی ہے"
+
+#~ msgid "%.2f MB space left on %s"
+#~ msgstr "%.2f م.ب جگہ %s پر باقی ہے"
+
+#~ msgid "label"
+#~ msgstr "لیبل"
+
+#~ msgid "high alarm limit (MB)"
+#~ msgstr "ہائی الارم حد (م.ب)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-04 00:15+0100\n"
+"POT-Creation-Date: 2008-01-13 16:10+0100\n"
 "PO-Revision-Date: 2007-10-04 17:29+0100\n"
 "Last-Translator: Christian Lomsdalen <christian@vindstille.net>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -17,85 +17,89 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/fsguard.c:242 ../panel-plugin/fsguard.c:247
+#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:244 ../panel-plugin/fsguard.c:249
-#, c-format
-msgid "%.0f MB"
-msgstr "%.0f MB"
-
 #: ../panel-plugin/fsguard.c:258
-#, c-format
-msgid "Only %s space left on %s (%s)!"
-msgstr "Kun %s plass ledig på %s (%s)!"
-
-#: ../panel-plugin/fsguard.c:260
-#, c-format
-msgid "Only %s space left on %s!"
-msgstr "Kun %s plass ledig på %s!"
-
-#: ../panel-plugin/fsguard.c:271
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s plass ledig på %s (%s)"
 
-#: ../panel-plugin/fsguard.c:273
+#: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s plass ledig på %s"
 
-#: ../panel-plugin/fsguard.c:278
+#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f MB"
+
+#: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Klarte ikke sjekke punkt %s, kontroller oppsettet"
 
-#: ../panel-plugin/fsguard.c:543 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:284
+#, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr "Kun %s plass ledig på %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:287
+#, c-format
+msgid "Only %s space left on %s!"
+msgstr "Kun %s plass ledig på %s!"
+
+#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Ledig diskplass verktøy"
 
-#: ../panel-plugin/fsguard.c:554
+#: ../panel-plugin/fsguard.c:560
 msgid "Configuration"
 msgstr "Konfigurasjon"
 
-#: ../panel-plugin/fsguard.c:561
+#: ../panel-plugin/fsguard.c:567
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: ../panel-plugin/fsguard.c:567
+#: ../panel-plugin/fsguard.c:573
 msgid "File manager"
 msgstr "Filbehandler"
 
-#: ../panel-plugin/fsguard.c:573
+#: ../panel-plugin/fsguard.c:579
 msgid "Warning limit (MB)"
 msgstr "Høy advarselgrense (MB)"
 
-#: ../panel-plugin/fsguard.c:578
+#: ../panel-plugin/fsguard.c:584
 msgid "Urgent limit (MB)"
 msgstr "Øyeblikkelig alarmgrense (MB)"
 
-#: ../panel-plugin/fsguard.c:602
+#: ../panel-plugin/fsguard.c:608
 msgid "User Interface"
 msgstr "Brukergrensesnitt"
 
-#: ../panel-plugin/fsguard.c:609
+#: ../panel-plugin/fsguard.c:615
 msgid "Name"
 msgstr "Navn"
 
-#: ../panel-plugin/fsguard.c:617
+#: ../panel-plugin/fsguard.c:623
 msgid "Display size"
 msgstr "Skjermstørrelse"
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:627
 msgid "Display meter"
 msgstr "Skjermmåler"
 
-#: ../panel-plugin/fsguard.c:625
-msgid "Hide button"
-msgstr "Skjul knapp"
+#: ../panel-plugin/fsguard.c:631
+#, fuzzy
+msgid "Display button"
+msgstr "Skjermmåler"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Overvåker ledig diskplass"
+
+#~ msgid "Hide button"
+#~ msgstr "Skjul knapp"
