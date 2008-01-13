@@ -109,7 +109,7 @@ fsguard_refresh_button (FsGuard *fsguard)
         && !fsguard->show_size && !fsguard->show_progress_bar) {
         DBG ("Show the button back");
         if (G_LIKELY (GTK_IS_WIDGET (fsguard->cb_hide_button)))
-            gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button), FALSE);
+            gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button), TRUE);
         else {
             gtk_widget_show (fsguard->btn_panel);
             fsguard->hide_button = FALSE;
@@ -530,7 +530,7 @@ fsguard_check3_changed (GtkWidget *widget, FsGuard *fsguard)
 static void
 fsguard_check4_changed (GtkWidget *widget, FsGuard *fsguard)
 {
-    fsguard->hide_button = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
+    fsguard->hide_button = !gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
 
     if (fsguard->hide_button == FALSE)
         gtk_widget_show (fsguard->btn_panel);
@@ -628,9 +628,9 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check3),
                                   fsguard->show_progress_bar);
 
-    fsguard->cb_hide_button = gtk_check_button_new_with_label (_("Hide button"));
+    fsguard->cb_hide_button = gtk_check_button_new_with_label (_("Display button"));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button),
-                                  fsguard->hide_button);
+                                  !fsguard->hide_button);
 
     gtk_table_attach_defaults (GTK_TABLE (table2), check1,
                                0, 1, 0, 1);
