@@ -132,6 +132,7 @@ fsguard_refresh_name (FsGuard *fsguard)
 static void
 fsguard_set_icon (FsGuard *fsguard, gint id)
 {
+    GtkIconTheme       *icon_theme;
     GdkPixbuf          *pixbuf;
     gint                size;
 
@@ -140,24 +141,25 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
 
     fsguard->icon_id = id;
     size = xfce_panel_plugin_get_size (fsguard->plugin);
-    size = size - (2 * MAX (fsguard->btn_panel->style->xthickness,
-                            fsguard->btn_panel->style->ythickness));
+    size -= 2 * MAX (fsguard->btn_panel->style->xthickness,
+                     fsguard->btn_panel->style->ythickness);
 
-    switch (id) {
-      default:
-      case ICON_NORMAL:
-        pixbuf = xfce_themed_icon_load ("xfce4-fsguard-plugin", size);
-        break;
-      case ICON_WARNING:
-        pixbuf = xfce_themed_icon_load ("xfce4-fsguard-plugin-warning", size);
-        break;
-      case ICON_URGENT:
-        pixbuf = xfce_themed_icon_load ("xfce4-fsguard-plugin-urgent", size);
-        break;
+    icon_theme = gtk_icon_theme_get_default ();
+    if (id == ICON_URGENT) {
+        pixbuf = gtk_icon_theme_load_icon (icon_theme, "xfce4-fsguard-plugin-urgent", size, 0, NULL);
+    } else if (id == ICON_WARNING) {
+        pixbuf = gtk_icon_theme_load_icon (icon_theme, "xfce4-fsguard-plugin-warning", size, 0, NULL);
+    } else {
+        pixbuf = gtk_icon_theme_load_icon (icon_theme, "xfce4-fsguard-plugin", size, 0, NULL);
     }
 
-    gtk_widget_set_sensitive (fsguard->icon_panel, id != ICON_INSENSITIVE);
+    if (G_UNLIKELY (NULL == pixbuf)) {
+        pixbuf = gtk_icon_theme_load_icon (icon_theme, GTK_STOCK_HARDDISK, size, 0, NULL);
+    }
+    g_return_if_fail (G_LIKELY (NULL != pixbuf));
+
     gtk_image_set_from_pixbuf (GTK_IMAGE (fsguard->icon_panel), pixbuf);
+    gtk_widget_set_sensitive (fsguard->icon_panel, id != ICON_INSENSITIVE);
     g_object_unref (G_OBJECT (pixbuf));
 }
 
