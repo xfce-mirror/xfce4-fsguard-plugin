@@ -1,8 +1,8 @@
 # Portuguese translations for xfce package.
 # Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
-# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2007.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007,2008.
 #
 msgid ""
 msgstr ""
@@ -95,9 +95,8 @@ msgid "Display meter"
 msgstr "Medidor de exibição"
 
 #: ../panel-plugin/fsguard.c:631
-#, fuzzy
 msgid "Display button"
-msgstr "Medidor de exibição"
+msgstr "Botão de exibição"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
