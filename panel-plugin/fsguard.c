@@ -71,7 +71,7 @@ typedef struct
 {
     XfcePanelPlugin    *plugin;
     gboolean            seen;
-    gint                icon_id;
+    volatile gint       icon_id;
     gint                timeout;
     guint               limit_warning;
     guint               limit_urgent;
@@ -101,7 +101,7 @@ static GtkTooltips *tooltips = NULL;
 
 // all functions {{{
 
-static inline void
+static void
 fsguard_refresh_button (FsGuard *fsguard)
 {
     /* Refresh the checkbox state as seen in the dialog */
@@ -140,9 +140,9 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
         return;
 
     fsguard->icon_id = id;
-    size = xfce_panel_plugin_get_size (fsguard->plugin);
-    size -= 2 * MAX (fsguard->btn_panel->style->xthickness,
-                     fsguard->btn_panel->style->ythickness);
+	size = xfce_panel_plugin_get_size (fsguard->plugin);
+    size -= 2 + 2 * MAX (fsguard->btn_panel->style->xthickness,
+                         fsguard->btn_panel->style->ythickness);
 
     icon_theme = gtk_icon_theme_get_default ();
     if (id == ICON_URGENT) {
@@ -163,7 +163,7 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     g_object_unref (G_OBJECT (pixbuf));
 }
 
-static inline void
+static void
 fsguard_refresh_icon (FsGuard *fsguard)
 {
     gint icon_id = fsguard->icon_id;
