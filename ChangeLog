@@ -1,5 +1,9 @@
 2008-01-24	Mike Massonnet <mmassonnet@xfce.org>
 
+	* configure.in.in: Bump version post-release
+
+2008-01-24	Mike Massonnet <mmassonnet@xfce.org>
+
 	* === Release 0.4.1 ===
 	* panel-plugin/fsguard.c(fsguard_set_icon): Scale pixbuf.
 
