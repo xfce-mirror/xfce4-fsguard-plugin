@@ -1,3 +1,8 @@
+2008-01-24	Mike Massonnet <mmassonnet@xfce.org>
+
+	* === Release 0.4.1 ===
+	* panel-plugin/fsguard.c(fsguard_set_icon): Scale pixbuf.
+
 2008-01-13	Mike Massonnet <mmassonnet@xfce.org>
 
 	* configure.in.in: Fix version number to 0.4.1
