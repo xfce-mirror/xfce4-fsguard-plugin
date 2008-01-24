@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-13 16:10+0100\n"
+"POT-Creation-Date: 2008-01-24 11:44+0100\n"
 "PO-Revision-Date: 2007-12-06 23:40+0000\n"
 "Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -55,47 +55,49 @@ msgstr "Nur noch %s freier Speicher auf »%s« (%s)!"
 msgid "Only %s space left on %s!"
 msgstr "Nur noch %s freier Speicher auf »%s«!"
 
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Speicherplatzprüfung"
 
-#: ../panel-plugin/fsguard.c:560
+#: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
 msgstr "Einstellungen"
 
-#: ../panel-plugin/fsguard.c:567
+#: ../panel-plugin/fsguard.c:568
 msgid "Mount point"
 msgstr "Einhängepunkt"
 
-#: ../panel-plugin/fsguard.c:573
+#: ../panel-plugin/fsguard.c:574
 msgid "File manager"
 msgstr "Dateimanager"
 
-#: ../panel-plugin/fsguard.c:579
+#: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
 msgstr "Warnung ab (MB)"
 
-#: ../panel-plugin/fsguard.c:584
+#: ../panel-plugin/fsguard.c:585
 msgid "Urgent limit (MB)"
 msgstr "Kritisch ab (MB)"
 
-#: ../panel-plugin/fsguard.c:608
+#: ../panel-plugin/fsguard.c:609
 msgid "User Interface"
 msgstr "Benutzungsschnittstelle"
 
-#: ../panel-plugin/fsguard.c:615
+#: ../panel-plugin/fsguard.c:616
 msgid "Name"
 msgstr "Name"
 
-#: ../panel-plugin/fsguard.c:623
+#: ../panel-plugin/fsguard.c:624
 msgid "Display size"
 msgstr "Freien Speicher anzeigen"
 
-#: ../panel-plugin/fsguard.c:627
+#: ../panel-plugin/fsguard.c:628
 msgid "Display meter"
 msgstr "Balken anzeigen"
 
-#: ../panel-plugin/fsguard.c:631
+#: ../panel-plugin/fsguard.c:632
 msgid "Display button"
 msgstr "Knopf anzeigen"
 
