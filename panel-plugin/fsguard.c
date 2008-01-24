@@ -101,7 +101,7 @@ static GtkTooltips *tooltips = NULL;
 
 // all functions {{{
 
-static inline void
+static void
 fsguard_refresh_button (FsGuard *fsguard)
 {
     /* Refresh the checkbox state as seen in the dialog */
@@ -134,15 +134,16 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
 {
     GtkIconTheme       *icon_theme;
     GdkPixbuf          *pixbuf;
+    GdkPixbuf          *scaled;
     gint                size;
 
     if (id == fsguard->icon_id)
         return;
 
     fsguard->icon_id = id;
-    size = xfce_panel_plugin_get_size (fsguard->plugin);
-    size -= 2 * MAX (fsguard->btn_panel->style->xthickness,
-                     fsguard->btn_panel->style->ythickness);
+	size = xfce_panel_plugin_get_size (fsguard->plugin);
+    size -= 2 + 2 * MAX (fsguard->btn_panel->style->xthickness,
+                         fsguard->btn_panel->style->ythickness);
 
     icon_theme = gtk_icon_theme_get_default ();
     if (id == ICON_URGENT) {
@@ -156,14 +157,22 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     if (G_UNLIKELY (NULL == pixbuf)) {
         pixbuf = gtk_icon_theme_load_icon (icon_theme, GTK_STOCK_HARDDISK, size, 0, NULL);
     }
-    g_return_if_fail (G_LIKELY (NULL != pixbuf));
+
+    if (G_UNLIKELY (NULL == pixbuf)) {
+        gtk_image_clear (GTK_IMAGE (fsguard->icon_panel));
+        return;
+    }
+
+    scaled = gdk_pixbuf_scale_simple (pixbuf, size, size, GDK_INTERP_BILINEAR);
+    g_object_unref (G_OBJECT (pixbuf));
+    pixbuf = scaled;
 
     gtk_image_set_from_pixbuf (GTK_IMAGE (fsguard->icon_panel), pixbuf);
     gtk_widget_set_sensitive (fsguard->icon_panel, id != ICON_INSENSITIVE);
     g_object_unref (G_OBJECT (pixbuf));
 }
 
-static inline void
+static void
 fsguard_refresh_icon (FsGuard *fsguard)
 {
     gint icon_id = fsguard->icon_id;

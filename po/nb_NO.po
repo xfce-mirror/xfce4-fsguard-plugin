@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-13 16:10+0100\n"
+"POT-Creation-Date: 2008-01-24 11:44+0100\n"
 "PO-Revision-Date: 2007-10-04 17:29+0100\n"
 "Last-Translator: Christian Lomsdalen <christian@vindstille.net>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -52,47 +52,49 @@ msgstr "Kun %s plass ledig på %s (%s)!"
 msgid "Only %s space left on %s!"
 msgstr "Kun %s plass ledig på %s!"
 
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Ledig diskplass verktøy"
 
-#: ../panel-plugin/fsguard.c:560
+#: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
 msgstr "Konfigurasjon"
 
-#: ../panel-plugin/fsguard.c:567
+#: ../panel-plugin/fsguard.c:568
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: ../panel-plugin/fsguard.c:573
+#: ../panel-plugin/fsguard.c:574
 msgid "File manager"
 msgstr "Filbehandler"
 
-#: ../panel-plugin/fsguard.c:579
+#: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
 msgstr "Høy advarselgrense (MB)"
 
-#: ../panel-plugin/fsguard.c:584
+#: ../panel-plugin/fsguard.c:585
 msgid "Urgent limit (MB)"
 msgstr "Øyeblikkelig alarmgrense (MB)"
 
-#: ../panel-plugin/fsguard.c:608
+#: ../panel-plugin/fsguard.c:609
 msgid "User Interface"
 msgstr "Brukergrensesnitt"
 
-#: ../panel-plugin/fsguard.c:615
+#: ../panel-plugin/fsguard.c:616
 msgid "Name"
 msgstr "Navn"
 
-#: ../panel-plugin/fsguard.c:623
+#: ../panel-plugin/fsguard.c:624
 msgid "Display size"
 msgstr "Skjermstørrelse"
 
-#: ../panel-plugin/fsguard.c:627
+#: ../panel-plugin/fsguard.c:628
 msgid "Display meter"
 msgstr "Skjermmåler"
 
-#: ../panel-plugin/fsguard.c:631
+#: ../panel-plugin/fsguard.c:632
 #, fuzzy
 msgid "Display button"
 msgstr "Skjermmåler"
