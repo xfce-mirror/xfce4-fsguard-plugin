@@ -71,7 +71,7 @@ typedef struct
 {
     XfcePanelPlugin    *plugin;
     gboolean            seen;
-    volatile gint       icon_id;
+    gint                icon_id;
     gint                timeout;
     guint               limit_warning;
     guint               limit_urgent;
