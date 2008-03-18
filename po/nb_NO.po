@@ -95,9 +95,8 @@ msgid "Display meter"
 msgstr "Skjermmåler"
 
 #: ../panel-plugin/fsguard.c:632
-#, fuzzy
 msgid "Display button"
-msgstr "Skjermmåler"
+msgstr "Vis knapp"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
