@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2007-10-20 10:10+0100\n"
+"PO-Revision-Date: 2008-04-17 09:33+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:254
+#: ../panel-plugin/fsguard.c:255
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
@@ -33,7 +34,8 @@ msgstr "%s/%s szabad itt: %s (%s)"
 msgid "%s/%s space left on %s"
 msgstr "%s/%s szabad itt: %s"
 
-#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:261
+#: ../panel-plugin/fsguard.c:262
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
@@ -55,7 +57,8 @@ msgstr "Csak %s szabat itt: %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:550
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Szabad hely figyelő"
 
@@ -89,16 +92,15 @@ msgstr "Név"
 
 #: ../panel-plugin/fsguard.c:624
 msgid "Display size"
-msgstr ""
+msgstr "Méret mutatása"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Display meter"
-msgstr ""
+msgstr "Mérő mutatása"
 
 #: ../panel-plugin/fsguard.c:632
-#, fuzzy
 msgid "Display button"
-msgstr "Gomb elrejtése"
+msgstr "Gomb mutatása"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
@@ -106,21 +108,16 @@ msgstr "Szabad lemezhely figyelése"
 
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "Csak %.2f MB szabad itt: %s (%s)!"
-
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "Csak %.2f MB szabat itt: %s!"
-
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f MB szabad itt: %s (%s)"
-
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f MB szabad itt: %s"
-
 #~ msgid "label"
 #~ msgstr "cím"
-
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "Veszélyszint (MB)"
-
 #~ msgid "Properties"
 #~ msgstr "Tulajdonságok"
+
