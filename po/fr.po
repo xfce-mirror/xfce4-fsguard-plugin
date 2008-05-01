@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2007-10-26 04:28+0100\n"
+"PO-Revision-Date: 2008-05-01 23:36+0200\n"
 "Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Seulement %s d'espace disque libre sur %s !"
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Contrôle d'espace disque libre"
+msgstr "Contrôle l'espace disque libre"
 
 #: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
