@@ -1,21 +1,23 @@
+# translation of eu.po to Euskara
 # Basque translations for xfce4-fsguard-plugin package.
 # Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as
 #   the xfce4-fsguard-plugin package.
-# Piarres Beobide <pi@beobide.net, 2006.
 #
+# Piarres Beobide <pi@beobide.net, 2006, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2007-10-04 17:30+0100\n"
-"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
-"Language-Team: Euskara <Librezale@librezale.org>\n"
+"PO-Revision-Date: 2008-05-01 23:17+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
 #, c-format
@@ -60,7 +62,7 @@ msgstr "Leku Libre Egiaztatzailea"
 
 #: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigurazioa"
 
 #: ../panel-plugin/fsguard.c:568
 msgid "Mount point"
@@ -72,54 +74,33 @@ msgstr "Fitxategi-kudeatzailea"
 
 #: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
-msgstr "Abisu muga altua (MB)"
+msgstr "Abisu muga (MB)"
 
 #: ../panel-plugin/fsguard.c:585
-#, fuzzy
 msgid "Urgent limit (MB)"
-msgstr "Alarma muga altua (MB)"
+msgstr "Larritasun muga (MB)"
 
 #: ../panel-plugin/fsguard.c:609
 msgid "User Interface"
-msgstr ""
+msgstr "Erabiltzaile interfazea"
 
 #: ../panel-plugin/fsguard.c:616
 msgid "Name"
-msgstr ""
+msgstr "Izena"
 
 #: ../panel-plugin/fsguard.c:624
 msgid "Display size"
-msgstr ""
+msgstr "Pantaila tamaina"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Display meter"
-msgstr ""
+msgstr "Pantaila neurgailua"
 
 #: ../panel-plugin/fsguard.c:632
 msgid "Display button"
-msgstr ""
+msgstr "Pantaila botoia"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Disko leku librea monitorizatu"
 
-#~ msgid "Only %.2f MB space left on %s (%s)!"
-#~ msgstr "%.2f MB leku libre bakarrik dago %s-(e)n (%s)!"
-
-#~ msgid "Only %.2f MB space left on %s!"
-#~ msgstr "%.2f MB leku libre bakarrik dago %s-(e)n!"
-
-#~ msgid "%.2f MB space left on %s (%s)"
-#~ msgstr "%.2f MB leku libre dago %s-(e)n (%s)"
-
-#~ msgid "%.2f MB space left on %s"
-#~ msgstr "%.2f MB leku libre dago %s-(e)n"
-
-#~ msgid "label"
-#~ msgstr "etiketa"
-
-#~ msgid "high alarm limit (MB)"
-#~ msgstr "Alarma muga altua (MB)"
-
-#~ msgid "Properties"
-#~ msgstr "Propietateak"
