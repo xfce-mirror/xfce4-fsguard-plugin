@@ -70,7 +70,7 @@ msgstr "Ponto de montagem"
 
 #: ../panel-plugin/fsguard.c:574
 msgid "File manager"
-msgstr "Gerente de arquivo"
+msgstr "Gerenciador de arquivo"
 
 #: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
