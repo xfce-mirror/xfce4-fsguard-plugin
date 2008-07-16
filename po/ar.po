@@ -11,8 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Arabic\n"
 
-#: ../panel-plugin/fsguard.c:254
-#: ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
 #, c-format
 msgid "%.2f GB"
 msgstr ""
@@ -27,8 +26,7 @@ msgstr ""
 msgid "%s/%s space left on %s"
 msgstr ""
 
-#: ../panel-plugin/fsguard.c:261
-#: ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
 #, c-format
 msgid "%.0f MB"
 msgstr ""
@@ -50,8 +48,7 @@ msgstr ""
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr ""
 
@@ -98,4 +95,3 @@ msgstr ""
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr ""
-
