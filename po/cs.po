@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2007-12-17 21:57+0100\n"
+"PO-Revision-Date: 2008-11-02 17:55+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:254
+#: ../panel-plugin/fsguard.c:255
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
@@ -31,7 +32,8 @@ msgstr "%s/%s zbývá na disku %s (%s)"
 msgid "%s/%s space left on %s"
 msgstr "%s/%s zbývá na disku %s"
 
-#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:261
+#: ../panel-plugin/fsguard.c:262
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
@@ -53,7 +55,8 @@ msgstr "Pouze %s místa zbývá na disku %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:550
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Aplikace pro kontrolu volného místa"
 
@@ -94,34 +97,27 @@ msgid "Display meter"
 msgstr "Zobrazit měřič"
 
 #: ../panel-plugin/fsguard.c:632
-#, fuzzy
 msgid "Display button"
-msgstr "Zobrazit měřič"
+msgstr "Zobrazovat tlačítko"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr "Sledování volného prostoru na disku"
+msgstr "Sleduje volný prostor na disku"
 
 #~ msgid "Hide button"
 #~ msgstr "Tlačítko skrýt"
-
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "Pouze %.2f MB místa zbývá na disku %s (%s)!"
-
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "Pouze %.2f MB místa zbývá na disku %s!"
-
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f MB zbývá na disku %s (%s)"
-
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f MB zbývá na disku %s"
-
 #~ msgid "label"
 #~ msgstr "popisek"
-
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "limit pro zobrazení výstrahy (MB)"
-
 #~ msgid "Properties"
 #~ msgstr "Vlastnosti"
+
