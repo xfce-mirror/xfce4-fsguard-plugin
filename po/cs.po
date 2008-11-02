@@ -1,14 +1,14 @@
 # Czech translations for xfce4-fsguard-plugin package.
 # Copyright (C) 2006 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Michal Várady  <miko.vaji@gmail.com>, 2006.
+# Michal Várady <miko.vaji@gmail.com>, 2006-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2008-11-02 17:55+0100\n"
+"PO-Revision-Date: 2008-11-02 17:56+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Pouze %s místa zbývá na disku %s!"
 #: ../panel-plugin/fsguard.c:550
 #: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Aplikace pro kontrolu volného místa"
+msgstr "Kontrolu volného místa"
 
 #: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
