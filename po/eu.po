@@ -103,4 +103,3 @@ msgstr "Pantaila botoia"
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Disko leku librea monitorizatu"
-
