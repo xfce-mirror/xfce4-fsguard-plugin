@@ -1,3 +1,8 @@
+2008-11-22	Mike Massonnet <mmassonnet@xfce.org>
+
+	* === Release 0.4.2 ===
+	* panel-plugin/fsguard.c(fsguard_check_fs): Reverse progress fraction.
+
 2008-01-24	Mike Massonnet <mmassonnet@xfce.org>
 
 	* configure.in.in: Bump version post-release

@@ -3,7 +3,7 @@
 /*
  * Copyright (c) 2003 Andre Lerche <a.lerche@gmx.net>
  * Copyright (c) 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
- * Copyright (c) 2007 Mike Massonnet <mmassonnet@xfce.org>
+ * Copyright (c) 2007, 2008 Mike Massonnet <mmassonnet@xfce.org>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -280,7 +280,7 @@ fsguard_check_fs (FsGuard *fsguard)
     }
     if (fsguard->show_progress_bar) {
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar),
-                                       (total > 0 ) ? free / total : 0.0);
+                                       (total > 0 ) ? 1.0 - (free / total) : 0.0);
         fsguard_refresh_monitor (fsguard);
     }
 
