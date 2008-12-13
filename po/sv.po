@@ -1,124 +1,120 @@
 # Swedish translation for xfce4-fsguard-plugin
-# Copyright (c) 2006 Free Software Foundation, Inc.
+# Copyright (c) 2006, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2007-10-04 17:29+0100\n"
-"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
+"POT-Creation-Date: 2008-12-13 13:40+0100\n"
+"PO-Revision-Date: 2008-12-13 16:24+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:263
+#: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:267
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s utrymme kvar på %s (%s)"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:267
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s utrymme kvar på %s"
 
-#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:270
+#: ../panel-plugin/fsguard.c:271
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:273
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
-"kunde inte kontrollera monteringspunkten %s, undersök din konfiguration"
+msgstr "kunde inte kontrollera monteringspunkten %s, kontrollera din konfiguration"
 
-#: ../panel-plugin/fsguard.c:284
+#: ../panel-plugin/fsguard.c:293
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Endast %s utrymme kvar på %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:287
+#: ../panel-plugin/fsguard.c:296
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Endast %s utrymme kvar på %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:559
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Kontrollerare av ledigt utrymme"
+msgstr "Kontrollera ledigt utrymme"
 
-#: ../panel-plugin/fsguard.c:561
+#: ../panel-plugin/fsguard.c:570
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
-#: ../panel-plugin/fsguard.c:568
+#: ../panel-plugin/fsguard.c:577
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: ../panel-plugin/fsguard.c:574
+#: ../panel-plugin/fsguard.c:583
 msgid "File manager"
 msgstr "Filhanterare"
 
-#: ../panel-plugin/fsguard.c:580
+#: ../panel-plugin/fsguard.c:589
 msgid "Warning limit (MB)"
-msgstr "Varningsgräns hög (MB)"
+msgstr "Varningsgräns (MB)"
 
-#: ../panel-plugin/fsguard.c:585
-#, fuzzy
+#: ../panel-plugin/fsguard.c:594
 msgid "Urgent limit (MB)"
-msgstr "Alarmgräns hög (MB)"
+msgstr "Alarmgräns (MB)"
 
-#: ../panel-plugin/fsguard.c:609
+#: ../panel-plugin/fsguard.c:618
 msgid "User Interface"
-msgstr ""
+msgstr "Användargränssnitt"
 
-#: ../panel-plugin/fsguard.c:616
+#: ../panel-plugin/fsguard.c:625
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
-#: ../panel-plugin/fsguard.c:624
+#: ../panel-plugin/fsguard.c:633
 msgid "Display size"
-msgstr ""
+msgstr "Visa storlek"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:637
 msgid "Display meter"
-msgstr ""
+msgstr "Visa mätare"
 
-#: ../panel-plugin/fsguard.c:632
+#: ../panel-plugin/fsguard.c:641
 msgid "Display button"
-msgstr ""
+msgstr "Visa knapp"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "Övervaka ledigt diskutrymme"
 
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "Endast %.2f MB utrymme kvar på %s (%s)!"
-
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "Endast %.2f MB utrymme kvar på %s!"
-
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f MB utrymme kvar på %s (%s)"
-
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f MB utrymme kvar på %s"
-
 #~ msgid "label"
 #~ msgstr "etikett"
-
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "alarmgräns hög (MB)"
-
 #~ msgid "Properties"
 #~ msgstr "Egenskaper"
+
