@@ -1,14 +1,14 @@
 # Czech translations for xfce4-fsguard-plugin package.
 # Copyright (C) 2006 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Michal Várady <miko.vaji@gmail.com>, 2006-2008.
+# Michal Várady <miko.vaji@gmail.com>, 2006-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2008-11-02 17:56+0100\n"
+"PO-Revision-Date: 2009-02-01 14:54+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -25,12 +25,12 @@ msgstr "%.2f GB"
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr "%s/%s zbývá na disku %s (%s)"
+msgstr "Na disku %3$s (%4$s) zbývá %1$s z %2$s"
 
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s"
-msgstr "%s/%s zbývá na disku %s"
+msgstr "Na disku %3$s zbývá %1$s z %2$s"
 
 #: ../panel-plugin/fsguard.c:261
 #: ../panel-plugin/fsguard.c:262
@@ -41,24 +41,24 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "Nelze ověřit místo připojení %s, zkontrolujte Vaši konfiguraci"
+msgstr "Nelze ověřit místo připojení %s, zkontrolujte konfiguraci"
 
 #: ../panel-plugin/fsguard.c:284
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr "Pouze %s místa zbývá na disku %s (%s)!"
+msgstr "Na disku %2$s (%3$s) zbývá pouze %1$s místa!"
 
 #: ../panel-plugin/fsguard.c:287
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr "Pouze %s místa zbývá na disku %s!"
+msgstr "Na disku %2$s zbývá pouze %1$s místa!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:550
 #: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Kontrolu volného místa"
+msgstr "Kontrola volného místa"
 
 #: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
@@ -74,11 +74,11 @@ msgstr "Správce souborů"
 
 #: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
-msgstr "Limit pro zobrazení varování (MB)"
+msgstr "Limit pro zobrazení varování (v MB)"
 
 #: ../panel-plugin/fsguard.c:585
 msgid "Urgent limit (MB)"
-msgstr "Limit pro zobrazení výstrahy (MB)"
+msgstr "Limit pro zobrazení výstrahy (v MB)"
 
 #: ../panel-plugin/fsguard.c:609
 msgid "User Interface"
@@ -98,7 +98,7 @@ msgstr "Zobrazit měřič"
 
 #: ../panel-plugin/fsguard.c:632
 msgid "Display button"
-msgstr "Zobrazovat tlačítko"
+msgstr "Zobrazit tlačítko"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
