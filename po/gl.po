@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2008-06-24 19:44+0100\n"
+"PO-Revision-Date: 2009-02-11 15:13+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "%.2f GB"
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr ""
+msgstr "%s/%s espazo libre en %s (%s)"
 
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s"
-msgstr ""
+msgstr "%s/%s espazo libre en %s"
 
 #: ../panel-plugin/fsguard.c:261
 #: ../panel-plugin/fsguard.c:262
@@ -45,7 +45,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
+msgstr "non se puido comprobar o punto de montaxe %s, verifique a súa configuración"
 
 #: ../panel-plugin/fsguard.c:284
 #, c-format
@@ -78,11 +78,11 @@ msgstr "Xestor de ficheiros"
 
 #: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
-msgstr ""
+msgstr "Límite de advertencia (MB)"
 
 #: ../panel-plugin/fsguard.c:585
 msgid "Urgent limit (MB)"
-msgstr ""
+msgstr "Límite de urxencia (MB)"
 
 #: ../panel-plugin/fsguard.c:609
 msgid "User Interface"
@@ -94,19 +94,19 @@ msgstr "Nome"
 
 #: ../panel-plugin/fsguard.c:624
 msgid "Display size"
-msgstr ""
+msgstr "Mostrar o tamaño"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Display meter"
-msgstr ""
+msgstr "Mostrar medida"
 
 #: ../panel-plugin/fsguard.c:632
 msgid "Display button"
-msgstr ""
+msgstr "Mostrar botón"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "Monitor de espazo de disco libre"
 
 #~ msgid "label"
 #~ msgstr "etiqueta"
