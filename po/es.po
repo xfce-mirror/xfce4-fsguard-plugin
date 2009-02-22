@@ -1,21 +1,20 @@
-# translation of xfce4-fsguard-plugin to Danish
-# Copyright (C) 2007 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
+# Spanish translations for xfce4-fsguard-plugin package
+# Copyright (C) 2009 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007.
+#  <abel.martin.ruiz@gmail.com>, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2008-09-18 13:55+0100\n"
-"Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"PO-Revision-Date: 2009-02-11 19:32+0100\n"
+"Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
+"Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Danish\n"
-"X-Poedit-Country: DENMARK\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/fsguard.c:254
 #: ../panel-plugin/fsguard.c:255
@@ -26,12 +25,12 @@ msgstr "%.2f GB"
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr "%s/%s plads tilbage på %s (%s)"
+msgstr "%s/%s de espacio restante en %s (%s)"
 
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s"
-msgstr "%s/%s plads tilbage på %s"
+msgstr "%s/%s de espacio restante en %s"
 
 #: ../panel-plugin/fsguard.c:261
 #: ../panel-plugin/fsguard.c:262
@@ -42,66 +41,66 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "kunne ikke kontrollere monteringspunktet %s, kontrollér venligst din konfiguration"
+msgstr "no se pudo comprobar punto de montaje %s; por favor, compruebe su configuración"
 
 #: ../panel-plugin/fsguard.c:284
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr "Kun %s plads tilbage på %s (%s)!"
+msgstr "¡Sólo quedan %s de espacio en %s (%s)!"
 
 #: ../panel-plugin/fsguard.c:287
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr "Kun %s plads tilbage på %s!"
+msgstr "¡Sólo quedan %s de espacio en %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:550
 #: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Fri diskpladstjekker"
+msgstr "Monitor de espacio libre"
 
 #: ../panel-plugin/fsguard.c:561
 msgid "Configuration"
-msgstr "Opsætning"
+msgstr "Configuración"
 
 #: ../panel-plugin/fsguard.c:568
 msgid "Mount point"
-msgstr "Monteringspunkt"
+msgstr "Punto de montaje"
 
 #: ../panel-plugin/fsguard.c:574
 msgid "File manager"
-msgstr "Filhåndtering"
+msgstr "Administrador de archivos"
 
 #: ../panel-plugin/fsguard.c:580
 msgid "Warning limit (MB)"
-msgstr "Advarselsgrænse (MB)"
+msgstr "Límite de advertencia (MB)"
 
 #: ../panel-plugin/fsguard.c:585
 msgid "Urgent limit (MB)"
-msgstr "Hastegrænse (MB)"
+msgstr "Límite urgente (MB)"
 
 #: ../panel-plugin/fsguard.c:609
 msgid "User Interface"
-msgstr "Brugergrænseflade"
+msgstr "Interfaz de usuario"
 
 #: ../panel-plugin/fsguard.c:616
 msgid "Name"
-msgstr "Navn"
+msgstr "Nombre"
 
 #: ../panel-plugin/fsguard.c:624
 msgid "Display size"
-msgstr "Vis størrelse"
+msgstr "Mostrar tamaño"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Display meter"
-msgstr "Vis måler"
+msgstr "Mostrar medidor"
 
 #: ../panel-plugin/fsguard.c:632
 msgid "Display button"
-msgstr "Vis knap"
+msgstr "Mostrar botón"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr "Overvåg fri diskplads"
+msgstr "Monitor de espacio libre de disco"
 
