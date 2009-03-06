@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2009-01-14 17:15+0100\n"
+"PO-Revision-Date: 2009-03-04 09:14+0100\n"
 "Last-Translator: Francesco Scarrone <pjf.fra@gmail.com>\n"
 "Language-Team: Darkforge <www.darkforge.it>\n"
 "MIME-Version: 1.0\n"
@@ -101,4 +101,5 @@ msgstr "Mostra pulsante"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr "Monitor spazio libero sul disco"
+msgstr "Controlla spazio libero sul disco"
+
