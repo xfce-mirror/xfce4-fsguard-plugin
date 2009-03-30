@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2009-03-03 20:31+0100\n"
+"PO-Revision-Date: 2009-03-23 22:54+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -25,12 +25,12 @@ msgstr "%.2f GB"
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr "Pozostało %s/%s wolnej przestrzeni na wolumenie %s (%s)"
+msgstr "Na wolumenie „%3$s” (%4$s) pozostało %1$s z %2$s wolnej przestrzeni"
 
 #: ../panel-plugin/fsguard.c:258
 #, c-format
 msgid "%s/%s space left on %s"
-msgstr "Pozostało %s/%s wolnej przestrzeni na wolumenie %s"
+msgstr "Na wolumenie „%3$s” pozostało %1$s z %2$s wolnej przestrzeni"
 
 #: ../panel-plugin/fsguard.c:261
 #: ../panel-plugin/fsguard.c:262
@@ -41,17 +41,17 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "Nie można sprawdzić punktu montowania %s. Proszę sprawdzić ustawienia."
+msgstr "Nie można sprawdzić punktu montowania „%s”. Proszę sprawdzić ustawienia."
 
 #: ../panel-plugin/fsguard.c:284
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr "Pozostał tylko %s wolnej przestrzeni na wolumenie %s (%s)!"
+msgstr "Na wolumenie „%2$s” (%3$s) pozostał tylko %1$s wolnej przestrzeni!"
 
 #: ../panel-plugin/fsguard.c:287
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr "Pozostało tylko %s wolnej przestrzeni na wolumenie %s!"
+msgstr "Na wolumenie „%2$s” pozostało tylko %1$s wolnej przestrzeni!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
