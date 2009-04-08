@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-24 11:44+0100\n"
-"PO-Revision-Date: 2009-03-23 22:54+0100\n"
+"PO-Revision-Date: 2009-04-07 19:41+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:264
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "Nie można sprawdzić punktu montowania „%s”. Proszę sprawdzić ustawienia."
+msgstr "Nie można odnaleźć punktu montowania „%s”. Proszę sprawdzić ustawienia."
 
 #: ../panel-plugin/fsguard.c:284
 #, c-format
