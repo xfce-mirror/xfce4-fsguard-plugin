@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-24 11:44+0100\n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
 "PO-Revision-Date: 2009-05-14 02:56+0500\n"
 "Last-Translator: Muhammad Ali Makki <makki.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -19,87 +19,86 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../panel-plugin/fsguard.c:254
-#: ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f گ.ب"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s جگہ باقی ہے %s (%s)"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s جگہ باقی ہے %s"
 
-#: ../panel-plugin/fsguard.c:261
-#: ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f م.ب"
 
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "ماؤنٹ پوائنٹ %s چیک نہیں کیا جاسکتا، اپنی config چیک کریں"
 
-#: ../panel-plugin/fsguard.c:284
+#: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "صرف %s جگہ %s (%s) پر باقی ہے!"
 
-#: ../panel-plugin/fsguard.c:287
+#: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "صرف %s جگہ %s پر باقی ہے!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "خالی جگہ چیکر"
 
-#: ../panel-plugin/fsguard.c:561
+#: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
 msgstr "تشکیل"
 
-#: ../panel-plugin/fsguard.c:568
+#: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "ماؤنٹ پوائنٹ"
 
-#: ../panel-plugin/fsguard.c:574
-msgid "File manager"
-msgstr "فائل منیجر"
-
-#: ../panel-plugin/fsguard.c:580
-msgid "Warning limit (MB)"
+#: ../panel-plugin/fsguard.c:596
+#, fuzzy
+msgid "Warning limit (%)"
 msgstr "انتباہ حد (م.ب)"
 
-#: ../panel-plugin/fsguard.c:585
-msgid "Urgent limit (MB)"
+#: ../panel-plugin/fsguard.c:601
+#, fuzzy
+msgid "Urgent limit (%)"
 msgstr "ارجنٹ حد (م.ب)"
 
-#: ../panel-plugin/fsguard.c:609
+#: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
 msgstr "صارف مواجہ"
 
-#: ../panel-plugin/fsguard.c:616
+#: ../panel-plugin/fsguard.c:628
 msgid "Name"
 msgstr "نام"
 
-#: ../panel-plugin/fsguard.c:624
+#: ../panel-plugin/fsguard.c:636
 msgid "Display size"
 msgstr "ڈسپلے حجم"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
 msgstr "ڈسپلے میٹر"
 
-#: ../panel-plugin/fsguard.c:632
+#: ../panel-plugin/fsguard.c:644
 msgid "Display button"
 msgstr "ڈسپلے بٹن"
 
@@ -107,16 +106,23 @@ msgstr "ڈسپلے بٹن"
 msgid "Monitor free disk space"
 msgstr "خالی ڈسک جگہ کا معائنہ کریں"
 
+#~ msgid "File manager"
+#~ msgstr "فائل منیجر"
+
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "صرف %.2f م.ب جگہ %s (%s) پر باقی ہے!"
+
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "صرف %.2f م.ب جگہ %s پر باقی ہے!"
+
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f م.ب جگہ %s (%s) پر باقی ہے"
+
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f م.ب جگہ %s پر باقی ہے"
+
 #~ msgid "label"
 #~ msgstr "لیبل"
+
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "ہائی الارم حد (م.ب)"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-24 11:44+0100\n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
 "PO-Revision-Date: 2007-11-16 23:47+0300\n"
 "Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
 "Language-Team: Latvian <rprieditis@inbox.lv>\n"
@@ -15,84 +15,86 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s brīvās vietas palicis uz %s (%s)"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s brīvās vietas palicis uz %s"
 
-#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "nevarēja pārbaudīt montēšanas punktu %s, lūdzu pārbaudiet uzstādījumus"
 
-#: ../panel-plugin/fsguard.c:284
+#: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Tikai %s brīvās vietas palicis uz %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:287
+#: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Tikai %s brīvas vietas plicis uz %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Brīvās Vietas Pārbaudītājs"
 
-#: ../panel-plugin/fsguard.c:561
+#: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
 msgstr "Konfigurācija"
 
-#: ../panel-plugin/fsguard.c:568
+#: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "Montēšanas punkts"
 
-#: ../panel-plugin/fsguard.c:574
-msgid "File manager"
-msgstr "Failu Pārvaldnieks"
-
-#: ../panel-plugin/fsguard.c:580
-msgid "Warning limit (MB)"
+#: ../panel-plugin/fsguard.c:596
+#, fuzzy
+msgid "Warning limit (%)"
 msgstr "Brīdinājuma limits (MB)"
 
-#: ../panel-plugin/fsguard.c:585
-msgid "Urgent limit (MB)"
+#: ../panel-plugin/fsguard.c:601
+#, fuzzy
+msgid "Urgent limit (%)"
 msgstr "Kritisks limits (MB)"
 
-#: ../panel-plugin/fsguard.c:609
+#: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
 msgstr "Lietotāja Saskarsne"
 
-#: ../panel-plugin/fsguard.c:616
+#: ../panel-plugin/fsguard.c:628
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../panel-plugin/fsguard.c:624
+#: ../panel-plugin/fsguard.c:636
 msgid "Display size"
 msgstr "Displeja izmērs"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
 msgstr "Rādit skaitītāju"
 
-#: ../panel-plugin/fsguard.c:632
+#: ../panel-plugin/fsguard.c:644
 #, fuzzy
 msgid "Display button"
 msgstr "Rādit skaitītāju"
@@ -100,6 +102,9 @@ msgstr "Rādit skaitītāju"
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Uzrauga brīvo diska vietu"
+
+#~ msgid "File manager"
+#~ msgstr "Failu Pārvaldnieks"
 
 #~ msgid "Hide button"
 #~ msgstr "Slēpt pogu"

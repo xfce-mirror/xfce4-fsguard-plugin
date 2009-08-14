@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-23 12:19+0200\n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
 "PO-Revision-Date: 2009-07-24 00:50+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
@@ -19,84 +19,87 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/fsguard.c:263 ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:267
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s hely maradt a következőn: %s (%s)"
 
-#: ../panel-plugin/fsguard.c:267
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s hely maradt a következőn: %s"
 
-#: ../panel-plugin/fsguard.c:270 ../panel-plugin/fsguard.c:271
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:273
+#: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "A csatolási pont (%s) ellenőrzése sikertelen, ellenőrizze a beállításokat"
+msgstr ""
+"A csatolási pont (%s) ellenőrzése sikertelen, ellenőrizze a beállításokat"
 
-#: ../panel-plugin/fsguard.c:293
+#: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Csak %s hely maradt a következőn: %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:296
+#: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Csak %s hely maradt a következőn: %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:559 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Szabadhely-ellenőrző"
 
-#: ../panel-plugin/fsguard.c:570
+#: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
 msgstr "Beállítás"
 
-#: ../panel-plugin/fsguard.c:577
+#: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "Csatolási pont"
 
-#: ../panel-plugin/fsguard.c:583
-msgid "File manager"
-msgstr "Fájlkezelő"
-
-#: ../panel-plugin/fsguard.c:589
-msgid "Warning limit (MB)"
+#: ../panel-plugin/fsguard.c:596
+#, fuzzy
+msgid "Warning limit (%)"
 msgstr "Figyelmeztetési határ (MB)"
 
-#: ../panel-plugin/fsguard.c:594
-msgid "Urgent limit (MB)"
+#: ../panel-plugin/fsguard.c:601
+#, fuzzy
+msgid "Urgent limit (%)"
 msgstr "Sürgős határ (MB)"
 
-#: ../panel-plugin/fsguard.c:618
+#: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
 msgstr "Felhasználói felület"
 
-#: ../panel-plugin/fsguard.c:625
+#: ../panel-plugin/fsguard.c:628
 msgid "Name"
 msgstr "Név"
 
-#: ../panel-plugin/fsguard.c:633
+#: ../panel-plugin/fsguard.c:636
 msgid "Display size"
 msgstr "Méret megjelenítése"
 
-#: ../panel-plugin/fsguard.c:637
+#: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
 msgstr "Mérő megjelenítése"
 
-#: ../panel-plugin/fsguard.c:641
+#: ../panel-plugin/fsguard.c:644
 msgid "Display button"
 msgstr "Gomb megjelenítése"
 
@@ -104,3 +107,5 @@ msgstr "Gomb megjelenítése"
 msgid "Monitor free disk space"
 msgstr "Szabad hely figyelése"
 
+#~ msgid "File manager"
+#~ msgstr "Fájlkezelő"

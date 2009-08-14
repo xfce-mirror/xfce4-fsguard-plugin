@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-24 11:44+0100\n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
 "PO-Revision-Date: 2007-12-06 23:40+0000\n"
 "Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,92 +18,97 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:254 ../panel-plugin/fsguard.c:255
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s frei auf »%s« (%s)"
 
-#: ../panel-plugin/fsguard.c:258
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s frei auf »%s«"
 
-#: ../panel-plugin/fsguard.c:261 ../panel-plugin/fsguard.c:262
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr ""
 "Der Einhängepunkt »%s« konnte nicht geprüft werden, bitte prüfen Sie Ihre "
 "Konfiguration."
 
-#: ../panel-plugin/fsguard.c:284
+#: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Nur noch %s freier Speicher auf »%s« (%s)!"
 
-#: ../panel-plugin/fsguard.c:287
+#: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Nur noch %s freier Speicher auf »%s«!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:550 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Speicherplatzprüfung"
 
-#: ../panel-plugin/fsguard.c:561
+#: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
 msgstr "Einstellungen"
 
-#: ../panel-plugin/fsguard.c:568
+#: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "Einhängepunkt"
 
-#: ../panel-plugin/fsguard.c:574
-msgid "File manager"
-msgstr "Dateimanager"
-
-#: ../panel-plugin/fsguard.c:580
-msgid "Warning limit (MB)"
+#: ../panel-plugin/fsguard.c:596
+#, fuzzy
+msgid "Warning limit (%)"
 msgstr "Warnung ab (MB)"
 
-#: ../panel-plugin/fsguard.c:585
-msgid "Urgent limit (MB)"
+#: ../panel-plugin/fsguard.c:601
+#, fuzzy
+msgid "Urgent limit (%)"
 msgstr "Kritisch ab (MB)"
 
-#: ../panel-plugin/fsguard.c:609
+#: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
 msgstr "Benutzungsschnittstelle"
 
-#: ../panel-plugin/fsguard.c:616
+#: ../panel-plugin/fsguard.c:628
 msgid "Name"
 msgstr "Name"
 
-#: ../panel-plugin/fsguard.c:624
+#: ../panel-plugin/fsguard.c:636
 msgid "Display size"
 msgstr "Freien Speicher anzeigen"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
 msgstr "Balken anzeigen"
 
-#: ../panel-plugin/fsguard.c:632
+#: ../panel-plugin/fsguard.c:644
 msgid "Display button"
 msgstr "Knopf anzeigen"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "Freien Festplattenplatz überwachen"
+
+#~ msgid "File manager"
+#~ msgstr "Dateimanager"
 
 #~ msgid "Hide button"
 #~ msgstr "Knopf verstecken"

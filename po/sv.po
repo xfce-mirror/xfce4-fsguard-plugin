@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-13 13:40+0100\n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
 "PO-Revision-Date: 2008-12-13 16:24+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -15,87 +15,87 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:263
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:267
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s utrymme kvar på %s (%s)"
 
-#: ../panel-plugin/fsguard.c:267
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s utrymme kvar på %s"
 
-#: ../panel-plugin/fsguard.c:270
-#: ../panel-plugin/fsguard.c:271
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:273
+#: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "kunde inte kontrollera monteringspunkten %s, kontrollera din konfiguration"
+msgstr ""
+"kunde inte kontrollera monteringspunkten %s, kontrollera din konfiguration"
 
-#: ../panel-plugin/fsguard.c:293
+#: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Endast %s utrymme kvar på %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:296
+#: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Endast %s utrymme kvar på %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:559
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Kontrollera ledigt utrymme"
 
-#: ../panel-plugin/fsguard.c:570
+#: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
 msgstr "Konfiguration"
 
-#: ../panel-plugin/fsguard.c:577
+#: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: ../panel-plugin/fsguard.c:583
-msgid "File manager"
-msgstr "Filhanterare"
-
-#: ../panel-plugin/fsguard.c:589
-msgid "Warning limit (MB)"
+#: ../panel-plugin/fsguard.c:596
+#, fuzzy
+msgid "Warning limit (%)"
 msgstr "Varningsgräns (MB)"
 
-#: ../panel-plugin/fsguard.c:594
-msgid "Urgent limit (MB)"
+#: ../panel-plugin/fsguard.c:601
+#, fuzzy
+msgid "Urgent limit (%)"
 msgstr "Alarmgräns (MB)"
 
-#: ../panel-plugin/fsguard.c:618
+#: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
 msgstr "Användargränssnitt"
 
-#: ../panel-plugin/fsguard.c:625
+#: ../panel-plugin/fsguard.c:628
 msgid "Name"
 msgstr "Namn"
 
-#: ../panel-plugin/fsguard.c:633
+#: ../panel-plugin/fsguard.c:636
 msgid "Display size"
 msgstr "Visa storlek"
 
-#: ../panel-plugin/fsguard.c:637
+#: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
 msgstr "Visa mätare"
 
-#: ../panel-plugin/fsguard.c:641
+#: ../panel-plugin/fsguard.c:644
 msgid "Display button"
 msgstr "Visa knapp"
 
@@ -103,18 +103,26 @@ msgstr "Visa knapp"
 msgid "Monitor free disk space"
 msgstr "Övervaka ledigt diskutrymme"
 
+#~ msgid "File manager"
+#~ msgstr "Filhanterare"
+
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "Endast %.2f MB utrymme kvar på %s (%s)!"
+
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "Endast %.2f MB utrymme kvar på %s!"
+
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f MB utrymme kvar på %s (%s)"
+
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f MB utrymme kvar på %s"
+
 #~ msgid "label"
 #~ msgstr "etikett"
+
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "alarmgräns hög (MB)"
+
 #~ msgid "Properties"
 #~ msgstr "Egenskaper"
-

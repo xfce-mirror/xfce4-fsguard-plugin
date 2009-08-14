@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-09 15:28+0900\n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
 "PO-Revision-Date: 2008-12-09 15:39+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -20,90 +20,92 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/fsguard.c:263
-#: ../panel-plugin/fsguard.c:264
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:267
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%3$s (%4$s) には %2$s 中 %1$s の空き容量があります"
 
-#: ../panel-plugin/fsguard.c:267
+#: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%3$s には %2$s 中 %1$s の空き容量があります"
 
-#: ../panel-plugin/fsguard.c:270
-#: ../panel-plugin/fsguard.c:271
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:273
+#: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "マウントポイント (%s) を確認できませんでした。設定を確認して下さい。"
 
-#: ../panel-plugin/fsguard.c:293
+#: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "%2$s (%3$s) は残り %1$s しかありません!"
 
-#: ../panel-plugin/fsguard.c:296
+#: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "%2$s は残り %1$s しかありません!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:559
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "空き容量チェッカ"
 
-#: ../panel-plugin/fsguard.c:570
+#: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
 msgstr "設定"
 
-#: ../panel-plugin/fsguard.c:577
+#: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "マウントポイント"
 
-#: ../panel-plugin/fsguard.c:583
-msgid "File manager"
-msgstr "ファイルマネージャ"
-
-#: ../panel-plugin/fsguard.c:589
-msgid "Warning limit (MB)"
+#: ../panel-plugin/fsguard.c:596
+#, fuzzy
+msgid "Warning limit (%)"
 msgstr "警告を出す上限値 (MB)"
 
-#: ../panel-plugin/fsguard.c:594
-msgid "Urgent limit (MB)"
+#: ../panel-plugin/fsguard.c:601
+#, fuzzy
+msgid "Urgent limit (%)"
 msgstr "注意を促す上限値 (MB)"
 
-#: ../panel-plugin/fsguard.c:618
+#: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
 msgstr "ユーザインターフェイス"
 
-#: ../panel-plugin/fsguard.c:625
+#: ../panel-plugin/fsguard.c:628
 msgid "Name"
 msgstr "名前"
 
-#: ../panel-plugin/fsguard.c:633
+#: ../panel-plugin/fsguard.c:636
 msgid "Display size"
 msgstr "サイズを表示する"
 
-#: ../panel-plugin/fsguard.c:637
+#: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
 msgstr "メーターを表示する"
 
-#: ../panel-plugin/fsguard.c:641
+#: ../panel-plugin/fsguard.c:644
 msgid "Display button"
 msgstr "ボタンを表示する"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "ディスクの空き容量を見張ります。"
+
+#~ msgid "File manager"
+#~ msgstr "ファイルマネージャ"
