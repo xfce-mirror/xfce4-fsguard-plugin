@@ -1,5 +1,12 @@
 2009-08-14	Mike Massonnet <mmassonnet@xfce.org>
 
+Drop the file manager option
+
+Use default tools to open the path instead of exposing the choice of a file
+manager to the user.
+
+2009-08-14	Mike Massonnet <mmassonnet@xfce.org>
+
 Replace limits in MB to percents
 
 Set default for warning level to 8% and urgent to 2%.

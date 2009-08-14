@@ -81,7 +81,6 @@ typedef struct
     gboolean            show_name;
     gchar              *name;
     gchar              *path;
-    gchar              *filemanager;
 
     GtkWidget          *ebox;
     GtkWidget          *box;
@@ -211,20 +210,39 @@ fsguard_refresh_monitor (FsGuard *fsguard)
                             &color);
 }
 
+static inline gboolean
+__open_mnt (gchar *command, gchar *path)
+{
+    gboolean res;
+    gchar *cmd;
+    gchar *path_quoted;
+    path_quoted = g_shell_quote (path);
+    cmd = g_strdup_printf ("%s %s", command, path_quoted);
+    res = xfce_exec (cmd, FALSE, FALSE, NULL);
+    g_free (path_quoted);
+    g_free (cmd);
+    return res;
+}
+
 static void
 fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
 {
-    GString *cmd;
-    if (strlen(fsguard->filemanager) == 0) {
-        return;
-    }
-    cmd = g_string_new (fsguard->filemanager);
-    if (fsguard->path != NULL && (strcmp(fsguard->path, ""))) {
-        g_string_append (cmd, " ");
-        g_string_append (cmd, fsguard->path);
-    }
-    xfce_exec (cmd->str, FALSE, FALSE, NULL);
-    g_string_free (cmd, TRUE);
+    if (fsguard->path == NULL || fsguard->path[0] == '\0')
+      return;
+
+    if (__open_mnt ("exo-open", fsguard->path))
+      return;
+    if (__open_mnt ("Thunar", fsguard->path))
+      return;
+    if (__open_mnt ("xdg-open", fsguard->path))
+      return;
+
+    GtkWidget *dialog;
+    dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_NO_SEPARATOR, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                     "Free Space Checker", NULL);
+    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+                                              _("Unable to find an appropriate application to open the mount point"),
+                                              NULL);
 }
 
 static gboolean
@@ -317,7 +335,6 @@ fsguard_read_config (FsGuard *fsguard)
     fsguard->name               = g_strdup (xfce_rc_read_entry (rc, "label", ""));
     fsguard->show_name          = xfce_rc_read_bool_entry (rc, "label_visible", FALSE);
     fsguard->path               = g_strdup (xfce_rc_read_entry (rc, "mnt", "/"));
-    fsguard->filemanager        = g_strdup (xfce_rc_read_entry (rc, "filemanager", "Thunar"));
     fsguard->show_size          = xfce_rc_read_bool_entry (rc, "lab_size_visible", TRUE);
     fsguard->show_progress_bar  = xfce_rc_read_bool_entry (rc, "progress_bar_visible", TRUE);
     fsguard->hide_button        = xfce_rc_read_bool_entry (rc, "hide_button", FALSE);
@@ -351,7 +368,6 @@ fsguard_write_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
     xfce_rc_write_entry (rc, "label", fsguard->name);
     xfce_rc_write_bool_entry (rc, "label_visible", fsguard->show_name);
     xfce_rc_write_entry (rc, "mnt", fsguard->path);
-    xfce_rc_write_entry (rc, "filemanager", fsguard->filemanager);
 
     xfce_rc_close (rc);
 }    
@@ -432,7 +448,6 @@ fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     g_free (fsguard->name);
     g_free (fsguard->path);
-    g_free (fsguard->filemanager);
 
     g_free(fsguard);
 }
@@ -478,13 +493,6 @@ fsguard_entry1_changed (GtkWidget *widget, FsGuard *fsguard)
     fsguard->path = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
     fsguard->seen = FALSE;
     fsguard_check_fs (fsguard);
-}
-
-static void
-fsguard_entry2_changed (GtkWidget *widget, FsGuard *fsguard)
-{
-    g_free (fsguard->filemanager);
-    fsguard->filemanager = g_strdup (gtk_entry_get_text (GTK_ENTRY(widget)));
 }
 
 static void
@@ -571,7 +579,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
 
     /* Configuration frame */
-    GtkWidget *table1 = gtk_table_new (2, 4, FALSE);
+    GtkWidget *table1 = gtk_table_new (2, 3, FALSE);
     GtkWidget *frame1 = xfce_create_framebox_with_content (_("Configuration"), table1);
     gtk_table_set_row_spacings (GTK_TABLE (table1), BORDER);
     gtk_table_set_col_spacings (GTK_TABLE (table1), BORDER);
@@ -584,12 +592,6 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     GtkWidget *entry1 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY (entry1), 32);
     gtk_entry_set_text (GTK_ENTRY (entry1), fsguard->path);
-
-    GtkWidget *label2 = gtk_label_new (_("File manager"));
-    gtk_misc_set_alignment (GTK_MISC (label2), 0, 0.5);
-    GtkWidget *entry2 = gtk_entry_new ();
-    gtk_entry_set_max_length (GTK_ENTRY (entry2), 16);
-    gtk_entry_set_text (GTK_ENTRY (entry2), fsguard->filemanager);
 
     GtkWidget *label3 = gtk_label_new (_("Warning limit (%)"));
     gtk_misc_set_alignment (GTK_MISC (label3), 0, 0.5);
@@ -605,18 +607,14 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                                0, 1, 0, 1);
     gtk_table_attach_defaults (GTK_TABLE (table1), entry1,
                                1, 2, 0, 1);
-    gtk_table_attach_defaults (GTK_TABLE (table1), label2,
-                               0, 1, 1, 2);
-    gtk_table_attach_defaults (GTK_TABLE (table1), entry2,
-                               1, 2, 1, 2);
     gtk_table_attach_defaults (GTK_TABLE (table1), label3,
-                               0, 1, 2, 3);
+                               0, 1, 1, 2);
     gtk_table_attach_defaults (GTK_TABLE (table1), spin1,
-                               1, 2, 2, 3);
+                               1, 2, 1, 2);
     gtk_table_attach_defaults (GTK_TABLE (table1), label4,
-                               0, 1, 3, 4);
+                               0, 1, 2, 3);
     gtk_table_attach_defaults (GTK_TABLE (table1), spin2,
-                               1, 2, 3, 4);
+                               1, 2, 2, 3);
 
     /* Display frame */
     GtkWidget *table2 = gtk_table_new (2, 4, FALSE);
@@ -661,10 +659,6 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     g_signal_connect (entry1,
                       "changed",
                       G_CALLBACK (fsguard_entry1_changed),
-                      fsguard);
-    g_signal_connect (entry2,
-                      "changed",
-                      G_CALLBACK (fsguard_entry2_changed),
                       fsguard);
     g_signal_connect (spin1,
                       "value-changed",
