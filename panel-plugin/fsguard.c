@@ -249,9 +249,9 @@ fsguard_check_fs (FsGuard *fsguard)
         free            = (freeblocks * blocksize) / 1048576;
         total           = (totalblocks * blocksize) / 1048576;
 
-        if (free > fsguard->limit_warning) {
+        if (free > (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_NORMAL;
-        } else if (free > fsguard->limit_urgent && free <= fsguard->limit_warning) {
+        } else if (free > (total * fsguard->limit_urgent / 100) && free <= (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_WARNING;
         } else {
             icon_id = ICON_URGENT;
@@ -321,8 +321,13 @@ fsguard_read_config (FsGuard *fsguard)
     fsguard->show_size          = xfce_rc_read_bool_entry (rc, "lab_size_visible", TRUE);
     fsguard->show_progress_bar  = xfce_rc_read_bool_entry (rc, "progress_bar_visible", TRUE);
     fsguard->hide_button        = xfce_rc_read_bool_entry (rc, "hide_button", FALSE);
-    fsguard->limit_warning      = xfce_rc_read_int_entry (rc, "yellow", 1500);
-    fsguard->limit_urgent       = xfce_rc_read_int_entry (rc, "red", 300);
+    fsguard->limit_warning      = xfce_rc_read_int_entry (rc, "yellow", 8);
+    fsguard->limit_urgent       = xfce_rc_read_int_entry (rc, "red", 2);
+    /* Prevent MB values from earlier configuration files (2009-08-14) */
+    if (fsguard->limit_warning > 100)
+      fsguard->limit_warning = 8;
+    if (fsguard->limit_urgent > 100)
+      fsguard->limit_urgent = 2;
 
     xfce_rc_close (rc);
 }
@@ -586,14 +591,14 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_entry_set_max_length (GTK_ENTRY (entry2), 16);
     gtk_entry_set_text (GTK_ENTRY (entry2), fsguard->filemanager);
 
-    GtkWidget *label3 = gtk_label_new (_("Warning limit (MB)"));
+    GtkWidget *label3 = gtk_label_new (_("Warning limit (%)"));
     gtk_misc_set_alignment (GTK_MISC (label3), 0, 0.5);
-    GtkWidget *spin1 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
+    GtkWidget *spin1 = gtk_spin_button_new_with_range (0, 100, 1);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin1), fsguard->limit_warning);
 
-    GtkWidget *label4 = gtk_label_new (_("Urgent limit (MB)"));
+    GtkWidget *label4 = gtk_label_new (_("Urgent limit (%)"));
     gtk_misc_set_alignment (GTK_MISC (label4), 0, 0.5);
-    GtkWidget *spin2 = gtk_spin_button_new_with_range (0, G_MAXUINT, 100);
+    GtkWidget *spin2 = gtk_spin_button_new_with_range (0, 100, 1);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin2), fsguard->limit_urgent);
 
     gtk_table_attach_defaults (GTK_TABLE (table1), label1,
