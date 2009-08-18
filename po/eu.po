@@ -1,27 +1,28 @@
-# translation of eu.po to Euskara
+# translation of xfce4-fsguard-plugin.master.po to Euskara
 # Basque translations for xfce4-fsguard-plugin package.
 # Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as
 #   the xfce4-fsguard-plugin package.
 #
-# Piarres Beobide <pi@beobide.net, 2006, 2008.
+# Piarres Beobide <pi@beobide.net, 2006, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: xfce4-fsguard-plugin.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2008-05-01 23:17+0200\n"
+"PO-Revision-Date: 2009-08-18 09:40+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
+"Language-Team: Euskara <debian-l10n-eu@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Ezin da muntatze puntua irekitzeko aplikazio egokirik aurkitu"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -73,14 +74,12 @@ msgid "Mount point"
 msgstr "Muntatze-puntua"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Abisu muga (MB)"
+msgstr "Abisu muga (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Larritasun muga (MB)"
+msgstr "Larritasun muga (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
@@ -106,5 +105,3 @@ msgstr "Pantaila botoia"
 msgid "Monitor free disk space"
 msgstr "Disko leku librea monitorizatu"
 
-#~ msgid "File manager"
-#~ msgstr "Fitxategi-kudeatzailea"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2008-05-10 13:24+1000\n"
+"PO-Revision-Date: 2009-08-18 19:44+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Unable to find an appropriate application to open the mount point"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -71,14 +71,12 @@ msgid "Mount point"
 msgstr "Mount point"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Warning limit (MB)"
+msgstr "Warning limit (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Urgent limit (MB)"
+msgstr "Urgent limit (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
