@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin git version\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
+"PO-Revision-Date: 2009-09-05 20:40+0200\n"
+"Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
+"Language-Team: Greek <nls@tux.hellug.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr "Δεν βρέθηκε κάποια κατάλληλη εφαρμογή για να ανοίξει το σημείο προσάρτησης"
+
+#: ../panel-plugin/fsguard.c:281
+#: ../panel-plugin/fsguard.c:282
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: ../panel-plugin/fsguard.c:285
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s χώρος έχει μείνει στο %s (%s)"
+
+#: ../panel-plugin/fsguard.c:285
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s χώρος έχει μείνει στο %s"
+
+#: ../panel-plugin/fsguard.c:288
+#: ../panel-plugin/fsguard.c:289
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f MB"
+
+#: ../panel-plugin/fsguard.c:291
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "δεν μπορεί να ελεγχθεί το σημείο προσάρτησης %s, παρακαλώ ελέγξτε τις ρυθμίσεις σας"
+
+#: ../panel-plugin/fsguard.c:311
+#, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr "Μόνο %s χώρος έχει μείνει στο %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:314
+#, c-format
+msgid "Only %s space left on %s!"
+msgstr "Μόνο %s χώρος έχει μείνει στο %s!"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:572
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "Έλεγχος ελεύθερου χώρου"
+
+#: ../panel-plugin/fsguard.c:583
+msgid "Configuration"
+msgstr "Ρύθμιση"
+
+#: ../panel-plugin/fsguard.c:590
+msgid "Mount point"
+msgstr "Σημείο προσάρτησης"
+
+#: ../panel-plugin/fsguard.c:596
+msgid "Warning limit (%)"
+msgstr "Προειδοποιητικό όριο (%)"
+
+#: ../panel-plugin/fsguard.c:601
+msgid "Urgent limit (%)"
+msgstr "Κρίσιμο όριο (%)"
+
+#: ../panel-plugin/fsguard.c:621
+msgid "User Interface"
+msgstr "Ρυθμίσεις εμφάνισης"
+
+#: ../panel-plugin/fsguard.c:628
+msgid "Name"
+msgstr "Όνομα"
+
+#: ../panel-plugin/fsguard.c:636
+msgid "Display size"
+msgstr "Εμφάνιση μεγέθους"
+
+#: ../panel-plugin/fsguard.c:640
+msgid "Display meter"
+msgstr "Εμφάνιση μπάρας"
+
+#: ../panel-plugin/fsguard.c:644
+msgid "Display button"
+msgstr "Εμφάνιση κουμπιού"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "Παρακολουθεί τον διαθέσιμο ελεύθερο χώρο"
+
