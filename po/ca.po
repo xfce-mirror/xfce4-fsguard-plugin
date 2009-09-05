@@ -3,14 +3,14 @@
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as the
 # xfce4-fsguard-plugin package.
-# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2008.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2008-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2008-03-21 20:46+0100\n"
+"PO-Revision-Date: 2009-09-05 16:13+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: catalan\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,7 @@ msgstr ""
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr ""
+"No s'ha pogut trobar una aplicació apropiada per obrir el punt de muntatge"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -76,14 +77,12 @@ msgid "Mount point"
 msgstr "Punt de muntatge"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Límit d'advertència (MB)"
+msgstr "Límit d'advertència (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Límit perillós (MB)"
+msgstr "Límit perillós (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
