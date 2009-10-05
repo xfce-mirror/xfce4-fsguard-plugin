@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2008-12-09 15:39+0900\n"
+"PO-Revision-Date: 2009-10-05 23:07+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,10 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "マウントポイントを開く適切なアプリケーションが見つかりません"
 
-#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:281
+#: ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
@@ -39,7 +40,8 @@ msgstr "%3$s (%4$s) には %2$s 中 %1$s の空き容量があります"
 msgid "%s/%s space left on %s"
 msgstr "%3$s には %2$s 中 %1$s の空き容量があります"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:288
+#: ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
@@ -61,7 +63,8 @@ msgstr "%2$s は残り %1$s しかありません!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "空き容量チェッカ"
 
@@ -74,14 +77,12 @@ msgid "Mount point"
 msgstr "マウントポイント"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "警告を出す上限値 (MB)"
+msgstr "警告を出す上限値 (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "注意を促す上限値 (MB)"
+msgstr "緊急措置を促す上限値 (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
@@ -109,3 +110,4 @@ msgstr "ディスクの空き容量を見張ります。"
 
 #~ msgid "File manager"
 #~ msgstr "ファイルマネージャ"
+
