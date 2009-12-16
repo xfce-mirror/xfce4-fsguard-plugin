@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2008-12-13 16:24+0100\n"
+"PO-Revision-Date: 2009-12-16 17:28+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,10 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Kunde inte hitta ett lämpligt program för att öppna monteringspunkten"
 
-#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:281
+#: ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
@@ -34,7 +35,8 @@ msgstr "%s/%s utrymme kvar på %s (%s)"
 msgid "%s/%s space left on %s"
 msgstr "%s/%s utrymme kvar på %s"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:288
+#: ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
@@ -42,8 +44,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
-"kunde inte kontrollera monteringspunkten %s, kontrollera din konfiguration"
+msgstr "kunde inte kontrollera monteringspunkten %s, kontrollera din konfiguration"
 
 #: ../panel-plugin/fsguard.c:311
 #, c-format
@@ -57,7 +58,8 @@ msgstr "Endast %s utrymme kvar på %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
 msgstr "Kontrollera ledigt utrymme"
 
@@ -70,14 +72,12 @@ msgid "Mount point"
 msgstr "Monteringspunkt"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Varningsgräns (MB)"
+msgstr "Varningsgräns (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Alarmgräns (MB)"
+msgstr "Alarmgräns (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
@@ -105,24 +105,18 @@ msgstr "Övervaka ledigt diskutrymme"
 
 #~ msgid "File manager"
 #~ msgstr "Filhanterare"
-
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "Endast %.2f MB utrymme kvar på %s (%s)!"
-
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "Endast %.2f MB utrymme kvar på %s!"
-
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f MB utrymme kvar på %s (%s)"
-
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f MB utrymme kvar på %s"
-
 #~ msgid "label"
 #~ msgstr "etikett"
-
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "alarmgräns hög (MB)"
-
 #~ msgid "Properties"
 #~ msgstr "Egenskaper"
+
