@@ -1,7 +1,7 @@
 # Hungarian translation of xfce4-fsguard-plugin
 # Copyright 2009. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
-#
+# 
 # SZERVÁC Attila <sas@321.hu>, 2006. .
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2009-07-23 17:00+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Nem található megfelelő alkalmazás a csatolási pont megnyitásához"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -46,8 +46,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
-"A csatolási pont (%s) ellenőrzése sikertelen, ellenőrizze a beállításokat"
+msgstr "A csatolási pont (%s) ellenőrzése sikertelen, ellenőrizze a beállításokat"
 
 #: ../panel-plugin/fsguard.c:311
 #, c-format
@@ -74,14 +73,12 @@ msgid "Mount point"
 msgstr "Csatolási pont"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Figyelmeztetési határ (MB)"
+msgstr "Figyelmeztetési határ (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Sürgős határ (MB)"
+msgstr "Sürgős határ (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
