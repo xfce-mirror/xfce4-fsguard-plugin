@@ -5,7 +5,7 @@
 # Andre Lerche <a.lerche@gmx.net>, 2003.
 # Fabian Nowak <timystery@arcor.de>, 2007.
 # Mike Massonnet <mmassonnet@gmail.com>, 2007.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
@@ -45,9 +45,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
-"Der Einhängepunkt »%s« konnte nicht geprüft werden, bitte prüfen Sie Ihre "
-"Konfiguration."
+msgstr "Der Einhängepunkt »%s« konnte nicht geprüft werden, bitte prüfen Sie Ihre Konfiguration."
 
 #: ../panel-plugin/fsguard.c:311
 #, c-format
@@ -74,14 +72,12 @@ msgid "Mount point"
 msgstr "Einhängepunkt"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Warnung ab (MB)"
+msgstr "Warnung ab (%%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Kritisch ab (MB)"
+msgstr "Kritisch ab (%%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
