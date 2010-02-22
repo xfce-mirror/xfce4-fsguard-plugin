@@ -73,11 +73,11 @@ msgstr "Einhängepunkt"
 
 #: ../panel-plugin/fsguard.c:596
 msgid "Warning limit (%)"
-msgstr "Warnung ab (%%)"
+msgstr "Warnung ab (%)"
 
 #: ../panel-plugin/fsguard.c:601
 msgid "Urgent limit (%)"
-msgstr "Kritisch ab (%%)"
+msgstr "Kritisch ab (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
