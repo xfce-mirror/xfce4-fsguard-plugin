@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Konnte keine geeignete Anwendung finden, mit welcher der Einhängepunkt geöffnet werden kann."
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -69,23 +69,23 @@ msgstr "Einstellungen"
 
 #: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
-msgstr "Einhängepunkt"
+msgstr "Einhängepunkt:"
 
 #: ../panel-plugin/fsguard.c:596
 msgid "Warning limit (%)"
-msgstr "Warnung ab (%)"
+msgstr "Warnung ab (in %):"
 
 #: ../panel-plugin/fsguard.c:601
 msgid "Urgent limit (%)"
-msgstr "Kritisch ab (%)"
+msgstr "Kritisch ab (in %):"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
-msgstr "Benutzungsschnittstelle"
+msgstr "Aussehen"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Name"
-msgstr "Name"
+msgstr "Name:"
 
 #: ../panel-plugin/fsguard.c:636
 msgid "Display size"
