@@ -1,0 +1,110 @@
+# Uyghur translations for xfce4-fsguard-plugin package.
+# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
+# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
+# This file is distributed under the same license as
+#   the xfce4-fsguard-plugin package.
+# Gheyret T.Kenji <gheyret@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-14 22:39+0200\n"
+"PO-Revision-Date: 2009-10-05 23:07+0900\n"
+"Last-Translator: Gheyret T.Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:281
+#: ../panel-plugin/fsguard.c:282
+#, c-format
+msgid "%.2f GB"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:285
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:285
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:288
+#: ../panel-plugin/fsguard.c:289
+#, c-format
+msgid "%.0f MB"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:291
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:311
+#, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:314
+#, c-format
+msgid "Only %s space left on %s!"
+msgstr ""
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:572
+#: ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:583
+msgid "Configuration"
+msgstr "تەڭشەك"
+
+#: ../panel-plugin/fsguard.c:590
+msgid "Mount point"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:596
+msgid "Warning limit (%)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:601
+msgid "Urgent limit (%)"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:621
+msgid "User Interface"
+msgstr "ئىشلەتكۈچى كۆرۈنمە يۈزى"
+
+#: ../panel-plugin/fsguard.c:628
+msgid "Name"
+msgstr "ئاتى"
+
+#: ../panel-plugin/fsguard.c:636
+msgid "Display size"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:640
+msgid "Display meter"
+msgstr ""
+
+#: ../panel-plugin/fsguard.c:644
+msgid "Display button"
+msgstr ""
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr ""
+
+#~ msgid "File manager"
+#~ msgstr "ファイルマネージャ"
+
