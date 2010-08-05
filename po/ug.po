@@ -19,51 +19,51 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "mount نۇقتىسىنى ئاچىدىغان مۇۋاپىق پروگرامما تېپىلمىدى"
 
 #: ../panel-plugin/fsguard.c:281
 #: ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
-msgstr ""
+msgstr "%.2f GB"
 
 #: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr ""
+msgstr "%3$s (%4$s) نىڭدا %1$s/%2$s  بوشلۇق قالدى"
 
 #: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s"
-msgstr ""
+msgstr "%3$s نىڭدا %1$s/%2$s  بوشلۇق قالدى"
 
 #: ../panel-plugin/fsguard.c:288
 #: ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
-msgstr ""
+msgstr "%.0f MB"
 
 #: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
+msgstr "mount نۇقتىسىنى (%s) جەزىملىيەلمىدى. تەڭشەككە قاراپ بېقىڭ."
 
 #: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr ""
+msgstr "%2$s (%3$s) نىڭدا %1$s بوشلۇق قالدى."
 
 #: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr ""
+msgstr "%2$s نىڭدا %1$s بوشلۇق قالدى."
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:572
 #: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr ""
+msgstr "بوشلۇق تەكشۈرگۈ"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
@@ -71,15 +71,15 @@ msgstr "تەڭشەك"
 
 #: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
-msgstr ""
+msgstr "mount نۇقتىسىنى"
 
 #: ../panel-plugin/fsguard.c:596
 msgid "Warning limit (%)"
-msgstr ""
+msgstr "ئاگاھلاندۇرۇش چېكى (%)"
 
 #: ../panel-plugin/fsguard.c:601
 msgid "Urgent limit (%)"
-msgstr ""
+msgstr "جىددىي ھالەت چېكى (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
@@ -91,19 +91,19 @@ msgstr "ئاتى"
 
 #: ../panel-plugin/fsguard.c:636
 msgid "Display size"
-msgstr ""
+msgstr "چوڭلۇقىنى كۆرسىتىدۇ"
 
 #: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
-msgstr ""
+msgstr "مېتىرنى كۆرسىتىدۇ"
 
 #: ../panel-plugin/fsguard.c:644
 msgid "Display button"
-msgstr ""
+msgstr "توپچىنى كۆرسىتىدۇ"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "دىسكىدىكى قالغان بوشلۇقنى كۆزىتىدۇ"
 
 #~ msgid "File manager"
 #~ msgstr "ファイルマネージャ"
