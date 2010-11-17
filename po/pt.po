@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Nuno Miguel <nunis@netcabo.pt>, 2007.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin/\n"
@@ -17,10 +17,9 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "Incapaz de encontrar uma aplicação adequada para abrir o ponto de montagem"
+msgstr "Incapaz de encontrar a aplicação adequada para abrir o ponto de montagem"
 
-#: ../panel-plugin/fsguard.c:281
-#: ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
@@ -35,8 +34,7 @@ msgstr "%s/%s espaço livre em %s (%s)"
 msgid "%s/%s space left on %s"
 msgstr "%s/%s espaço livre em %s"
 
-#: ../panel-plugin/fsguard.c:288
-#: ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
@@ -54,14 +52,13 @@ msgstr "Apenas %s de espaço livre em %s (%s)!"
 #: ../panel-plugin/fsguard.c:314
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr "Apenas %s espaço livre em %s!"
+msgstr "Apenas %s de espaço livre em %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Free Space Checker"
+msgstr "Verificador de espaço livre"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
@@ -69,7 +66,7 @@ msgstr "Configuração"
 
 #: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
-msgstr "Ponto montagem"
+msgstr "Ponto de montagem"
 
 #: ../panel-plugin/fsguard.c:596
 msgid "Warning limit (%)"
@@ -81,7 +78,7 @@ msgstr "Limite de urgência (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
-msgstr "Interface Utilizador"
+msgstr "Interface de utilizador"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Name"
@@ -101,20 +98,25 @@ msgstr "Mostrar botão"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr "Monitor de espaço livre em disco"
+msgstr "Vigiar o espaço livre "
 
 #~ msgid "File manager"
 #~ msgstr "Gestor de ficheiros"
+
 #~ msgid "Only %.2f MB space left on %s (%s)!"
 #~ msgstr "Apenas %.2f MB espaço livre em %s (%s)! "
+
 #~ msgid "Only %.2f MB space left on %s!"
 #~ msgstr "Apenas %.2f MB espaço livre em %s!"
+
 #~ msgid "%.2f MB space left on %s (%s)"
 #~ msgstr "%.2f MB espaço livre em %s (%s)"
+
 #~ msgid "%.2f MB space left on %s"
 #~ msgstr "%.2f MB espaço livre em %s"
+
 #~ msgid "label"
 #~ msgstr "Etiqueta"
+
 #~ msgid "high alarm limit (MB)"
 #~ msgstr "alarme de limite alto (MB)"
-
