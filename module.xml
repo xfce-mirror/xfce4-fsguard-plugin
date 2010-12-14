@@ -5,9 +5,9 @@
 	<mailing-list rdf:resource="http://foo-projects.org/mailman/listinfo/xfce"/>
 	<maintainer>
 		<foaf:Person>
-			<foaf:name>Mike Massonnet</foaf:name>
-			<foaf:mbox>mailto:mmassonnet@xfce.org</foaf:mbox>
-			<gnome:userid>mmassonnet</gnome:userid>
+			<foaf:name>Florian Rivoal</foaf:name>
+			<foaf:mbox>mailto:frivoal@xfce.org</foaf:mbox>
+			<gnome:userid>frivoal</gnome:userid>
 		</foaf:Person>
 	</maintainer>
 </Project>
