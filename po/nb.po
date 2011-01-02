@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the xfce package.
 # Terje Uriansrud <ter@operamail.com>, 2007.
 # Christian Lomsdalen <christian@vindstille.net>, 2007.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
+"POT-Creation-Date: 2011-01-02 17:03+0000\n"
 "PO-Revision-Date: 2007-10-04 17:29+0100\n"
 "Last-Translator: Christian Lomsdalen <christian@vindstille.net>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Klarte ikke finne en passende applikasjon til å åpne monteringspunkt"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -71,14 +71,12 @@ msgid "Mount point"
 msgstr "Monteringspunkt"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Høy advarselgrense (MB)"
+msgstr "Advarselgrense (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Øyeblikkelig alarmgrense (MB)"
+msgstr "Alarmgrense (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
