@@ -3,12 +3,12 @@
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
 # Andhika Padmawan <andhika.padmawan@gmail.com>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
+"POT-Creation-Date: 2011-05-31 10:03+0000\n"
 "PO-Revision-Date: 2008-06-20 18:32+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Tak dapat menemukan aplikasi yang sesuai untuk membuka titik kait"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -70,14 +70,12 @@ msgid "Mount point"
 msgstr "Titik mount"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Batas peringatan (MB)"
+msgstr "Batas peringatan (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Batas penting (MB)"
+msgstr "Batas penting (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
