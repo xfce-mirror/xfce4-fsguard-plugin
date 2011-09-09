@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-16 10:03+0000\n"
-"PO-Revision-Date: 2011-06-15 11:34+0200\n"
+"POT-Creation-Date: 2011-09-09 04:04+0000\n"
+"PO-Revision-Date: 2011-09-09 11:34+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "Slechts %s ruimte over op %s!"
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Bewaker van Vrije Ruimte"
+msgstr "Bewaker van vrije ruimte"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
