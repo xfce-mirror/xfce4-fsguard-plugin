@@ -2,26 +2,27 @@
 # Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as
-#   the xfce4-fsguard-plugin package.
+# the xfce4-fsguard-plugin package.
 # Hydonsingore Cia <hydonsingore@educities.edu.tw>, 2006.
 # Vern Sun <s5unty@gmail.com>, 2007.
 # Hunt Xu <huntxu@live.cn>, 2009.
-#
+# Chipong Luo <chipong_l@yahoo.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
+"POT-Creation-Date: 2011-10-09 04:02+0000\n"
 "PO-Revision-Date: 2009-11-09 19:56+0800\n"
-"Last-Translator: Hunt Xu <huntxu@live.cn>\n"
-"Language-Team: Chinese(Simplified) <xfce-i18n@xfce.org>\n"
+"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
+"Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "无法找到合适的程序以打开挂载点"
+msgstr "未能找到合适的应用程序打开挂载点"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
@@ -31,7 +32,7 @@ msgstr "%.2f GB"
 #: ../panel-plugin/fsguard.c:285
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr "%3$s (%4$s) 的容量剩下 %1$s/%2$s"
+msgstr "%3$s(%4$s) 的容量剩下 %1$s/%2$s"
 
 #: ../panel-plugin/fsguard.c:285
 #, c-format
@@ -46,12 +47,12 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "无法检查位置 %s，请检查您的设定"
+msgstr "未能检查挂载点 %s，请检查您的配置"
 
 #: ../panel-plugin/fsguard.c:311
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr "%2$s (%3$s) 的容量只剩下 %1$s！"
+msgstr "%2$s(%3$s) 的容量只剩下 %1$s！"
 
 #: ../panel-plugin/fsguard.c:314
 #, c-format
@@ -62,7 +63,7 @@ msgstr "%2$s 的容量只剩下 %1$s！"
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "剩余容量检查程序"
+msgstr "剩余容量检查器"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
@@ -74,35 +75,32 @@ msgstr "挂载点"
 
 #: ../panel-plugin/fsguard.c:596
 msgid "Warning limit (%)"
-msgstr "低于此值发出警告 (%)"
+msgstr "警告值(%)"
 
 #: ../panel-plugin/fsguard.c:601
 msgid "Urgent limit (%)"
-msgstr "低于此值发出严重警告 (%)"
+msgstr "严重警告值(%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
-msgstr "用户视图"
+msgstr "用户界面"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Name"
-msgstr "一个用于显示的名称"
+msgstr "名称"
 
 #: ../panel-plugin/fsguard.c:636
 msgid "Display size"
-msgstr "显示磁盘的剩余空间"
+msgstr "显示大小"
 
 #: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
-msgstr "显示图形化的计量器"
+msgstr "显示计量器"
 
 #: ../panel-plugin/fsguard.c:644
 msgid "Display button"
-msgstr "到文件管理器的按钮"
+msgstr "显示按钮"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr "监控磁盘剩余容量"
-
-#~ msgid "File manager"
-#~ msgstr "文件管理器"
+msgstr "监视磁盘剩余容量"
