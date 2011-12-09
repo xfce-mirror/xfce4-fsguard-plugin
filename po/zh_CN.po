@@ -1,12 +1,12 @@
-# Simplified Chinese translations for xfce4-fsguard-plugin package.
-# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
-# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
+# Simplified Chinese translations for
+# the xfce4-fsguard-plugin package.
 # This file is distributed under the same license as
 # the xfce4-fsguard-plugin package.
 # Hydonsingore Cia <hydonsingore@educities.edu.tw>, 2006.
 # Vern Sun <s5unty@gmail.com>, 2007.
 # Hunt Xu <huntxu@live.cn>, 2009.
 # Chipong Luo <chipong_l@yahoo.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
@@ -14,8 +14,8 @@ msgstr ""
 "POT-Creation-Date: 2011-10-09 04:02+0000\n"
 "PO-Revision-Date: 2009-11-09 19:56+0800\n"
 "Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
-"Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
-"Language: \n"
+"Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
