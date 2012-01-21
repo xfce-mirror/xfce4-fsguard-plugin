@@ -3,27 +3,31 @@
 # Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
 # This file is distributed under the same license as the xfce4-fsguard-plugin package.
 # Rimas Kudelis <rq@akl.lt>, 2005.
+# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2007-10-04 17:29+0100\n"
-"Last-Translator: Mike Massonnet <mmassonnet@gmail.com>\n"
-"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"POT-Creation-Date: 2012-01-21 14:36+0000\n"
+"PO-Revision-Date: 2012-01-21 17:09+0200\n"
+"Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"Language-Team: Lietuvių <>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Nepavyko rasti tinkamos programos prijungimo taško atvėrimui"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
-msgstr ""
+msgstr "%.2f GB"
 
 #: ../panel-plugin/fsguard.c:285
 #, c-format
@@ -38,7 +42,7 @@ msgstr "%s/%s laisvos vietos yra likę skirsnyje·%s"
 #: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
-msgstr ""
+msgstr "%.0f MB"
 
 #: ../panel-plugin/fsguard.c:291
 #, c-format
@@ -59,49 +63,47 @@ msgstr "Tik %s laisvos vietos liko skirsnyje·%s!"
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "Laisvos vietos tikrintuvė"
+msgstr "Laisvos vietos tikrinimas"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigūracija"
 
 #: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
 msgstr "Prijungimo taškas"
 
 #: ../panel-plugin/fsguard.c:596
-#, fuzzy
 msgid "Warning limit (%)"
-msgstr "Įspėti ties (MB)"
+msgstr "Įspėti ties (%)"
 
 #: ../panel-plugin/fsguard.c:601
-#, fuzzy
 msgid "Urgent limit (%)"
-msgstr "Signalizuoti ties (MB)"
+msgstr "Signalizuoti ties (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
-msgstr ""
+msgstr "Naudotojo sąsaja"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
 #: ../panel-plugin/fsguard.c:636
 msgid "Display size"
-msgstr ""
+msgstr "Rodyti dydį"
 
 #: ../panel-plugin/fsguard.c:640
 msgid "Display meter"
-msgstr ""
+msgstr "Rodyti skaitiklį"
 
 #: ../panel-plugin/fsguard.c:644
 msgid "Display button"
-msgstr ""
+msgstr "Rodyti mygtuką"
 
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
-msgstr ""
+msgstr "Stebėti laisvą disko vietą"
 
 #~ msgid "File manager"
 #~ msgstr "Bylų naršyklė"
