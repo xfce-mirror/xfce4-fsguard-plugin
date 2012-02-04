@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# كريم اولاد الشلحة <herr.linux88@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-04 20:39+0000\n"
+"PO-Revision-Date: 2012-02-04 20:56+0000\n"
+"Last-Translator: كريم اولاد الشلحة <herr.linux88@gmail.com>\n"
+"Language-Team: Arabic Xfce Translation Team\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.0\n"
+
+#: ../panel-plugin/fsguard.c:244
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr "غير قادر على العثور على تطبيق مناسب لفتح نقطة الضم"
+
+#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f جيجابايت"
+
+#: ../panel-plugin/fsguard.c:285
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s مساحة فارغة في %s (%s)"
+
+#: ../panel-plugin/fsguard.c:285
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s مساحة فارغة في %s"
+
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f م.بايت"
+
+#: ../panel-plugin/fsguard.c:291
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "تعذر فحص نقطة الضم %s, الرجاء فحص إعداداتك"
+
+#: ../panel-plugin/fsguard.c:311
+#, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr "فقط %s مساحة فارغة في %s (%s)!"
+
+#: ../panel-plugin/fsguard.c:314
+#, c-format
+msgid "Only %s space left on %s!"
+msgstr "فقط %s مساحة فارغة في %s!"
+
+#. }}}
+#. vim600: set foldmethod=marker: foldmarker={{{,}}}
+#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
+msgid "Free Space Checker"
+msgstr "فاحص المساحات الفارغة"
+
+#: ../panel-plugin/fsguard.c:583
+msgid "Configuration"
+msgstr "إعدادات"
+
+#: ../panel-plugin/fsguard.c:590
+msgid "Mount point"
+msgstr "نقطة الضم"
+
+#: ../panel-plugin/fsguard.c:596
+msgid "Warning limit (%)"
+msgstr "حدود إنذار (%)"
+
+#: ../panel-plugin/fsguard.c:601
+msgid "Urgent limit (%)"
+msgstr "حدود الطوارء (%)"
+
+#: ../panel-plugin/fsguard.c:621
+msgid "User Interface"
+msgstr "واجهة المستخدم"
+
+#: ../panel-plugin/fsguard.c:628
+msgid "Name"
+msgstr "إسم"
+
+#: ../panel-plugin/fsguard.c:636
+msgid "Display size"
+msgstr "حجم العرض"
+
+#: ../panel-plugin/fsguard.c:640
+msgid "Display meter"
+msgstr "عرض متر"
+
+#: ../panel-plugin/fsguard.c:644
+msgid "Display button"
+msgstr "عرض الزر"
+
+#: ../panel-plugin/fsguard.desktop.in.in.h:2
+msgid "Monitor free disk space"
+msgstr "مراقب المساحة الخالية في القرص"
