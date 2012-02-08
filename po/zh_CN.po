@@ -5,15 +5,15 @@
 # Hydonsingore Cia <hydonsingore@educities.edu.tw>, 2006.
 # Vern Sun <s5unty@gmail.com>, 2007.
 # Hunt Xu <huntxu@live.cn>, 2009.
-# Chipong Luo <chipong_l@yahoo.com>, 2011.
+# Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-fsguard-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 04:02+0000\n"
+"POT-Creation-Date: 2012-02-08 05:51+0000\n"
 "PO-Revision-Date: 2009-11-09 19:56+0800\n"
-"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
+"Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,12 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "未能找到合适的应用程序打开挂载点"
+msgstr "未能找到合适的应用程序打开此挂载点"
 
 #: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
-msgstr "%.2f GB"
+msgstr "%.2f G"
 
 #: ../panel-plugin/fsguard.c:285
 #, c-format
@@ -42,7 +42,7 @@ msgstr "%3$s 的容量剩下 %1$s/%2$s"
 #: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
-msgstr "%.0f MB"
+msgstr "%.0f M"
 
 #: ../panel-plugin/fsguard.c:291
 #, c-format
