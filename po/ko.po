@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "마운트 지점을 열 적당한 프로그램을 찾을 수 없습니다"
 
 #: ../panel-plugin/fsguard.c:281
 #: ../panel-plugin/fsguard.c:282
@@ -68,7 +68,7 @@ msgstr "남은 용량 확인"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
-msgstr ""
+msgstr "설정"
 
 #: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
