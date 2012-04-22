@@ -64,7 +64,7 @@ msgstr "겨우 %s이(가) 남은 %s!"
 #: ../panel-plugin/fsguard.c:572
 #: ../panel-plugin/fsguard.desktop.in.in.h:1
 msgid "Free Space Checker"
-msgstr "남은 용량 감시기"
+msgstr "남은 용량 검사기"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
