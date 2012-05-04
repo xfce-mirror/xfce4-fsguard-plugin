@@ -47,10 +47,8 @@
 
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
-#include <libxfcegui4/libxfcegui4.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
-#include <libxfce4panel/xfce-hvbox.h>
+#include <libxfce4ui/libxfce4ui.h>
+#include <libxfce4panel/libxfce4panel.h>
 
 #define ICON_NORMAL             0
 #define ICON_WARNING            1
@@ -218,7 +216,7 @@ __open_mnt (gchar *command, gchar *path)
     gchar *path_quoted;
     path_quoted = g_shell_quote (path);
     cmd = g_strdup_printf ("%s %s", command, path_quoted);
-    res = xfce_exec (cmd, FALSE, FALSE, NULL);
+    res = xfce_spawn_command_line_on_screen (NULL, cmd, FALSE, FALSE, NULL);
     g_free (path_quoted);
     g_free (cmd);
     return res;
@@ -308,10 +306,10 @@ fsguard_check_fs (FsGuard *fsguard)
     if (err != -1 && !fsguard->seen && icon_id == ICON_URGENT) {
         fsguard->seen = TRUE;
         if (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) {
-            xfce_warn (_("Only %s space left on %s (%s)!"),
+            xfce_dialog_show_warning (NULL, NULL, _("Only %s space left on %s (%s)!"),
                        msg_size, fsguard->path, fsguard->name);
         } else {
-            xfce_warn (_("Only %s space left on %s!"),
+            xfce_dialog_show_warning (NULL, NULL, _("Only %s space left on %s!"),
                        msg_size, fsguard->path);
         }
     }
@@ -580,7 +578,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     /* Configuration frame */
     GtkWidget *table1 = gtk_table_new (2, 3, FALSE);
-    GtkWidget *frame1 = xfce_create_framebox_with_content (_("Configuration"), table1);
+    GtkWidget *frame1 = xfce_gtk_frame_box_new_with_content (_("Configuration"), table1);
     gtk_table_set_row_spacings (GTK_TABLE (table1), BORDER);
     gtk_table_set_col_spacings (GTK_TABLE (table1), BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (frame1), BORDER);
@@ -618,7 +616,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     /* Display frame */
     GtkWidget *table2 = gtk_table_new (2, 4, FALSE);
-    GtkWidget *frame2 = xfce_create_framebox_with_content (_("User Interface"), table2);
+    GtkWidget *frame2 = xfce_gtk_frame_box_new_with_content (_("User Interface"), table2);
     gtk_table_set_row_spacings (GTK_TABLE (table2), BORDER);
     gtk_table_set_col_spacings (GTK_TABLE (table2), BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (frame2), BORDER);
