@@ -323,15 +323,28 @@ fsguard_read_config (FsGuard *fsguard)
     char               *file;
     XfceRc             *rc;
 
-    file = xfce_panel_plugin_lookup_rc_file (fsguard->plugin);
+    /* prepare default values */
+    fsguard->seen               = FALSE;
+    fsguard->name               = g_strdup ("");
+    fsguard->show_name          = FALSE;
+    fsguard->path               = g_strdup ("/");
+    fsguard->show_size          = TRUE;
+    fsguard->show_progress_bar  = TRUE;
+    fsguard->hide_button        = FALSE;
+    fsguard->limit_warning      = 8;
+    fsguard->limit_urgent       = 2;
+
+    file = xfce_panel_plugin_lookup_rc_file(fsguard->plugin);
+    g_return_if_fail (file);
     DBG ("Lookup rc file `%s'", file);
     rc = xfce_rc_simple_open (file, TRUE);
     g_free (file);
     g_return_if_fail (rc);
 
-    fsguard->seen               = FALSE;
+    g_free (fsguard->name);
     fsguard->name               = g_strdup (xfce_rc_read_entry (rc, "label", ""));
     fsguard->show_name          = xfce_rc_read_bool_entry (rc, "label_visible", FALSE);
+    g_free (fsguard->path);
     fsguard->path               = g_strdup (xfce_rc_read_entry (rc, "mnt", "/"));
     fsguard->show_size          = xfce_rc_read_bool_entry (rc, "lab_size_visible", TRUE);
     fsguard->show_progress_bar  = xfce_rc_read_bool_entry (rc, "progress_bar_visible", TRUE);
