@@ -735,7 +735,7 @@ fsguard_construct (XfcePanelPlugin *plugin)
     xfce_panel_plugin_menu_show_configure (plugin);
 }
 
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (fsguard_construct);
+XFCE_PANEL_PLUGIN_REGISTER (fsguard_construct);
 
 // }}}
 
