@@ -246,7 +246,7 @@ fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
 static gboolean
 fsguard_check_fs (FsGuard *fsguard)
 {
-    float               free = 0;
+    float               freespace = 0;
     float               total = 0;
     float               freeblocks = 0;
     float               totalblocks = 0;
@@ -262,12 +262,12 @@ fsguard_check_fs (FsGuard *fsguard)
         blocksize       = fsd.f_bsize;
         freeblocks      = fsd.f_bavail;
         totalblocks     = fsd.f_blocks;
-        free            = (freeblocks * blocksize) / 1048576;
+        freespace       = (freeblocks * blocksize) / 1048576;
         total           = (totalblocks * blocksize) / 1048576;
 
-        if (free > (total * fsguard->limit_warning / 100)) {
+        if (freespace > (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_NORMAL;
-        } else if (free > (total * fsguard->limit_urgent / 100) && free <= (total * fsguard->limit_warning / 100)) {
+        } else if (freespace > (total * fsguard->limit_urgent / 100) && freespace <= (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_WARNING;
         } else {
             icon_id = ICON_URGENT;
@@ -277,14 +277,14 @@ fsguard_check_fs (FsGuard *fsguard)
     /* msg_total_size, msg_size */
     if (total > 1024) {
         g_snprintf (msg_total_size, sizeof(msg_total_size), _("%.2f GB"), total / 1024);
-        g_snprintf (msg_size, sizeof (msg_size), _("%.2f GB"), free / 1024);
+        g_snprintf (msg_size, sizeof (msg_size), _("%.2f GB"), freespace / 1024);
         g_snprintf (msg, sizeof (msg),
                     (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) ?
                     _("%s/%s space left on %s (%s)") : _("%s/%s space left on %s"),
                     msg_size, msg_total_size, fsguard->path, fsguard->name);
     } else {
         g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.0f MB"), total);
-        g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), free);
+        g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), freespace);
         g_snprintf (msg, sizeof (msg),
                     _("could not check mountpoint %s, please check your config"),
                     fsguard->path);
@@ -296,7 +296,7 @@ fsguard_check_fs (FsGuard *fsguard)
     }
     if (fsguard->show_progress_bar) {
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar),
-                                       (total > 0 ) ? 1.0 - (free / total) : 0.0);
+                                       (total > 0 ) ? 1.0 - (freespace / total) : 0.0);
         fsguard_refresh_monitor (fsguard);
     }
 
