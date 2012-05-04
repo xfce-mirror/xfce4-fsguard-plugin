@@ -323,9 +323,9 @@ fsguard_read_config (FsGuard *fsguard)
     char               *file;
     XfceRc             *rc;
 
-    file = xfce_panel_plugin_save_location (fsguard->plugin, TRUE);
+    file = xfce_panel_plugin_lookup_rc_file (fsguard->plugin);
     DBG ("Lookup rc file `%s'", file);
-    rc = xfce_rc_simple_open (file, FALSE);
+    rc = xfce_rc_simple_open (file, TRUE);
     g_free (file);
     g_return_if_fail (rc);
 
