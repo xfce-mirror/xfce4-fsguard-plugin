@@ -38,7 +38,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#if defined(__linux__)
+#if defined(__linux__) || defined(__GNU__)
 #include <sys/vfs.h>
 #elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD_kernel__)
 #include <sys/param.h>
