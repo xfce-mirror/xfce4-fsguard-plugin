@@ -722,6 +722,7 @@ fsguard_construct (XfcePanelPlugin *plugin)
       g_timeout_add (8192, (GSourceFunc) fsguard_check_fs, fsguard);
 
     gtk_container_add (GTK_CONTAINER (plugin), fsguard->ebox);
+    fsguard_set_size(fsguard->plugin, xfce_panel_plugin_get_size(fsguard->plugin), fsguard);
 
     g_signal_connect (plugin,
                       "free-data",
