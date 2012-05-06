@@ -481,12 +481,10 @@ fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
 static gboolean
 fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 {
-    gint btn_size;
-
     DBG ("Set size to `%d'", size);
 
-    btn_size = size / xfce_panel_plugin_get_nrows (plugin);
-    gtk_widget_set_size_request (fsguard->btn_panel, btn_size, btn_size);
+    size /= xfce_panel_plugin_get_nrows (plugin);
+    gtk_widget_set_size_request (fsguard->btn_panel, size, size);
 
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
     if (orientation == GTK_ORIENTATION_HORIZONTAL) {
