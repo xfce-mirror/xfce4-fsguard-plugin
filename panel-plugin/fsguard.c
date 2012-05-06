@@ -61,6 +61,12 @@
 #define COLOR_WARNING           "#FFE500"
 #define COLOR_URGENT            "#FF4F00"
 
+#ifdef LIBXFCE4PANEL_CHECK_VERSION
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#define HAS_PANEL_49
+#endif
+#endif
+
 // }}}
 
 // struct {{{
@@ -139,6 +145,10 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
 
     fsguard->icon_id = id;
 	size = xfce_panel_plugin_get_size (fsguard->plugin);
+#ifdef HAS_PANEL_49
+    size /= xfce_panel_plugin_get_nrows (fsguard->plugin);
+#endif
+
     size -= 2 + 2 * MAX (fsguard->btn_panel->style->xthickness,
                          fsguard->btn_panel->style->ythickness);
 
@@ -387,6 +397,8 @@ static FsGuard *
 fsguard_new (XfcePanelPlugin *plugin)
 {
     FsGuard *fsguard = g_new0(FsGuard, 1);
+    GtkWidget *alignment;
+
     fsguard->plugin = plugin;
 
     fsguard_read_config (fsguard);
@@ -403,7 +415,9 @@ fsguard_new (XfcePanelPlugin *plugin)
 
     fsguard->lab_name = gtk_label_new (NULL);
     fsguard->lab_size = gtk_label_new (NULL);
-    fsguard->lab_box = gtk_vbox_new (FALSE, 0);
+    fsguard->lab_box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 0);
+
+    alignment = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);
 
     fsguard->btn_panel = xfce_create_panel_button ();
     fsguard->icon_panel = gtk_image_new ();
@@ -429,7 +443,8 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_container_add (GTK_CONTAINER(fsguard->btn_panel), fsguard->icon_panel);
     gtk_container_add (GTK_CONTAINER(fsguard->lab_box), fsguard->lab_name);
     gtk_container_add (GTK_CONTAINER(fsguard->lab_box), fsguard->lab_size);
-    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_box);
+    gtk_container_add (GTK_CONTAINER(fsguard->box), alignment);
+    gtk_container_add (GTK_CONTAINER(alignment), fsguard->lab_box);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->pb_box);
     gtk_container_add (GTK_CONTAINER(fsguard->pb_box), fsguard->progress_bar);
 
@@ -463,25 +478,15 @@ fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
     g_free(fsguard);
 }
 
-static void
-fsguard_set_orientation (XfcePanelPlugin *plugin, GtkOrientation orientation, FsGuard *fsguard)
-{
-    DBG ("Set orientation to `%s'", orientation == GTK_ORIENTATION_HORIZONTAL ?
-                                    "Horizontal" : "Vertical");
-
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->box), orientation);
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->pb_box), orientation);
-    gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
-                                      orientation == GTK_ORIENTATION_HORIZONTAL ?
-                                      GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
-}
-
 static gboolean
 fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 {
+    gint btn_size;
+
     DBG ("Set size to `%d'", size);
 
-    gtk_widget_set_size_request (fsguard->btn_panel, size, size);
+    btn_size = size / xfce_panel_plugin_get_nrows (plugin);
+    gtk_widget_set_size_request (fsguard->btn_panel, btn_size, btn_size);
 
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
     if (orientation == GTK_ORIENTATION_HORIZONTAL) {
@@ -496,6 +501,55 @@ fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 
     return TRUE;
 }
+
+#ifdef HAS_PANEL_49
+static void
+fsguard_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, FsGuard *fsguard)
+{
+    GtkOrientation orientation, panel_orientation;
+
+    orientation =
+      (mode != XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
+      GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
+    panel_orientation =
+      (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
+      GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
+
+    DBG ("Set mode to `%s'", mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL ?
+         "Horizontal" : (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL ? "Vertical" : "Deskbar"));
+
+    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->box), panel_orientation);
+    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->pb_box), panel_orientation);
+    gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
+                                      panel_orientation == GTK_ORIENTATION_HORIZONTAL ?
+                                      GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
+    gtk_label_set_angle (GTK_LABEL(fsguard->lab_name),
+                         orientation == GTK_ORIENTATION_VERTICAL ? -90 : 0);
+    gtk_label_set_angle (GTK_LABEL(fsguard->lab_size),
+                         orientation == GTK_ORIENTATION_VERTICAL ? -90 : 0);
+    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->lab_box),
+                                orientation == GTK_ORIENTATION_VERTICAL ?
+                                GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL);
+    gtk_box_reorder_child (GTK_BOX (fsguard->lab_box),
+                           orientation == GTK_ORIENTATION_VERTICAL ? fsguard->lab_size : fsguard->lab_name, 0);
+    fsguard_set_size (plugin, xfce_panel_plugin_get_size (plugin), fsguard);
+}
+
+#else
+static void
+fsguard_set_orientation (XfcePanelPlugin *plugin, GtkOrientation orientation, FsGuard *fsguard)
+{
+    DBG ("Set orientation to `%s'", orientation == GTK_ORIENTATION_HORIZONTAL ?
+                                    "Horizontal" : "Vertical");
+
+    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->box), orientation);
+    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->pb_box), orientation);
+    gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
+                                      orientation == GTK_ORIENTATION_HORIZONTAL ?
+                                      GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
+    fsguard_set_size (plugin, xfce_panel_plugin_get_size (plugin), fsguard);
+}
+#endif
 
 static void
 fsguard_entry1_changed (GtkWidget *widget, FsGuard *fsguard)
@@ -735,10 +789,17 @@ fsguard_construct (XfcePanelPlugin *plugin)
                       "size-changed",
                       G_CALLBACK (fsguard_set_size),
                       fsguard);
+#ifdef HAS_PANEL_49
+    g_signal_connect (plugin,
+                      "mode-changed",
+                      G_CALLBACK (fsguard_set_mode),
+                      fsguard);
+#else
     g_signal_connect (plugin,
                       "orientation-changed",
                       G_CALLBACK (fsguard_set_orientation),
                       fsguard);
+#endif
     g_signal_connect (plugin,
                       "configure-plugin",
                       G_CALLBACK (fsguard_create_options),
