@@ -406,6 +406,8 @@ fsguard_new (XfcePanelPlugin *plugin)
     tooltips = gtk_tooltips_new ();
 
     fsguard->ebox = gtk_event_box_new();
+    gtk_event_box_set_visible_window(GTK_EVENT_BOX(fsguard->ebox), FALSE);
+    gtk_event_box_set_above_child(GTK_EVENT_BOX(fsguard->ebox), TRUE);
 
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
     fsguard->box =
@@ -792,6 +794,7 @@ fsguard_construct (XfcePanelPlugin *plugin)
                       "mode-changed",
                       G_CALLBACK (fsguard_set_mode),
                       fsguard);
+    xfce_panel_plugin_set_small (plugin, TRUE);
 #else
     g_signal_connect (plugin,
                       "orientation-changed",
