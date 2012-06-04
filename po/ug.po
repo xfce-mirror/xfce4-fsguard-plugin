@@ -19,13 +19,13 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:244
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "mount نۇقتىسىنى ئاچىدىغان مۇۋاپىق پروگرامما تېپىلمىدى"
+msgstr "ئېگەرلەش نۇقتىسىنى ئاچىدىغان مۇۋاپىق پروگرامما تېپىلمىدى"
 
 #: ../panel-plugin/fsguard.c:281
 #: ../panel-plugin/fsguard.c:282
 #, c-format
 msgid "%.2f GB"
-msgstr "%.2f GB"
+msgstr "%.2f گ ب"
 
 #: ../panel-plugin/fsguard.c:285
 #, c-format
@@ -41,12 +41,12 @@ msgstr "%3$s نىڭدا %1$s/%2$s  بوشلۇق قالدى"
 #: ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.0f MB"
-msgstr "%.0f MB"
+msgstr "%.0f م ب"
 
 #: ../panel-plugin/fsguard.c:291
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "mount نۇقتىسىنى (%s) جەزىملىيەلمىدى. تەڭشەككە قاراپ بېقىڭ."
+msgstr "ئېگەرلەش نۇقتىسىنى (%s) جەزملىيەلمىدى. تەڭشەككە قاراپ بېقىڭ."
 
 #: ../panel-plugin/fsguard.c:311
 #, c-format
@@ -67,11 +67,11 @@ msgstr "بوشلۇق تەكشۈرگۈ"
 
 #: ../panel-plugin/fsguard.c:583
 msgid "Configuration"
-msgstr "تەڭشەك"
+msgstr "سەپلىمە"
 
 #: ../panel-plugin/fsguard.c:590
 msgid "Mount point"
-msgstr "mount نۇقتىسىنى"
+msgstr "ئېگەرلەش نۇقتىسى"
 
 #: ../panel-plugin/fsguard.c:596
 msgid "Warning limit (%)"
@@ -83,7 +83,7 @@ msgstr "جىددىي ھالەت چېكى (%)"
 
 #: ../panel-plugin/fsguard.c:621
 msgid "User Interface"
-msgstr "ئىشلەتكۈچى كۆرۈنمە يۈزى"
+msgstr "ئىشلەتكۈچى ئارايۈزى"
 
 #: ../panel-plugin/fsguard.c:628
 msgid "Name"
@@ -104,7 +104,3 @@ msgstr "توپچىنى كۆرسىتىدۇ"
 #: ../panel-plugin/fsguard.desktop.in.in.h:2
 msgid "Monitor free disk space"
 msgstr "دىسكىدىكى قالغان بوشلۇقنى كۆزىتىدۇ"
-
-#~ msgid "File manager"
-#~ msgstr "ファイルマネージャ"
-
