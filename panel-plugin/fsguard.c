@@ -407,17 +407,13 @@ fsguard_new (XfcePanelPlugin *plugin)
 
     fsguard->ebox = gtk_event_box_new();
     gtk_event_box_set_visible_window(GTK_EVENT_BOX(fsguard->ebox), FALSE);
-    gtk_event_box_set_above_child(GTK_EVENT_BOX(fsguard->ebox), TRUE);
 
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
-    fsguard->box =
-      xfce_hvbox_new (orientation == GTK_ORIENTATION_HORIZONTAL ?
-                      GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL,
-                      FALSE, 2);
+    fsguard->box = xfce_hvbox_new (orientation, FALSE, 2);
 
     fsguard->lab_name = gtk_label_new (NULL);
     fsguard->lab_size = gtk_label_new (NULL);
-    fsguard->lab_box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 0);
+    fsguard->lab_box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 2);
 
     alignment = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);
 
@@ -429,11 +425,7 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
                                       orientation == GTK_ORIENTATION_HORIZONTAL ?
                                       GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
-    fsguard->pb_box =
-      xfce_hvbox_new (orientation == GTK_ORIENTATION_HORIZONTAL ?
-                      GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL,
-                      FALSE, 0);
-    gtk_container_set_border_width (GTK_CONTAINER (fsguard->pb_box), BORDER / 2);
+    fsguard->pb_box = xfce_hvbox_new (orientation, FALSE, 0);
 
     g_signal_connect (G_OBJECT(fsguard->btn_panel),
                       "clicked",
@@ -483,19 +475,24 @@ fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
 static gboolean
 fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 {
+    int border_width = (size > 26 ? 2 : 1);
+#ifdef HAS_PANEL_49
+    size /= xfce_panel_plugin_get_nrows (plugin);
+#endif
     DBG ("Set size to `%d'", size);
 
-    size /= xfce_panel_plugin_get_nrows (plugin);
-    gtk_widget_set_size_request (fsguard->btn_panel, size, size);
+    gtk_container_set_border_width (GTK_CONTAINER (fsguard->pb_box), border_width);
 
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
     if (orientation == GTK_ORIENTATION_HORIZONTAL) {
-        gtk_widget_set_size_request (GTK_WIDGET(fsguard->progress_bar), BORDER, -1);
+        gtk_widget_set_size_request (GTK_WIDGET(fsguard->progress_bar), 8, -1);
         gtk_widget_set_size_request (GTK_WIDGET(plugin), -1, size);
     } else {
-        gtk_widget_set_size_request (GTK_WIDGET(fsguard->progress_bar), -1, BORDER);
+        gtk_widget_set_size_request (GTK_WIDGET(fsguard->progress_bar), -1, 8);
         gtk_widget_set_size_request (GTK_WIDGET(plugin), size, -1);
     }
+    size -= 2 * border_width;
+    gtk_widget_set_size_request (fsguard->btn_panel, size, size);
 
     fsguard_refresh_icon (fsguard);
 
