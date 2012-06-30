@@ -491,8 +491,9 @@ fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
         gtk_widget_set_size_request (GTK_WIDGET(fsguard->progress_bar), -1, 8);
         gtk_widget_set_size_request (GTK_WIDGET(plugin), size, -1);
     }
-    size -= 2 * border_width;
     gtk_widget_set_size_request (fsguard->btn_panel, size, size);
+    size -= 2 * border_width;
+    gtk_widget_set_size_request (fsguard->icon_panel, size, size);
 
     fsguard_refresh_icon (fsguard);
 
