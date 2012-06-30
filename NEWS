@@ -1,3 +1,14 @@
+20120630 (1.0.1):
+-----------------
+
+    * Better compliance with panel plugin HIG
+    * Fix look on transparent/colored panels
+    * Added compatibility with xfce4-panel v.4.9.0+
+    * Fix config loading (bug #8821)
+    * Fix build on GNU/Hurd (Bug #7955 / #8820)
+    * Port to libxfce4ui (bug #8143)
+    * Build the plugin as a module
+
 20101215 (1.0.0):
 -----------------
 
