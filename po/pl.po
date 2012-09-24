@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Nie udało się odnaleźć odpowiedniego programu do otwarcia punktu montowania"
 
 #: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
