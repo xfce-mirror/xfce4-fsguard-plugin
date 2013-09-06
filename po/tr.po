@@ -1,108 +1,105 @@
-# translation of tr.po to Türkçe
-# English/GB translation of xfce4-fsguard-plugin.
-# Copyright (C) 2007 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Jeff Bailes <thepizzaking@gmail.com>, 2007.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Jeff Bailes <thepizzaking@gmail.com>, 2007
+# Necdet Yücel <necdetyucel@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: tr\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2009-01-13 16:33+0200\n"
-"Last-Translator: Samed Beyribey <ras0ir@eventualis.org>\n"
-"Language-Team: Türkçe <tr@li.org>\n"
+"POT-Creation-Date: 2013-07-03 21:00+0200\n"
+"PO-Revision-Date: 2013-09-06 10:53+0000\n"
+"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/xfce/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/fsguard.c:244
+#: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "Bağlama noktasını açabilmek için uygun bir uygulama bulunamadı"
 
-#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s boş alan / sürücünün kapasitesi:%s %s (%s)"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s boş alan / sürücünün kapasitesi: %s %s"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:291
+#: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Sürücüye ulaşılamıyor %s, lütfen ayarları kontrol edin."
 
-#: ../panel-plugin/fsguard.c:311
+#: ../panel-plugin/fsguard.c:318
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Only %s space left on %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:314
+#: ../panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Only %s space left on %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
 msgstr "Boş Alan Denetleyici"
 
-#: ../panel-plugin/fsguard.c:583
+#: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
 msgstr "Yapılandırma"
 
-#: ../panel-plugin/fsguard.c:590
+#: ../panel-plugin/fsguard.c:653
 msgid "Mount point"
 msgstr "Sürücü yolu"
 
-#: ../panel-plugin/fsguard.c:596
-#, fuzzy
+#: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
-msgstr "Uyarı sınırı (MB)"
+msgstr "Uyarı sınırı (%)"
 
-#: ../panel-plugin/fsguard.c:601
-#, fuzzy
+#: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
-msgstr "Tehlike sınırı (MB)"
+msgstr "Acil sınırı (%)"
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:684
 msgid "User Interface"
 msgstr "Kullanıcı arayüzü"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:691
 msgid "Name"
 msgstr "İsim"
 
-#: ../panel-plugin/fsguard.c:636
+#: ../panel-plugin/fsguard.c:699
 msgid "Display size"
 msgstr "Boyut"
 
-#: ../panel-plugin/fsguard.c:640
+#: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
 msgstr "Çubuk"
 
-#: ../panel-plugin/fsguard.c:644
+#: ../panel-plugin/fsguard.c:707
 msgid "Display button"
 msgstr "Buton"
 
-#: ../panel-plugin/fsguard.desktop.in.in.h:2
+#: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
 msgstr "Diskteki boş alanı gözlemler"
-
-#~ msgid "File manager"
-#~ msgstr "Dosya yöneticisi"
