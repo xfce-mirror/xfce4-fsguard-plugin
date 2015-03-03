@@ -6,7 +6,7 @@ dnl
 
 m4_define([xfce4_fsguard_plugin_version_major], [1])
 m4_define([xfce4_fsguard_plugin_version_minor], [0])
-m4_define([xfce4_fsguard_plugin_version_micro], [1])
+m4_define([xfce4_fsguard_plugin_version_micro], [2])
 m4_define([xfce4_fsguard_plugin_version_nano], [])
 m4_define([xfce4_fsguard_plugin_version_build], [@REVISION@])
 m4_define([xfce4_fsguard_plugin_version_tag], []) # Leave empty for releases
@@ -16,25 +16,14 @@ m4_define([xfce4_fsguard_plugin_version], [xfce4_fsguard_plugin_version_major().
 AC_INIT([Free Space Checker], [xfce4_fsguard_plugin_version], [http://bugzilla.xfce.org/], [xfce4-fsguard-plugin],
 	[http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin])
 
-AM_INIT_AUTOMAKE([xfce4-fsguard-plugin], [xfce4_fsguard_plugin_version()])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
-
-dnl Avoid g77 and g++ checks
-m4_undefine([AC_PROG_CXX])
-m4_defun([AC_PROG_CXX],[])
-m4_undefine([AC_PROG_F77])
-m4_defun([AC_PROG_F77],[])
-
-dnl Check for UNIX variants
-AC_AIX
-AC_ISC_POSIX
-AC_MINIX
 
 dnl Check for basic programs
 AC_PROG_CC
 AC_PROG_INSTALL
-AC_PROG_INTLTOOL
+IT_PROG_INTLTOOL([0.35.0])
 
 dnl Initialize libtool
 LT_PREREQ([2.2.6])

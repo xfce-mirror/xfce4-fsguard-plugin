@@ -1,3 +1,10 @@
+20150303 (1.0.2):
+-----------------
+
+  * Properly resize image _and_ btn so that the image is not shrinked
+  * New translations: th, ms, bg, oc, is, sl, en_AU
+  * Updated translations: ast, de, es, fr, it, hr, nl, pl, tr, ug
+
 20120630 (1.0.1):
 -----------------
 
