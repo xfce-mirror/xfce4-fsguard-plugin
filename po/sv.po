@@ -1,122 +1,104 @@
-# Swedish translation for xfce4-fsguard-plugin
-# Copyright (c) 2006, 2008 Free Software Foundation, Inc.
-# This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Daniel Nylander <po@danielnylander.se>, 2006, 2008.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2006,2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-fsguard-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2009-12-16 17:28+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"POT-Creation-Date: 2013-07-03 21:00+0200\n"
+"PO-Revision-Date: 2015-07-19 17:19+0000\n"
+"Last-Translator: Påvel Nicklasson <pavelnicklasson@bahnhof.se>\n"
+"Language-Team: Swedish (http://www.transifex.com/p/xfce-panel-plugins/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/fsguard.c:244
+#: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "Kunde inte hitta ett lämpligt program för att öppna monteringspunkten"
+msgstr "Det gick inte att hitta ett lämpligt program för att öppna monteringspunkten"
 
-#: ../panel-plugin/fsguard.c:281
-#: ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s utrymme kvar på %s (%s)"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s utrymme kvar på %s"
 
-#: ../panel-plugin/fsguard.c:288
-#: ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:291
+#: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "kunde inte kontrollera monteringspunkten %s, kontrollera din konfiguration"
+msgstr "det gick inte att kontrollera monteringspunkt %s, kontrollera din konfiguration"
 
-#: ../panel-plugin/fsguard.c:311
+#: ../panel-plugin/fsguard.c:318
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Endast %s utrymme kvar på %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:314
+#: ../panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Endast %s utrymme kvar på %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
 msgstr "Kontrollera ledigt utrymme"
 
-#: ../panel-plugin/fsguard.c:583
+#: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
 msgstr "Konfiguration"
 
-#: ../panel-plugin/fsguard.c:590
+#: ../panel-plugin/fsguard.c:653
 msgid "Mount point"
 msgstr "Monteringspunkt"
 
-#: ../panel-plugin/fsguard.c:596
+#: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
 msgstr "Varningsgräns (%)"
 
-#: ../panel-plugin/fsguard.c:601
+#: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
 msgstr "Alarmgräns (%)"
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:684
 msgid "User Interface"
 msgstr "Användargränssnitt"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:691
 msgid "Name"
 msgstr "Namn"
 
-#: ../panel-plugin/fsguard.c:636
+#: ../panel-plugin/fsguard.c:699
 msgid "Display size"
 msgstr "Visa storlek"
 
-#: ../panel-plugin/fsguard.c:640
+#: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
 msgstr "Visa mätare"
 
-#: ../panel-plugin/fsguard.c:644
+#: ../panel-plugin/fsguard.c:707
 msgid "Display button"
 msgstr "Visa knapp"
 
-#: ../panel-plugin/fsguard.desktop.in.in.h:2
+#: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
 msgstr "Övervaka ledigt diskutrymme"
-
-#~ msgid "File manager"
-#~ msgstr "Filhanterare"
-#~ msgid "Only %.2f MB space left on %s (%s)!"
-#~ msgstr "Endast %.2f MB utrymme kvar på %s (%s)!"
-#~ msgid "Only %.2f MB space left on %s!"
-#~ msgstr "Endast %.2f MB utrymme kvar på %s!"
-#~ msgid "%.2f MB space left on %s (%s)"
-#~ msgstr "%.2f MB utrymme kvar på %s (%s)"
-#~ msgid "%.2f MB space left on %s"
-#~ msgstr "%.2f MB utrymme kvar på %s"
-#~ msgid "label"
-#~ msgstr "etikett"
-#~ msgid "high alarm limit (MB)"
-#~ msgstr "alarmgräns hög (MB)"
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
