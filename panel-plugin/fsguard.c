@@ -139,8 +139,7 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     size = xfce_panel_plugin_get_size (fsguard->plugin);
     size /= xfce_panel_plugin_get_nrows (fsguard->plugin);
 
-    size -= 2 + 2 * MAX (fsguard->btn_panel->style->xthickness,
-                         fsguard->btn_panel->style->ythickness);
+    size -= 2;
 
     icon_theme = gtk_icon_theme_get_default ();
     if (id == ICON_URGENT) {
