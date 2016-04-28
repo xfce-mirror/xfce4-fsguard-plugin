@@ -6,3 +6,4 @@ _Comment=Monitor free disk space
 Icon=xfce4-fsguard-plugin-warning
 X-XFCE-Module=fsguard
 X-XFCE-Internal=FALSE
+X-XFCE-API=2.0
