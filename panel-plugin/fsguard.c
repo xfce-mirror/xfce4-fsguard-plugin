@@ -625,7 +625,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_table_set_row_spacings (GTK_TABLE (table1), BORDER);
     gtk_table_set_col_spacings (GTK_TABLE (table1), BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (frame1), BORDER);
-    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), frame1,
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))), frame1,
                         TRUE, TRUE, 0);
 
     GtkWidget *label1 = gtk_label_new (_("Mount point"));
@@ -663,7 +663,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_table_set_row_spacings (GTK_TABLE (table2), BORDER);
     gtk_table_set_col_spacings (GTK_TABLE (table2), BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (frame2), BORDER);
-    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), frame2,
+    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))), frame2,
                         TRUE, TRUE, 0);
 
     GtkWidget *check1 = gtk_check_button_new_with_label (_("Name"));
@@ -730,7 +730,7 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                       G_CALLBACK (fsguard_check4_changed),
                       fsguard);
 
-    gtk_widget_show_all (GTK_DIALOG (dialog)->vbox);
+    gtk_widget_show_all (GTK_WIDGET (dialog));
     gtk_dialog_run (GTK_DIALOG (dialog));
     gtk_widget_destroy (dialog);
     xfce_panel_plugin_unblock_menu (fsguard->plugin);
