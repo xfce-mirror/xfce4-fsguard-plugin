@@ -399,7 +399,6 @@ static FsGuard *
 fsguard_new (XfcePanelPlugin *plugin)
 {
     FsGuard *fsguard = g_new0(FsGuard, 1);
-    GtkWidget *alignment;
 
     fsguard->plugin = plugin;
 
@@ -415,7 +414,8 @@ fsguard_new (XfcePanelPlugin *plugin)
     fsguard->lab_size = gtk_label_new (NULL);
     fsguard->lab_box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 2);
 
-    alignment = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);
+    gtk_widget_set_halign(fsguard->lab_box, GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(fsguard->lab_box, GTK_ALIGN_CENTER);
 
     fsguard->btn_panel = xfce_create_panel_button ();
     fsguard->icon_panel = gtk_image_new ();
@@ -437,8 +437,7 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_container_add (GTK_CONTAINER(fsguard->btn_panel), fsguard->icon_panel);
     gtk_container_add (GTK_CONTAINER(fsguard->lab_box), fsguard->lab_name);
     gtk_container_add (GTK_CONTAINER(fsguard->lab_box), fsguard->lab_size);
-    gtk_container_add (GTK_CONTAINER(fsguard->box), alignment);
-    gtk_container_add (GTK_CONTAINER(alignment), fsguard->lab_box);
+    gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->lab_box);
     gtk_container_add (GTK_CONTAINER(fsguard->box), fsguard->pb_box);
     gtk_container_add (GTK_CONTAINER(fsguard->pb_box), fsguard->progress_bar);
 
