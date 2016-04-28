@@ -629,18 +629,18 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                         TRUE, TRUE, 0);
 
     GtkWidget *label1 = gtk_label_new (_("Mount point"));
-    gtk_misc_set_alignment (GTK_MISC (label1), 0, 0.5);
+    gtk_widget_set_valign(label1, GTK_ALIGN_CENTER);
     GtkWidget *entry1 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY (entry1), 32);
     gtk_entry_set_text (GTK_ENTRY (entry1), fsguard->path);
 
     GtkWidget *label3 = gtk_label_new (_("Warning limit (%)"));
-    gtk_misc_set_alignment (GTK_MISC (label3), 0, 0.5);
+    gtk_widget_set_valign(label3, GTK_ALIGN_CENTER);
     GtkWidget *spin1 = gtk_spin_button_new_with_range (0, 100, 1);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin1), fsguard->limit_warning);
 
     GtkWidget *label4 = gtk_label_new (_("Urgent limit (%)"));
-    gtk_misc_set_alignment (GTK_MISC (label4), 0, 0.5);
+    gtk_widget_set_valign(label4, GTK_ALIGN_CENTER);
     GtkWidget *spin2 = gtk_spin_button_new_with_range (0, 100, 1);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin2), fsguard->limit_urgent);
 
