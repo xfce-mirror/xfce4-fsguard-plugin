@@ -248,7 +248,7 @@ fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
       return;
 
     GtkWidget *dialog;
-    dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_NO_SEPARATOR, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+    dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                      "Free Space Checker");
     gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
                                               _("Unable to find an appropriate application to open the mount point"));
