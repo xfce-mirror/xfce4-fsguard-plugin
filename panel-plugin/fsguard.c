@@ -92,8 +92,6 @@ typedef struct
     GtkWidget          *cb_hide_button;
 } FsGuard;
 
-static GtkTooltips *tooltips = NULL;
-
 // }}}
 
 // all functions {{{
@@ -301,7 +299,7 @@ fsguard_check_fs (FsGuard *fsguard)
         fsguard_refresh_monitor (fsguard);
     }
 
-    gtk_tooltips_set_tip (tooltips, fsguard->ebox, msg, NULL);
+    gtk_widget_set_tooltip_text(fsguard->ebox, msg);
     fsguard_set_icon (fsguard, icon_id);
 
     if (err != -1 && !fsguard->seen && icon_id == ICON_URGENT) {
@@ -394,8 +392,6 @@ fsguard_new (XfcePanelPlugin *plugin)
     fsguard->plugin = plugin;
 
     fsguard_read_config (fsguard);
-
-    tooltips = gtk_tooltips_new ();
 
     fsguard->ebox = gtk_event_box_new();
     gtk_event_box_set_visible_window(GTK_EVENT_BOX(fsguard->ebox), FALSE);
