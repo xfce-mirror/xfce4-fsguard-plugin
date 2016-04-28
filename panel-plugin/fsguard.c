@@ -422,10 +422,9 @@ fsguard_new (XfcePanelPlugin *plugin)
 
     fsguard->progress_bar = gtk_progress_bar_new ();
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), 0.0);
-    gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
-                                      orientation == GTK_ORIENTATION_HORIZONTAL ?
-                                      GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
-    fsguard->pb_box = xfce_hvbox_new (orientation, FALSE, 0);
+    gtk_progress_bar_set_inverted (GTK_PROGRESS_BAR(fsguard->progress_bar), (orientation == GTK_ORIENTATION_HORIZONTAL));
+    gtk_orientable_set_orientation (GTK_ORIENTABLE(fsguard->progress_bar), !orientation);
+    fsguard->pb_box = gtk_box_new (orientation, 0);
 
     g_signal_connect (G_OBJECT(fsguard->btn_panel),
                       "clicked",
@@ -512,16 +511,15 @@ fsguard_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, FsGuard *fs
     DBG ("Set mode to `%s'", mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL ?
          "Horizontal" : (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL ? "Vertical" : "Deskbar"));
 
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->box), panel_orientation);
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->pb_box), panel_orientation);
-    gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
-                                      panel_orientation == GTK_ORIENTATION_HORIZONTAL ?
-                                      GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
+    gtk_orientable_set_orientation (GTK_ORIENTABLE (fsguard->box), panel_orientation);
+    gtk_orientable_set_orientation (GTK_ORIENTABLE (fsguard->pb_box), panel_orientation);
+    gtk_orientable_set_orientation (GTK_ORIENTABLE (fsguard->progress_bar), !panel_orientation);
+    gtk_progress_bar_set_inverted (GTK_PROGRESS_BAR(fsguard->progress_bar), (panel_orientation == GTK_ORIENTATION_HORIZONTAL));
     gtk_label_set_angle (GTK_LABEL(fsguard->lab_name),
                          orientation == GTK_ORIENTATION_VERTICAL ? -90 : 0);
     gtk_label_set_angle (GTK_LABEL(fsguard->lab_size),
                          orientation == GTK_ORIENTATION_VERTICAL ? -90 : 0);
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->lab_box),
+    gtk_orientable_set_orientation (GTK_ORIENTABLE (fsguard->lab_box),
                                 orientation == GTK_ORIENTATION_VERTICAL ?
                                 GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL);
     gtk_box_reorder_child (GTK_BOX (fsguard->lab_box),
