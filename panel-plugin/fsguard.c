@@ -61,12 +61,6 @@
 #define COLOR_WARNING           "#FFE500"
 #define COLOR_URGENT            "#FF4F00"
 
-#ifdef LIBXFCE4PANEL_CHECK_VERSION
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-#define HAS_PANEL_49
-#endif
-#endif
-
 // }}}
 
 // struct {{{
@@ -144,10 +138,8 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
         return;
 
     fsguard->icon_id = id;
-	size = xfce_panel_plugin_get_size (fsguard->plugin);
-#ifdef HAS_PANEL_49
+    size = xfce_panel_plugin_get_size (fsguard->plugin);
     size /= xfce_panel_plugin_get_nrows (fsguard->plugin);
-#endif
 
     size -= 2 + 2 * MAX (fsguard->btn_panel->style->xthickness,
                          fsguard->btn_panel->style->ythickness);
@@ -476,9 +468,7 @@ static gboolean
 fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 {
     int border_width = (size > 26 ? 2 : 1);
-#ifdef HAS_PANEL_49
     size /= xfce_panel_plugin_get_nrows (plugin);
-#endif
     DBG ("Set size to `%d'", size);
 
     gtk_container_set_border_width (GTK_CONTAINER (fsguard->pb_box), border_width);
@@ -500,7 +490,6 @@ fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
     return TRUE;
 }
 
-#ifdef HAS_PANEL_49
 static void
 fsguard_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, FsGuard *fsguard)
 {
@@ -532,22 +521,6 @@ fsguard_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, FsGuard *fs
                            orientation == GTK_ORIENTATION_VERTICAL ? fsguard->lab_size : fsguard->lab_name, 0);
     fsguard_set_size (plugin, xfce_panel_plugin_get_size (plugin), fsguard);
 }
-
-#else
-static void
-fsguard_set_orientation (XfcePanelPlugin *plugin, GtkOrientation orientation, FsGuard *fsguard)
-{
-    DBG ("Set orientation to `%s'", orientation == GTK_ORIENTATION_HORIZONTAL ?
-                                    "Horizontal" : "Vertical");
-
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->box), orientation);
-    xfce_hvbox_set_orientation (XFCE_HVBOX (fsguard->pb_box), orientation);
-    gtk_progress_bar_set_orientation (GTK_PROGRESS_BAR(fsguard->progress_bar),
-                                      orientation == GTK_ORIENTATION_HORIZONTAL ?
-                                      GTK_PROGRESS_BOTTOM_TO_TOP : GTK_PROGRESS_LEFT_TO_RIGHT);
-    fsguard_set_size (plugin, xfce_panel_plugin_get_size (plugin), fsguard);
-}
-#endif
 
 static void
 fsguard_entry1_changed (GtkWidget *widget, FsGuard *fsguard)
@@ -787,18 +760,11 @@ fsguard_construct (XfcePanelPlugin *plugin)
                       "size-changed",
                       G_CALLBACK (fsguard_set_size),
                       fsguard);
-#ifdef HAS_PANEL_49
     g_signal_connect (plugin,
                       "mode-changed",
                       G_CALLBACK (fsguard_set_mode),
                       fsguard);
     xfce_panel_plugin_set_small (plugin, TRUE);
-#else
-    g_signal_connect (plugin,
-                      "orientation-changed",
-                      G_CALLBACK (fsguard_set_orientation),
-                      fsguard);
-#endif
     g_signal_connect (plugin,
                       "configure-plugin",
                       G_CALLBACK (fsguard_create_options),
