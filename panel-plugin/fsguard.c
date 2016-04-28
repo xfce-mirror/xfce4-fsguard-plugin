@@ -151,7 +151,7 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     }
 
     if (G_UNLIKELY (NULL == pixbuf)) {
-        pixbuf = gtk_icon_theme_load_icon (icon_theme, GTK_STOCK_HARDDISK, size, 0, NULL);
+        pixbuf = gtk_icon_theme_load_icon (icon_theme, "gtk-harddisk", size, 0, NULL);
     }
 
     if (G_UNLIKELY (NULL == pixbuf)) {
