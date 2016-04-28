@@ -620,10 +620,10 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
 
     /* Configuration frame */
-    GtkWidget *table1 = gtk_table_new (2, 3, FALSE);
+    GtkWidget *table1 = gtk_grid_new ();
     GtkWidget *frame1 = xfce_gtk_frame_box_new_with_content (_("Configuration"), table1);
-    gtk_table_set_row_spacings (GTK_TABLE (table1), BORDER);
-    gtk_table_set_col_spacings (GTK_TABLE (table1), BORDER);
+    gtk_grid_set_row_spacing (GTK_GRID (table1), BORDER);
+    gtk_grid_set_column_spacing (GTK_GRID (table1), BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (frame1), BORDER);
     gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))), frame1,
                         TRUE, TRUE, 0);
@@ -644,24 +644,24 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     GtkWidget *spin2 = gtk_spin_button_new_with_range (0, 100, 1);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin2), fsguard->limit_urgent);
 
-    gtk_table_attach_defaults (GTK_TABLE (table1), label1,
-                               0, 1, 0, 1);
-    gtk_table_attach_defaults (GTK_TABLE (table1), entry1,
-                               1, 2, 0, 1);
-    gtk_table_attach_defaults (GTK_TABLE (table1), label3,
-                               0, 1, 1, 2);
-    gtk_table_attach_defaults (GTK_TABLE (table1), spin1,
-                               1, 2, 1, 2);
-    gtk_table_attach_defaults (GTK_TABLE (table1), label4,
-                               0, 1, 2, 3);
-    gtk_table_attach_defaults (GTK_TABLE (table1), spin2,
-                               1, 2, 2, 3);
+    gtk_grid_attach (GTK_GRID (table1), label1,
+                               0, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (table1), entry1,
+                               1, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (table1), label3,
+                               0, 1, 1, 1);
+    gtk_grid_attach (GTK_GRID (table1), spin1,
+                               1, 1, 1, 1);
+    gtk_grid_attach (GTK_GRID (table1), label4,
+                               0, 2, 1, 1);
+    gtk_grid_attach (GTK_GRID (table1), spin2,
+                               1, 2, 1, 1);
 
     /* Display frame */
-    GtkWidget *table2 = gtk_table_new (2, 4, FALSE);
+    GtkWidget *table2 = gtk_grid_new ();
     GtkWidget *frame2 = xfce_gtk_frame_box_new_with_content (_("User Interface"), table2);
-    gtk_table_set_row_spacings (GTK_TABLE (table2), BORDER);
-    gtk_table_set_col_spacings (GTK_TABLE (table2), BORDER);
+    gtk_grid_set_row_spacing (GTK_GRID (table2), BORDER);
+    gtk_grid_set_column_spacing (GTK_GRID (table2), BORDER);
     gtk_container_set_border_width (GTK_CONTAINER (frame2), BORDER);
     gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))), frame2,
                         TRUE, TRUE, 0);
@@ -686,16 +686,16 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fsguard->cb_hide_button),
                                   !fsguard->hide_button);
 
-    gtk_table_attach_defaults (GTK_TABLE (table2), check1,
-                               0, 1, 0, 1);
-    gtk_table_attach_defaults (GTK_TABLE (table2), entry3,
-                               1, 2, 0, 1);
-    gtk_table_attach_defaults (GTK_TABLE (table2), check2,
-                               0, 2, 1, 2);
-    gtk_table_attach_defaults (GTK_TABLE (table2), check3,
-                               0, 2, 2, 3);
-    gtk_table_attach_defaults (GTK_TABLE (table2), fsguard->cb_hide_button,
-                               0, 2, 3, 4);
+    gtk_grid_attach (GTK_GRID (table2), check1,
+                               0, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (table2), entry3,
+                               1, 0, 1, 1);
+    gtk_grid_attach (GTK_GRID (table2), check2,
+                               0, 1, 2, 1);
+    gtk_grid_attach (GTK_GRID (table2), check3,
+                               0, 2, 2, 1);
+    gtk_grid_attach (GTK_GRID (table2), fsguard->cb_hide_button,
+                               0, 3, 2, 1);
 
     g_signal_connect (entry1,
                       "changed",
