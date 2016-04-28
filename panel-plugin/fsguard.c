@@ -408,11 +408,11 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_event_box_set_visible_window(GTK_EVENT_BOX(fsguard->ebox), FALSE);
 
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
-    fsguard->box = xfce_hvbox_new (orientation, FALSE, 2);
+    fsguard->box = gtk_box_new (orientation, 2);
 
     fsguard->lab_name = gtk_label_new (NULL);
     fsguard->lab_size = gtk_label_new (NULL);
-    fsguard->lab_box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 2);
+    fsguard->lab_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 
     gtk_widget_set_halign(fsguard->lab_box, GTK_ALIGN_CENTER);
     gtk_widget_set_valign(fsguard->lab_box, GTK_ALIGN_CENTER);
