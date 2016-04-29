@@ -284,22 +284,23 @@ fsguard_check_fs (FsGuard *fsguard)
             icon_id = ICON_URGENT;
         }
     }
+        g_snprintf (msg, sizeof (msg),
+                    _("could not check mountpoint %s, please check your config"),
+                    fsguard->path);
 
     /* msg_total_size, msg_size */
     if (total > 1024) {
         g_snprintf (msg_total_size, sizeof(msg_total_size), _("%.2f GB"), total / 1024);
         g_snprintf (msg_size, sizeof (msg_size), _("%.2f GB"), freespace / 1024);
+    } else {
+        g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.0f MB"), total);
+        g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), freespace);
+    }
+    if (err != -1)
         g_snprintf (msg, sizeof (msg),
                     (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) ?
                     _("%s/%s space left on %s (%s)") : _("%s/%s space left on %s"),
                     msg_size, msg_total_size, fsguard->path, fsguard->name);
-    } else {
-        g_snprintf (msg_total_size, sizeof (msg_total_size), _("%.0f MB"), total);
-        g_snprintf (msg_size, sizeof (msg_size), _("%.0f MB"), freespace);
-        g_snprintf (msg, sizeof (msg),
-                    _("could not check mountpoint %s, please check your config"),
-                    fsguard->path);
-    }
 
     if (fsguard->show_size) {
         gtk_label_set_text (GTK_LABEL(fsguard->lab_size),
