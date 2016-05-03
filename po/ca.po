@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2016-05-01 15:24+0000\n"
+"PO-Revision-Date: 2016-05-03 15:40+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -93,11 +93,11 @@ msgstr "Mostra la mida"
 
 #: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
-msgstr "Mostra comptador"
+msgstr "Mostra la mètrica"
 
 #: ../panel-plugin/fsguard.c:707
 msgid "Display button"
-msgstr "Mostra botó"
+msgstr "Mostra el botó"
 
 #: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
