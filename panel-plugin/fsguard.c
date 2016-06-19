@@ -199,10 +199,13 @@ fsguard_refresh_monitor (FsGuard *fsguard)
 #if GTK_CHECK_VERSION (3, 16, 0)
     GtkCssProvider *css_provider;
 #if GTK_CHECK_VERSION (3, 20, 0)
-    gchar * css = g_strdup_printf("progressbar progress { background-color: %s; background-image: none; }", gdk_rgba_to_string(&color));
+    gchar * css = g_strdup_printf("progressbar trough { min-width: 4px; min-height: 4px; } \
+                                   progressbar progress { min-width: 4px; min-height: 4px; \
+                                                          background-color: %s; background-image: none; }",
 #else
-    gchar * css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }", gdk_rgba_to_string(&color));
+    gchar * css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
 #endif
+                                  gdk_rgba_to_string(&color));
     /* Setup Gtk style */
     css_provider = gtk_css_provider_new ();
     gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
