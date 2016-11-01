@@ -1,3 +1,7 @@
+20161101 (1.1.0):
+-----------------
+  * set progressbar minimal width/height to 4px so that it looks like with gtk+2
+
 20160605 (1.0.99):
 -----------------
   * port to gtk+3/libxfce4ui-2/libxfce4panel-2.0
