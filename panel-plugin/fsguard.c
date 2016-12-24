@@ -199,9 +199,13 @@ fsguard_refresh_monitor (FsGuard *fsguard)
 #if GTK_CHECK_VERSION (3, 16, 0)
     GtkCssProvider *css_provider;
 #if GTK_CHECK_VERSION (3, 20, 0)
-    gchar * css = g_strdup_printf("progressbar trough { min-width: 4px; min-height: 4px; } \
-                                   progressbar progress { min-width: 4px; min-height: 4px; \
+    gchar * cssminsizes = "min-width: 4px; min-height: 0px";
+    if (gtk_orientable_get_orientation(GTK_ORIENTABLE(fsguard->progress_bar)) == GTK_ORIENTATION_HORIZONTAL)
+        cssminsizes = "min-width: 0px; min-height: 4px";
+    gchar * css = g_strdup_printf("progressbar trough { %s } \
+                                   progressbar progress { %s ; \
                                                           background-color: %s; background-image: none; }",
+                                  cssminsizes, cssminsizes,
 #else
     gchar * css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
 #endif
@@ -533,6 +537,7 @@ fsguard_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, FsGuard *fs
     gtk_box_reorder_child (GTK_BOX (fsguard->lab_box),
                            orientation == GTK_ORIENTATION_VERTICAL ? fsguard->lab_size : fsguard->lab_name, 0);
     fsguard_set_size (plugin, xfce_panel_plugin_get_size (plugin), fsguard);
+    fsguard_refresh_monitor (fsguard);
 }
 
 static void
