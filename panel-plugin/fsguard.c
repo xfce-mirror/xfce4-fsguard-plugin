@@ -70,6 +70,7 @@ typedef struct
     XfcePanelPlugin    *plugin;
     gboolean            seen;
     gint                icon_id;
+    gchar              *css_class;
     gint                timeout;
     guint               limit_warning;
     guint               limit_urgent;
@@ -352,6 +353,7 @@ fsguard_read_config (FsGuard *fsguard)
     fsguard->name               = g_strdup ("");
     fsguard->show_name          = FALSE;
     fsguard->path               = g_strdup ("/");
+    fsguard->css_class          = g_strdup ("normal");
     fsguard->show_size          = TRUE;
     fsguard->show_progress_bar  = TRUE;
     fsguard->hide_button        = FALSE;
