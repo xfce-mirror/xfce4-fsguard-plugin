@@ -179,7 +179,7 @@ fsguard_refresh_icon (FsGuard *fsguard)
 }
 
 static void
-fsguard_refresh_monitor (FsGuard *fsguard)
+fsguard_refresh_monitor_color (FsGuard *fsguard, gchar *css_class)
 {
     GdkRGBA             color;
 
@@ -322,7 +322,8 @@ fsguard_check_fs (FsGuard *fsguard)
     if (fsguard->show_progress_bar) {
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar),
                                        (total > 0 ) ? 1.0 - (freespace / total) : 0.0);
-        fsguard_refresh_monitor (fsguard);
+        if (icon_id != fsguard->icon_id)
+            fsguard_refresh_monitor_color (fsguard, css_class);
     }
 
     gtk_widget_set_tooltip_text(fsguard->ebox, msg);
