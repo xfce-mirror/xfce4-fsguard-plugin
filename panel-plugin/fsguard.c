@@ -264,6 +264,7 @@ fsguard_check_fs (FsGuard *fsguard)
     float               totalblocks = 0;
     long                blocksize = 0;
     int                 err;
+    gchar              *css_class = "normal";
     gchar               msg_size[100], msg_total_size[100], msg[100];
     gint                icon_id = ICON_INSENSITIVE;
     static struct statfs fsd;
@@ -279,10 +280,13 @@ fsguard_check_fs (FsGuard *fsguard)
 
         if (freespace > (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_NORMAL;
+            css_class = "normal";
         } else if (freespace > (total * fsguard->limit_urgent / 100) && freespace <= (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_WARNING;
+            css_class = "warning";
         } else {
             icon_id = ICON_URGENT;
+            css_class = "urgent";
         }
     }
         g_snprintf (msg, sizeof (msg),
