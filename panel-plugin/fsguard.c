@@ -436,20 +436,20 @@ fsguard_new (XfcePanelPlugin *plugin)
     css_provider = gtk_css_provider_new ();
 #if GTK_CHECK_VERSION (3, 20, 0)
         gtk_css_provider_load_from_data (css_provider, "\
-            progressbar.horizontal trough { min-height: 6px; }\
-            progressbar.horizontal progress { min-height: 6px; }\
-            progressbar.vertical trough { min-width: 6px; }\
-            progressbar.vertical progress { min-width: 6px; }\
+            progressbar.horizontal trough { min-height: 4px; }\
+            progressbar.horizontal progress { min-height: 4px; }\
+            progressbar.vertical trough { min-width: 4px; }\
+            progressbar.vertical progress { min-width: 4px; }\
             .normal progress { background-color: " COLOR_NORMAL " ; background-image: none; }\
             .warning progress { background-color: " COLOR_WARNING " ; background-image: none; }\
             .urgent progress { background-color: " COLOR_URGENT " ; background-image: none; }",
              -1, NULL);
 #else
         gtk_css_provider_load_from_data (css_provider, "\
-            .progressbar.horizontal trough { min-height: 6px; }\
-            .progressbar.horizontal progress { min-height: 6px; }\
-            .progressbar.vertical trough { min-width: 6px; }\
-            .progressbar.vertical progress { min-width: 6px; }\
+            .progressbar.horizontal trough { min-height: 4px; }\
+            .progressbar.horizontal progress { min-height: 4px; }\
+            .progressbar.vertical trough { min-width: 4px; }\
+            .progressbar.vertical progress { min-width: 4px; }\
             .normal progress { background-color: " COLOR_NORMAL " ; background-image: none; }\
             .warning progress { background-color: " COLOR_WARNING " ; background-image: none; }\
             .urgent progress { background-color: " COLOR_URGENT " ; background-image: none; }",
