@@ -207,7 +207,7 @@ fsguard_refresh_monitor (FsGuard *fsguard)
                                                           background-color: %s; background-image: none; }",
                                   cssminsizes, cssminsizes,
 #else
-    gchar * css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
+    gchar * css = g_strdup_printf(".progressbar progress { background-color: %s; background-image: none; }",
 #endif
                                   gdk_rgba_to_string(&color));
     /* Setup Gtk style */
