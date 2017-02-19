@@ -135,6 +135,7 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     if (id == fsguard->icon_id)
         return;
 
+    DBG ("icon id: new=%d, cur=%d", id, fsguard->icon_id);
     fsguard->icon_id = id;
     size = xfce_panel_plugin_get_size (fsguard->plugin);
     size /= xfce_panel_plugin_get_nrows (fsguard->plugin);
