@@ -199,27 +199,15 @@ fsguard_refresh_monitor_color (FsGuard *fsguard, gchar *css_class)
     }
 
 #if GTK_CHECK_VERSION (3, 16, 0)
-    GtkCssProvider *css_provider;
-#if GTK_CHECK_VERSION (3, 20, 0)
-    gchar * cssminsizes = "min-width: 4px; min-height: 0px";
-    if (gtk_orientable_get_orientation(GTK_ORIENTABLE(fsguard->progress_bar)) == GTK_ORIENTATION_HORIZONTAL)
-        cssminsizes = "min-width: 0px; min-height: 4px";
-    gchar * css = g_strdup_printf("progressbar trough { %s } \
-                                   progressbar progress { %s ; \
-                                                          background-color: %s; background-image: none; }",
-                                  cssminsizes, cssminsizes,
-#else
-    gchar * css = g_strdup_printf(".progressbar progress { background-color: %s; background-image: none; }",
-#endif
-                                  gdk_rgba_to_string(&color));
-    /* Setup Gtk style */
-    css_provider = gtk_css_provider_new ();
-    gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
-    gtk_style_context_add_provider (
-        GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
-        GTK_STYLE_PROVIDER (css_provider),
-        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-    g_free(css);
+    DBG("removing class %s, adding %s", fsguard->css_class, css_class);
+    gtk_style_context_remove_class (
+        GTK_STYLE_CONTEXT(gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
+        fsguard->css_class);
+    gtk_style_context_add_class (
+        GTK_STYLE_CONTEXT(gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
+        css_class);
+    g_free(fsguard->css_class);
+    fsguard->css_class = g_strdup(css_class);
 #else
     gtk_widget_override_background_color (GTK_WIDGET (fsguard->progress_bar),
                           GTK_STATE_PRELIGHT,
@@ -414,6 +402,9 @@ fsguard_write_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
 static FsGuard *
 fsguard_new (XfcePanelPlugin *plugin)
 {
+#if GTK_CHECK_VERSION (3, 16, 0)
+    GtkCssProvider *css_provider;
+#endif
     FsGuard *fsguard = g_new0(FsGuard, 1);
 
     fsguard->plugin = plugin;
@@ -437,6 +428,27 @@ fsguard_new (XfcePanelPlugin *plugin)
     fsguard->icon_panel = gtk_image_new ();
 
     fsguard->progress_bar = gtk_progress_bar_new ();
+#if GTK_CHECK_VERSION (3, 16, 0)
+    css_provider = gtk_css_provider_new ();
+#if GTK_CHECK_VERSION (3, 20, 0)
+        gtk_css_provider_load_from_data (css_provider, "\
+            progressbar.horizontal trough { min-height: 6px; }\
+            progressbar.horizontal progress { min-height: 6px; }\
+            progressbar.vertical trough { min-width: 6px; }\
+            progressbar.vertical progress { min-width: 6px; }\
+            .normal progress { background-color: " COLOR_NORMAL " ; background-image: none; }\
+            .warning progress { background-color: " COLOR_WARNING " ; background-image: none; }\
+            .urgent progress { background-color: " COLOR_URGENT " ; background-image: none; }",
+             -1, NULL);
+#endif
+    gtk_style_context_add_provider (
+        GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
+        GTK_STYLE_PROVIDER (css_provider),
+        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    gtk_style_context_add_class (
+        GTK_STYLE_CONTEXT(gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
+        fsguard->css_class);
+#endif
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), 0.0);
     gtk_progress_bar_set_inverted (GTK_PROGRESS_BAR(fsguard->progress_bar), (orientation == GTK_ORIENTATION_HORIZONTAL));
     gtk_orientable_set_orientation (GTK_ORIENTABLE(fsguard->progress_bar), !orientation);
