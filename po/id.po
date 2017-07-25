@@ -1,105 +1,104 @@
-# Indonesian translations for xfce4-fsguard-plugin package.
-# Copyright (C) 2003-2004 Andre Lerche <a.lerche@gmx.net>.
-# Copyright (C) 2005 Stefan Ott <stefan@desire.ch>.
-# This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Andhika Padmawan <andhika.padmawan@gmail.com>, 2008.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-31 10:03+0000\n"
-"PO-Revision-Date: 2008-06-20 18:32+0700\n"
-"Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
-"Language-Team: Indonesian <id@li.org>\n"
+"POT-Creation-Date: 2013-07-03 21:00+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-panel-plugins/language/id/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/fsguard.c:244
+#: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Tak dapat menemukan aplikasi yang sesuai untuk membuka titik kait"
 
-#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s ruang kosong tersisa di %s (%s)"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s ruang kosong tersisa di %s"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:291
+#: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "tak dapat mencek titik mount %s, silakan cek konfigurasi anda"
 
-#: ../panel-plugin/fsguard.c:311
+#: ../panel-plugin/fsguard.c:318
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Hanya %s ruang kosong di %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:314
+#: ../panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Hanya %s ruang kosong di %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
 msgstr "Pemeriksa Ruangan Kosong"
 
-#: ../panel-plugin/fsguard.c:583
+#: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
 msgstr "Konfigurasi"
 
-#: ../panel-plugin/fsguard.c:590
+#: ../panel-plugin/fsguard.c:653
 msgid "Mount point"
 msgstr "Titik mount"
 
-#: ../panel-plugin/fsguard.c:596
+#: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
 msgstr "Batas peringatan (%)"
 
-#: ../panel-plugin/fsguard.c:601
+#: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
 msgstr "Batas penting (%)"
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:684
 msgid "User Interface"
 msgstr "Antarmuka Pengguna"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:691
 msgid "Name"
 msgstr "Nama"
 
-#: ../panel-plugin/fsguard.c:636
+#: ../panel-plugin/fsguard.c:699
 msgid "Display size"
 msgstr "Ukuran tampilan"
 
-#: ../panel-plugin/fsguard.c:640
+#: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
 msgstr "Tampilan meter"
 
-#: ../panel-plugin/fsguard.c:644
+#: ../panel-plugin/fsguard.c:707
 msgid "Display button"
 msgstr "Tombol tampilan"
 
-#: ../panel-plugin/fsguard.desktop.in.in.h:2
+#: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
 msgstr "Monitor ruang kosong disk"
-
-#~ msgid "File manager"
-#~ msgstr "Manajer berkas"
