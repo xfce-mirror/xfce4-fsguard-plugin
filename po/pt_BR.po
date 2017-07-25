@@ -1,130 +1,105 @@
-# Portuguese translations for xfce package.
-# Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce package.
-# Og Maciel <ogmaciel@gnome.org>, 2007.
-# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007,2008.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007-2008
+# Og Maciel <ogmaciel@gnome.org>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce 4-fsguard-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-20 16:48+0000\n"
-"PO-Revision-Date: 2008-07-24 21:15-0300\n"
-"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
-"Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
+"POT-Creation-Date: 2013-07-03 21:00+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/fsguard.c:244
+#: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Não foi possível encontrar um aplicativo apropriado para abrir o ponto de montagem"
 
-#: ../panel-plugin/fsguard.c:281 ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s de espaço livre em %s (%s)"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s de espaço livre em %s"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:291
+#: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr ""
-"Não foi possível verificar o ponto de montagem %s, por favor verifique sua "
-"configuração"
+msgstr "Não foi possível verificar o ponto de montagem %s, por favor verifique sua configuração"
 
-#: ../panel-plugin/fsguard.c:311
+#: ../panel-plugin/fsguard.c:318
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Somente %s de espaço livre em %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:314
+#: ../panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Somente %s de espaço livre em %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572 ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
 msgstr "Verificador de espaço livre"
 
-#: ../panel-plugin/fsguard.c:583
+#: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
 msgstr "Configuração"
 
-#: ../panel-plugin/fsguard.c:590
+#: ../panel-plugin/fsguard.c:653
 msgid "Mount point"
 msgstr "Ponto de montagem"
 
-#: ../panel-plugin/fsguard.c:596
+#: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
 msgstr "Limite de aviso (%)"
 
-#: ../panel-plugin/fsguard.c:601
+#: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
 msgstr "Limite de urgência (%)"
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:684
 msgid "User Interface"
 msgstr "Interface de usuário"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:691
 msgid "Name"
 msgstr "Nome"
 
-#: ../panel-plugin/fsguard.c:636
+#: ../panel-plugin/fsguard.c:699
 msgid "Display size"
 msgstr "Tamanho de exibição"
 
-#: ../panel-plugin/fsguard.c:640
+#: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
 msgstr "Medidor de exibição"
 
-#: ../panel-plugin/fsguard.c:644
+#: ../panel-plugin/fsguard.c:707
 msgid "Display button"
 msgstr "Botão de exibição"
 
-#: ../panel-plugin/fsguard.desktop.in.in.h:2
+#: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
 msgstr "Monitor de espaço livre em disco"
-
-#~ msgid "File manager"
-#~ msgstr "Gerenciador de arquivo"
-
-#~ msgid "Hide button"
-#~ msgstr "Ocultar botão"
-
-#~ msgid "Only %.2f MB space left on %s (%s)!"
-#~ msgstr "Somente %.2f MB de espaço livre em %s (%s)!"
-
-#~ msgid "Only %.2f MB space left on %s!"
-#~ msgstr "Somente %.2f MB de espaço livre em %s!"
-
-#~ msgid "%.2f MB space left on %s (%s)"
-#~ msgstr "%.2f MB de espaço livre em %s (%s)"
-
-#~ msgid "%.2f MB space left on %s"
-#~ msgstr "%.2f MB de espaço livre em %s"
-
-#~ msgid "label"
-#~ msgstr "rótulo"
-
-#~ msgid "high alarm limit (MB)"
-#~ msgstr "alarme de limite alto (MB)"
