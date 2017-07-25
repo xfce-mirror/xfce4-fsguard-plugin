@@ -1,125 +1,103 @@
-# Czech translations for xfce4-fsguard-plugin package.
-# Copyright (C) 2006 THE xfce4-fsguard-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-fsguard-plugin package.
-# Michal Várady <miko.vaji@gmail.com>, 2006-2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-fsguard-plugin 0.3.0\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-14 22:39+0200\n"
-"PO-Revision-Date: 2010-01-04 18:56+0100\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
-"Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2013-07-03 21:00+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Czech (http://www.transifex.com/xfce/xfce-panel-plugins/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../panel-plugin/fsguard.c:244
+#: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Nelze nalézt příslušnou aplikaci pro otevření bodu připojení"
 
-#: ../panel-plugin/fsguard.c:281
-#: ../panel-plugin/fsguard.c:282
+#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "Na disku %3$s (%4$s) zbývá %1$s z %2$s"
 
-#: ../panel-plugin/fsguard.c:285
+#: ../panel-plugin/fsguard.c:292
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "Na disku %3$s zbývá %1$s z %2$s"
 
-#: ../panel-plugin/fsguard.c:288
-#: ../panel-plugin/fsguard.c:289
+#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:291
+#: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Nelze ověřit místo připojení %s, zkontrolujte konfiguraci"
 
-#: ../panel-plugin/fsguard.c:311
+#: ../panel-plugin/fsguard.c:318
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Na disku %2$s (%3$s) zbývá pouze %1$s místa!"
 
-#: ../panel-plugin/fsguard.c:314
+#: ../panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Na disku %2$s zbývá pouze %1$s místa!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:572
-#: ../panel-plugin/fsguard.desktop.in.in.h:1
+#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
 msgstr "Kontrola volného místa"
 
-#: ../panel-plugin/fsguard.c:583
+#: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
 msgstr "Konfigurace"
 
-#: ../panel-plugin/fsguard.c:590
+#: ../panel-plugin/fsguard.c:653
 msgid "Mount point"
 msgstr "Místo připojení"
 
-#: ../panel-plugin/fsguard.c:596
+#: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
 msgstr "Limit pro varování (%)"
 
-#: ../panel-plugin/fsguard.c:601
+#: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
 msgstr "Limit pro výstrahu (%)"
 
-#: ../panel-plugin/fsguard.c:621
+#: ../panel-plugin/fsguard.c:684
 msgid "User Interface"
 msgstr "Uživatelské rozhraní"
 
-#: ../panel-plugin/fsguard.c:628
+#: ../panel-plugin/fsguard.c:691
 msgid "Name"
 msgstr "Název"
 
-#: ../panel-plugin/fsguard.c:636
+#: ../panel-plugin/fsguard.c:699
 msgid "Display size"
 msgstr "Zobrazit velikost"
 
-#: ../panel-plugin/fsguard.c:640
+#: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
 msgstr "Zobrazit měřič"
 
-#: ../panel-plugin/fsguard.c:644
+#: ../panel-plugin/fsguard.c:707
 msgid "Display button"
 msgstr "Zobrazit tlačítko"
 
-#: ../panel-plugin/fsguard.desktop.in.in.h:2
+#: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
 msgstr "Sleduje volný prostor na disku"
-
-#~ msgid "File manager"
-#~ msgstr "Správce souborů"
-#~ msgid "Hide button"
-#~ msgstr "Tlačítko skrýt"
-#~ msgid "Only %.2f MB space left on %s (%s)!"
-#~ msgstr "Pouze %.2f MB místa zbývá na disku %s (%s)!"
-#~ msgid "Only %.2f MB space left on %s!"
-#~ msgstr "Pouze %.2f MB místa zbývá na disku %s!"
-#~ msgid "%.2f MB space left on %s (%s)"
-#~ msgstr "%.2f MB zbývá na disku %s (%s)"
-#~ msgid "%.2f MB space left on %s"
-#~ msgstr "%.2f MB zbývá na disku %s"
-#~ msgid "label"
-#~ msgstr "popisek"
-#~ msgid "high alarm limit (MB)"
-#~ msgstr "limit pro zobrazení výstrahy (MB)"
-#~ msgid "Properties"
-#~ msgstr "Vlastnosti"
-
