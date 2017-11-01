@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"PO-Revision-Date: 2017-11-01 17:11+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "Kan ikke finde et passende program til at åbne monteringsstedet"
+msgstr "Kan ikke finde et passende program til at åbne monteringspunktet"
 
 #: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
@@ -46,7 +46,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "kunne ikke kontrollere monteringspunktet %s, kontrollér venligst din konfiguration"
+msgstr "kunne ikke tjekke monteringspunktet %s, tjek venligst din konfiguration"
 
 #: ../panel-plugin/fsguard.c:318
 #, c-format
@@ -62,7 +62,7 @@ msgstr "Kun %s plads tilbage på %s!"
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
-msgstr "Ledig diskpladstjekker"
+msgstr "Tjek af ledig diskplads"
 
 #: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
@@ -74,7 +74,7 @@ msgstr "Monteringspunkt"
 
 #: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
-msgstr "Grænse til advarsel(%)"
+msgstr "Grænse for advarsel (%)"
 
 #: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
