@@ -673,7 +673,6 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     GtkWidget *label1 = gtk_label_new (_("Mount point"));
     gtk_widget_set_valign(label1, GTK_ALIGN_CENTER);
     GtkWidget *entry1 = gtk_entry_new ();
-    gtk_entry_set_max_length (GTK_ENTRY (entry1), 32);
     gtk_entry_set_text (GTK_ENTRY (entry1), fsguard->path);
 
     GtkWidget *label3 = gtk_label_new (_("Warning limit (%)"));
