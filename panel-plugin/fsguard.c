@@ -648,10 +648,29 @@ fsguard_check4_changed (GtkWidget *widget, FsGuard *fsguard)
 static void
 fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 {
+    GtkWidget *dialog;
+    GtkWidget *area;
+    GtkWidget *table1;
+    GtkWidget *frame1;
+    GtkWidget *alignment;
+    GtkWidget *label1;
+    GtkWidget *entry1;
+    GtkWidget *label3;
+    GtkWidget *spin1;
+    GtkWidget *label4;
+    GtkWidget *spin2;
+    GtkWidget *table2;
+    GtkWidget *frame2;
+    GtkWidget *check1;
+    GtkWidget *entry3;
+    GtkWidget *check2;
+    GtkWidget *check3;
+    GtkSizeGroup *size_group;
+
     xfce_panel_plugin_block_menu (plugin);
 
     /* Dialog */
-    GtkWidget *dialog =
+    dialog =
       xfce_titled_dialog_new_with_buttons (_("Free Space Checker"),
         GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
         GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -661,29 +680,46 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
     gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
 
-    /* Configuration frame */
-    GtkWidget *table1 = gtk_grid_new ();
-    GtkWidget *frame1 = xfce_gtk_frame_box_new_with_content (_("Configuration"), table1);
-    gtk_grid_set_row_spacing (GTK_GRID (table1), BORDER);
-    gtk_grid_set_column_spacing (GTK_GRID (table1), BORDER);
-    gtk_container_set_border_width (GTK_CONTAINER (frame1), BORDER);
-    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))), frame1,
-                        TRUE, TRUE, 0);
+    size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
-    GtkWidget *label1 = gtk_label_new (_("Mount point"));
+    area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
+    gtk_box_set_spacing (GTK_BOX (area), 18);
+    gtk_container_set_border_width (GTK_CONTAINER (area), 12);
+
+    /* Configuration frame */
+    table1 = gtk_grid_new ();
+    frame1 = xfce_gtk_frame_box_new (_("Configuration"), &alignment);
+    gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 6, 0, 12, 0);
+    gtk_container_add (GTK_CONTAINER (alignment), table1);
+    gtk_grid_set_row_spacing (GTK_GRID (table1), 6);
+    gtk_grid_set_column_spacing (GTK_GRID (table1), 12);
+    gtk_box_pack_start (GTK_BOX (area), frame1, TRUE, TRUE, 0);
+
+    label1 = gtk_label_new (_("Mount point"));
     gtk_widget_set_valign(label1, GTK_ALIGN_CENTER);
-    GtkWidget *entry1 = gtk_entry_new ();
+    gtk_label_set_xalign (GTK_LABEL (label1), 0.0f);
+    entry1 = gtk_entry_new ();
     gtk_entry_set_text (GTK_ENTRY (entry1), fsguard->path);
 
-    GtkWidget *label3 = gtk_label_new (_("Warning limit (%)"));
-    gtk_widget_set_valign(label3, GTK_ALIGN_CENTER);
-    GtkWidget *spin1 = gtk_spin_button_new_with_range (0, 100, 1);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin1), fsguard->limit_warning);
+    gtk_size_group_add_widget (size_group, label1);
 
-    GtkWidget *label4 = gtk_label_new (_("Urgent limit (%)"));
+    label3 = gtk_label_new (_("Warning limit (%)"));
+    gtk_widget_set_valign(label3, GTK_ALIGN_CENTER);
+    gtk_label_set_xalign (GTK_LABEL (label3), 0.0f);
+    spin1 = gtk_spin_button_new_with_range (0, 100, 1);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin1), fsguard->limit_warning);
+    gtk_widget_set_halign (GTK_WIDGET (spin1), GTK_ALIGN_START);
+
+    gtk_size_group_add_widget (size_group, label3);
+
+    label4 = gtk_label_new (_("Urgent limit (%)"));
     gtk_widget_set_valign(label4, GTK_ALIGN_CENTER);
-    GtkWidget *spin2 = gtk_spin_button_new_with_range (0, 100, 1);
+    gtk_label_set_xalign (GTK_LABEL (label4), 0.0f);
+    spin2 = gtk_spin_button_new_with_range (0, 100, 1);
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (spin2), fsguard->limit_urgent);
+    gtk_widget_set_halign (GTK_WIDGET (spin2), GTK_ALIGN_START);
+
+    gtk_size_group_add_widget (size_group, label4);
 
     gtk_grid_attach (GTK_GRID (table1), label1,
                                0, 0, 1, 1);
@@ -699,27 +735,30 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                                1, 2, 1, 1);
 
     /* Display frame */
-    GtkWidget *table2 = gtk_grid_new ();
-    GtkWidget *frame2 = xfce_gtk_frame_box_new_with_content (_("User Interface"), table2);
-    gtk_grid_set_row_spacing (GTK_GRID (table2), BORDER);
-    gtk_grid_set_column_spacing (GTK_GRID (table2), BORDER);
-    gtk_container_set_border_width (GTK_CONTAINER (frame2), BORDER);
-    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))), frame2,
-                        TRUE, TRUE, 0);
+    table2 = gtk_grid_new ();
+    frame2 = xfce_gtk_frame_box_new (_("User Interface"), &alignment);
+    gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 6, 0, 12, 0);
+    gtk_container_add (GTK_CONTAINER (alignment), table2);
 
-    GtkWidget *check1 = gtk_check_button_new_with_label (_("Name"));
+    gtk_grid_set_row_spacing (GTK_GRID (table2), 6);
+    gtk_grid_set_column_spacing (GTK_GRID (table2), 12);
+    gtk_box_pack_start (GTK_BOX (area), frame2, TRUE, TRUE, 0);
+
+    check1 = gtk_check_button_new_with_label (_("Name"));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check1),
                                   fsguard->show_name);
-    GtkWidget *entry3 = gtk_entry_new ();
+
+    gtk_size_group_add_widget (size_group, check1);
+
+    entry3 = gtk_entry_new ();
     gtk_entry_set_max_length (GTK_ENTRY (entry3), 16);
     gtk_entry_set_text (GTK_ENTRY (entry3), fsguard->name);
 
-
-    GtkWidget *check2 = gtk_check_button_new_with_label (_("Display size"));
+    check2 = gtk_check_button_new_with_label (_("Display size"));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check2),
                                   fsguard->show_size);
 
-    GtkWidget *check3 = gtk_check_button_new_with_label (_("Display meter"));
+    check3 = gtk_check_button_new_with_label (_("Display meter"));
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check3),
                                   fsguard->show_progress_bar);
 
