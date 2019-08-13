@@ -1,6 +1,8 @@
 20190913 (1.1.1):
 -----------------
   * New translations (ie, be) and translations updates
+  * Set progressbar minimal width and height depending on the orientation (#12942)
+  * Style improvements
 
 20161101 (1.1.0):
 -----------------
