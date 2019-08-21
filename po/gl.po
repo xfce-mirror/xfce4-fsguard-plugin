@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2019-08-15 09:13+0000\n"
+"PO-Revision-Date: 2019-08-21 13:57+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr "Non se puido atopar un aplicativo axeitado para abrir o punto de montaxe"
+msgstr "Non se puido atopar unha aplicación axeitada para abrir o punto de montaxe"
 
 #: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
