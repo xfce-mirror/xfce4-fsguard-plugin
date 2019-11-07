@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Aljoša Žagar <anthon.manix@gmail.com>, 2013
+# Arnold Marko <arnold.marko@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Aljoša Žagar <anthon.manix@gmail.com>\n"
+"PO-Revision-Date: 2019-11-07 20:28+0000\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,4 +102,4 @@ msgstr "Prikaži gumb"
 
 #: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
-msgstr "Nadzoruj prosti prostor diska"
+msgstr "Prikaži prostor na disku"
