@@ -14,7 +14,7 @@ m4_define([xfce4_fsguard_plugin_version], [xfce4_fsguard_plugin_version_major().
 
 
 AC_INIT([Free Space Checker], [xfce4_fsguard_plugin_version], [http://bugzilla.xfce.org/], [xfce4-fsguard-plugin],
-	[http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin])
+	[https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
 
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])
 AM_CONFIG_HEADER([config.h])

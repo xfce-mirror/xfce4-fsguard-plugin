@@ -11,7 +11,7 @@ clicked to open the chosen mount point.
  Homepage
 ----------
 
-http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
+https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin
 
 
  Dependencies
@@ -41,5 +41,5 @@ Select the product “Xfce Panel Plugins” and the component “fsguard”.
 Feature requests are always welcome.
 
 You can also join the Xfce Goodies mailing-list at this address:
-http://foo-projects.org/mailman/listinfo/goodies-dev.
+https://mail.xfce.org/mailman/listinfo/xfce4-dev
 
