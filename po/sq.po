@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2020-01-28 21:34+0000\n"
+"PO-Revision-Date: 2020-01-29 09:18+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/fsguard.c:252
 msgid "Unable to find an appropriate application to open the mount point"
-msgstr ""
+msgstr "S’arrihet të gjendet një aplikacion i përshtatshëm për hapjen e pikës së montimit"
 
 #: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
 #, c-format
@@ -46,7 +46,7 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "Nuk montova dot pikën e montimit %s, ju lutem kontrolloni formësimin tuaj"
+msgstr "s’u montua dot pika e montimit %s, ju lutemi, kontrolloni formësimin tuaj"
 
 #: ../panel-plugin/fsguard.c:318
 #, c-format
@@ -74,15 +74,15 @@ msgstr "Pikë montimi"
 
 #: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
-msgstr ""
+msgstr "Kufi sinjalizimi (%s)"
 
 #: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
-msgstr ""
+msgstr "Kufi urgjence (%s)"
 
 #: ../panel-plugin/fsguard.c:684
 msgid "User Interface"
-msgstr ""
+msgstr "Ndërfaqe Përdoruesi"
 
 #: ../panel-plugin/fsguard.c:691
 msgid "Name"
@@ -90,16 +90,16 @@ msgstr "Emër"
 
 #: ../panel-plugin/fsguard.c:699
 msgid "Display size"
-msgstr ""
+msgstr "Shfaq madhësi"
 
 #: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
-msgstr ""
+msgstr "Shfaq matës"
 
 #: ../panel-plugin/fsguard.c:707
 msgid "Display button"
-msgstr ""
+msgstr "Shfaq buton"
 
 #: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
-msgstr "Mbikëqyr hapësirë disku të lirë"
+msgstr "Mbikëqyrni hapësirë disku të lirë"
