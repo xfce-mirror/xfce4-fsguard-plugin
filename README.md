@@ -2,14 +2,19 @@
 
 # xfce4-fsguard-plugin
 
-The xfce4-fsguard-plugin component provides a daemon, manager, and editor to
-centralize the configuration management of the Xfce system.
+The FSGuard panel plugin checks free space on a chosen mount point frequently 
+and displays a message when a limit is reached. 
+There are two limits: a warning limit where only the icon changes, and an urgent limit
+that advises the user with a message. 
+
+The icon button can be clicked to open the chosen mount point. 
+The amount of free space is visible in a tooltip.
 
 ----
 
 ### Homepage
 
-[xfce4-fsguard-plugin documentation](https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin)
+[Xfce4-fsguard-plugin documentation](https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin)
 
 ### Changelog
 
@@ -17,13 +22,13 @@ See [NEWS](https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin/-/blob/mas
 
 ### Source Code Repository
 
-[xfce4-fsguard-plugin source code](https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin)
+[Xfce4-fsguard-plugin source code](https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin)
 
-### Download A Release Tarball
+### Download a Release Tarball
 
-[xfce4-fsguard-plugin archive](https://archive.xfce.org/src/panel-plugins/xfce4-fsguard-plugin)
+[Xfce4-fsguard-plugin archive](https://archive.xfce.org/src/panel-plugins/xfce4-fsguard-plugin)
     or
-[xfce4-fsguard-plugin tags](https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin/-/tags)
+[Xfce4-fsguard-plugin tags](https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin/-/tags)
 
 ### Required Packages
 
