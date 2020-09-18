@@ -32,10 +32,9 @@ See [NEWS](https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin/-/blob/mas
 
 ### Required Packages
 
-* libgtk+2 >=2.6
-* libxfcegui4 >=4.4.0
-* libxfce4util >=4.4.0
-* libxfce4panel >=4.4.0
+  * [libxfce4ui](https://gitlab.xfce.org/xfce/libxfce4ui)
+  * [libxfce4util](https://gitlab.xfce.org/xfce/libxfce4util)
+  * [xfce4-panel](https://gitlab.xfce.org/xfce/xfce4-panel)
 
 ### Installation
 
