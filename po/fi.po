@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Jari Rahkonen <inactive+jari@transifex.com>, 2010
+# 9e06e299e74d2541309887ba0f7d6eee_126c110 <673225c2b34f8d31a8e0b8e4dc2dd62e_1152>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
