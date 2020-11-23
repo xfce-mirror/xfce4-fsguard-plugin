@@ -428,7 +428,7 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_widget_set_halign(fsguard->lab_box, GTK_ALIGN_CENTER);
     gtk_widget_set_valign(fsguard->lab_box, GTK_ALIGN_CENTER);
 
-    fsguard->btn_panel = xfce_create_panel_button ();
+    fsguard->btn_panel = xfce_panel_create_button ();
     fsguard->icon_panel = gtk_image_new ();
 
     fsguard->progress_bar = gtk_progress_bar_new ();
