@@ -255,7 +255,7 @@ fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
                                               _("Unable to find an appropriate application to open the mount point"));
 }
 
-static gboolean
+static void
 fsguard_check_fs (FsGuard *fsguard)
 {
     float               freespace = 0;
@@ -331,7 +331,14 @@ fsguard_check_fs (FsGuard *fsguard)
                        msg_size, fsguard->path);
         }
     }
+}
 
+static gboolean
+fsguard_check_fs_cb (gpointer user_data)
+{
+    FsGuard *fsguard = user_data;
+
+    fsguard_check_fs (fsguard);
     return TRUE;
 }
 
@@ -827,8 +834,7 @@ fsguard_construct (XfcePanelPlugin *plugin)
  
     FsGuard *fsguard = fsguard_new (plugin);
     fsguard_check_fs (fsguard);
-    fsguard->timeout =
-      g_timeout_add (8192, (GSourceFunc) fsguard_check_fs, fsguard);
+    fsguard->timeout = g_timeout_add (8192, fsguard_check_fs_cb, fsguard);
 
     gtk_container_add (GTK_CONTAINER (plugin), fsguard->ebox);
     fsguard_set_size(fsguard->plugin, xfce_panel_plugin_get_size(fsguard->plugin), fsguard);
