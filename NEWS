@@ -1,3 +1,19 @@
+1.1.2
+======
+- Add gitignore
+- Fix "ISO C90 forbids mixed declarations and code"
+- Modernize the configure.ac.in file
+- Remove GSourceFunc casts
+- Replace obsolete xfce_create_panel_button usage
+- Adds new README.md updates AM_INIT_AUTOMAKE
+- Add basic GitLab pipeline
+- Improve spacing in settings dialog (Bug #14665)
+- Update URLs from goodies.x.o to docs.x.o (Bug #16163)
+- Translation Updates:
+  Albanian, Belarusian, Bulgarian, Eastern Armenian, English (Canada),
+  Estonian, Finnish, Galician, Hebrew, Interlingue, Slovak, Slovenian,
+  Spanish, Turkish, Uyghur
+
 20190913 (1.1.1):
 -----------------
   * New translations (ie, be) and translations updates
