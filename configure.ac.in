@@ -9,16 +9,18 @@ m4_define([xfce4_fsguard_plugin_version_minor], [1])
 m4_define([xfce4_fsguard_plugin_version_micro], [1])
 m4_define([xfce4_fsguard_plugin_version_nano], [])
 m4_define([xfce4_fsguard_plugin_version_build], [@REVISION@])
-m4_define([xfce4_fsguard_plugin_version_tag], []) # Leave empty for releases
+m4_define([xfce4_fsguard_plugin_version_tag], [git]) # Leave empty for releases
 m4_define([xfce4_fsguard_plugin_version], [xfce4_fsguard_plugin_version_major().xfce4_fsguard_plugin_version_minor().xfce4_fsguard_plugin_version_micro()ifelse(xfce4_fsguard_plugin_version_nano(), [], [], [.xfce4_fsguard_plugin_version_nano()])ifelse(xfce4_fsguard_plugin_version_tag(), [git], [xfce4_fsguard_plugin_version_tag()-xfce4_fsguard_plugin_version_build()], [xfce4_fsguard_plugin_version_tag()])])
 
+m4_define([fsguard_debug_default], [ifelse(xfce4_fsguard_plugin_version_tag(), [git], [yes], [minimum])])
 
-AC_INIT([Free Space Checker], [xfce4_fsguard_plugin_version], [http://bugzilla.xfce.org/], [xfce4-fsguard-plugin],
+AC_INIT([xfce4-fsguard-plugin], [xfce4_fsguard_plugin_version], [https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin], [xfce4-fsguard-plugin],
 	[https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
 
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
+AC_CONFIG_MACRO_DIRS([m4])
 
 dnl Check for basic programs
 AC_PROG_CC
@@ -37,16 +39,16 @@ XDT_CHECK_LIBX11_REQUIRE
 
 dnl configure the panel plugin
 XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.12.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.8.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.12.0])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.12.0])
 
 dnl check for i18n support
 XDT_I18N([@LINGUAS@])
 
 dnl Check for debugging support
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([fsguard_debug_default])
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 icons/Makefile
 icons/48x48/Makefile
@@ -59,3 +61,4 @@ icons/scalable/Makefile
 panel-plugin/Makefile
 po/Makefile.in
 ])
+AC_OUTPUT
