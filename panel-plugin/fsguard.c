@@ -238,6 +238,8 @@ __open_mnt (gchar *command, gchar *path)
 static void
 fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
 {
+    GtkWidget *dialog;
+
     if (fsguard->path == NULL || fsguard->path[0] == '\0')
       return;
 
@@ -248,7 +250,6 @@ fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
     if (__open_mnt ("xdg-open", fsguard->path))
       return;
 
-    GtkWidget *dialog;
     dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                      "Free Space Checker");
     gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
@@ -413,6 +414,7 @@ fsguard_write_config (XfcePanelPlugin *plugin, FsGuard *fsguard)
 static FsGuard *
 fsguard_new (XfcePanelPlugin *plugin)
 {
+    GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
 #if GTK_CHECK_VERSION (3, 16, 0)
     GtkCssProvider *css_provider;
 #endif
@@ -425,7 +427,6 @@ fsguard_new (XfcePanelPlugin *plugin)
     fsguard->ebox = gtk_event_box_new();
     gtk_event_box_set_visible_window(GTK_EVENT_BOX(fsguard->ebox), FALSE);
 
-    GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
     fsguard->box = gtk_box_new (orientation, 2);
 
     fsguard->lab_name = gtk_label_new (NULL);
@@ -523,12 +524,13 @@ static gboolean
 fsguard_set_size (XfcePanelPlugin *plugin, int size, FsGuard *fsguard)
 {
     int border_width = (size > 26 ? 2 : 1);
+    GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
+
     size /= xfce_panel_plugin_get_nrows (plugin);
     DBG ("Set size to `%d'", size);
 
     gtk_container_set_border_width (GTK_CONTAINER (fsguard->pb_box), border_width);
 
-    GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
     if (orientation == GTK_ORIENTATION_HORIZONTAL) {
         gtk_widget_set_size_request (GTK_WIDGET(fsguard->progress_bar), 8, -1);
         gtk_widget_set_size_request (GTK_WIDGET(plugin), -1, size);
@@ -830,9 +832,12 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 static void
 fsguard_construct (XfcePanelPlugin *plugin)
 {
+    FsGuard *fsguard;
+
     xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
+    fsguard = fsguard_new (plugin);
  
-    FsGuard *fsguard = fsguard_new (plugin);
     fsguard_check_fs (fsguard);
     fsguard->timeout = g_timeout_add (8192, fsguard_check_fs_cb, fsguard);
 
@@ -867,5 +872,3 @@ fsguard_construct (XfcePanelPlugin *plugin)
 XFCE_PANEL_PLUGIN_REGISTER (fsguard_construct);
 
 // }}}
-
-// vim600: set foldmethod=marker: foldmarker={{{,}}}
