@@ -18,7 +18,7 @@ AC_INIT([xfce4-fsguard-plugin], [xfce4_fsguard_plugin_version], [https://gitlab.
 	[https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
 
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
-AM_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE
 AC_CONFIG_MACRO_DIRS([m4])
 
