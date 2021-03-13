@@ -23,7 +23,8 @@ libtool
 ltmain.sh
 m4
 missing
-po/.intltool-merge-cache
+panel-plugin/fsguard.desktop
+po/.intltool-merge-cache*
 po/Makefile.in.in
 po/POTFILES
 stamp-*
