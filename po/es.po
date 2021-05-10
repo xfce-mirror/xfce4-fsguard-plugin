@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2021-03-13 10:29+0000\n"
+"PO-Revision-Date: 2021-05-10 19:50+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -48,23 +48,23 @@ msgstr "%.0f MB"
 #: ../panel-plugin/fsguard.c:298
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
-msgstr "no se ha podido comprobar punto de montaje %s; por favor, compruebe su configuración"
+msgstr "no se ha podido comprobar el punto de montaje %s, compruebe la configuración"
 
 #: ../panel-plugin/fsguard.c:318
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr "¡Solamente quedan %s de espacio en %s (%s)!"
+msgstr "¡Solo quedan %s de espacio en %s (%s)!"
 
 #: ../panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr "¡Solamente quedan %s de espacio en %s!"
+msgstr "¡Solo quedan %s de espacio en %s!"
 
 #. }}}
 #. vim600: set foldmethod=marker: foldmarker={{{,}}}
 #: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
 msgid "Free Space Checker"
-msgstr "Verificador de espacio libre"
+msgstr "Verificador del espacio libre"
 
 #: ../panel-plugin/fsguard.c:646
 msgid "Configuration"
@@ -76,7 +76,7 @@ msgstr "Punto de montaje"
 
 #: ../panel-plugin/fsguard.c:659
 msgid "Warning limit (%)"
-msgstr "Límite de advertencia (%)"
+msgstr "Límite para la advertencia (%)"
 
 #: ../panel-plugin/fsguard.c:664
 msgid "Urgent limit (%)"
@@ -92,16 +92,16 @@ msgstr "Nombre"
 
 #: ../panel-plugin/fsguard.c:699
 msgid "Display size"
-msgstr "Mostrar tamaño"
+msgstr "Mostrar el tamaño"
 
 #: ../panel-plugin/fsguard.c:703
 msgid "Display meter"
-msgstr "Mostrar medidor"
+msgstr "Mostrar el medidor"
 
 #: ../panel-plugin/fsguard.c:707
 msgid "Display button"
-msgstr "Mostrar botón"
+msgstr "Mostrar el botón"
 
 #: ../panel-plugin/fsguard.desktop.in.h:2
 msgid "Monitor free disk space"
-msgstr "Monitor de espacio libre del disco"
+msgstr "Monitor del espacio libre del disco"
