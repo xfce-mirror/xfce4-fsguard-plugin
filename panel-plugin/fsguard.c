@@ -131,7 +131,9 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     GtkIconTheme       *icon_theme;
     GdkPixbuf          *pixbuf;
     GdkPixbuf          *scaled;
+    cairo_surface_t    *surface;
     gint                size;
+    gint                scale_factor;
 
     if (id == fsguard->icon_id)
         return;
@@ -144,16 +146,17 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
     size -= 2;
 
     icon_theme = gtk_icon_theme_get_default ();
+    scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (fsguard->plugin));
     if (id == ICON_URGENT) {
-        pixbuf = gtk_icon_theme_load_icon (icon_theme, "xfce4-fsguard-plugin-urgent", size, 0, NULL);
+        pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, "xfce4-fsguard-plugin-urgent", size, scale_factor, 0, NULL);
     } else if (id == ICON_WARNING) {
-        pixbuf = gtk_icon_theme_load_icon (icon_theme, "xfce4-fsguard-plugin-warning", size, 0, NULL);
+        pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, "xfce4-fsguard-plugin-warning", size, scale_factor, 0, NULL);
     } else {
-        pixbuf = gtk_icon_theme_load_icon (icon_theme, "xfce4-fsguard-plugin", size, 0, NULL);
+        pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, "xfce4-fsguard-plugin", size, scale_factor, 0, NULL);
     }
 
     if (G_UNLIKELY (NULL == pixbuf)) {
-        pixbuf = gtk_icon_theme_load_icon (icon_theme, "gtk-harddisk", size, 0, NULL);
+        pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, "gtk-harddisk", size, scale_factor, 0, NULL);
     }
 
     if (G_UNLIKELY (NULL == pixbuf)) {
@@ -161,12 +164,14 @@ fsguard_set_icon (FsGuard *fsguard, gint id)
         return;
     }
 
-    scaled = gdk_pixbuf_scale_simple (pixbuf, size, size, GDK_INTERP_BILINEAR);
+    scaled = gdk_pixbuf_scale_simple (pixbuf, size * scale_factor, size * scale_factor, GDK_INTERP_BILINEAR);
     g_object_unref (G_OBJECT (pixbuf));
     pixbuf = scaled;
 
-    gtk_image_set_from_pixbuf (GTK_IMAGE (fsguard->icon_panel), pixbuf);
+    surface = gdk_cairo_surface_create_from_pixbuf (pixbuf, scale_factor, NULL);
+    gtk_image_set_from_surface (GTK_IMAGE (fsguard->icon_panel), surface);
     gtk_widget_set_sensitive (fsguard->icon_panel, id != ICON_INSENSITIVE);
+    cairo_surface_destroy (surface);
     g_object_unref (G_OBJECT (pixbuf));
 }
 
