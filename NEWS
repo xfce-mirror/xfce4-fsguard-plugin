@@ -1,3 +1,16 @@
+1.1.3 (2023-04-19)
+=====
+- Fix autotools warnings
+- Update copyright year
+- build: Add GLib requirement
+- Fix blurry icons when UI scale > 1
+- build: Fix intltool lock file problem during make distcheck
+- autoconf: Some updates
+- Update `.gitignore`
+- Translation Updates:
+  Belarusian, Bulgarian, English (Canada), Norwegian Bokmål,
+  Slovenian, Spanish, Turkish, Ukrainian
+
 1.1.2
 ======
 - Add gitignore
