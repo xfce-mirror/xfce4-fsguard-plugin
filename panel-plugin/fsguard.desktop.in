@@ -1,8 +1,8 @@
 [Xfce Panel]
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
-_Name=Free Space Checker
-_Comment=Monitor free disk space
+Name=Free Space Checker
+Comment=Monitor free disk space
 Icon=xfce4-fsguard-plugin-warning
 X-XFCE-Module=fsguard
 X-XFCE-Internal=FALSE
