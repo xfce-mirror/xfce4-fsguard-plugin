@@ -8,97 +8,91 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2017-09-23 19:02+0000\n"
-"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
-"Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-panel-plugins/language/he/)\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"PO-Revision-Date: 2013-07-03 19:00+0000\n"
+"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2016\n"
+"Language-Team: Hebrew (http://app.transifex.com/xfce/xfce-panel-plugins/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: ../panel-plugin/fsguard.c:252
+#: ../panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "לא יכול למצוא תוכנה מתאימה לפתיחת נקודת ההצבה"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
-#, c-format
-msgid "%.2f GB"
-msgstr "%.2f GB"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s (%s)"
-msgstr "%s/%s מקום נשאר ב- %s (%s)"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s"
-msgstr "%s/%s מקום נשאר ב- %s"
-
-#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
-#, c-format
-msgid "%.0f MB"
-msgstr "%.0f MB"
-
-#: ../panel-plugin/fsguard.c:298
+#: ../panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "לא יכול לבדוק נקודת הצבה %s, אנא בדוק את ההגדרות שלך"
 
-#: ../panel-plugin/fsguard.c:318
+#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f MB"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s מקום נשאר ב- %s (%s)"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s מקום נשאר ב- %s"
+
+#: ../panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "רק %s מקום נשאר ב- %s (%s)! "
 
-#: ../panel-plugin/fsguard.c:321
+#: ../panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "רק %s מקום נשאר ב- %s!"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
+#: ../panel-plugin/fsguard.c:688
 msgid "Free Space Checker"
 msgstr "בודק מקום פנוי"
 
-#: ../panel-plugin/fsguard.c:646
+#: ../panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "הגדרה"
 
-#: ../panel-plugin/fsguard.c:653
+#: ../panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "נקודת הצבה"
 
-#: ../panel-plugin/fsguard.c:659
+#: ../panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "גבול אזהרה (%)"
 
-#: ../panel-plugin/fsguard.c:664
+#: ../panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "גבול דחוף (%)"
 
-#: ../panel-plugin/fsguard.c:684
+#: ../panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "ממשק משתמש"
 
-#: ../panel-plugin/fsguard.c:691
+#: ../panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "שם"
 
-#: ../panel-plugin/fsguard.c:699
+#: ../panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "הצג גודל"
 
-#: ../panel-plugin/fsguard.c:703
+#: ../panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "הצג מד"
 
-#: ../panel-plugin/fsguard.c:707
+#: ../panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "הצג כפתור"
-
-#: ../panel-plugin/fsguard.desktop.in.h:2
-msgid "Monitor free disk space"
-msgstr "עקוב אחר מקום פנוי בדיסק"
