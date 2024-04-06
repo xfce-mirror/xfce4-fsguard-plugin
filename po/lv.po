@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-fsguard-plugin package.
 # 
 # Translators:
 # Rihards Priedītis <rprieditis@gmail.com>, 2009
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-06 12:53+0200\n"
 "PO-Revision-Date: 2013-07-03 19:00+0000\n"
 "Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2009\n"
 "Language-Team: Latvian (http://app.transifex.com/xfce/xfce-panel-plugins/language/lv/)\n"
@@ -19,81 +19,85 @@ msgstr ""
 "Language: lv\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: ../panel-plugin/fsguard.c:261
+#: panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Nevarēja atrast piemērotu lietotni, lai atvērtu montējuma punktu"
 
-#: ../panel-plugin/fsguard.c:299
+#: panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "nevarēja pārbaudīt montēšanas punktu %s, lūdzu pārbaudiet uzstādījumus"
 
-#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#: panel-plugin/fsguard.c:304 panel-plugin/fsguard.c:305
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#: panel-plugin/fsguard.c:307 panel-plugin/fsguard.c:308
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s brīvās vietas palicis uz %s (%s)"
 
-#: ../panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s brīvās vietas palicis uz %s"
 
-#: ../panel-plugin/fsguard.c:333
+#: panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Tikai %s brīvās vietas palicis uz %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:336
+#: panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Tikai %s brīvas vietas plicis uz %s!"
 
-#: ../panel-plugin/fsguard.c:688
+#: panel-plugin/fsguard.c:688 panel-plugin/fsguard.desktop.in:5
 msgid "Free Space Checker"
 msgstr "Brīvās Vietas Pārbaudītājs"
 
-#: ../panel-plugin/fsguard.c:705
+#: panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "Konfigurācija"
 
-#: ../panel-plugin/fsguard.c:712
+#: panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "Montēšanas punkts"
 
-#: ../panel-plugin/fsguard.c:720
+#: panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "Brīdinājuma limits (%)"
 
-#: ../panel-plugin/fsguard.c:729
+#: panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "Kritisks limits (%)"
 
-#: ../panel-plugin/fsguard.c:753
+#: panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "Lietotāja saskarne"
 
-#: ../panel-plugin/fsguard.c:761
+#: panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../panel-plugin/fsguard.c:771
+#: panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "Displeja izmērs"
 
-#: ../panel-plugin/fsguard.c:775
+#: panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "Rādīt skaitītāju"
 
-#: ../panel-plugin/fsguard.c:779
+#: panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "Rādīt skaitītāju"
+
+#: panel-plugin/fsguard.desktop.in:6
+msgid "Monitor free disk space"
+msgstr "Uzrauga brīvo diska vietu"
