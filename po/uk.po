@@ -4,102 +4,96 @@
 # 
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2007-2008
-# Andrij Mizyk <andmizyk@gmail.com>, 2021
+# f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2021-01-29 12:28+0000\n"
-"Last-Translator: Andrij Mizyk <andmizyk@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"PO-Revision-Date: 2013-07-03 19:00+0000\n"
+"Last-Translator: f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021\n"
+"Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: ../panel-plugin/fsguard.c:252
+#: ../panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Не вдається знайти відповідну програму для відкриття точки монтування"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
-#, c-format
-msgid "%.2f GB"
-msgstr "%.2f ГБ"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s (%s)"
-msgstr "%s/%s вільного простору залишилося на %s (%s)"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s"
-msgstr "%s/%s вільного простору залишилося на %s"
-
-#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
-#, c-format
-msgid "%.0f MB"
-msgstr "%.0f МБ"
-
-#: ../panel-plugin/fsguard.c:298
+#: ../panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Неможливо перевірити точку монтування %s, будь ласка перевірте Ваш config"
 
-#: ../panel-plugin/fsguard.c:318
+#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f ГБ"
+
+#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f МБ"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s вільного простору залишилося на %s (%s)"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s вільного простору залишилося на %s"
+
+#: ../panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Тільки %s вільного простору залишилось на %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:321
+#: ../panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Тільки %s вільного простору залишилось на %s!"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
+#: ../panel-plugin/fsguard.c:688
 msgid "Free Space Checker"
 msgstr "Контролер вільного місця"
 
-#: ../panel-plugin/fsguard.c:646
+#: ../panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "Конфігурація"
 
-#: ../panel-plugin/fsguard.c:653
+#: ../panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "Точка монтування"
 
-#: ../panel-plugin/fsguard.c:659
+#: ../panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "Ліміт для попередження (%)"
 
-#: ../panel-plugin/fsguard.c:664
+#: ../panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "Терміновий ліміт (%)"
 
-#: ../panel-plugin/fsguard.c:684
+#: ../panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "Інтерфейс користувача"
 
-#: ../panel-plugin/fsguard.c:691
+#: ../panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "Назва"
 
-#: ../panel-plugin/fsguard.c:699
+#: ../panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "Відображати розмір"
 
-#: ../panel-plugin/fsguard.c:703
+#: ../panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "Відображати мірку"
 
-#: ../panel-plugin/fsguard.c:707
+#: ../panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "Відображати кнопку"
-
-#: ../panel-plugin/fsguard.desktop.in.h:2
-msgid "Monitor free disk space"
-msgstr "Контроль вільного простору на диску"
