@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-fsguard-plugin package.
 # 
 # Translators:
 # 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-06 12:53+0200\n"
 "PO-Revision-Date: 2013-07-03 19:00+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2019\n"
 "Language-Team: Slovenian (http://app.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
@@ -19,81 +19,85 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: ../panel-plugin/fsguard.c:261
+#: panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Primernega programa za odpiranje priklopne točke ni mogoče najti"
 
-#: ../panel-plugin/fsguard.c:299
+#: panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Priklopne točke %s ni bilo mogoče preveriti, preverite svoje nastavitve"
 
-#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#: panel-plugin/fsguard.c:304 panel-plugin/fsguard.c:305
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#: panel-plugin/fsguard.c:307 panel-plugin/fsguard.c:308
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f MB"
 
-#: ../panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s preostalega prostora na %s (%s)"
 
-#: ../panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s preostalega prostora na %s"
 
-#: ../panel-plugin/fsguard.c:333
+#: panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Samo %s preostalega prostora na %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:336
+#: panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Samo %s preostalega prostora na %s!"
 
-#: ../panel-plugin/fsguard.c:688
+#: panel-plugin/fsguard.c:688 panel-plugin/fsguard.desktop.in:5
 msgid "Free Space Checker"
 msgstr "Preverjevalnik prostega prostora"
 
-#: ../panel-plugin/fsguard.c:705
+#: panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "Nastavitve"
 
-#: ../panel-plugin/fsguard.c:712
+#: panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "Priklopna točka"
 
-#: ../panel-plugin/fsguard.c:720
+#: panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "Meja za opozorilo (%)"
 
-#: ../panel-plugin/fsguard.c:729
+#: panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "Meja za nujno posredovanje (%)"
 
-#: ../panel-plugin/fsguard.c:753
+#: panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "Uporabniški vmesnik"
 
-#: ../panel-plugin/fsguard.c:761
+#: panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "Ime"
 
-#: ../panel-plugin/fsguard.c:771
+#: panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "Prikaži velikost"
 
-#: ../panel-plugin/fsguard.c:775
+#: panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "Prikaži merilnik"
 
-#: ../panel-plugin/fsguard.c:779
+#: panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "Prikaži gumb"
+
+#: panel-plugin/fsguard.desktop.in:6
+msgid "Monitor free disk space"
+msgstr "Prikaži prostor na disku"
