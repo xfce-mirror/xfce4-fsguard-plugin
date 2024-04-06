@@ -8,97 +8,91 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Nick Schermer <nick@xfce.org>\n"
-"Language-Team: Basque (http://www.transifex.com/xfce/xfce-panel-plugins/language/eu/)\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"PO-Revision-Date: 2013-07-03 19:00+0000\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net, 2006,2008-2009\n"
+"Language-Team: Basque (http://app.transifex.com/xfce/xfce-panel-plugins/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/fsguard.c:252
+#: ../panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Ezin da muntatze puntua irekitzeko aplikazio egokirik aurkitu"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
-#, c-format
-msgid "%.2f GB"
-msgstr "%.2f GB"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s (%s)"
-msgstr "%s/%s leku libre dago %s-(e)n (%s)"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s"
-msgstr "%s/%s leku libre dago %s-(e)n"
-
-#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
-#, c-format
-msgid "%.0f MB"
-msgstr "%.0f MB"
-
-#: ../panel-plugin/fsguard.c:298
+#: ../panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Ezin da %s muntatze puntua egiaztatau, konfigurazio egiaztatu"
 
-#: ../panel-plugin/fsguard.c:318
+#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f MB"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s leku libre dago %s-(e)n (%s)"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s leku libre dago %s-(e)n"
+
+#: ../panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "%s leku libre bakarrik dago %s-(e)n (%s)!"
 
-#: ../panel-plugin/fsguard.c:321
+#: ../panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "%s leku libre bakarrik dago %s-(e)n!"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
+#: ../panel-plugin/fsguard.c:688
 msgid "Free Space Checker"
 msgstr "Leku Libre Egiaztatzailea"
 
-#: ../panel-plugin/fsguard.c:646
+#: ../panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "Konfigurazioa"
 
-#: ../panel-plugin/fsguard.c:653
+#: ../panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "Muntatze-puntua"
 
-#: ../panel-plugin/fsguard.c:659
+#: ../panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "Abisu muga (%)"
 
-#: ../panel-plugin/fsguard.c:664
+#: ../panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "Larritasun muga (%)"
 
-#: ../panel-plugin/fsguard.c:684
+#: ../panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "Erabiltzaile interfazea"
 
-#: ../panel-plugin/fsguard.c:691
+#: ../panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "Izena"
 
-#: ../panel-plugin/fsguard.c:699
+#: ../panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "Pantaila tamaina"
 
-#: ../panel-plugin/fsguard.c:703
+#: ../panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "Pantaila neurgailua"
 
-#: ../panel-plugin/fsguard.c:707
+#: ../panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "Pantaila botoia"
-
-#: ../panel-plugin/fsguard.desktop.in.h:2
-msgid "Monitor free disk space"
-msgstr "Disko leku librea monitorizatu"
