@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-fsguard-plugin package.
 # 
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2007-2008
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-06 12:53+0200\n"
 "PO-Revision-Date: 2013-07-03 19:00+0000\n"
 "Last-Translator: f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021\n"
 "Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
@@ -19,81 +19,85 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: ../panel-plugin/fsguard.c:261
+#: panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Не вдається знайти відповідну програму для відкриття точки монтування"
 
-#: ../panel-plugin/fsguard.c:299
+#: panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "Неможливо перевірити точку монтування %s, будь ласка перевірте Ваш config"
 
-#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#: panel-plugin/fsguard.c:304 panel-plugin/fsguard.c:305
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f ГБ"
 
-#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#: panel-plugin/fsguard.c:307 panel-plugin/fsguard.c:308
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f МБ"
 
-#: ../panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s вільного простору залишилося на %s (%s)"
 
-#: ../panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s вільного простору залишилося на %s"
 
-#: ../panel-plugin/fsguard.c:333
+#: panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Тільки %s вільного простору залишилось на %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:336
+#: panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Тільки %s вільного простору залишилось на %s!"
 
-#: ../panel-plugin/fsguard.c:688
+#: panel-plugin/fsguard.c:688 panel-plugin/fsguard.desktop.in:5
 msgid "Free Space Checker"
 msgstr "Контролер вільного місця"
 
-#: ../panel-plugin/fsguard.c:705
+#: panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "Конфігурація"
 
-#: ../panel-plugin/fsguard.c:712
+#: panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "Точка монтування"
 
-#: ../panel-plugin/fsguard.c:720
+#: panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "Ліміт для попередження (%)"
 
-#: ../panel-plugin/fsguard.c:729
+#: panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "Терміновий ліміт (%)"
 
-#: ../panel-plugin/fsguard.c:753
+#: panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "Інтерфейс користувача"
 
-#: ../panel-plugin/fsguard.c:761
+#: panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "Назва"
 
-#: ../panel-plugin/fsguard.c:771
+#: panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "Відображати розмір"
 
-#: ../panel-plugin/fsguard.c:775
+#: panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "Відображати мірку"
 
-#: ../panel-plugin/fsguard.c:779
+#: panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "Відображати кнопку"
+
+#: panel-plugin/fsguard.desktop.in:6
+msgid "Monitor free disk space"
+msgstr "Контроль вільного простору на диску"
