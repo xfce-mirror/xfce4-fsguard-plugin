@@ -9,97 +9,91 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:00+0200\n"
-"PO-Revision-Date: 2019-05-10 11:27+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"PO-Revision-Date: 2013-07-03 19:00+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2013-2014,2019\n"
+"Language-Team: Icelandic (http://app.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: is\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: ../panel-plugin/fsguard.c:252
+#: ../panel-plugin/fsguard.c:261
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Tókst ekki að finna viðeigandi forrit til að opna tengipunktinn"
 
-#: ../panel-plugin/fsguard.c:288 ../panel-plugin/fsguard.c:289
-#, c-format
-msgid "%.2f GB"
-msgstr "%.2f GB"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s (%s)"
-msgstr "%s/%s pláss eftir á %s (%s)"
-
-#: ../panel-plugin/fsguard.c:292
-#, c-format
-msgid "%s/%s space left on %s"
-msgstr "%s/%s pláss eftir á %s"
-
-#: ../panel-plugin/fsguard.c:295 ../panel-plugin/fsguard.c:296
-#, c-format
-msgid "%.0f MB"
-msgstr "%.0f MB"
-
-#: ../panel-plugin/fsguard.c:298
+#: ../panel-plugin/fsguard.c:299
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "gate kki skoðað tengipunkt %s, athugaðu stillingaskrárnar þínar"
 
-#: ../panel-plugin/fsguard.c:318
+#: ../panel-plugin/fsguard.c:304 ../panel-plugin/fsguard.c:305
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: ../panel-plugin/fsguard.c:307 ../panel-plugin/fsguard.c:308
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f MB"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s pláss eftir á %s (%s)"
+
+#: ../panel-plugin/fsguard.c:313
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s pláss eftir á %s"
+
+#: ../panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Aðeins %s pláss eftir á %s (%s)!"
 
-#: ../panel-plugin/fsguard.c:321
+#: ../panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Aðeins %s pláss eftir á %s!"
 
-#. }}}
-#. vim600: set foldmethod=marker: foldmarker={{{,}}}
-#: ../panel-plugin/fsguard.c:635 ../panel-plugin/fsguard.desktop.in.h:1
+#: ../panel-plugin/fsguard.c:688
 msgid "Free Space Checker"
 msgstr "Athugun á lausu diskplássi"
 
-#: ../panel-plugin/fsguard.c:646
+#: ../panel-plugin/fsguard.c:705
 msgid "Configuration"
 msgstr "Uppsetning"
 
-#: ../panel-plugin/fsguard.c:653
+#: ../panel-plugin/fsguard.c:712
 msgid "Mount point"
 msgstr "Tengipunktur"
 
-#: ../panel-plugin/fsguard.c:659
+#: ../panel-plugin/fsguard.c:720
 msgid "Warning limit (%)"
 msgstr "Mörk viðvörunar (%)"
 
-#: ../panel-plugin/fsguard.c:664
+#: ../panel-plugin/fsguard.c:729
 msgid "Urgent limit (%)"
 msgstr "Hættumörk (%)"
 
-#: ../panel-plugin/fsguard.c:684
+#: ../panel-plugin/fsguard.c:753
 msgid "User Interface"
 msgstr "Notandaviðmót"
 
-#: ../panel-plugin/fsguard.c:691
+#: ../panel-plugin/fsguard.c:761
 msgid "Name"
 msgstr "Heiti"
 
-#: ../panel-plugin/fsguard.c:699
+#: ../panel-plugin/fsguard.c:771
 msgid "Display size"
 msgstr "Skjástærð"
 
-#: ../panel-plugin/fsguard.c:703
+#: ../panel-plugin/fsguard.c:775
 msgid "Display meter"
 msgstr "Skjámælir"
 
-#: ../panel-plugin/fsguard.c:707
+#: ../panel-plugin/fsguard.c:779
 msgid "Display button"
 msgstr "Skjáhnappur"
-
-#: ../panel-plugin/fsguard.desktop.in.h:2
-msgid "Monitor free disk space"
-msgstr "Fylgjast með lausu diskplássi"
