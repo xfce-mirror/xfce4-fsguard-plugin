@@ -4,19 +4,11 @@ dnl 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
 dnl 2007 Mike Massonnet <mmassonnet@gmail.com>
 dnl
 
-m4_define([xfce4_fsguard_plugin_version_major], [1])
-m4_define([xfce4_fsguard_plugin_version_minor], [1])
-m4_define([xfce4_fsguard_plugin_version_micro], [3])
-m4_define([xfce4_fsguard_plugin_version_nano], [])
-m4_define([xfce4_fsguard_plugin_version_build], [@REVISION@])
-m4_define([xfce4_fsguard_plugin_version_tag], [git]) # Leave empty for releases
-m4_define([xfce4_fsguard_plugin_version], [xfce4_fsguard_plugin_version_major().xfce4_fsguard_plugin_version_minor().xfce4_fsguard_plugin_version_micro()ifelse(xfce4_fsguard_plugin_version_nano(), [], [], [.xfce4_fsguard_plugin_version_nano()])ifelse(xfce4_fsguard_plugin_version_tag(), [git], [xfce4_fsguard_plugin_version_tag()-xfce4_fsguard_plugin_version_build()], [xfce4_fsguard_plugin_version_tag()])])
-
-m4_define([fsguard_debug_default], [ifelse(xfce4_fsguard_plugin_version_tag(), [git], [yes], [minimum])])
+XDT_VERSION_INIT([1.1.3], [git])
 
 AC_COPYRIGHT([Copyright (c) 2003-2023 The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-fsguard-plugin], [xfce4_fsguard_plugin_version], [https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin], [xfce4-fsguard-plugin],
-	[https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
+AC_INIT([xfce4-fsguard-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin], [xfce4-fsguard-plugin], [https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
+AC_REVISION([xdt_version_build])
 
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AC_CONFIG_HEADERS([config.h])
@@ -30,9 +22,6 @@ AC_PROG_INSTALL
 dnl Initialize libtool
 LT_PREREQ([2.2.6])
 LT_INIT([disable-static])
-
-dnl Check for X11 installed
-XDT_CHECK_LIBX11_REQUIRE
 
 dnl configure the panel plugin
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.50.0])
@@ -49,7 +38,7 @@ AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.19.8])
 
 dnl Check for debugging support
-XDT_FEATURE_DEBUG([fsguard_debug_default])
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 AC_CONFIG_FILES([
 Makefile
