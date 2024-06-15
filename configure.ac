@@ -9,6 +9,7 @@ XDT_VERSION_INIT([1.1.3], [git])
 AC_COPYRIGHT([Copyright (c) 2003-2023 The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-fsguard-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin], [xfce4-fsguard-plugin], [https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
 AC_REVISION([xdt_version_build])
+AC_PREREQ([2.69])
 
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AC_CONFIG_HEADERS([config.h])
