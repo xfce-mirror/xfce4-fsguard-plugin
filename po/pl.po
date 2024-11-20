@@ -41,22 +41,22 @@ msgstr "%.0f MB"
 #: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s (%s)"
-msgstr "Na wolumenie „%3$s” (%4$s) pozostało %1$s z %2$s wolnej przestrzeni"
+msgstr "Na wolumenie „%s” (%s) pozostało %s z %s wolnej przestrzeni"
 
 #: panel-plugin/fsguard.c:313
 #, c-format
 msgid "%s/%s space left on %s"
-msgstr "Na wolumenie „%3$s” pozostało %1$s z %2$s wolnej przestrzeni"
+msgstr "Na wolumenie „%s” pozostało %s z %s wolnej przestrzeni"
 
 #: panel-plugin/fsguard.c:333
 #, c-format
 msgid "Only %s space left on %s (%s)!"
-msgstr "Na wolumenie „%2$s” (%3$s) pozostał tylko %1$s wolnej przestrzeni!"
+msgstr "Na wolumenie „%s” (%s) pozostało tylko %s wolnej przestrzeni!"
 
 #: panel-plugin/fsguard.c:336
 #, c-format
 msgid "Only %s space left on %s!"
-msgstr "Na wolumenie „%2$s” pozostało tylko %1$s wolnej przestrzeni!"
+msgstr "Na wolumenie „%s” pozostało tylko %s wolnej przestrzeni!"
 
 #: panel-plugin/fsguard.c:688 panel-plugin/fsguard.desktop.in:5
 msgid "Free Space Checker"
