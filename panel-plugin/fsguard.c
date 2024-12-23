@@ -203,7 +203,6 @@ fsguard_refresh_monitor_color (FsGuard *fsguard, gchar *css_class)
         break;
     }
 
-#if GTK_CHECK_VERSION (3, 16, 0)
     DBG("removing class %s, adding %s", fsguard->css_class, css_class);
     gtk_style_context_remove_class (
         GTK_STYLE_CONTEXT(gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
@@ -213,17 +212,6 @@ fsguard_refresh_monitor_color (FsGuard *fsguard, gchar *css_class)
         css_class);
     g_free(fsguard->css_class);
     fsguard->css_class = g_strdup(css_class);
-#else
-    gtk_widget_override_background_color (GTK_WIDGET (fsguard->progress_bar),
-                          GTK_STATE_PRELIGHT,
-                          &color);
-    gtk_widget_override_background_color (GTK_WIDGET (fsguard->progress_bar),
-                          GTK_STATE_SELECTED,
-                          &color);
-    gtk_widget_override_color (GTK_WIDGET (fsguard->progress_bar),
-                            GTK_STATE_SELECTED,
-                            &color);
-#endif
 }
 
 static inline gboolean
@@ -234,7 +222,7 @@ __open_mnt (gchar *command, gchar *path)
     gchar *path_quoted;
     path_quoted = g_shell_quote (path);
     cmd = g_strdup_printf ("%s %s", command, path_quoted);
-    res = xfce_spawn_command_line_on_screen (NULL, cmd, FALSE, FALSE, NULL);
+    res = xfce_spawn_command_line (NULL, cmd, FALSE, FALSE, TRUE, NULL);
     g_free (path_quoted);
     g_free (cmd);
     return res;
@@ -420,9 +408,7 @@ static FsGuard *
 fsguard_new (XfcePanelPlugin *plugin)
 {
     GtkOrientation orientation = xfce_panel_plugin_get_orientation (plugin);
-#if GTK_CHECK_VERSION (3, 16, 0)
     GtkCssProvider *css_provider;
-#endif
     FsGuard *fsguard = g_new0(FsGuard, 1);
 
     fsguard->plugin = plugin;
@@ -445,9 +431,7 @@ fsguard_new (XfcePanelPlugin *plugin)
     fsguard->icon_panel = gtk_image_new ();
 
     fsguard->progress_bar = gtk_progress_bar_new ();
-#if GTK_CHECK_VERSION (3, 16, 0)
     css_provider = gtk_css_provider_new ();
-#if GTK_CHECK_VERSION (3, 20, 0)
         gtk_css_provider_load_from_data (css_provider, "\
             progressbar.horizontal trough { min-height: 4px; }\
             progressbar.horizontal progress { min-height: 4px; }\
@@ -457,17 +441,6 @@ fsguard_new (XfcePanelPlugin *plugin)
             .warning progress { background-color: " COLOR_WARNING " ; background-image: none; }\
             .urgent progress { background-color: " COLOR_URGENT " ; background-image: none; }",
              -1, NULL);
-#else
-        gtk_css_provider_load_from_data (css_provider, "\
-            .progressbar.horizontal trough { min-height: 4px; }\
-            .progressbar.horizontal progress { min-height: 4px; }\
-            .progressbar.vertical trough { min-width: 4px; }\
-            .progressbar.vertical progress { min-width: 4px; }\
-            .normal progress { background-color: " COLOR_NORMAL " ; background-image: none; }\
-            .warning progress { background-color: " COLOR_WARNING " ; background-image: none; }\
-            .urgent progress { background-color: " COLOR_URGENT " ; background-image: none; }",
-             -1, NULL);
-#endif
     gtk_style_context_add_provider (
         GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
         GTK_STYLE_PROVIDER (css_provider),
@@ -475,7 +448,6 @@ fsguard_new (XfcePanelPlugin *plugin)
     gtk_style_context_add_class (
         GTK_STYLE_CONTEXT(gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
         fsguard->css_class);
-#endif
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(fsguard->progress_bar), 0.0);
     gtk_progress_bar_set_inverted (GTK_PROGRESS_BAR(fsguard->progress_bar), (orientation == GTK_ORIENTATION_HORIZONTAL));
     gtk_orientable_set_orientation (GTK_ORIENTABLE(fsguard->progress_bar), !orientation);
@@ -685,10 +657,10 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     /* Dialog */
     dialog =
-      xfce_titled_dialog_new_with_buttons (_("Free Space Checker"),
+      xfce_titled_dialog_new_with_mixed_buttons (_("Free Space Checker"),
         GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
         GTK_DIALOG_DESTROY_WITH_PARENT,
-        "gtk-close", GTK_RESPONSE_OK,
+        "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
         NULL);
     gtk_window_set_icon_name (GTK_WINDOW (dialog), "xfce4-fsguard-plugin-warning");
     gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
