@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-04-06 12:53+0200\n"
+"POT-Creation-Date: 2024-12-23 12:52+0100\n"
 "PO-Revision-Date: 2013-07-03 19:00+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012\n"
 "Language-Team: Serbian (http://app.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
@@ -18,82 +18,86 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: panel-plugin/fsguard.c:261
+#: panel-plugin/fsguard.c:249
 msgid "Unable to find an appropriate application to open the mount point"
 msgstr "Нисам могао пронаћи одговарајући програм за отварање тачке качења"
 
-#: panel-plugin/fsguard.c:299
+#: panel-plugin/fsguard.c:287
 #, c-format
 msgid "could not check mountpoint %s, please check your config"
 msgstr "нисам могао проверити тачку качења %s, молим, проверите ваше поставке"
 
-#: panel-plugin/fsguard.c:304 panel-plugin/fsguard.c:305
+#: panel-plugin/fsguard.c:292 panel-plugin/fsguard.c:293
 #, c-format
 msgid "%.2f GB"
 msgstr "%.2f ГБ"
 
-#: panel-plugin/fsguard.c:307 panel-plugin/fsguard.c:308
+#: panel-plugin/fsguard.c:295 panel-plugin/fsguard.c:296
 #, c-format
 msgid "%.0f MB"
 msgstr "%.0f МБ"
 
-#: panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:301
 #, c-format
 msgid "%s/%s space left on %s (%s)"
 msgstr "%s/%s слободног простора на %s (%s)"
 
-#: panel-plugin/fsguard.c:313
+#: panel-plugin/fsguard.c:301
 #, c-format
 msgid "%s/%s space left on %s"
 msgstr "%s/%s слободног простора на %s"
 
-#: panel-plugin/fsguard.c:333
+#: panel-plugin/fsguard.c:321
 #, c-format
 msgid "Only %s space left on %s (%s)!"
 msgstr "Само %s слободног простора на %s (%s)!"
 
-#: panel-plugin/fsguard.c:336
+#: panel-plugin/fsguard.c:324
 #, c-format
 msgid "Only %s space left on %s!"
 msgstr "Само %s слободног простора на %s!"
 
-#: panel-plugin/fsguard.c:688 panel-plugin/fsguard.desktop.in:5
+#: panel-plugin/fsguard.c:660 panel-plugin/fsguard.desktop.in:5
 msgid "Free Space Checker"
 msgstr "Провера слободног простора"
 
-#: panel-plugin/fsguard.c:705
+#: panel-plugin/fsguard.c:663
+msgid "_Close"
+msgstr "_Затвори"
+
+#: panel-plugin/fsguard.c:677
 msgid "Configuration"
 msgstr "Поставке"
 
-#: panel-plugin/fsguard.c:712
+#: panel-plugin/fsguard.c:684
 msgid "Mount point"
 msgstr "Тачка качења"
 
-#: panel-plugin/fsguard.c:720
+#: panel-plugin/fsguard.c:692
 msgid "Warning limit (%)"
 msgstr "Ниво опомене (%)"
 
-#: panel-plugin/fsguard.c:729
+#: panel-plugin/fsguard.c:701
 msgid "Urgent limit (%)"
 msgstr "Ниво хитности (%)"
 
-#: panel-plugin/fsguard.c:753
+#: panel-plugin/fsguard.c:725
 msgid "User Interface"
 msgstr "Корисничко сучеље"
 
-#: panel-plugin/fsguard.c:761
+#: panel-plugin/fsguard.c:733
 msgid "Name"
 msgstr "Име"
 
-#: panel-plugin/fsguard.c:771
+#: panel-plugin/fsguard.c:743
 msgid "Display size"
 msgstr "Приказ величине"
 
-#: panel-plugin/fsguard.c:775
+#: panel-plugin/fsguard.c:747
 msgid "Display meter"
 msgstr "Приказ мерача"
 
-#: panel-plugin/fsguard.c:779
+#: panel-plugin/fsguard.c:751
 msgid "Display button"
 msgstr "Приказ дугмета"
 
