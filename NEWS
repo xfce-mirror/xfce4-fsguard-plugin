@@ -1,3 +1,25 @@
+1.1.4 (2024-12-24)
+=====
+- Update copyright year
+- build: Bump dependency versions and fix deprecation warnings
+- I18n: Update po/LINGUAS list
+- build: Be less verbose
+- build: Add AC_PREREQ
+- build: Use XDT_VERSION_INIT and get rid of configure.ac.in
+- I18n: Update po/LINGUAS list
+- build: Get rid of intltool
+- Translation Updates:
+  Albanian, Arabic, Basque, Belarusian, Bulgarian, Catalan, Chinese
+  (China), Chinese (Taiwan), Croatian, Czech, Danish, Dutch, Eastern
+  Armenian, English (Australia), English (Canada), English (United
+  Kingdom), Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Panjabi (Punjabi), Polish,
+  Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak,
+  Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, Urdu, Urdu
+  (Pakistan), Uyghur
+
 1.1.3 (2023-04-19)
 =====
 - Fix autotools warnings
