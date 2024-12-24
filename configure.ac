@@ -4,7 +4,7 @@ dnl 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
 dnl 2007 Mike Massonnet <mmassonnet@gmail.com>
 dnl
 
-XDT_VERSION_INIT([1.1.4])
+XDT_VERSION_INIT([1.1.4], [git])
 
 AC_COPYRIGHT([Copyright (c) 2003-2024 The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-fsguard-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin], [xfce4-fsguard-plugin], [https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
