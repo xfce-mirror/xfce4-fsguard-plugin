@@ -445,6 +445,7 @@ fsguard_new (XfcePanelPlugin *plugin)
         GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
         GTK_STYLE_PROVIDER (css_provider),
         GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_object_unref (css_provider);
     gtk_style_context_add_class (
         GTK_STYLE_CONTEXT(gtk_widget_get_style_context (GTK_WIDGET (fsguard->progress_bar))),
         fsguard->css_class);
