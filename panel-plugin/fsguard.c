@@ -34,6 +34,9 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+#ifdef HAVE_XFCE_REVISION_H
+#include "xfce-revision.h"
+#endif
 
 #include <string.h>
 #include <sys/types.h>
@@ -804,6 +807,27 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     fsguard_write_config (fsguard->plugin, fsguard);
 }
 
+static void
+fsguard_show_about (XfcePanelPlugin *plugin, FsGuard *fsguard)
+{
+    const gchar *auth[] = {
+        "Andre Lerche <a.lerche@gmx.net>",
+        "Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>",
+        "Mike Massonnet <mmassonnet@xfce.org>",
+        NULL
+    };
+
+    gtk_show_about_dialog (NULL,
+        "logo-icon-name", "xfce4-fsguard-plugin",
+        "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
+        "version", VERSION_FULL,
+        "program-name", PACKAGE_NAME,
+        "comments", _("Monitor free disk space"),
+        "website", PACKAGE_URL,
+        "copyright", "Copyright \302\251 2003-2025 The Xfce development team",
+        "authors", auth, NULL);
+}
+
 // }}}
 
 // initialization {{{
@@ -843,8 +867,13 @@ fsguard_construct (XfcePanelPlugin *plugin)
                       "configure-plugin",
                       G_CALLBACK (fsguard_create_options),
                       fsguard);
+    g_signal_connect (plugin,
+                      "about",
+                      G_CALLBACK (fsguard_show_about),
+                      fsguard);
 
     xfce_panel_plugin_menu_show_configure (plugin);
+    xfce_panel_plugin_menu_show_about (plugin);
 }
 
 XFCE_PANEL_PLUGIN_REGISTER (fsguard_construct);
