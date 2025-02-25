@@ -25,6 +25,7 @@ EXTRA_DIST =													\
 	README.md												\
 	meson.build												\
 	po/meson.build												\
+	xfce-revision.h.in											\
 	$(NULL)
 
 DISTCLEANFILES =												\

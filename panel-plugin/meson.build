@@ -1,5 +1,6 @@
 plugin_sources = [
   'fsguard.c',
+  xfce_revision_h,
 ]
 
 plugin_install_subdir = 'xfce4' / 'panel' / 'plugins'

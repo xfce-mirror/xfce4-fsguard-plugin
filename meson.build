@@ -114,6 +114,14 @@ extra_cflags += [
 add_project_arguments(cc.get_supported_arguments(extra_cflags_check), language: 'c')
 add_project_arguments(extra_cflags, language: 'c')
 
+xfce_revision_h = vcs_tag(
+  command: ['git', 'rev-parse', '--short', 'HEAD'],
+  fallback: 'UNKNOWN',
+  input: 'xfce-revision.h.in',
+  output: 'xfce-revision.h',
+  replace_string: '@REVISION@',
+)
+
 subdir('panel-plugin')
 subdir('icons')
 subdir('po')
