@@ -22,7 +22,9 @@ ChangeLog: Makefile
 dist-hook: ChangeLog
 
 EXTRA_DIST =													\
-	README.md														\
+	README.md												\
+	meson.build												\
+	po/meson.build												\
 	$(NULL)
 
 DISTCLEANFILES =												\
