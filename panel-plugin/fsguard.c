@@ -239,7 +239,11 @@ fsguard_open_mnt (GtkWidget *widget, FsGuard *fsguard)
     if (fsguard->path == NULL || fsguard->path[0] == '\0')
       return;
 
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+    if (__open_mnt ("xfce-open", fsguard->path))
+#else
     if (__open_mnt ("exo-open", fsguard->path))
+#endif
       return;
     if (__open_mnt ("Thunar", fsguard->path))
       return;
