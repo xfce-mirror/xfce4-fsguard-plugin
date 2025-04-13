@@ -5,12 +5,16 @@ libfsguard_la_SOURCES = fsguard.c
 
 libfsguard_la_CFLAGS =											\
 	-I$(top_srcdir)											\
+	@GLIB_CFLAGS@											\
+	@GTK_CFLAGS@											\
 	@LIBXFCE4UI_CFLAGS@										\
 	@LIBXFCE4UTIL_CFLAGS@										\
 	@LIBXFCE4PANEL_CFLAGS@										\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 libfsguard_la_LIBADD =												\
+	@GLIB_LIBS@												\
+	@GTK_LIBS@												\
 	@LIBXFCE4UI_LIBS@											\
 	@LIBXFCE4UTIL_LIBS@											\
 	@LIBXFCE4PANEL_LIBS@
