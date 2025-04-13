@@ -828,7 +828,7 @@ fsguard_show_about (XfcePanelPlugin *plugin, FsGuard *fsguard)
         "program-name", PACKAGE_NAME,
         "comments", _("Monitor free disk space"),
         "website", PACKAGE_URL,
-        "copyright", "Copyright \302\251 2003-2025 The Xfce development team",
+        "copyright", "Copyright \302\251 2003-" COPYRIGHT_YEAR " The Xfce development team",
         "authors", auth, NULL);
 }
 

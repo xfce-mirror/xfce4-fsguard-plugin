@@ -4,9 +4,10 @@ dnl 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
 dnl 2007 Mike Massonnet <mmassonnet@gmail.com>
 dnl
 
+m4_define([copyright_year], [2025])
 XDT_VERSION_INIT([1.1.4], [git])
 
-AC_COPYRIGHT([Copyright (c) 2003-2024 The Xfce development team. All rights reserved.])
+AC_COPYRIGHT([Copyright (c) 2003-copyright_year() The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-fsguard-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin], [xfce4-fsguard-plugin], [https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin])
 AC_REVISION([xdt_version_build])
 AC_PREREQ([2.69])
@@ -17,6 +18,9 @@ AM_MAINTAINER_MODE
 AC_CONFIG_MACRO_DIRS([m4])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_DEFINE([VERSION_FULL], [PACKAGE_VERSION], [Alias for VERSION and PACKAGE_VERSION for meson compatibility])
+COPYRIGHT_YEAR=copyright_year()
+AC_DEFINE_UNQUOTED([COPYRIGHT_YEAR], ["$COPYRIGHT_YEAR"], [Copyright year])
+AC_SUBST([COPYRIGHT_YEAR])
 
 dnl Check for basic programs
 AC_PROG_CC
