@@ -1,14 +1,10 @@
 project(
   'xfce4-fsguard-plugin',
   'c',
-  version: '1.1.4-dev',
-  license: 'BSD-2-Clause',
-  meson_version: '>= 0.54.0',
-  default_options: [
-    'c_std=gnu11',
-    'buildtype=debugoptimized',
-    'warning_level=2',
-  ]
+version : '1.2.0',
+  license : 'BSD-2-Clause',
+  meson_version : '>= 0.54.0',
+  default_options : ['c_std=gnu11', 'buildtype=debugoptimized', 'warning_level=2']
 )
 
 project_namespace = 'panel-plugins'
