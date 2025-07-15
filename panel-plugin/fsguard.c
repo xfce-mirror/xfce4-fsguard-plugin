@@ -641,6 +641,12 @@ fsguard_check4_changed (GtkWidget *widget, FsGuard *fsguard)
 }
 
 static void
+fsguard_write_config_cb (GtkWidget *dialog, FsGuard *fsguard)
+{
+    fsguard_write_config (fsguard->plugin, fsguard);
+}
+
+static void
 fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
 {
     GtkWidget *dialog;
@@ -809,10 +815,9 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
                       G_CALLBACK (fsguard_check4_changed),
                       fsguard);
 
+    g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
+    g_signal_connect (dialog, "destroy", G_CALLBACK (fsguard_write_config_cb), fsguard);
     gtk_widget_show_all (GTK_WIDGET (dialog));
-    gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_destroy (dialog);
-    fsguard_write_config (fsguard->plugin, fsguard);
 }
 
 static void
