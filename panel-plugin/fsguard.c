@@ -71,6 +71,7 @@
 typedef struct
 {
     XfcePanelPlugin    *plugin;
+    GtkWidget          *settings_dialog;
     gboolean            seen;
     gint                icon_id;
     gchar              *css_class;
@@ -661,15 +662,19 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     GtkWidget *check3;
     GtkSizeGroup *size_group;
 
-    xfce_panel_plugin_block_menu (plugin);
+    if (fsguard->settings_dialog != NULL) {
+        gtk_window_present (GTK_WINDOW (fsguard->settings_dialog));
+        return;
+    }
 
     /* Dialog */
-    dialog =
+    fsguard->settings_dialog = dialog =
       xfce_titled_dialog_new_with_mixed_buttons (_("Free Space Checker"),
         GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
         GTK_DIALOG_DESTROY_WITH_PARENT,
         "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
         NULL);
+    g_object_add_weak_pointer (G_OBJECT (dialog), (gpointer *) &fsguard->settings_dialog);
     gtk_window_set_icon_name (GTK_WINDOW (dialog), "xfce4-fsguard-plugin-warning");
     gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
     gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
@@ -807,7 +812,6 @@ fsguard_create_options (XfcePanelPlugin *plugin, FsGuard *fsguard)
     gtk_widget_show_all (GTK_WIDGET (dialog));
     gtk_dialog_run (GTK_DIALOG (dialog));
     gtk_widget_destroy (dialog);
-    xfce_panel_plugin_unblock_menu (fsguard->plugin);
     fsguard_write_config (fsguard->plugin, fsguard);
 }
 
