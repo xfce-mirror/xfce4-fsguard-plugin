@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-fsguard-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-12-23 12:52+0100\n"
+"PO-Revision-Date: 2013-07-03 19:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/fsguard.c:249
+msgid "Unable to find an appropriate application to open the mount point"
+msgstr "მიმაგრების წერტილის გასახსნელად აპლიკაციის აღმოჩენა შეუძლებელია"
+
+#: panel-plugin/fsguard.c:287
+#, c-format
+msgid "could not check mountpoint %s, please check your config"
+msgstr "მიმაგრების წერტილის %s შემოწმება შეუძლებელია. გადახედეთ კონფიგურაციას"
+
+#: panel-plugin/fsguard.c:292 panel-plugin/fsguard.c:293
+#, c-format
+msgid "%.2f GB"
+msgstr "%.2f გბ"
+
+#: panel-plugin/fsguard.c:295 panel-plugin/fsguard.c:296
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f მბ"
+
+#: panel-plugin/fsguard.c:301
+#, c-format
+msgid "%s/%s space left on %s (%s)"
+msgstr "%s/%s ადგილი დარჩა %s-ზე (%s)"
+
+#: panel-plugin/fsguard.c:301
+#, c-format
+msgid "%s/%s space left on %s"
+msgstr "%s/%s ადგილი დარჩა %s-ზე"
+
+#: panel-plugin/fsguard.c:321
+#, c-format
+msgid "Only %s space left on %s (%s)!"
+msgstr "მხოლოდ %s ადგილი დარჩა %s-ზე (%s)!"
+
+#: panel-plugin/fsguard.c:324
+#, c-format
+msgid "Only %s space left on %s!"
+msgstr "მხოლოდ %s ადგილი დარჩა %s-ზე!"
+
+#: panel-plugin/fsguard.c:660 panel-plugin/fsguard.desktop.in:5
+msgid "Free Space Checker"
+msgstr "თავისუფალი ადგილის შემოწმების პროგრამა"
+
+#: panel-plugin/fsguard.c:663
+msgid "_Close"
+msgstr "და_ხურვა"
+
+#: panel-plugin/fsguard.c:677
+msgid "Configuration"
+msgstr "მორგება"
+
+#: panel-plugin/fsguard.c:684
+msgid "Mount point"
+msgstr "მიმაგრების წერტილი"
+
+#: panel-plugin/fsguard.c:692
+msgid "Warning limit (%)"
+msgstr "გაფრთხილების ზღვარი (%)"
+
+#: panel-plugin/fsguard.c:701
+msgid "Urgent limit (%)"
+msgstr "სასწრაფოობის ზღვარი (%)"
+
+#: panel-plugin/fsguard.c:725
+msgid "User Interface"
+msgstr "მომხმარებლის ინტერფეისი"
+
+#: panel-plugin/fsguard.c:733
+msgid "Name"
+msgstr "სახელი"
+
+#: panel-plugin/fsguard.c:743
+msgid "Display size"
+msgstr "ზომის ჩვენება"
+
+#: panel-plugin/fsguard.c:747
+msgid "Display meter"
+msgstr "მზომის ჩვენება"
+
+#: panel-plugin/fsguard.c:751
+msgid "Display button"
+msgstr "ღილაკის ჩვენება"
+
+#: panel-plugin/fsguard.desktop.in:6
+msgid "Monitor free disk space"
+msgstr "თავისუფალი ადგილის მონიტორინგი"
