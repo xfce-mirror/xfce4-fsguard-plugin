@@ -499,6 +499,7 @@ fsguard_free (XfcePanelPlugin *plugin, FsGuard *fsguard)
 
     g_free (fsguard->name);
     g_free (fsguard->path);
+    g_free (fsguard->css_class);
 
     g_free(fsguard);
 }
