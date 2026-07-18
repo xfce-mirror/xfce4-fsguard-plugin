@@ -259,9 +259,6 @@ fsguard_check_fs (FsGuard *fsguard)
 {
     float               freespace = 0;
     float               total = 0;
-    float               freeblocks = 0;
-    float               totalblocks = 0;
-    long                blocksize = 0;
     int                 err;
     gchar              *css_class = "normal";
     gchar               msg_size[100], msg_total_size[100], msg[100];
@@ -271,11 +268,11 @@ fsguard_check_fs (FsGuard *fsguard)
     err = statfs (fsguard->path, &fsd);
 
     if (err != -1) {
-        blocksize       = fsd.f_bsize;
-        freeblocks      = fsd.f_bavail;
-        totalblocks     = fsd.f_blocks;
-        freespace       = (freeblocks * blocksize) / 1048576;
-        total           = (totalblocks * blocksize) / 1048576;
+        long blocksize = fsd.f_bsize;
+        float freeblocks = fsd.f_bavail;
+        float totalblocks = fsd.f_blocks;
+        freespace = (freeblocks * blocksize) / 1048576;
+        total = (totalblocks * blocksize) / 1048576;
 
         if (freespace > (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_NORMAL;
