@@ -277,7 +277,7 @@ fsguard_check_fs (FsGuard *fsguard)
         if (freespace > (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_NORMAL;
             css_class = "normal";
-        } else if (freespace > (total * fsguard->limit_urgent / 100) && freespace <= (total * fsguard->limit_warning / 100)) {
+        } else if (freespace > (total * fsguard->limit_urgent / 100)) {
             icon_id = ICON_WARNING;
             css_class = "warning";
         } else {
