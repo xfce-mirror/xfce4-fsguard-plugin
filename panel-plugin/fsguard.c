@@ -102,7 +102,7 @@ static void
 fsguard_refresh_button (FsGuard *fsguard)
 {
     /* Refresh the checkbox state as seen in the dialog */
-    if (fsguard->hide_button == TRUE && (*(fsguard->name) == '\0' || !fsguard->show_name)
+    if (fsguard->hide_button && (*(fsguard->name) == '\0' || !fsguard->show_name)
         && !fsguard->show_size && !fsguard->show_progress_bar) {
         DBG ("Show the button back");
         if (G_LIKELY (GTK_IS_WIDGET (fsguard->cb_hide_button)))
@@ -259,9 +259,6 @@ fsguard_check_fs (FsGuard *fsguard)
 {
     float               freespace = 0;
     float               total = 0;
-    float               freeblocks = 0;
-    float               totalblocks = 0;
-    long                blocksize = 0;
     int                 err;
     gchar              *css_class = "normal";
     gchar               msg_size[100], msg_total_size[100], msg[100];
@@ -271,16 +268,16 @@ fsguard_check_fs (FsGuard *fsguard)
     err = statfs (fsguard->path, &fsd);
 
     if (err != -1) {
-        blocksize       = fsd.f_bsize;
-        freeblocks      = fsd.f_bavail;
-        totalblocks     = fsd.f_blocks;
-        freespace       = (freeblocks * blocksize) / 1048576;
-        total           = (totalblocks * blocksize) / 1048576;
+        long blocksize = fsd.f_bsize;
+        float freeblocks = fsd.f_bavail;
+        float totalblocks = fsd.f_blocks;
+        freespace = (freeblocks * blocksize) / 1048576;
+        total = (totalblocks * blocksize) / 1048576;
 
         if (freespace > (total * fsguard->limit_warning / 100)) {
             icon_id = ICON_NORMAL;
             css_class = "normal";
-        } else if (freespace > (total * fsguard->limit_urgent / 100) && freespace <= (total * fsguard->limit_warning / 100)) {
+        } else if (freespace > (total * fsguard->limit_urgent / 100)) {
             icon_id = ICON_WARNING;
             css_class = "warning";
         } else {
@@ -322,7 +319,7 @@ fsguard_check_fs (FsGuard *fsguard)
 
     if (err != -1 && !fsguard->seen && icon_id == ICON_URGENT) {
         fsguard->seen = TRUE;
-        if (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) {
+        if (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name) != 0) {
             xfce_dialog_show_warning (NULL, NULL, _("Only %s space left on %s (%s)!"),
                        msg_size, fsguard->path, fsguard->name);
         } else {
@@ -630,7 +627,7 @@ fsguard_check4_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->hide_button = !gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
 
-    if (fsguard->hide_button == FALSE)
+    if (!fsguard->hide_button)
         gtk_widget_show (fsguard->btn_panel);
     else {
         gtk_widget_hide (fsguard->btn_panel);
