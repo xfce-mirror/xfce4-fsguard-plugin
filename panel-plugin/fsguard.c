@@ -322,7 +322,7 @@ fsguard_check_fs (FsGuard *fsguard)
 
     if (err != -1 && !fsguard->seen && icon_id == ICON_URGENT) {
         fsguard->seen = TRUE;
-        if (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name)) {
+        if (*(fsguard->name) != '\0' && strcmp(fsguard->path, fsguard->name) != 0) {
             xfce_dialog_show_warning (NULL, NULL, _("Only %s space left on %s (%s)!"),
                        msg_size, fsguard->path, fsguard->name);
         } else {
