@@ -102,7 +102,7 @@ static void
 fsguard_refresh_button (FsGuard *fsguard)
 {
     /* Refresh the checkbox state as seen in the dialog */
-    if (fsguard->hide_button == TRUE && (*(fsguard->name) == '\0' || !fsguard->show_name)
+    if (fsguard->hide_button && (*(fsguard->name) == '\0' || !fsguard->show_name)
         && !fsguard->show_size && !fsguard->show_progress_bar) {
         DBG ("Show the button back");
         if (G_LIKELY (GTK_IS_WIDGET (fsguard->cb_hide_button)))
@@ -630,7 +630,7 @@ fsguard_check4_changed (GtkWidget *widget, FsGuard *fsguard)
 {
     fsguard->hide_button = !gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget));
 
-    if (fsguard->hide_button == FALSE)
+    if (!fsguard->hide_button)
         gtk_widget_show (fsguard->btn_panel);
     else {
         gtk_widget_hide (fsguard->btn_panel);
